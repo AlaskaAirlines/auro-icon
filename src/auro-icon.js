@@ -20,6 +20,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
+ * @attr {Boolean} ondark - Set value for on-dark version of auro-icon.
  */
 
 // build the component class
