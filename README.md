@@ -1,6 +1,6 @@
 ## auro-icon
 
-`<auro-icon>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+`<auro-icon>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of displaying the [icons](https://auro.alaskaair.com/icons/usage) from the Auro Design System.
 
 ## UI development browser support
 
@@ -33,7 +33,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 Defining the component dependency within each component that is using the `<auro-icon>` component.
 
 ```javascript
-import "@alaskaairuxauro-icon";
+import "@alaskaairux/auro-icon";
 ```
 
 **Reference component in HTML**
@@ -52,8 +52,8 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
 
-<script src="https://unpkg.com/@alaskaairuxauro-icon@:version/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairuxauro-icon@:version/dist/auro-icon__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@:version/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@:version/dist/auro-icon__bundled.js"></script>
 ```
 
 ### polyfills.js
@@ -69,16 +69,36 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 The `<auro-icon>` element should be used in situations where users may:
 
-* ...
-* ...
-* ...
+* want to use an auro icons without a lot of setup
+* want to add an icon to another auro component
 
 ## API Code Examples
 
-Default auro-icon
+Primary auro-icon
 
 ```html
-<auro-icon>Hello World</auro-icon>
+<auro-icon category="interface" name="chevron-up"></auro-icon>
+<auro-icon category="interface" name="chevron-up" onDark></auro-icon>
+```
+
+Emphasis auro-icon
+
+```html
+<auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
+<auro-icon category="interface" name="chevron-up" emphasis onDark></auro-icon>
+```
+
+Accent auro-icon
+
+```html
+<auro-icon category="interface" name="chevron-up" accent></auro-icon>
+<auro-icon category="interface" name="chevron-up" accent onDark></auro-icon>
+```
+
+Disabled auro-icon
+```html
+<auro-icon category="interface" name="chevron-up" disabled></auro-icon>
+<auro-icon category="interface" name="chevron-up" disabled onDark></auro-icon>
 ```
 
 ## Development

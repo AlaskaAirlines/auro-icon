@@ -6,6 +6,7 @@
 import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
+import penguin from '../node_modules/@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -20,7 +21,8 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
- * @attr {Boolean} ondark - Set value for on-dark version of auro-icon.
+ * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
+ * @attr svg - Internal property to store the svg.
  */
 
 // build the component class
@@ -63,30 +65,17 @@ class AuroIcon extends AuroElement {
     };
   }
 
-  connectedCallback() {
-    super.connectedCallback();
-    const url = this.category && this.name ? `../node_modules/@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js` : undefined;
-
-    if (url) {
-      import(url)
-        .then((svgIcon) => {
-          const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
-          this.svg = dom.body.firstChild;
-        })
-        .catch((err) => {
-          import('../node_modules/@alaskaairux/icons/dist/icons/interface/penguin_es6.js')
-            .then((svgIcon) => {
-              const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
-              this.svg = dom.body.firstChild;
-            });
-        });
-    } else {
-      import('../node_modules/@alaskaairux/icons/dist/icons/interface/penguin_es6.js')
-        .then((svgIcon) => {
-          const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
-          this.svg = dom.body.firstChild;
-        });
-    }
+  firstUpdated() {
+    import(`../node_modules/@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js`)
+      .then((svgIcon) => {
+        const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
+        this.svg = dom.body.firstChild;
+      })
+      .catch((err) => {
+        console.log(err);
+        const dom = new DOMParser().parseFromString(penguin.svg, 'text/html');
+        this.svg = dom.body.firstChild;
+      });
   }
 
   static get styles() {
