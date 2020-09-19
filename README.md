@@ -39,7 +39,7 @@ import "@alaskaairux/auro-icon";
 **Reference component in HTML**
 
 ```html
-<auro-icon>Hello World</auro-icon>
+<auro-icon category="alert" name="error" accent></auro-icon>
 ```
 
 ## Install bundled assets from CDN

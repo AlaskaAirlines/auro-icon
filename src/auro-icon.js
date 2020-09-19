@@ -66,14 +66,13 @@ class AuroIcon extends AuroElement {
   }
 
   firstUpdated() {
-    import(`../node_modules/@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js`)
-      .then((svgIcon) => {
+    import(`../node_modules/@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js`).then((svgIcon) => {
         const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
+
         this.svg = dom.body.firstChild;
-      })
-      .catch((err) => {
-        console.log(err);
+      }).catch(() => {
         const dom = new DOMParser().parseFromString(penguin.svg, 'text/html');
+
         this.svg = dom.body.firstChild;
       });
   }
