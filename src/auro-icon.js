@@ -23,6 +23,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
  * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
  * @attr svg - Internal property to store the svg.
+ * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
 // build the component class
@@ -52,6 +53,18 @@ class AuroIcon extends AuroElement {
         reflect: true
       },
       disabled: {
+        type: Boolean,
+        reflect: true
+      },
+      error: {
+        type: Boolean,
+        reflect: true
+      },
+      success: {
+        type: Boolean,
+        reflect: true
+      },
+      advisory: {
         type: Boolean,
         reflect: true
       },
@@ -86,15 +99,21 @@ class AuroIcon extends AuroElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const classes = {
-      'primary': !this.emphasis && !this.accent && !this.disabled,
-      'emphasis': this.emphasis && !this.accent && !this.disabled,
-      'accent': this.accent && !this.emphasis && !this.disabled,
-      'disabled': this.disabled && !this.emphasis && !this.accent
+      'primary': !this.emphasis && !this.accent && !this.disabled && !this.error && !this.success && !this.advisory,
+      'emphasis': this.emphasis,
+      'accent': this.accent,
+      'disabled': this.disabled,
+      'error': this.error,
+      'success': this.success,
+      'advisory': this.advisory
     }
 
     return html`
-      <div class="${classMap(classes)}" aria-hidden="${this.hideAudible(this.hiddenAudible)}">
-        ${this.svg}
+      <div class="${classMap(classes)}">
+        <div class="util_displayHiddenVisually">
+          <slot></slot>
+        </div>
+        <slot name="icon">${this.svg}</slot>
       </div>
     `;
   }
