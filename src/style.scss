@@ -14,6 +14,11 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
 
 :host {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+
+
   .primary {
     color: var(--auro-color-icon-primary-on-light);
   }
