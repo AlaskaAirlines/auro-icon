@@ -16,7 +16,6 @@ describe('auro-icon', () => {
     const div = el.shadowRoot.querySelector('div');
     const svg = el.shadowRoot.querySelector('svg');
 
-    expect(div).to.have.class('primary');
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');
@@ -34,7 +33,6 @@ describe('auro-icon', () => {
     const div = el.shadowRoot.querySelector('div');
     const svg = el.shadowRoot.querySelector('svg');
 
-    expect(div).to.have.class('primary');
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');
@@ -52,7 +50,6 @@ describe('auro-icon', () => {
     const div = el.shadowRoot.querySelector('div');
     const svg = el.shadowRoot.querySelector('svg');
 
-    expect(div).to.have.class('primary');
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');

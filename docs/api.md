@@ -17,6 +17,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `hiddenVisually` | `hiddenVisually` | `Boolean` | If present, the component will be hidden visually, but still read by screen readers |
 | `name`           | `name`           | `String`  | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage. |
 | `onDark`         | `onDark`         | `Boolean` | Set value for on-dark version of auro-icon.      |
+| `primary`        | `primary`        | `Boolean` | Sets the icon to use the baseline primary icon style. |
 | `success`        | `success`        | `boolean` |                                                  |
 | `svg`            | `svg`            |           | Internal property to store the svg.              |
 

@@ -18,6 +18,7 @@ import styleCss from "./style-css.js";
  *
  * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
  * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage.
+ * @attr {Boolean} primary - Sets the icon to use the baseline primary icon style.
  * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
@@ -42,6 +43,10 @@ class AuroIcon extends AuroElement {
       },
       name: {
         type: String,
+        reflect: true
+      },
+      primary: {
+        type: Boolean,
         reflect: true
       },
       emphasis: {
@@ -99,7 +104,7 @@ class AuroIcon extends AuroElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const classes = {
-      'primary': !this.emphasis && !this.accent && !this.disabled && !this.error && !this.success && !this.advisory,
+      'primary': this.primary,
       'emphasis': this.emphasis,
       'accent': this.accent,
       'disabled': this.disabled,
