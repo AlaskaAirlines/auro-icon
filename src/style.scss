@@ -11,25 +11,70 @@
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
 
 // Support for auroElement styles
-// @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
 
-// container styles - defines the look of the outer custom component
-// :host {
-//   ...
-// }
-
-// layout styles - define any layout specifications for UI that is contained WITHIN the component
-// never define layout that would cause effect on element outside the scope of this component
-
-
-// component shape styles
-// .auro-icon {
-//   ...
-// }
-
-.testClass {
-  color:  var(--auro-color-border-error-on-light);
-  border: 1px solid var(--auro-color-border-error-on-light);
+:host {
+  color: currentColor;
   display: inline-block;
-  padding: var(--auro-text-body-size-default);
+  vertical-align: middle;
+  line-height: 1;
+
+
+  .primary {
+    color: var(--auro-color-icon-primary-on-light);
+  }
+
+  .emphasis {
+    color: var(--auro-color-icon-emphasis-on-light);
+  }
+
+  .accent {
+    color: var(--auro-color-icon-accent-on-light);
+  }
+
+  .disabled {
+    color: var(--auro-color-icon-disabled-on-light);
+  }
+
+  .error {
+    color: var(--auro-color-alert-error-on-light);
+  }
+
+  .success {
+    color: var(--auro-color-alert-success-on-light);
+  }
+
+  .advisory {
+    color: var(--auro-color-alert-advisory-on-light)
+  }
+}
+
+:host([onDark]) {
+  .primary {
+    color: var(--auro-color-icon-primary-on-dark);
+  }
+
+  .emphasis {
+    color: var(--auro-color-icon-emphasis-on-dark);
+  }
+
+  .accent {
+    color: var(--auro-color-icon-accent-on-dark);
+  }
+
+  .disabled {
+    color: var(--auro-color-icon-disabled-on-dark);
+  }
+
+  .error {
+    color: var(--auro-color-alert-error-on-dark);
+  }
+
+  .success {
+    color: var(--auro-color-alert-success-on-dark);
+  }
+
+  .advisory {
+    color: var(--auro-color-alert-advisory-on-dark)
+  }
 }
