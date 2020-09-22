@@ -6,7 +6,7 @@
 import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
-import penguin from '../node_modules/@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
+import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -84,7 +84,7 @@ class AuroIcon extends AuroElement {
   }
 
   firstUpdated() {
-    import(`../node_modules/@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js`).then((svgIcon) => {
+    import(`@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js`).then((svgIcon) => {
         const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
 
         this.svg = dom.body.firstChild;
