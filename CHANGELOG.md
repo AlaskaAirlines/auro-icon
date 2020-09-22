@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.0...v1.0.1) (2020-09-22)
+
+
+### Bug Fixes
+
+* reference to icon package ([959ca76](https://github.com/AlaskaAirlines/auro-icon/commit/959ca7639b2f215b7157ecc6cf882b48a85ddce5))
+
 # 1.0.0 (2020-09-22)
 
 
