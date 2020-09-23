@@ -1,3 +1,4 @@
+/* eslint-disable one-var */
 // Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -83,16 +84,24 @@ class AuroIcon extends AuroElement {
     };
   }
 
-  firstUpdated() {
-    import(`@alaskaairux/icons/dist/icons/${this.category}/${this.name}_es6.js`).then((svgIcon) => {
-        const dom = new DOMParser().parseFromString(svgIcon.default.svg, 'text/html');
+  async fetchIcon(category, name) {
+    const icon = await fetch(`https://unpkg.com/@alaskaairux/icons@3.4.0/dist/icons/${category}/${name}.svg`);
+    const iconHTML = await icon.text();
+    const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
 
-        this.svg = dom.body.firstChild;
-      }).catch(() => {
-        const dom = new DOMParser().parseFromString(penguin.svg, 'text/html');
+    return dom.body.querySelector('svg');
+  }
 
-        this.svg = dom.body.firstChild;
-      });
+  async firstUpdated() {
+    const svg = await this.fetchIcon(this.category, this.name);
+
+    if (svg) {
+      this.svg = svg;
+    } else {
+      const penDOM = new DOMParser().parseFromString(penguin.svg, 'text/html');
+
+      this.svg = penDOM.body.firstChild;
+    }
   }
 
   static get styles() {
