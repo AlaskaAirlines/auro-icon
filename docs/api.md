@@ -21,12 +21,6 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `success`        | `success`        | `boolean` |                                                  |
 | `svg`            | `svg`            |           | Internal property to store the svg.              |
 
-## Methods
-
-| Method        | Type                              | Description                                   |
-|---------------|-----------------------------------|-----------------------------------------------|
-| `hideAudible` | `(value: any): "true" \| "false"` | Function that determines state of aria-hidden |
-
 ## Slots
 
 | Name | Description                                      |
