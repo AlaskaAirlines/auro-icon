@@ -74,6 +74,10 @@ class AuroIcon extends AuroElement {
         type: Boolean,
         reflect: true
       },
+      warning: {
+        type: Boolean,
+        reflect: true
+      },
       onDark: {
         type: Boolean,
         reflect: true
@@ -125,7 +129,8 @@ class AuroIcon extends AuroElement {
       'disabled': this.disabled,
       'error': this.error,
       'success': this.success,
-      'advisory': this.advisory
+      'advisory': this.advisory,
+      'warning': this.warning
     }
 
     return html`

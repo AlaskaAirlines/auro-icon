@@ -8,6 +8,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 |------------------|------------------|-----------|--------------------------------------------------|
 | `accent`         | `accent`         | `Boolean` | Sets the icon to use the accent style.           |
 | `advisory`       | `advisory`       | `boolean` |                                                  |
+| `warning`        | `warning`        | `boolean` | Sets the icon to use the warning style.          |
 | `category`       | `category`       | `String`  | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
 | `disabled`       | `disabled`       | `Boolean` | Sets the icon to use the disabled style.         |
 | `emphasis`       | `emphasis`       | `Boolean` | Sets the icon to use the emphasis style.         |
