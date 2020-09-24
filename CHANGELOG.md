@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.1...v1.0.2) (2020-09-24)
+
+
+### Bug Fixes
+
+* update icons to use CDN ([338caa3](https://github.com/AlaskaAirlines/auro-icon/commit/338caa3b910caa9d1b371f025176350016225a91))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.0...v1.0.1) (2020-09-22)
 
 
