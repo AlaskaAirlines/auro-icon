@@ -13,6 +13,8 @@
 // Support for auroElement styles
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
 
+@import "./node_modules/@alaskaairux/icons/dist/icons";
+
 :host {
   color: currentColor;
   display: inline-block;
