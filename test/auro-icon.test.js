@@ -3,7 +3,21 @@
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
+import sinon from 'sinon';
 import '../src/auro-icon.js';
+
+const fetchStub = sinon.stub(window, 'fetch');
+
+function mockIconResponse(body = "") {
+  return new window.Response(JSON.stringify(body), {
+    status: 200,
+    headers: { 'Content-type': 'application/json' }
+ });
+}
+
+beforeEach(() => {
+  fetchStub.resolves(mockIconResponse("<svg></svg>"));
+});
 
 describe('auro-icon', () => {
   it('icon is set', async () => {
