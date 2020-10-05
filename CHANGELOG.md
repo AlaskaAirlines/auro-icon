@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.2...v1.0.3) (2020-10-05)
+
+
+### Bug Fixes
+
+* add custom property fallbacks for IE11 ([87e4e78](https://github.com/AlaskaAirlines/auro-icon/commit/87e4e786af84a5377e231542b22a850668579d0c))
+
 ## [1.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.1...v1.0.2) (2020-09-24)
 
 
