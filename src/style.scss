@@ -53,6 +53,10 @@
   .warning {
     color: var(--auro-color-alert-warning-on-light);
   }
+
+  .alaska {
+    color: var(--auro-color-background-darkest);
+  }
 }
 
 :host([onDark]) {
@@ -86,5 +90,9 @@
 
   .warning {
     color: var(--auro-color-alert-warning-on-dark);
+  }
+
+  .alaska {
+    color: var(--auro-color-background-lightest);
   }
 }
