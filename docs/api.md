@@ -2,14 +2,22 @@
 
 auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
 
+## Attributes
+
+| Attribute    | Type      | Description                 |
+|--------------|-----------|-----------------------------|
+| `customSize` | `Boolean` | Allows for custom size use. |
+
 ## Properties
 
 | Property         | Attribute        | Type      | Description                                      |
 |------------------|------------------|-----------|--------------------------------------------------|
 | `accent`         | `accent`         | `Boolean` | Sets the icon to use the accent style.           |
 | `advisory`       | `advisory`       | `boolean` |                                                  |
-| `warning`        | `warning`        | `boolean` | Sets the icon to use the warning style.          |
+| `alaska`         | `alaska`         | `Boolean` | Set value for default alaska airlines logo.      |
+| `alaskaTagline`  | `alaskaTagline`  | `Boolean` | Set value for alaska airlines logo with tagline. |
 | `category`       | `category`       | `String`  | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
+| `customColor`    | `customColor`    | `Boolean` | Removes primary selector.                        |
 | `disabled`       | `disabled`       | `Boolean` | Sets the icon to use the disabled style.         |
 | `emphasis`       | `emphasis`       | `Boolean` | Sets the icon to use the emphasis style.         |
 | `error`          | `error`          | `boolean` |                                                  |
@@ -21,6 +29,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `primary`        | `primary`        | `Boolean` | Sets the icon to use the baseline primary icon style. |
 | `success`        | `success`        | `boolean` |                                                  |
 | `svg`            | `svg`            |           | Internal property to store the svg.              |
+| `warning`        | `warning`        | `Boolean` | Sets the icon to use the warning style.          |
 
 ## Slots
 
