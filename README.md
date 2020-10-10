@@ -96,9 +96,68 @@ Accent auro-icon
 ```
 
 Disabled auro-icon
+
 ```html
 <auro-icon category="interface" name="chevron-up" disabled></auro-icon>
 <auro-icon category="interface" name="chevron-up" disabled onDark></auro-icon>
+```
+
+## Alaska Logos
+
+Easy keyword option for using the Alaska Airlines logo.
+
+```html
+<auro-icon alaska></auro-icon>
+<auro-icon alaska onDark></auro-icon>
+```
+
+```html
+<auro-icon alaskaTagline></auro-icon>
+<auro-icon alaskaTagline onDark></auro-icon>
+```
+
+## Other airline logos
+
+The auro-icon component has easy access to other than Alaska airline logos. Supported logos include 
+
+```
+/logos
+├── glyph-AA.svg
+├── glyph-AS.svg
+├── logo-7H.svg
+├── logo-AA.svg
+├── logo-AF.svg
+├── logo-AM.svg
+├── logo-AS-tagline.svg
+├── logo-AS.svg
+├── logo-AY.svg
+├── logo-BA.svg
+├── logo-CX.svg
+├── logo-DE.svg
+├── logo-DL.svg
+├── logo-EI.svg
+├── logo-EK.svg
+├── logo-EV.svg
+├── logo-FI.svg
+├── logo-FJ.svg
+├── logo-HA.svg
+├── logo-HU.svg
+├── logo-JL.svg
+├── logo-KE.svg
+├── logo-KL.svg
+├── logo-LA.svg
+├── logo-LH.svg
+├── logo-LP.svg
+├── logo-OO.svg
+├── logo-QF.svg
+├── logo-QX.svg
+└── logo-SQ.svg
+```
+
+Example
+
+```html
+<auro-icon category="logos" name="logo-AS"></auro-icon>
 ```
 
 ## Development

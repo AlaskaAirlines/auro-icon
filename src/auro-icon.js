@@ -23,7 +23,12 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
+ * @attr {Boolean} warning - Sets the icon to use the warning style.
  * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
+ * @attr {Boolean} customColor - Removes primary selector.
+ * @attr {Boolean} customSize - Allows for custom size use.
+ * @attr {Boolean} alaska - Set value for default alaska airlines logo.
+ * @attr {Boolean} alaskaTagline - Set value for alaska airlines logo with tagline.
  * @attr svg - Internal property to store the svg.
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
@@ -40,6 +45,14 @@ class AuroIcon extends AuroElement {
       ...super.properties,
       category: {
         type: String,
+        reflect: true
+      },
+      alaska: {
+        type: Boolean,
+        reflect: true
+      },
+      alaskaTagline: {
+        type: Boolean,
         reflect: true
       },
       name: {
@@ -84,6 +97,9 @@ class AuroIcon extends AuroElement {
       },
       svg: {
         attribute: false
+      },
+      customColor: {
+        type: Boolean
       }
     };
   }
@@ -95,7 +111,20 @@ class AuroIcon extends AuroElement {
    * @returns {dom} DOM ready HTML to be appended
    */
   async fetchIcon(category, name) {
-    const icon = await fetch(`https://unpkg.com/@alaskaairux/icons@3.4.0/dist/icons/${category}/${name}.svg`);
+    const uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
+    let icon = '';
+
+    if (category === 'logos') {
+      icon = await fetch(`${uri}/${category}/${name}.svg`);
+    } else if (this.alaska) {
+      icon = await fetch(`${uri}/restricted/AS.svg`);
+    } else if (this.alaskaTagline) {
+      icon = await fetch(`${uri}/restricted/AS-tagline.svg`);
+    } else {
+      icon = await fetch(`${uri}/icons/${category}/${name}.svg`);
+    }
+
+
     const iconHTML = await icon.text();
     const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
 
@@ -123,14 +152,15 @@ class AuroIcon extends AuroElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const classes = {
-      'primary': this.primary,
+      'primary': true && !this.alaska && !this.alaskaTagline && !this.customColor,
       'emphasis': this.emphasis,
       'accent': this.accent,
       'disabled': this.disabled,
       'error': this.error,
       'success': this.success,
       'advisory': this.advisory,
-      'warning': this.warning
+      'warning': this.warning,
+      'logo': this.alaska || this.alaskaTagline,
     }
 
     return html`

@@ -21,6 +21,9 @@
   vertical-align: middle;
   line-height: 1;
 
+  .logo {
+    color: var(--auro-color-brand-midnight-400);
+  }
 
   .primary {
     color: var(--auro-color-icon-primary-on-light);
@@ -56,6 +59,11 @@
 }
 
 :host([onDark]) {
+
+  .logo {
+    color: var(--auro-color-base-white);
+  }
+
   .primary {
     color: var(--auro-color-icon-primary-on-dark);
   }
@@ -83,8 +91,11 @@
   .advisory {
     color: var(--auro-color-alert-advisory-on-dark);
   }
+}
 
-  .warning {
-    color: var(--auro-color-alert-warning-on-dark);
-  }
+:host([customSize]) {
+  --auro-size-lg: 100%;
+
+  width: 100%;
+  height: 100%;
 }
