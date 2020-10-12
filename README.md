@@ -49,11 +49,11 @@ In cases where the project is not able to process JS assets, there are pre-proce
 **NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@latest/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@latest/dist/bundled/baseline.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-icon@:version/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-icon@:version/dist/auro-icon__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/polyfills.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js"></script>
 ```
 
 ### polyfills.js
