@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [2.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.3...v2.0.0) (2020-10-12)
+
+
+### Features
+
+* support for alaska logos by prop ([4614acd](https://github.com/AlaskaAirlines/auro-icon/commit/4614acd2a68eef40e77b86a410f04d90b2032eef))
+
+
+### BREAKING CHANGES
+
+* This update requires a breaking change as the API for
+applying custom color and size has been changed.
+
 ## [1.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v1.0.2...v1.0.3) (2020-10-05)
 
 
