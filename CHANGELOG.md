@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.1...v2.0.2) (2020-10-31)
+
+
+### Bug Fixes
+
+* move from travis to GHA ([ad34f46](https://github.com/AlaskaAirlines/auro-icon/commit/ad34f46f9c8c660d98cd6a7f37692f0f266655f6))
+
 ## [2.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.0...v2.0.1) (2020-10-12)
 
 
