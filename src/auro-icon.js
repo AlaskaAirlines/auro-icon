@@ -8,6 +8,7 @@ import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
 import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
+import cacheFetch from './cacheFetch';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -112,20 +113,18 @@ class AuroIcon extends AuroElement {
    */
   async fetchIcon(category, name) {
     const uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
-    let icon = '';
+    let iconHTML = '';
 
     if (category === 'logos') {
-      icon = await fetch(`${uri}/${category}/${name}.svg`);
+      iconHTML = await cacheFetch(`${uri}/${category}/${name}.svg`);
     } else if (this.alaska) {
-      icon = await fetch(`${uri}/restricted/AS.svg`);
+      iconHTML = await cacheFetch(`${uri}/restricted/AS.svg`);
     } else if (this.alaskaTagline) {
-      icon = await fetch(`${uri}/restricted/AS-tagline.svg`);
+      iconHTML = await cacheFetch(`${uri}/restricted/AS-tagline.svg`);
     } else {
-      icon = await fetch(`${uri}/icons/${category}/${name}.svg`);
+      iconHTML = await cacheFetch(`${uri}/icons/${category}/${name}.svg`);
     }
 
-
-    const iconHTML = await icon.text();
     const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
 
     return dom.body.querySelector('svg');
