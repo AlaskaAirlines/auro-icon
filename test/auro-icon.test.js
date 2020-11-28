@@ -16,6 +16,7 @@ function mockIconResponse(body = "") {
 }
 
 beforeEach(() => {
+  fetchStub.resetHistory();
   fetchStub.resolves(mockIconResponse("<svg></svg>"));
 });
 
@@ -68,6 +69,17 @@ describe('auro-icon', () => {
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');
     expect(svg).to.not.be.null;
+  });
+
+  it ('does not duplicate requests for same icon source', async () => {
+    const el = await (fixture(html`
+      <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
+      <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
+    `));
+
+    await waitUntil(() => el.svg, 'Element did not become ready');
+
+    expect(fetch).to.be.calledOnceWith(sinon.match('icons/interface/chevron-up.svg'));
   });
 
   it('auro-icon is using emphasis style', async () => {
