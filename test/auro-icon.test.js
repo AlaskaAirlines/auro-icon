@@ -71,7 +71,7 @@ describe('auro-icon', () => {
     expect(svg).to.not.be.null;
   });
 
-  it ('does not duplicate requests for same icon source', async () => {
+  it('does not duplicate requests for same icon source', async () => {
     const el = await (fixture(html`
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
