@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.2...v2.0.3) (2020-12-02)
+
+
+### Bug Fixes
+
+* add perf update, use map to dedupe fetch requests ([47e8621](https://github.com/AlaskaAirlines/auro-icon/commit/47e862142d56cf8095428dc93ce1338f7c7c9960))
+
 ## [2.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.1...v2.0.2) (2020-10-31)
 
 
