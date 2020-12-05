@@ -8,7 +8,18 @@ import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
 import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
+import alaska from '@alaskaairux/icons/dist/restricted/AS_es6.js';
+import alaskaTagline from '@alaskaairux/icons/dist/restricted/AS-tagline_es6.js';
 import cacheFetch from './cacheFetch';
+
+import as400 from '@alaskaairux/icons/dist/restricted/AS-400_es6.js';
+import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
+import as200 from '@alaskaairux/icons/dist/restricted/AS-200_es6.js';
+import as100 from '@alaskaairux/icons/dist/restricted/AS-100_es6.js';
+import asTag400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400_es6.js';
+import asTag300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
+import asTag200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.js';
+import asTag100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -30,15 +41,44 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} customSize - Allows for custom size use.
  * @attr {Boolean} alaska - Set value for default alaska airlines logo.
  * @attr {Boolean} alaskaTagline - Set value for alaska airlines logo with tagline.
- * @attr svg - Internal property to store the svg.
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
 // build the component class
 class AuroIcon extends AuroElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+
+    /**
+     * @private
+     */
+    this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
+
+    /**
+     * @private
+     */
+    this.zero = 0;
+
+    /**
+     * @private
+     */
+    this.no = 1;
+
+    /**
+     * @private
+     */
+    this.sm = 107;
+
+    /**
+     * @private
+     */
+    this.md = 191;
+
+    /**
+     * @private
+     */
+    this.lg = 527;
+  }
 
   // function to define props used within the scope of this component
   static get properties() {
@@ -96,8 +136,13 @@ class AuroIcon extends AuroElement {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * @private
+       */
       svg: {
-        attribute: false
+        attribute: false,
+        reflect: true
       },
       customColor: {
         type: Boolean
@@ -112,17 +157,16 @@ class AuroIcon extends AuroElement {
    * @returns {dom} DOM ready HTML to be appended
    */
   async fetchIcon(category, name) {
-    const uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
     let iconHTML = '';
 
     if (category === 'logos') {
-      iconHTML = await cacheFetch(`${uri}/${category}/${name}.svg`);
+      iconHTML = await cacheFetch(`${this.uri}/${category}/${name}.svg`);
     } else if (this.alaska) {
-      iconHTML = await cacheFetch(`${uri}/restricted/AS.svg`);
+      iconHTML = alaska.svg;
     } else if (this.alaskaTagline) {
-      iconHTML = await cacheFetch(`${uri}/restricted/AS-tagline.svg`);
+      iconHTML = alaskaTagline.svg;
     } else {
-      iconHTML = await cacheFetch(`${uri}/icons/${category}/${name}.svg`);
+      iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
     }
 
     const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
@@ -130,15 +174,72 @@ class AuroIcon extends AuroElement {
     return dom.body.querySelector('svg');
   }
 
+  /**
+   * @private async function to decide which logo to use
+   * @param {number} iconWidth size of parent icon is in
+   * @returns {object} SVG to be appended to DOM
+   */
+  alaskaLogoDef(iconWidth) {
+    switch (this.alaska) {
+
+      case iconWidth <= this.sm:
+        this.svg = new DOMParser().parseFromString(as100.svg, 'text/html').body.firstChild;
+        break;
+      case iconWidth >= this.sm + this.no && iconWidth <= this.md:
+        this.svg = new DOMParser().parseFromString(as200.svg, 'text/html').body.firstChild;
+        break;
+      case iconWidth >= this.md + this.no && iconWidth <= this.lg:
+        this.svg = new DOMParser().parseFromString(as300.svg, 'text/html').body.firstChild;
+        break;
+      default:
+        this.svg = new DOMParser().parseFromString(as400.svg, 'text/html').body.firstChild;
+    }
+  }
+
+  /**
+   * @private async function to decide which logo to use
+   * @param {number} iconWidth size of parent icon is in
+   * @returns {object} SVG to be appended to DOM
+   */
+  alaskaLogoTagDef(iconWidth) {
+    switch (this.alaskaTagline) {
+
+      case iconWidth <= this.sm:
+        this.svg = new DOMParser().parseFromString(asTag100.svg, 'text/html').body.firstChild;
+        break;
+      case iconWidth >= this.sm + this.no && iconWidth <= this.md:
+        this.svg = new DOMParser().parseFromString(asTag200.svg, 'text/html').body.firstChild;
+        break;
+      case iconWidth >= this.md + this.no && iconWidth <= this.lg:
+        this.svg = new DOMParser().parseFromString(asTag300.svg, 'text/html').body.firstChild;
+        break;
+      default:
+        this.svg = new DOMParser().parseFromString(asTag400.svg, 'text/html').body.firstChild;
+    }
+  }
+
+  // lifecycle function
   async firstUpdated() {
     const svg = await this.fetchIcon(this.category, this.name);
 
     if (svg) {
       this.svg = svg;
-    } else {
+    } else if (!svg) {
       const penDOM = new DOMParser().parseFromString(penguin.svg, 'text/html');
 
       this.svg = penDOM.body.firstChild;
+    }
+
+    // The following code is for the purpose of
+    // displaying the correct Alaska logo
+    // with the correct Restricted icon
+    const iconContainer = await this.shadowRoot.querySelectorAll('.icon');
+    const iconWidth = iconContainer[this.zero].clientWidth;
+
+    if (this.alaska) {
+      this.alaskaLogoDef(iconWidth);
+    } else if (this.alaskaTagline) {
+      this.alaskaLogoTagDef(iconWidth);
     }
   }
 
@@ -151,6 +252,7 @@ class AuroIcon extends AuroElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const classes = {
+      'icon': true,
       'primary': true && !this.alaska && !this.alaskaTagline && !this.customColor,
       'emphasis': this.emphasis,
       'accent': this.accent,
