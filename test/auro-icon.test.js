@@ -169,6 +169,78 @@ describe('auro-icon', () => {
     expect(div).to.not.have.class('accent');
   });
 
+  it('auro-icon shows small alaska logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 72px" customsize alaska></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 57 17');
+  });
+
+  it('auro-icon shows small alaska tagline logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 72px" customsize alaskaTagline></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 57 24');
+  });
+
+  it('auro-icon shows med alaska logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 108px" customsize alaska></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 83 26');
+  });
+
+  it('auro-icon shows med alaska tagline logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 108px" customsize alaskaTagline></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 83 35');
+  });
+
+  it('auro-icon shows lg alaska logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 192px" customsize alaska></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 144 45');
+  });
+
+  it('auro-icon shows lg alaska tagline logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 192px" customsize alaskaTagline></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 144 63');
+  });
+
+  it('auro-icon shows xl alaska logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 528px" customsize alaska></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 396 121');
+  });
+
+  it('auro-icon shows xl alaska tagline logo', async () => {
+    const el = await fixture(html`
+      <auro-icon style="width: 528px" customsize alaskaTagline></auro-icon>
+    `);
+
+    const svg = el.shadowRoot.querySelector('svg');
+    expect(svg.getAttribute('viewBox')).to.equal('0 0 396 171');
+  });
+
   it('auro-icon is accessible', async () => {
     const el = await fixture(html`
       <auro-icon category="interface" name="chevron-up"></auro-icon>
