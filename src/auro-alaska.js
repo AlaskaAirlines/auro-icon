@@ -6,9 +6,7 @@
 
 import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
-import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
-import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
-import cacheFetch from './cacheFetch';
+import BaseIcon from "./baseIcon";
 
 import as400 from '@alaskaairux/icons/dist/restricted/AS-400_es6.js';
 import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
@@ -20,7 +18,7 @@ import asTag200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.js';
 import asTag100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
 
 // Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
+// import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -33,7 +31,7 @@ import styleCss from "./style-css.js";
  */
 
 // build the component class
-class AuroAlaska extends AuroElement {
+class AuroAlaska extends BaseIcon {
   constructor() {
     super();
 
@@ -57,52 +55,7 @@ class AuroAlaska extends AuroElement {
   static get properties() {
     return {
       ...super.properties,
-      alaska: {
-        type: Boolean,
-        reflect: true
-      },
-      alaskaTagline: {
-        type: Boolean,
-        reflect: true
-      },
-      onDark: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * @private
-       */
-      svg: {
-        attribute: false,
-        reflect: true
-      },
-      customColor: {
-        type: Boolean
-      }
     };
-  }
-
-  /**
-   * @private async function to fetch requested icon from npm CDN
-   * @param {string} category icon category
-   * @param {string} name icon name
-   * @returns {dom} DOM ready HTML to be appended
-   */
-  async fetchIcon(category, name) {
-    let iconHTML = '';
-
-    if (this.alaska) {
-      iconHTML = as300.svg;
-    } else if (this.alaskaTagline) {
-      iconHTML = asTag300.svg;
-    } else {
-      iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
-    }
-
-    const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
-
-    return dom.body.querySelector('svg');
   }
 
   /**
@@ -149,21 +102,10 @@ class AuroAlaska extends AuroElement {
     }
   }
 
-  // lifecycle function
+  // lifecycle function for the purpose of
+  // displaying the correct Alaska logo
+  // with the correct Restricted icon
   async firstUpdated() {
-    const svg = await this.fetchIcon(this.category, this.name);
-
-    if (svg) {
-      this.svg = svg;
-    } else if (!svg) {
-      const penDOM = new DOMParser().parseFromString(penguin.svg, 'text/html');
-
-      this.svg = penDOM.body.firstChild;
-    }
-
-    // The following code is for the purpose of
-    // displaying the correct Alaska logo
-    // with the correct Restricted icon
     const iconContainer = await this.shadowRoot.querySelectorAll('.icon');
     const iconWidth = iconContainer[this.zero].clientWidth;
 
