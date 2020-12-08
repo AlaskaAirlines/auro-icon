@@ -6,12 +6,7 @@
 
 import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
-import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
-import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
-import cacheFetch from './cacheFetch';
-import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
-import asTag300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
-import "focus-visible/dist/focus-visible.min.js";
+import BaseIcon from "./baseIcon";
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -28,16 +23,11 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} error - Sets the icon to use the error style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
  * @attr {Boolean} warning - Sets the icon to use the warning style.
- * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
- * @attr {Boolean} customColor - Removes primary selector.
- * @attr {Boolean} customSize - Allows for custom size use.
- * @attr {Boolean} alaska - Set value for default alaska airlines logo.
- * @attr {Boolean} alaskaTagline - Set value for alaska airlines logo with tagline.
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
 // build the component class
-class AuroIcon extends AuroElement {
+class AuroIcon extends BaseIcon {
   constructor() {
     super();
 
@@ -58,14 +48,6 @@ class AuroIcon extends AuroElement {
       ...super.properties,
       category: {
         type: String,
-        reflect: true
-      },
-      alaska: {
-        type: Boolean,
-        reflect: true
-      },
-      alaskaTagline: {
-        type: Boolean,
         reflect: true
       },
       name: {
@@ -104,59 +86,7 @@ class AuroIcon extends AuroElement {
         type: Boolean,
         reflect: true
       },
-      onDark: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * @private
-       */
-      svg: {
-        attribute: false,
-        reflect: true
-      },
-      customColor: {
-        type: Boolean
-      }
     };
-  }
-
-  /**
-   * @private async function to fetch requested icon from npm CDN
-   * @param {string} category icon category
-   * @param {string} name icon name
-   * @returns {dom} DOM ready HTML to be appended
-   */
-  async fetchIcon(category, name) {
-    let iconHTML = '';
-
-    if (category === 'logos') {
-      iconHTML = await cacheFetch(`${this.uri}/${category}/${name}.svg`);
-    } else if (this.alaska) {
-      iconHTML = as300.svg;
-    } else if (this.alaskaTagline) {
-      iconHTML = asTag300.svg;
-    } else {
-      iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
-    }
-
-    const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
-
-    return dom.body.querySelector('svg');
-  }
-
-  // lifecycle function
-  async firstUpdated() {
-    const svg = await this.fetchIcon(this.category, this.name);
-
-    if (svg) {
-      this.svg = svg;
-    } else if (!svg) {
-      const penDOM = new DOMParser().parseFromString(penguin.svg, 'text/html');
-
-      this.svg = penDOM.body.firstChild;
-    }
   }
 
   static get styles() {

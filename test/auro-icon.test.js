@@ -39,18 +39,6 @@ describe('auro-icon', () => {
     expect(svg).to.not.be.null;
   });
 
-  it('alaska logo  is set', async () => {
-    const el = await fixture(html`
-      <auro-alaska></auro-alaska>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const svg = el.shadowRoot.querySelector('svg');
-
-    expect(svg).to.not.be.null;
-  });
-
   it('icon is not set', async () => {
     const el = await fixture(html`
       <auro-icon category="interface" name="notThere"></auro-icon>
