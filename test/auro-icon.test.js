@@ -5,6 +5,7 @@
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
 import '../src/auro-icon.js';
+import '../src/auro-alaska.js';
 
 const fetchStub = sinon.stub(window, 'fetch');
 
@@ -34,6 +35,18 @@ describe('auro-icon', () => {
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');
+
+    expect(svg).to.not.be.null;
+  });
+
+  it('alaska logo  is set', async () => {
+    const el = await fixture(html`
+      <auro-alaska></auro-alaska>
+    `);
+
+    await waitUntil(() => el.svg, 'Element did not become ready');
+
+    const svg = el.shadowRoot.querySelector('svg');
 
     expect(svg).to.not.be.null;
   });
@@ -169,72 +182,72 @@ describe('auro-icon', () => {
     expect(div).to.not.have.class('accent');
   });
 
-  it('auro-icon shows small alaska logo', async () => {
+  it('auro-alaska shows small alaska logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 72px" customsize alaska></auro-icon>
+      <auro-alaska style="width: 72px" customsize alaska></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 57 17');
   });
 
-  it('auro-icon shows small alaska tagline logo', async () => {
+  it('auro-alaska shows small alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 72px" customsize alaskaTagline></auro-icon>
+      <auro-alaska style="width: 72px" customsize alaskaTagline></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 57 24');
   });
 
-  it('auro-icon shows med alaska logo', async () => {
+  it('auro-alaska shows med alaska logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 108px" customsize alaska></auro-icon>
+      <auro-alaska style="width: 108px" customsize alaska></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 83 26');
   });
 
-  it('auro-icon shows med alaska tagline logo', async () => {
+  it('auro-alaska shows med alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 108px" customsize alaskaTagline></auro-icon>
+      <auro-alaska style="width: 108px" customsize alaskaTagline></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 83 35');
   });
 
-  it('auro-icon shows lg alaska logo', async () => {
+  it('auro-alaska shows lg alaska logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 192px" customsize alaska></auro-icon>
+      <auro-alaska style="width: 192px" customsize alaska></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 144 45');
   });
 
-  it('auro-icon shows lg alaska tagline logo', async () => {
+  it('auro-alaska shows lg alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 192px" customsize alaskaTagline></auro-icon>
+      <auro-alaska style="width: 192px" customsize alaskaTagline></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 144 63');
   });
 
-  it('auro-icon shows xl alaska logo', async () => {
+  it('auro-alaska shows xl alaska logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 528px" customsize alaska></auro-icon>
+      <auro-alaska style="width: 528px" customsize alaska></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
     expect(svg.getAttribute('viewBox')).to.equal('0 0 396 121');
   });
 
-  it('auro-icon shows xl alaska tagline logo', async () => {
+  it('auro-alaska shows xl alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-icon style="width: 528px" customsize alaskaTagline></auro-icon>
+      <auro-alaska style="width: 528px" customsize alaskaTagline></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
