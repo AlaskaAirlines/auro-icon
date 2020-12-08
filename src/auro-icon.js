@@ -34,6 +34,9 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} primary - Sets the icon to use the baseline primary icon style.
  * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
+ * @attr {Boolean} advisory - Sets the icon to use the advisory style.
+ * @attr {Boolean} success - Sets the icon to use the success style.
+ * @attr {Boolean} error - Sets the icon to use the error style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
  * @attr {Boolean} warning - Sets the icon to use the warning style.
  * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
@@ -49,34 +52,19 @@ class AuroIcon extends AuroElement {
   constructor() {
     super();
 
-    /**
-     * @private
-     */
+    this.privateDefaults();
+  }
+
+  /**
+   * @private internal defaults
+   * @returns {void}
+   */
+  privateDefaults() {
     this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
-
-    /**
-     * @private
-     */
     this.zero = 0;
-
-    /**
-     * @private
-     */
     this.no = 1;
-
-    /**
-     * @private
-     */
     this.sm = 107;
-
-    /**
-     * @private
-     */
     this.md = 191;
-
-    /**
-     * @private
-     */
     this.lg = 527;
   }
 
