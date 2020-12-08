@@ -1,0 +1,15 @@
+onComment:
+  set:
+    - "Status: Review Needed"
+
+onApproved:
+  remove:
+    - "Status: Review Needed"
+  set:
+    - "Status: Complete / Ready to Merge"
+
+onChangesRequested:
+  remove:
+    - "Status: Complete / Ready to Merge"
+  set:
+    - "Status: Work In Progress"
