@@ -13,6 +13,7 @@
       import '@polymer/iron-demo-helpers/demo-snippet';
     </script>
     <script type="module" src="../src/auro-icon.js"></script>
+    <script type="module" src="../src/auro-alaska.js"></script>
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
@@ -21,6 +22,50 @@
   </head>
   <body>
     <div class="vertical-section-container">
+      <h1>auro-alaska</h1>
+
+      <demo-snippet>
+        <template>
+          <div style="width: 528px">
+            <auro-alaska customSize alaska></auro-alaska>
+            <auro-alaska customSize alaskaTagline></auro-alaska>
+          </div>
+          <div style="width: 192px">
+            <auro-alaska customSize alaska></auro-alaska>
+            <auro-alaska customSize alaskaTagline></auro-alaska>
+          </div>
+          <div style="width: 108px">
+            <auro-alaska customSize alaska></auro-alaska>
+            <auro-alaska customSize alaskaTagline></auro-alaska>
+          </div>
+          <div>
+            <auro-alaska style="width: 72px" customSize alaska></auro-alaska><br>
+            <auro-alaska style="width: 72px" customSize alaskaTagline></auro-alaska>
+          </div>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <div style="width: 528px" class="wrapper">
+            <auro-alaska customSize alaska ondark></auro-alaska>
+            <auro-alaska customSize alaskaTagline ondark></auro-alaska>
+          </div>
+          <div style="width: 192px" class="wrapper">
+            <auro-alaska customSize alaska ondark></auro-alaska>
+            <auro-alaska customSize alaskaTagline ondark></auro-alaska>
+          </div>
+          <div style="width: 108px" class="wrapper">
+            <auro-alaska customSize alaska ondark></auro-alaska>
+            <auro-alaska customSize alaskaTagline ondark></auro-alaska>
+          </div>
+          <div class="wrapper">
+            <auro-alaska style="width: 72px" customSize alaska ondark></auro-alaska><br>
+            <auro-alaska style="width: 72px" customSize alaskaTagline ondark></auro-alaska>
+          </div>
+        </template>
+      </demo-snippet>
+
       <h1>auro-icon</h1>
 
       <demo-snippet>
@@ -120,11 +165,11 @@
         </template>
       </demo-snippet>
 
-      <demo-snippet>
+      <!-- <demo-snippet>
         <template>
           <auro-icon></auro-icon>
         </template>
-      </demo-snippet>
+      </demo-snippet> -->
 
       <demo-snippet>
         <template>
