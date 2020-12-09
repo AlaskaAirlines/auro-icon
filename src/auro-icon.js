@@ -1,4 +1,5 @@
 /* eslint-disable one-var */
+/* eslint-disable no-console */
 // Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -89,6 +90,12 @@ class AuroIcon extends BaseIcon {
     };
   }
 
+  logUserAlert() {
+    if (this.alaska || this.alaskaTagline) {
+      console.log(`WARN: Using auro-icon for Alaska Airline's logo is deprecated. Please see auro-alaska for updated functionality`)
+    }
+  }
+
   static get styles() {
     return [
       super.styles,
@@ -117,6 +124,8 @@ class AuroIcon extends BaseIcon {
         </div>
         <slot name="icon">${this.svg}</slot>
       </div>
+
+      ${this.logUserAlert()}
     `;
   }
 }

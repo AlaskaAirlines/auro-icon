@@ -25,8 +25,8 @@ import styleCss from "./alaskaStyle-css.js";
 /**
  * auro-alaska provides users a way to use the Auro Icons by simply passing in the category and name.
  *
- * @attr {Boolean} alaska - Set value for default alaska airlines logo.
- * @attr {Boolean} alaskaTagline - Set value for alaska airlines logo with tagline.
+ * @attr {Boolean} alaska - Set value for default alaska airlines logo
+ * @attr {Boolean} alaskaOfficial - Set value for alaska airlines logo with official tagline
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -55,6 +55,10 @@ class AuroAlaska extends BaseIcon {
   static get properties() {
     return {
       ...super.properties,
+      alaskaOfficial: {
+        type: Boolean,
+        reflect: true
+      },
     };
   }
 
@@ -86,7 +90,7 @@ class AuroAlaska extends BaseIcon {
    * @returns {object} SVG to be appended to DOM
    */
   alaskaLogoTagDef(iconWidth) {
-    switch (this.alaskaTagline) {
+    switch (this.alaskaOfficial) {
 
       case iconWidth <= this.sm:
         this.svg = new DOMParser().parseFromString(asTag100.svg, 'text/html').body.firstChild;
@@ -109,9 +113,15 @@ class AuroAlaska extends BaseIcon {
     const iconContainer = await this.shadowRoot.querySelectorAll('.icon');
     const iconWidth = iconContainer[this.zero].clientWidth;
 
+    if (this.alaskaOfficial) {
+      this.alaska = false;
+    } else {
+      this.alaska = true;
+    }
+
     if (this.alaska) {
       this.alaskaLogoDef(iconWidth);
-    } else if (this.alaskaTagline) {
+    } else if (this.alaskaOfficial) {
       this.alaskaLogoTagDef(iconWidth);
     }
   }
@@ -127,7 +137,7 @@ class AuroAlaska extends BaseIcon {
   render() {
     const classes = {
       'icon': true,
-      'logo': this.alaska || this.alaskaTagline,
+      'logo': this.alaska || this.alaskaOfficial,
     }
 
     return html`

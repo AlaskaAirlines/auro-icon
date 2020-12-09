@@ -18,6 +18,10 @@ console.log(chalk.hex('#f26135')(`
 
 ╭ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ──────────────────────────────╮
 
+    `) + chalk.hex('#ffd200').bold(`WARN: `) + chalk.hex('#f26135')(`The use of auro-icon for Alaska Airline's
+       logo is `) + chalk.hex('#ffd200').bold(`DEPRECATED! `) + chalk.hex('#f26135')(`Please see auro-alaska
+                 for new logo support.
+
         Thanks for installing the latest version
                 of `) + chalk.hex('#ffd200').bold(`auro-icon v${pjson.version}.`) + chalk.hex('#f26135')(`
 
