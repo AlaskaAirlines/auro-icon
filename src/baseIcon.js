@@ -4,13 +4,14 @@
 
 // ---------------------------------------------------------------------
 
+import { css } from "lit-element";
 import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
 import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
 import cacheFetch from './cacheFetch';
 import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
 import asTag300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
 import "focus-visible/dist/focus-visible.min.js";
-// import styleCss from "./style-css.js";
+import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -55,6 +56,12 @@ export default class BaseIcon extends AuroElement {
         type: Boolean
       }
     };
+  }
+
+  static get styles() {
+    return css`
+      ${styleCss}
+    `;
   }
 
   /**

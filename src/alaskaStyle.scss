@@ -3,26 +3,21 @@
 
 // ---------------------------------------------------------------------
 
-// Import Auro tokens
-@import "./node_modules/@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
-@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/core";
-
 // Support for auroElement styles
 @import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
 
-@import "./node_modules/@alaskaairux/icons/dist/icons";
-
 :host {
-  color: currentColor;
-  vertical-align: middle;
-  line-height: 1;
+  display: inline-block;
+}
+
+:host([onDark]) {
 
   .logo {
-    color: var(--auro-color-brand-midnight-400);
+    color: var(--auro-color-base-white);
   }
 }
 
-:host([customSize]) {
+:host() {
   --auro-size-lg: 100%;
 
   width: 100%;

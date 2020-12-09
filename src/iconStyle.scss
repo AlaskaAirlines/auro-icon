@@ -1,0 +1,84 @@
+// Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import "./node_modules/@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement";
+
+:host {
+  display: inline-block;
+
+  .primary {
+    color: var(--auro-color-icon-primary-on-light);
+  }
+
+  .emphasis {
+    color: var(--auro-color-icon-emphasis-on-light);
+  }
+
+  .accent {
+    color: var(--auro-color-icon-accent-on-light);
+  }
+
+  .disabled {
+    color: var(--auro-color-icon-disabled-on-light);
+  }
+
+  .error {
+    color: var(--auro-color-alert-error-on-light);
+  }
+
+  .success {
+    color: var(--auro-color-alert-success-on-light);
+  }
+
+  .advisory {
+    color: var(--auro-color-alert-advisory-on-light);
+  }
+
+  .warning {
+    color: var(--auro-color-alert-warning-on-light);
+  }
+}
+
+:host([onDark]) {
+
+  .logo {
+    color: var(--auro-color-base-white);
+  }
+
+  .primary {
+    color: var(--auro-color-icon-primary-on-dark);
+  }
+
+  .emphasis {
+    color: var(--auro-color-icon-emphasis-on-dark);
+  }
+
+  .accent {
+    color: var(--auro-color-icon-accent-on-dark);
+  }
+
+  .disabled {
+    color: var(--auro-color-icon-disabled-on-dark);
+  }
+
+  .error {
+    color: var(--auro-color-alert-error-on-dark);
+  }
+
+  .success {
+    color: var(--auro-color-alert-success-on-dark);
+  }
+
+  .advisory {
+    color: var(--auro-color-alert-advisory-on-dark);
+  }
+}
+
+:host([customSize]) {
+  --auro-size-lg: 100%;
+
+  width: 100%;
+  height: 100%;
+}
