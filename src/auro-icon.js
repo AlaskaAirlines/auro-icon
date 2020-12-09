@@ -7,7 +7,7 @@
 import { html, css } from "lit-element";
 import { classMap } from 'lit-html/directives/class-map';
 import BaseIcon from "./baseIcon";
-import styleCss from "./style-css.js";
+import styleCss from "./iconStyle-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -90,9 +90,10 @@ class AuroIcon extends BaseIcon {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      super.styles,
+      css`${styleCss}`
+    ];
   }
 
   // function that renders the HTML and CSS into  the scope of the component
