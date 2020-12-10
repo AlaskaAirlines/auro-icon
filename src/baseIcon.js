@@ -20,8 +20,6 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
  * @attr {Boolean} customColor - Removes primary selector.
  * @attr {Boolean} customSize - Allows for custom size use.
- * @attr {Boolean} alaska - Set value for default alaska airlines logo.
- * @attr {Boolean} alaskaTagline - Set value for alaska airlines logo with tagline.
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -32,14 +30,6 @@ export default class BaseIcon extends AuroElement {
   static get properties() {
     return {
       ...super.properties,
-      alaska: {
-        type: Boolean,
-        reflect: true
-      },
-      alaskaTagline: {
-        type: Boolean,
-        reflect: true
-      },
       onDark: {
         type: Boolean,
         reflect: true

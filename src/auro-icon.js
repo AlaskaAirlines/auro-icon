@@ -90,6 +90,10 @@ class AuroIcon extends BaseIcon {
     };
   }
 
+  /**
+   * @private internal function
+   * @returns {void}
+   */
   logUserAlert() {
     if (this.alaska || this.alaskaTagline) {
       console.log(`WARN: Using auro-icon for Alaska Airline's logo is deprecated. Please see auro-alaska for updated functionality`)
@@ -113,8 +117,7 @@ class AuroIcon extends BaseIcon {
       'error': this.error,
       'success': this.success,
       'advisory': this.advisory,
-      'warning': this.warning,
-      'logo': this.alaska || this.alaskaTagline,
+      'warning': this.warning
     }
 
     return html`

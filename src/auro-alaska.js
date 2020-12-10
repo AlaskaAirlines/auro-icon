@@ -55,6 +55,10 @@ class AuroAlaska extends BaseIcon {
   static get properties() {
     return {
       ...super.properties,
+      alaska: {
+        type: Boolean,
+        reflect: true
+      },
       alaskaOfficial: {
         type: Boolean,
         reflect: true

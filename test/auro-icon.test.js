@@ -128,7 +128,7 @@ describe('auro-icon', () => {
     expect(div).to.have.class('disabled');
   });
 
-  it('auro-icon shows alaska icon', async () => {
+  it('auro-icon does not show alaska icon', async () => {
     const el = await fixture(html`
       <auro-icon alaska></auro-icon>
     `);
@@ -137,12 +137,12 @@ describe('auro-icon', () => {
 
     const div = el.shadowRoot.querySelector('div');
 
-    expect(div).to.have.class('logo');
+    expect(div).to.not.have.class('logo');
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
   });
 
-  it('auro-icon shows alaska tagline icon', async () => {
+  it('auro-icon does not show alaska tagline icon', async () => {
     const el = await fixture(html`
       <auro-icon alaskaTagline></auro-icon>
     `);
@@ -151,7 +151,7 @@ describe('auro-icon', () => {
 
     const div = el.shadowRoot.querySelector('div');
 
-    expect(div).to.have.class('logo');
+    expect(div).to.not.have.class('logo');
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
   });
