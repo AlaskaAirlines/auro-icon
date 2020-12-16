@@ -14,16 +14,18 @@ import styleCss from "./iconStyle-css.js";
 /**
  * auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
  *
- * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
- * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage.
- * @attr {Boolean} primary - Sets the icon to use the baseline primary icon style.
- * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
- * @attr {Boolean} accent - Sets the icon to use the accent style.
- * @attr {Boolean} advisory - Sets the icon to use the advisory style.
- * @attr {Boolean} success - Sets the icon to use the success style.
- * @attr {Boolean} error - Sets the icon to use the error style.
- * @attr {Boolean} disabled - Sets the icon to use the disabled style.
- * @attr {Boolean} warning - Sets the icon to use the warning style.
+ * @attr {Boolean} customSize - Allows for custom size use
+ * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage
+ * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage
+ * @attr {Boolean} customColor - Removes primary selector
+ * @attr {Boolean} primary - Sets the icon to use the baseline primary icon style
+ * @attr {Boolean} emphasis - Sets the icon to use the emphasis style
+ * @attr {Boolean} accent - Sets the icon to use the accent style
+ * @attr {Boolean} advisory - Sets the icon to use the advisory style
+ * @attr {Boolean} success - Sets the icon to use the success style
+ * @attr {Boolean} error - Sets the icon to use the error style
+ * @attr {Boolean} disabled - Sets the icon to use the disabled style
+ * @attr {Boolean} warning - Sets the icon to use the warning style
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -87,17 +89,10 @@ class AuroIcon extends BaseIcon {
         type: Boolean,
         reflect: true
       },
+      customColor: {
+        type: Boolean
+      }
     };
-  }
-
-  /**
-   * @private internal function
-   * @returns {void}
-   */
-  logUserAlert() {
-    if (this.alaska || this.alaskaTagline) {
-      console.log(`WARN: Using auro-icon for Alaska Airline's logo is deprecated. Please see auro-alaska for updated functionality`)
-    }
   }
 
   static get styles() {
@@ -127,8 +122,6 @@ class AuroIcon extends BaseIcon {
         </div>
         <slot name="icon">${this.svg}</slot>
       </div>
-
-      ${this.logUserAlert()}
     `;
   }
 }

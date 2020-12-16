@@ -12,10 +12,10 @@ import as400 from '@alaskaairux/icons/dist/restricted/AS-400_es6.js';
 import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
 import as200 from '@alaskaairux/icons/dist/restricted/AS-200_es6.js';
 import as100 from '@alaskaairux/icons/dist/restricted/AS-100_es6.js';
-import asTag400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400_es6.js';
-import asTag300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
-import asTag200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.js';
-import asTag100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
+import official400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400_es6.js';
+import official300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
+import official200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.js';
+import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
 
 // Import touch detection lib
 // import "focus-visible/dist/focus-visible.min.js";
@@ -23,10 +23,9 @@ import styleCss from "./alaskaStyle-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-alaska provides users a way to use the Auro Icons by simply passing in the category and name.
+ * auro-alaska provides users a way to use the Alaska Airline logos.
  *
- * @attr {Boolean} alaska - Set value for default alaska airlines logo
- * @attr {Boolean} alaskaOfficial - Set value for alaska airlines logo with official tagline
+ * @attr {Boolean} official - Set value for alaska airlines logo with official tagline
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -44,22 +43,25 @@ class AuroAlaska extends BaseIcon {
    */
   privateDefaults() {
     this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
-    this.zero = 0;
-    this.no = 1;
     this.sm = 107;
     this.md = 191;
     this.lg = 527;
+    this.alaska = true;
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
       ...super.properties,
+
+      /**
+       * @private
+       */
       alaska: {
         type: Boolean,
         reflect: true
       },
-      alaskaOfficial: {
+      official: {
         type: Boolean,
         reflect: true
       },
@@ -72,19 +74,16 @@ class AuroAlaska extends BaseIcon {
    * @returns {object} SVG to be appended to DOM
    */
   alaskaLogoDef(iconWidth) {
-    switch (this.alaska) {
-
-      case iconWidth <= this.sm:
+    if (this.alaska) {
+      if (iconWidth <= this.sm) {
         this.svg = new DOMParser().parseFromString(as100.svg, 'text/html').body.firstChild;
-        break;
-      case iconWidth >= this.sm + this.no && iconWidth <= this.md:
+      } else if (iconWidth > this.sm && iconWidth <= this.md) {
         this.svg = new DOMParser().parseFromString(as200.svg, 'text/html').body.firstChild;
-        break;
-      case iconWidth >= this.md + this.no && iconWidth <= this.lg:
+      } else if (iconWidth > this.md && iconWidth <= this.lg) {
         this.svg = new DOMParser().parseFromString(as300.svg, 'text/html').body.firstChild;
-        break;
-      default:
+      } else {
         this.svg = new DOMParser().parseFromString(as400.svg, 'text/html').body.firstChild;
+      }
     }
   }
 
@@ -93,40 +92,35 @@ class AuroAlaska extends BaseIcon {
    * @param {number} iconWidth size of parent icon is in
    * @returns {object} SVG to be appended to DOM
    */
-  alaskaLogoTagDef(iconWidth) {
-    switch (this.alaskaOfficial) {
-
-      case iconWidth <= this.sm:
-        this.svg = new DOMParser().parseFromString(asTag100.svg, 'text/html').body.firstChild;
-        break;
-      case iconWidth >= this.sm + this.no && iconWidth <= this.md:
-        this.svg = new DOMParser().parseFromString(asTag200.svg, 'text/html').body.firstChild;
-        break;
-      case iconWidth >= this.md + this.no && iconWidth <= this.lg:
-        this.svg = new DOMParser().parseFromString(asTag300.svg, 'text/html').body.firstChild;
-        break;
-      default:
-        this.svg = new DOMParser().parseFromString(asTag400.svg, 'text/html').body.firstChild;
+  alaskaOfficialDef(iconWidth) {
+    if (this.official) {
+      if (iconWidth <= this.sm) {
+        this.svg = new DOMParser().parseFromString(official100.svg, 'text/html').body.firstChild;
+      } else if (iconWidth > this.sm && iconWidth <= this.md) {
+        this.svg = new DOMParser().parseFromString(official200.svg, 'text/html').body.firstChild;
+      } else if (iconWidth > this.md && iconWidth <= this.lg) {
+        this.svg = new DOMParser().parseFromString(official300.svg, 'text/html').body.firstChild;
+      } else {
+        this.svg = new DOMParser().parseFromString(official400.svg, 'text/html').body.firstChild;
+      }
     }
   }
 
   // lifecycle function for the purpose of
   // displaying the correct Alaska logo
   // with the correct Restricted icon
-  async firstUpdated() {
-    const iconContainer = await this.shadowRoot.querySelectorAll('.icon');
-    const iconWidth = iconContainer[this.zero].clientWidth;
+  firstUpdated() {
+    const iconContainer = this.shadowRoot.querySelector('.icon');
+    const iconWidth = iconContainer.clientWidth;
 
-    if (this.alaskaOfficial) {
+    if (this.official) {
       this.alaska = false;
-    } else {
-      this.alaska = true;
     }
 
     if (this.alaska) {
       this.alaskaLogoDef(iconWidth);
-    } else if (this.alaskaOfficial) {
-      this.alaskaLogoTagDef(iconWidth);
+    } else if (this.official) {
+      this.alaskaOfficialDef(iconWidth);
     }
   }
 
@@ -141,7 +135,7 @@ class AuroAlaska extends BaseIcon {
   render() {
     const classes = {
       'icon': true,
-      'logo': this.alaska || this.alaskaOfficial,
+      'logo': this.alaska || this.official,
     }
 
     return html`
