@@ -15,11 +15,7 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
- *
- * @attr {Boolean} onDark - Set value for on-dark version of auro-icon.
- * @attr {Boolean} customColor - Removes primary selector.
- * @attr {Boolean} customSize - Allows for custom size use.
+ * @attr {Boolean} onDark - Set value for on-dark version of auro-icon
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -41,9 +37,6 @@ export default class BaseIcon extends AuroElement {
       svg: {
         attribute: false,
         reflect: true
-      },
-      customColor: {
-        type: Boolean
       }
     };
   }

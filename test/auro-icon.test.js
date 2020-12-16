@@ -181,7 +181,7 @@ describe('auro-icon', () => {
 
   it('auro-alaska shows small alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-alaska style="width: 72px" alaskaOfficial></auro-alaska>
+      <auro-alaska style="width: 72px" official></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
@@ -199,7 +199,7 @@ describe('auro-icon', () => {
 
   it('auro-alaska shows med alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-alaska style="width: 108px" alaskaOfficial></auro-alaska>
+      <auro-alaska style="width: 108px" official></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
@@ -217,7 +217,7 @@ describe('auro-icon', () => {
 
   it('auro-alaska shows lg alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-alaska style="width: 192px" alaskaOfficial></auro-alaska>
+      <auro-alaska style="width: 192px" official></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
@@ -235,7 +235,7 @@ describe('auro-icon', () => {
 
   it('auro-alaska shows xl alaska tagline logo', async () => {
     const el = await fixture(html`
-      <auro-alaska style="width: 528px" alaskaOfficial></auro-alaska>
+      <auro-alaska style="width: 528px" official></auro-alaska>
     `);
 
     const svg = el.shadowRoot.querySelector('svg');

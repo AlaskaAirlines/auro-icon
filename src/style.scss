@@ -21,10 +21,3 @@
     color: var(--auro-color-brand-midnight-400);
   }
 }
-
-:host([customSize]) {
-  --auro-size-lg: 100%;
-
-  width: 100%;
-  height: 100%;
-}
