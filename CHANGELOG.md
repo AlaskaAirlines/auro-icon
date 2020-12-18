@@ -1,5 +1,29 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.3...v3.0.0) (2020-12-18)
+
+
+### Code Refactoring
+
+* remove support for alaska logos from auro-icon element ([1b1643b](https://github.com/AlaskaAirlines/auro-icon/commit/1b1643b422b19927360187d5de9860311d48576c))
+
+
+### Features
+
+* add restricted logo size feature ([396ead9](https://github.com/AlaskaAirlines/auro-icon/commit/396ead98358c5192d507916c40d0bdb7f71e0017))
+* break common features into baseIcon ([56fa1a1](https://github.com/AlaskaAirlines/auro-icon/commit/56fa1a109c434ddf74aa75d35bb0eaf3f717081a))
+* create new auro-alaska custom element ([e7f973f](https://github.com/AlaskaAirlines/auro-icon/commit/e7f973feb623fc56490fa89e95bc5060f5d589b9))
+* upgrade to rollup bundle support ([92c8495](https://github.com/AlaskaAirlines/auro-icon/commit/92c8495302b9a9ace0f5bc77f03aaf3a05c24184))
+
+
+### BREAKING CHANGES
+
+* This commit will break previous support for the Alaska logos
+from the auro-icon custom element.
+* This feature and other related are redefining the scope
+of the auro-icon feature set and creates a new auro-alaska CE
+for specific Alaska logo support
+
 ## [2.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.2...v2.0.3) (2020-12-02)
 
 
