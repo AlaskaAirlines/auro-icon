@@ -104,17 +104,7 @@ Disabled auro-icon
 
 ## Alaska Logos
 
-Easy keyword option for using the Alaska Airlines logo.
-
-```html
-<auro-icon alaska></auro-icon>
-<auro-icon alaska onDark></auro-icon>
-```
-
-```html
-<auro-icon alaskaTagline></auro-icon>
-<auro-icon alaskaTagline onDark></auro-icon>
-```
+See [auro-alaska](https://auro.alaskaair.com/components/auro/icon/alaska).
 
 ## Other airline logos
 
