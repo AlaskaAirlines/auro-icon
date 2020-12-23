@@ -46,14 +46,14 @@ import "@alaskaairux/auro-icon";
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-**NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want.
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@latest/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@latest/dist/bundled/baseline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/polyfills.js"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
 ```
 
 ### polyfills.js
