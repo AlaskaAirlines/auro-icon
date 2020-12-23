@@ -46,7 +46,7 @@ import "@alaskaairux/auro-icon";
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want.
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
