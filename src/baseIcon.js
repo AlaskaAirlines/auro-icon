@@ -5,7 +5,7 @@
 // ---------------------------------------------------------------------
 
 import { css } from "lit-element";
-import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
+import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
 import cacheFetch from './cacheFetch';
 import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';

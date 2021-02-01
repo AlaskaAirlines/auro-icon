@@ -1,183 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auro Web Component Generator | auro-icon custom element</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script type="module">
-      import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
-      import '@polymer/iron-demo-helpers/demo-snippet';
-    </script>
-    <script type="module" src="../src/auro-icon.js"></script>
-    <script type="module" src="../src/auro-alaska.js"></script>
-    <custom-style>
-      <style is="custom-style" include="demo-pages-shared-styles"></style>
-    </custom-style>
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/prismjs@latest/themes/prism.css"
+    />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <div class="vertical-section-container">
-      <h1>auro-alaska</h1>
+    <main></main>
 
-      <demo-snippet>
-        <template>
-          <div style="width: 528px">
-            <auro-alaska></auro-alaska>
-            <auro-alaska official></auro-alaska>
-          </div>
-          <div style="width: 192px">
-            <auro-alaska></auro-alaska>
-            <auro-alaska official></auro-alaska>
-          </div>
-          <div style="width: 108px">
-            <auro-alaska></auro-alaska>
-            <auro-alaska official></auro-alaska>
-          </div>
-          <div>
-            <auro-alaska style="width: 72px"></auro-alaska><br>
-            <auro-alaska style="width: 72px" official></auro-alaska>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div style="width: 528px" class="wrapper">
-            <auro-alaska ondark></auro-alaska>
-            <auro-alaska official ondark></auro-alaska>
-          </div>
-          <div style="width: 192px" class="wrapper">
-            <auro-alaska ondark></auro-alaska>
-            <auro-alaska official ondark></auro-alaska>
-          </div>
-          <div style="width: 108px" class="wrapper">
-            <auro-alaska ondark></auro-alaska>
-            <auro-alaska official ondark></auro-alaska>
-          </div>
-          <div class="wrapper">
-            <auro-alaska style="width: 72px" ondark></auro-alaska><br>
-            <auro-alaska style="width: 72px" official ondark></auro-alaska>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <h1>auro-icon</h1>
-
-      <demo-snippet>
-        <template>
-          <auro-icon category="interface" name="chevron-down">You can hear me, but you can't see me.</auro-icon>
-        </template>
-      </demo-snippet>
-
-
-      <demo-snippet>
-        <template>
-          <auro-icon category="alert" name="error" primary></auro-icon>
-          <auro-icon category="alert" name="error" emphasis></auro-icon>
-          <auro-icon category="alert" name="error" accent></auro-icon>
-          <auro-icon category="alert" name="error" disabled></auro-icon>
-
-          <auro-icon category="alert" name="error" error></auro-icon>
-          <auro-icon category="alert" name="error" success></auro-icon>
-          <auro-icon category="alert" name="error" advisory></auro-icon>
-          <auro-icon category="alert" name="error" warning></auro-icon>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-          <template>
-            <div class="wrapper">
-              <auro-icon category="interface" name="accessibility" primary ondark></auro-icon>
-              <auro-icon category="interface" name="accessibility" emphasis ondark></auro-icon>
-              <auro-icon category="interface" name="accessibility" accent ondark></auro-icon>
-              <auro-icon category="interface" name="accessibility" disabled ondark></auro-icon>
-
-              <auro-icon category="interface" name="accessibility" error ondark></auro-icon>
-              <auro-icon category="interface" name="accessibility" success ondark></auro-icon>
-              <auro-icon category="interface" name="accessibility" advisory ondark></auro-icon>
-            </div>
-          </template>
-        </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-icon category="logos" name="logo-AS"></auro-icon>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-          <template>
-            <auro-icon category="logos" name="glyph-AS"></auro-icon>
-          </template>
-        </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-icon category="logos" name="logo-AS-tagline"></auro-icon>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div style="width: 528px">
-            <auro-icon customSize alaska></auro-icon>
-            <auro-icon customSize alaskaTagline></auro-icon>
-          </div>
-          <div style="width: 192px">
-            <auro-icon customSize alaska></auro-icon>
-            <auro-icon customSize alaskaTagline></auro-icon>
-          </div>
-          <div style="width: 108px">
-            <auro-icon customSize alaska></auro-icon>
-            <auro-icon customSize alaskaTagline></auro-icon>
-          </div>
-          <div>
-            <auro-icon style="width: 72px" customSize alaska></auro-icon><br>
-            <auro-icon style="width: 72px" customSize alaskaTagline></auro-icon>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <auro-alaska official></auro-alaska>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div class="wrapper">
-            <auro-alaska onDark></auro-alaska>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <demo-snippet>
-        <template>
-          <div class="wrapper">
-            <auro-alaska official onDark></auro-alaska>
-          </div>
-        </template>
-      </demo-snippet>
-
-      <!-- <demo-snippet>
-        <template>
-          <auro-icon></auro-icon>
-        </template>
-      </demo-snippet> -->
-
-      <demo-snippet>
-        <template>
-          <div class="wrapper">
-            <auro-icon category="interface" name="chevron-down" onDark emphasis></auro-icon>
-          </div>
-        </template>
-      </demo-snippet>
-    </div>
+    <script type="module">
+      import 'https://unpkg.com/marked@latest/marked.min.js';
+      import 'https://unpkg.com/prismjs@latest/prism.js';
+      fetch('/demo/demo.md')
+        .then((response) => response.text())
+        .then((text) => {
+          const rawHtml = marked(text);
+          document.querySelector('main').innerHTML = rawHtml;
+          Prism.highlightAll();
+        });
+    </script>
+    <script type="module" src="../src/auro-icon.js"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-accordion@latest/dist/auro-accordion__bundled.js" type="module"></script>
   </body>
 </html>
