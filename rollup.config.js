@@ -26,10 +26,13 @@ const getSharedPlugins = (isLegacy) => [
 ];
 
 const modernConfig = {
-  input: 'src/auro-icon.js',
+  input: {
+    ['auro-icon__bundled']: './src/auro-icon.js',
+    ['auro-alaska__bundled']: './src/auro-alaska.js'
+  },
   output: {
     format: 'esm',
-    file: 'dist/auro-icon__bundled.js'
+    dir: 'dist/'
   },
   plugins: [
     // remove shady DOM polyfill for modern browsers
@@ -60,4 +63,13 @@ const legacyConfig = {
   plugins: getSharedPlugins(true)
 };
 
-export default [modernConfig, legacyConfig];
+const legacyConfigAlaska = {
+  input: 'src/es5.js',
+  output: {
+    format: 'iife',
+    file: 'dist/auro-alaska__bundled.es5.js'
+  },
+  plugins: getSharedPlugins(true)
+};
+
+export default [modernConfig, legacyConfig, legacyConfigAlaska];

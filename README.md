@@ -54,6 +54,9 @@ In cases where the project is not able to process JS assets, there are pre-proce
 
 <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.es5.js" nomodule></script>
 <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
+
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.js" type="module"></script>
 ```
 
 ### polyfills.js
