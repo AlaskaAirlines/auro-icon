@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.0.0...v3.0.1) (2021-02-02)
+
+
+### Bug Fixes
+
+* address missing bundle ([1222c10](https://github.com/AlaskaAirlines/auro-icon/commit/1222c10887a7af4584f0d1af63f36ed41d3f16d8))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v2.0.3...v3.0.0) (2020-12-18)
 
 
