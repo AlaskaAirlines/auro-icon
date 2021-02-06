@@ -111,7 +111,7 @@ See [auro-alaska](https://auro.alaskaair.com/components/auro/icon/alaska).
 
 ## Other airline logos
 
-The auro-icon component has easy access to other than Alaska airline logos. Supported logos include
+The auro-icon component has easy access to other than Alaska airline logos.
 
 For full list, see [Icons repo](https://github.com/AlaskaAirlines/Icons/tree/master/src/icons/logos).
 
