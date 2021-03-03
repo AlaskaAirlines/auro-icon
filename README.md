@@ -59,10 +59,6 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.js" type="module"></script>
 ```
 
-### polyfills.js
-
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
-
 ### IE11 Support
 
 **Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
@@ -130,8 +126,6 @@ Please be sure to review the [contribution guidelines](https://auro.alaskaair.co
 ### Start development environment
 
 Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open two different shell sessions. One is for the **npm tasks**, the second is to run the **server**.
-
-**Peer dependency:** Please make sure Polymer is installed globally in order to run the Polymer server. See [Auro Component Development Details](https://github.com/AlaskaAirlines/auro_docs/blob/master/src/TECH_DETAILS.md) for more information.
 
 ```shell
 // shell terminal one
