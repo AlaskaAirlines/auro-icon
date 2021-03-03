@@ -7,7 +7,7 @@ The `auro-icon` web component comes pre-configured with all the available [Auro 
 ## Default component
 
 <div class="exampleWrapper">
-  <auro-icon category="logos" name="alaska"></auro-icon>
+  <auro-icon category="terminal" name="plane-diag-fill"></auro-icon>
 </div>
 
 <auro-accordion lowProfile justifyRight>
