@@ -143,7 +143,7 @@ class AuroAlaska extends BaseIcon {
         <div class="util_displayHiddenVisually">
           <slot></slot>
         </div>
-        <slot name="icon">${this.svg}</slot>
+        ${this.svg}
       </div>
     `;
   }
