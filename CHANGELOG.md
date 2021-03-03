@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v3.0.1...v3.0.2) (2021-03-03)
+
+
+### Bug Fixes
+
+* address Chrome 89 icon render issue ([2cb0aeb](https://github.com/AlaskaAirlines/auro-icon/commit/2cb0aebb1f4a50b61369c171c36defd3669cb2c7))
+* remove slot to fix Chrome 89 ([6c9df68](https://github.com/AlaskaAirlines/auro-icon/commit/6c9df68fed190f73934c33c3219582e20e07ac7a))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.0.0...v3.0.1) (2021-02-02)
 
 
