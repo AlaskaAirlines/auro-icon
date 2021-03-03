@@ -54,17 +54,17 @@ export default class BaseIcon extends AuroElement {
    * @returns {dom} DOM ready HTML to be appended
    */
   async fetchIcon(category, name) {
-    let iconHTML = `${this.uri}/icons/${category}/${name}.svg`;
+    let iconHTML = '';
 
-    // if (category === 'logos') {
-    //   iconHTML = await cacheFetch(`${this.uri}/${category}/${name}.svg`);
-    // } else if (this.alaska) {
-    //   iconHTML = as300.svg;
-    // } else if (this.alaskaTagline) {
-    //   iconHTML = asTag300.svg;
-    // } else {
-    //   iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
-    // }
+    if (category === 'logos') {
+      iconHTML = await cacheFetch(`${this.uri}/${category}/${name}.svg`);
+    } else if (this.alaska) {
+      iconHTML = as300.svg;
+    } else if (this.alaskaTagline) {
+      iconHTML = asTag300.svg;
+    } else {
+      iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
+    }
 
     const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
 
