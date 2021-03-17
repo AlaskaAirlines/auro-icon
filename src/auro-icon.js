@@ -18,6 +18,7 @@ import styleCss from "./iconStyle-css.js";
  * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage
  * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage
  * @attr {Boolean} customColor - Removes primary selector
+ * @attr {Boolean} label - Exposes content in slot as icon label
  * @attr {Boolean} primary - Sets the icon to use the baseline primary icon style
  * @attr {Boolean} emphasis - Sets the icon to use the emphasis style
  * @attr {Boolean} accent - Sets the icon to use the accent style
@@ -58,6 +59,10 @@ class AuroIcon extends BaseIcon {
         reflect: true
       },
       primary: {
+        type: Boolean,
+        reflect: true
+      },
+      label: {
         type: Boolean,
         reflect: true
       },
@@ -112,15 +117,20 @@ class AuroIcon extends BaseIcon {
       'error': this.error,
       'success': this.success,
       'advisory': this.advisory,
-      'warning': this.warning
+      'warning': this.warning,
+      'label': this.label
+    }
+
+    const a11y = {
+      'util_displayHiddenVisually': !this.label
     }
 
     return html`
       <div class="${classMap(classes)}">
-        <div class="util_displayHiddenVisually">
+        ${this.svg}
+        <div class="${classMap(a11y)}">
           <slot></slot>
         </div>
-        ${this.svg}
       </div>
     `;
   }
