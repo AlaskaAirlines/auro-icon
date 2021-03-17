@@ -36,9 +36,40 @@ If assistive technologies are needed to read back a description of the icon, sim
 
 </auro-accordion>
 
+## Default component with label
+
+In situations where the icon is to be listed with a descriptive label, simply use the `label` attribute and the text in the `slot` will appear next to the icon.
+
+The `primary` attribute is assigned by default. Other attributes, `emphasis`, `accent`, `disabled`, `error`, `success`, and `advisory` are supported. All `ondark` versions as well.
+
+<div class="exampleWrapper">
+  <auro-icon label category="in-flight" name="wifi">Wi-Fi</auro-icon>
+  <auro-icon label emphasis category="in-flight" name="plug">Power</auro-icon>
+  <auro-icon label accent category="in-flight" name="food-and-drink">Food</auro-icon>
+  <auro-icon label disabled category="in-flight" name="wifi-disabled">No Wi-Fi</auro-icon>
+  <auro-icon label error category="in-flight" name="flight-delayed">Flight is delayed.</auro-icon>
+  <auro-icon label success category="in-flight" name="flight-on-time">Flight is on time</auro-icon>
+  <auro-icon label advisory category="in-flight" name="wine-and-spirits">21 and over only</auro-icon>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-icon label category="in-flight" name="wifi">Wi-Fi</auro-icon>
+  <auro-icon label emphasis category="in-flight" name="plug">Power</auro-icon>
+  <auro-icon label accent category="in-flight" name="food-and-drink">Food</auro-icon>
+  <auro-icon label disabled category="in-flight" name="wifi-disabled">No Wi-Fi</auro-icon>
+  <auro-icon label error category="in-flight" name="flight-delayed">Flight is delayed.</auro-icon>
+  <auro-icon label success category="in-flight" name="flight-on-time">Flight is on time</auro-icon>
+  <auro-icon label advisory category="in-flight" name="wine-and-spirits">21 and over only</auro-icon>
+  ```
+
+</auro-accordion>
+
 ## Icons illustrating visual state
 
-Mono-color icons support the following attributes to illustrate visual state. The `primary` attribute is assigned by default. Other attributes, `emphasis`, `accent`, `disabled`, `error`, `success`, and `advisory` are available.
+Mono-color icons support the following attributes to illustrate visual state. The `primary` attribute is assigned by default. Other attributes, `emphasis`, `accent`, `disabled`, `error`, `success`, and `advisory` are supported.
 
 See the [API](/components/auro/icon/api) for details and use cases.
 

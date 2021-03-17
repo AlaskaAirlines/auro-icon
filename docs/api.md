@@ -43,6 +43,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `hidden`         | `hidden`         | `Boolean` | If present, the component will be hidden both visually and from screen readers |
 | `hiddenAudible`  | `hiddenAudible`  | `Boolean` | If present, the component will be hidden from screen readers, but seen visually |
 | `hiddenVisually` | `hiddenVisually` | `Boolean` | If present, the component will be hidden visually, but still read by screen readers |
+| `label`          | `label`          | `Boolean` | Exposes content in slot as icon label            |
 | `name`           | `name`           | `String`  | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage |
 | `onDark`         | `onDark`         | `Boolean` | Set value for on-dark version of auro-icon       |
 | `primary`        | `primary`        | `Boolean` | Sets the icon to use the baseline primary icon style |

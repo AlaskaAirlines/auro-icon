@@ -83,7 +83,7 @@ describe('auro-icon', () => {
     expect(fetch).to.be.calledOnceWith(sinon.match('icons/interface/chevron-up.svg'));
   });
 
-  it('auro-icon is using emphasis style', async () => {
+  it('auro-icon is using emphasis style & util_displayHiddenVisually', async () => {
     const el = await fixture(html`
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
     `);
@@ -91,11 +91,37 @@ describe('auro-icon', () => {
     await waitUntil(() => el.svg, 'Element did not become ready');
 
     const div = el.shadowRoot.querySelector('div');
+    const nestedDiv = el.shadowRoot.querySelector('div > div');
 
     expect(div).to.have.class('primary');
     expect(div).to.have.class('emphasis');
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');
+    expect(nestedDiv).to.have.class('util_displayHiddenVisually');
+  });
+
+  it('auro-icon is using label', async () => {
+    const el = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" label>Hello world</auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, 'Element did not become ready');
+
+    const div = el.shadowRoot.querySelector('div');
+
+    expect(div).to.have.class('label');
+  });
+
+  it('auro-icon is not hiding content', async () => {
+    const el = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" label>Hello world</auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, 'Element did not become ready');
+
+    const div = el.shadowRoot.querySelector('div > div');
+
+    expect(div).to.not.have.class('util_displayHiddenVisually');
   });
 
   it('auro-icon is using accent style', async () => {
