@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.0.3...v3.1.0) (2021-03-18)
+
+
+### Features
+
+* add label option ([20b5cd3](https://github.com/AlaskaAirlines/auro-icon/commit/20b5cd3f771403c20debba4f4f1035b9515e1afb))
+
 ## [3.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v3.0.2...v3.0.3) (2021-03-03)
 
 
