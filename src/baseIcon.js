@@ -21,6 +21,10 @@ import styleCss from "./style-css.js";
 
 // build the component class
 export default class BaseIcon extends AuroElement {
+  constructor() {
+    super();
+    this.onDark = false;
+  }
 
   // function to define props used within the scope of this component
   static get properties() {
