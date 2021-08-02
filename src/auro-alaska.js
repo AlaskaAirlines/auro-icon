@@ -47,6 +47,7 @@ class AuroAlaska extends BaseIcon {
     this.md = 191;
     this.lg = 527;
     this.alaska = true;
+    this.official = false;
   }
 
   // function to define props used within the scope of this component

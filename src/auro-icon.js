@@ -42,8 +42,19 @@ class AuroIcon extends BaseIcon {
    * @private internal defaults
    * @returns {void}
    */
+  /* eslint-disable max-statements */
   privateDefaults() {
     this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
+    this.primary = false;
+    this.label = false;
+    this.emphasis = false;
+    this.accent = false;
+    this.disabled = false;
+    this.error = false;
+    this.success = false;
+    this.advisory = false;
+    this.warning = false;
+    this.customColor = false;
   }
 
   // function to define props used within the scope of this component
