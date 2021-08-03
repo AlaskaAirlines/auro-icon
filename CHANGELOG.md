@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.1.0...v3.1.1) (2021-08-03)
+
+
+### Bug Fixes
+
+* default boolean properties to false ([28f190b](https://github.com/AlaskaAirlines/auro-icon/commit/28f190b24512b2e212e660eb3428c3b20021fdc0))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.0.3...v3.1.0) (2021-03-18)
 
 
