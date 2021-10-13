@@ -8,8 +8,6 @@ import { css } from "lit-element";
 import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
 import cacheFetch from './cacheFetch';
-import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
-import asTag300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 
@@ -62,10 +60,6 @@ export default class BaseIcon extends AuroElement {
 
     if (category === 'logos') {
       iconHTML = await cacheFetch(`${this.uri}/${category}/${name}.svg`);
-    } else if (this.alaska) {
-      iconHTML = as300.svg;
-    } else if (this.alaskaTagline) {
-      iconHTML = asTag300.svg;
     } else {
       iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
     }
