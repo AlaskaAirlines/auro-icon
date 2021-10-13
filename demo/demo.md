@@ -50,8 +50,8 @@ The `primary` attribute is assigned by default. Other attributes, `emphasis`, `a
   <auro-icon label error category="in-flight" name="flight-delayed">Flight is delayed.</auro-icon>
   <auro-icon label success category="in-flight" name="flight-on-time">Flight is on time</auro-icon>
   <auro-icon label advisory category="in-flight" name="wine-and-spirits">21 and over only</auro-icon>
-
-  <p></p>
+</div>
+<div class="exampleWrapper">
 
   <style>
     .responsiveExample {
