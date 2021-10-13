@@ -50,6 +50,22 @@ The `primary` attribute is assigned by default. Other attributes, `emphasis`, `a
   <auro-icon label error category="in-flight" name="flight-delayed">Flight is delayed.</auro-icon>
   <auro-icon label success category="in-flight" name="flight-on-time">Flight is on time</auro-icon>
   <auro-icon label advisory category="in-flight" name="wine-and-spirits">21 and over only</auro-icon>
+
+  <p></p>
+
+  <style>
+    .responsiveExample {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 769px) {
+      .responsiveExample {
+        width: 30%;
+      }
+    }
+  </style>
+
+  <auro-icon class="responsiveExample" label warning category="in-flight" name="flight-delayed">Your flight's arrival has been delayed. We apologize for the delay, but your aircraft was delayed due to a late inbound aircraft.</auro-icon>
 </div>
 
 <auro-accordion lowProfile justifyRight>
@@ -63,6 +79,21 @@ The `primary` attribute is assigned by default. Other attributes, `emphasis`, `a
   <auro-icon label error category="in-flight" name="flight-delayed">Flight is delayed.</auro-icon>
   <auro-icon label success category="in-flight" name="flight-on-time">Flight is on time</auro-icon>
   <auro-icon label advisory category="in-flight" name="wine-and-spirits">21 and over only</auro-icon>
+
+  <style>
+    .responsiveExample {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 769px) {
+      .responsiveExample {
+        width: 30%;
+      }
+    }
+  </style>
+
+  <auro-icon class="responsiveExample" label warning category="in-flight" name="flight-delayed">Your flight's arrival has been delayed. We apologize for the delay, but your aircraft was delayed due to a late inbound aircraft.</auro-icon>
+
   ```
 
 </auro-accordion>
