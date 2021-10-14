@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.2.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.1.1...v3.2.0) (2021-10-14)
+
+
+### Features
+
+* **alignment:** update icon with text alighnemnt [#34](https://github.com/AlaskaAirlines/auro-icon/issues/34) ([37833b6](https://github.com/AlaskaAirlines/auro-icon/commit/37833b605211c5d6bf348e01ae70947da9e81929))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.1.0...v3.1.1) (2021-08-03)
 
 
