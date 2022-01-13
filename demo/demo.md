@@ -161,19 +161,18 @@ All compatible with `ondark` attribute.
 The `auro-icon` by default apply the `primary` selector for color application. This can be over written using the defined API listed above. Custom colors are also allowed when using the `customColor` attribute and a parent element with a color setting.
 
 <div class="exampleWrapper">
-  <auro-icon category="terminal" name="plane-diag-fill" customColor style="color: orange"></auro-icon>
+  <auro-icon category="terminal" name="plane-diag-fill" ></auro-icon> default inherits color<br/>
+  <auro-icon category="terminal" name="plane-diag-fill" customColor></auro-icon> applies primary color selector<br/>
+  <auro-icon category="terminal" name="plane-diag-fill" customColor style="color: orange;"></auro-icon> applies the color from the style attribute
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-icon
-    category="terminal"
-    name="plane-diag-fill"
-    customColor
-    style="color: orange">
-  </auro-icon>
+  <auro-icon category="terminal" name="plane-diag-fill" ></auro-icon> default inherits color<br/>
+  <auro-icon category="terminal" name="plane-diag-fill" customColor></auro-icon> applies primary color selector<br/>
+  <auro-icon category="terminal" name="plane-diag-fill" customColor style="color: orange;"></auro-icon> applies the color from the style attribute
 
   ```
 
