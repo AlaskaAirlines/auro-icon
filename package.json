@@ -22,17 +22,17 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "lit-element": "^2.4.0"
+    "lit-element": "^2.5.1"
   },
   "peerDependencies": {
-    "@alaskaairux/design-tokens": "^3.0.0",
-    "@alaskaairux/webcorestylesheets": "^3.0.0",
-    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "@alaskaairux/design-tokens": "^3.12.1",
+    "@alaskaairux/webcorestylesheets": "^3.7.3",
+    "@webcomponents/webcomponentsjs": "^2.7.0",
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
-    "@alaskaairux/design-tokens": "^3.11.0",
-    "@alaskaairux/icons": "^4.16.1",
+    "@alaskaairux/design-tokens": "^3.12.1",
+    "@alaskaairux/icons": "^4.20.0",
     "@alaskaairux/webcorestylesheets": "^3.7.3",
     "@babel/core": "^7.19.6",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
@@ -60,7 +60,7 @@
     "copyfiles": "^2.4.1",
     "core-js": "^3.26.0",
     "eslint": "^8.26.0",
-    "eslint-plugin-lit": "^1.6.1",
+    "eslint-plugin-lit": "^1.7.2",
     "focus-visible": "^5.2.0",
     "husky": "^4.3.8",
     "lodash": "^4.17.21",

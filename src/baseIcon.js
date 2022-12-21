@@ -6,7 +6,7 @@
 
 import { css } from "lit-element";
 import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
-import penguin from '@alaskaairux/icons/dist/icons/interface/penguin_es6.js';
+import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
 import cacheFetch from './cacheFetch';
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
@@ -76,7 +76,7 @@ export default class BaseIcon extends AuroElement {
     if (svg) {
       this.svg = svg;
     } else if (!svg) {
-      const penDOM = new DOMParser().parseFromString(penguin.svg, 'text/html');
+      const penDOM = new DOMParser().parseFromString(error.svg, 'text/html');
 
       this.svg = penDOM.body.firstChild;
     }
