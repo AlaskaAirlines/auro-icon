@@ -8,7 +8,7 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-icon/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/[namespace]-[name]/actions?query=workflow%3A%22test+and+publish%22)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-icon/testPublish.yml?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/[namespace]-[name]/actions?query=workflow%3A%22test+and+publish%22)
 [![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-icon?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-icon)
 [![License](https://img.shields.io/npm/l/@alaskaairux/auro-icon?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
