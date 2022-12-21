@@ -22,6 +22,7 @@ beforeEach(() => {
 });
 
 describe('auro-icon', () => {
+
   it('icon is set', async () => {
     const el = await fixture(html`
       <auro-icon></auro-icon>
@@ -152,6 +153,30 @@ describe('auro-icon', () => {
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
     expect(div).to.have.class('disabled');
+  });
+
+  it('default accessibility', async () => {
+    const el = await fixture(html`
+      <auro-icon category="interface" name="chevron-up"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, 'Element did not become ready');
+
+    const span = el.shadowRoot.querySelector('span');
+
+    expect(span).to.have.attr('aria-hidden', 'true');
+  });
+
+  it('edited accessibility', async () => {
+    const el = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" ariaHidden="false"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, 'Element did not become ready');
+
+    const span = el.shadowRoot.querySelector('span');
+
+    expect(span).to.have.attr('aria-hidden', 'false');
   });
 
   it('auro-icon does not show alaska icon', async () => {
