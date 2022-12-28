@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [3.3.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.2.0...v3.3.0) (2022-12-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependencies ([f0ec641](https://github.com/AlaskaAirlines/auro-icon/commit/f0ec6412470cfef1e639d34f14edd4cca2892d0d))
+
+
+### Features
+
+* **a11y toggle:** add new aria-hidden option [#54](https://github.com/AlaskaAirlines/auro-icon/issues/54) ([ed06dc5](https://github.com/AlaskaAirlines/auro-icon/commit/ed06dc502a09af76a8f488bd32a322802e5454db))
+
 # [3.2.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.1.1...v3.2.0) (2021-10-14)
 
 
