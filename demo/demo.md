@@ -69,7 +69,9 @@ In situations where the icon is to be listed with a descriptive label, simply us
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-icon label category="in-flight" name="wifi">Your flight is enabled with super fast Wi-Fi</auro-icon>
+  <auro-icon label category="in-flight" name="wifi">
+    Your flight is enabled with super fast Wi-Fi
+  </auro-icon>
   ```
 
 </auro-accordion>

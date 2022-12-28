@@ -29,7 +29,6 @@ import styleCss from "./iconStyle-css.js";
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
  * @attr {Boolean} warning - Sets the icon to use the warning style.
  * @attr {String} ariaHidden - Set aria-hidden value. Default is `true`. Option is `false`.
- * @attr {String} title - Set custom description of icon in use.
  * @slot - Hidden from visibility, used for a11y if icon description is needed.
  */
 
@@ -112,10 +111,6 @@ class AuroIcon extends BaseIcon {
         type: Boolean
       },
       ariaHidden: {
-        type: String,
-        reflect: true
-      },
-      title: {
         type: String,
         reflect: true
       }
