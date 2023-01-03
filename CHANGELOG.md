@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.3.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.3.0...v3.3.1) (2023-01-03)
+
+
+### Performance Improvements
+
+* **focusvisible:** remove unused dependency [#57](https://github.com/AlaskaAirlines/auro-icon/issues/57) ([8f21549](https://github.com/AlaskaAirlines/auro-icon/commit/8f21549abbdea789e6d1a4e681e47b126416e512))
+
 # [3.3.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.2.0...v3.3.0) (2022-12-28)
 
 
