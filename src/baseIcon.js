@@ -8,7 +8,6 @@ import { css } from "lit-element";
 import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
 import cacheFetch from './cacheFetch';
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
