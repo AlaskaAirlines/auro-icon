@@ -18,7 +18,6 @@ import official200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.j
 import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
 
 // Import touch detection lib
-// import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./alaskaStyle-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
