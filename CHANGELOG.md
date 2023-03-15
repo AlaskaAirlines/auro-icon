@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.4.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.3.1...v3.4.0) (2023-03-15)
+
+
+### Features
+
+* **uri:** make uri attribute public [#24](https://github.com/AlaskaAirlines/auro-icon/issues/24) ([45b04f5](https://github.com/AlaskaAirlines/auro-icon/commit/45b04f589a078a6524912a297b71cb551410fd28))
+
 ## [3.3.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.3.0...v3.3.1) (2023-01-03)
 
 
