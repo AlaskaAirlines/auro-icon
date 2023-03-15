@@ -29,6 +29,7 @@ import styleCss from "./iconStyle-css.js";
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
  * @attr {Boolean} warning - Sets the icon to use the warning style.
  * @attr {String} ariaHidden - Set aria-hidden value. Default is `true`. Option is `false`.
+ * @attr {String} uri - Set the uri for CDN used when fetching icons
  * @slot - Hidden from visibility, used for a11y if icon description is needed.
  */
 
@@ -36,6 +37,8 @@ import styleCss from "./iconStyle-css.js";
 class AuroIcon extends BaseIcon {
   constructor() {
     super();
+
+    this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
 
     this.privateDefaults();
   }
@@ -46,7 +49,6 @@ class AuroIcon extends BaseIcon {
    */
   /* eslint-disable max-statements */
   privateDefaults() {
-    this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
     this.primary = false;
     this.label = false;
     this.emphasis = false;
@@ -113,6 +115,9 @@ class AuroIcon extends BaseIcon {
       ariaHidden: {
         type: String,
         reflect: true
+      },
+      uri: {
+        type: String
       }
     };
   }
