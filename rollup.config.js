@@ -27,7 +27,7 @@ const getSharedPlugins = (isLegacy) => [
 
 const modernConfig = {
   input: {
-    ['auro-icon__bundled']: './src/auro-icon.js',
+    ['auro-icon__bundled']: './index.js',
     ['auro-alaska__bundled']: './src/auro-alaska.js'
   },
   output: {
