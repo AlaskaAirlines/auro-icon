@@ -34,7 +34,7 @@ import styleCss from "./iconStyle-css.js";
  */
 
 // build the component class
-class AuroIcon extends BaseIcon {
+export class AuroIcon extends BaseIcon {
   constructor() {
     super();
 

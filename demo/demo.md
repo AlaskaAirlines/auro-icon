@@ -178,3 +178,31 @@ Auro icon's by default are set to the value of the `--auro-size-lg` token. To cu
   ```
 
 </auro-accordion>
+
+## Recommended Use and Version Control
+
+There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-icon` custom element is defined automatically.
+
+To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
+
+```js
+import './node_modules/@alaskaairux/auro-icon';
+registerComponent('custom-icon');
+```
+
+This will create a new custom element that you can use in your HTML that will function identically to the `auro-icon` element.
+
+<div class="exampleWrapper">
+  <custom-icon category="interface" name="pin-trip"></custom-icon>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <div class="exampleWrapper">
+    <custom-icon category="interface" name="pin-trip"></custom-icon>
+  </div>
+  ```
+
+</auro-accordion>
