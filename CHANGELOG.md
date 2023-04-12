@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.4.1](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.0...v3.4.1) (2023-04-12)
+
+
+### Performance Improvements
+
+* **extend:** allow for custom component registration + extension ([4ef2d7b](https://github.com/AlaskaAirlines/auro-icon/commit/4ef2d7baf2f0194d5d2242c14438746d78d6d635))
+
 # [3.4.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.3.1...v3.4.0) (2023-03-15)
 
 
