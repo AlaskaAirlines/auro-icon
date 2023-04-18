@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.4.3](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.2...v3.4.3) (2023-04-18)
+
+
+### Bug Fixes
+
+* **resources:** update .npmignore ([30d16d6](https://github.com/AlaskaAirlines/auro-icon/commit/30d16d60e251840792f4accbde8f6869ce08115e))
+
 ## [3.4.2](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.1...v3.4.2) (2023-04-17)
 
 
