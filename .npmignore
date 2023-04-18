@@ -15,5 +15,3 @@ coverage/
 # ignore src
 src/**/*.scss
 src/**/*.css
-src/**/*-css.js
-src/**/es5.js
