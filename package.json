@@ -53,6 +53,7 @@
     "babel-loader": "^8.2.2",
     "compression": "^1.7.4",
     "concat": "^1.0.3",
+    "concurrently": "^8.0.1",
     "copy-webpack-plugin": "^9.0.1",
     "copyfiles": "^2.4.1",
     "core-js": "^3.26.1",
@@ -90,6 +91,12 @@
     "last 2 Edge versions",
     "last 2 Safari major versions"
   ],
+  "nodemonConfig": {
+    "ignore": [
+      "*-css.js",
+      "*.css"
+    ]
+  },
   "scripts": {
     "build": "npm-run-all build:sass sass:render cssLint dist:js bundler postinstall build:api types",
     "apiBuild": "wca analyze 'src/**/auro-*.js' --outFiles docs/api.md",
@@ -97,7 +104,7 @@
     "bundle:test": "rollup -c -w",
     "postinstall": "node packageScripts/postinstall.js",
     "cssLint": "stylelint './src/*.css'",
-    "dev": "npm run build:sass:watch",
+    "dev": "concurrently --kill-others 'npm run build:watch' 'npm run serve'",
     "distJS": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "sass:render": "sass-render src/*.css -t ./scripts/staticStyles-template.js",
     "sweep": "rm -rf ./temp ./demo/css ./demo/fonts ./dist ./src/tokens | rm ./src/*.css ./src/*-css.js",
