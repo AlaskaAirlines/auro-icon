@@ -10,7 +10,7 @@ For the most up to date information on [UI development browser support](https://
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-icon/testPublish.yml?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/[namespace]-[name]/actions/workflows/testPublish.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-icon?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-icon)
-[![License](https://img.shields.io/npm/l/@alaskaairux/auro-icon?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-icon?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
 $ npm i @aurodesignsystem/auro-icon
@@ -33,7 +33,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 Defining the component dependency within each component that is using the `<auro-icon>` component.
 
 ```javascript
-import "@alaskaairux/auro-icon";
+import "@aurodesignsystem/auro-icon";
 ```
 
 **Reference component in HTML**
@@ -51,14 +51,10 @@ In cases where the project is not able to process JS assets, there are pre-proce
 Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.es5.js" nomodule></script>
-<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
-
-<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.es5.js" nomodule></script>
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-icon@latest/dist/auro-alaska__bundled.js" type="module"></script>
 ```
 
 **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
