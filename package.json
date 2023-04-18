@@ -75,6 +75,7 @@
     "sinon": "^11.1.2",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
+    "typescript": "^5.0.3",
     "wc-sass-render": "^1.4.0",
     "web-component-analyzer": "^1.1.6",
     "webpack-merge": "^5.8.0",
@@ -90,7 +91,7 @@
     "last 2 Safari major versions"
   ],
   "scripts": {
-    "build": "npm run ciBuild",
+    "build": "npm-run-all build:sass sass:render cssLint dist:js bundler postinstall build:api types",
     "apiBuild": "wca analyze 'src/**/auro-*.js' --outFiles docs/api.md",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
@@ -121,7 +122,8 @@
     "demo:copyAlaskaIndex": "copyfiles -u 1 -V './demo/alaska.html' ./build",
     "demo:updateIndex": "node ./scripts/prepForBuild",
     "demo:build": "npm-run-all ciBuild demo:rmBuild demo:newBuild demo:copyIndex demo:copyAlaskaIndex demo:copyDemo demo:copyAlaska demo:updateIndex",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "types": "tsc"
   },
   "husky": {
     "hooks": {
