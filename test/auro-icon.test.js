@@ -1,3 +1,7 @@
+/* eslint-disable max-lines */
+/* eslint-disable max-statements */
+/* eslint-disable require-jsdoc */
+/* eslint-disable func-style */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-console */
 /* eslint-disable one-var */
@@ -74,10 +78,10 @@ describe('auro-icon', () => {
   });
 
   it('does not duplicate requests for same icon source', async () => {
-    const el = await (fixture(html`
+    const el = await fixture(html`
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
-    `));
+    `);
 
     await waitUntil(() => el.svg, 'Element did not become ready');
 
@@ -227,6 +231,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 57 17');
   });
 
@@ -236,6 +241,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 57 24');
   });
 
@@ -245,6 +251,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 83 26');
   });
 
@@ -254,6 +261,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 83 35');
   });
 
@@ -263,6 +271,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 144 45');
   });
 
@@ -272,6 +281,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 144 63');
   });
 
@@ -281,6 +291,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 396 121');
   });
 
@@ -290,6 +301,7 @@ describe('auro-icon', () => {
     `);
 
     const svg = el.shadowRoot.querySelector('svg');
+
     expect(svg.getAttribute('viewBox')).to.equal('0 0 396 171');
   });
 
