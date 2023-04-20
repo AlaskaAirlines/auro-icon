@@ -63,11 +63,6 @@ Include the following example HTML code in the `<head>` element of your page.
 
 Both [Unpkg](https://www.unpkg.com/) and [JSDelivr](https://www.jsdelivr.com/) are free open source options that you can use. These are 3rd party resources and Auro is not responsible for their uptime. **Use at your own risk.** These bundle resources are included with the npm package, you are free to use any CDN resource that fits your needs.
 
-### IE11 Support
-
-**Displaimer:** While these components are supported in IE, there may be issues with loading the [web components polyfill](https://www.webcomponents.org/polyfills). Please consult their documentation when supporting IE11.
-
-
 ## auro-icon use cases
 
 The `<auro-icon>` element should be used in situations where users may:
