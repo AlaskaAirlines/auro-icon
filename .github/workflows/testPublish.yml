@@ -15,7 +15,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [12.x, 14.x]
 
     steps:
       - uses: actions/checkout@v3
@@ -24,9 +24,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm run build:sass:component
+      - run: npm run sassBuild:component
       - run: npm run postCss:component
-      - run: npm run sass:render
+      - run: npm run sassRender
       - run: npm run distJS
       - run: npm run bundler
       - run: npm test
@@ -44,9 +44,9 @@ jobs:
         with:
           node-version: 14
       - run: npm ci
-      - run: npm run build:sass:component
+      - run: npm run sassBuild:component
       - run: npm run postCss:component
-      - run: npm run sass:render
+      - run: npm run sassRender
       - run: npm run distJS
       - run: npm run bundler
       - uses: cycjimmy/semantic-release-action@v3

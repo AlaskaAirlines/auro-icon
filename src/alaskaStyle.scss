@@ -4,14 +4,10 @@
 // ---------------------------------------------------------------------
 
 // Support for auroElement styles
-@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 
 :host {
   display: inline-block;
-  --auro-size-lg: 100%;
-
-  width: 100%;
-  height: 100%;
 }
 
 :host([onDark]) {
@@ -19,4 +15,11 @@
   .logo {
     color: var(--auro-color-base-white);
   }
+}
+
+:host() {
+  --auro-size-lg: 100%;
+
+  width: 100%;
+  height: 100%;
 }
