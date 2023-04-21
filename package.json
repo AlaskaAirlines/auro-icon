@@ -34,13 +34,12 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@open-wc/testing": "^3.1.8",
-    "@open-wc/testing-karma": "^4.0.9",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^10.0.3",
-    "@web/dev-server": "^0.1.38",
-    "@web/test-runner": "^0.15.3",
+    "@web/dev-server": "^0.2.0",
+    "@web/test-runner": "^0.16.0",
     "autoprefixer": "^10.4.14",
     "compression": "^1.7.4",
     "concat": "^1.0.3",
@@ -57,7 +56,6 @@
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.23",
     "postcss-discard-comments": "^6.0.0",
-    "postcss-selector-replace": "^1.0.2",
     "prismjs": "^1.29.0",
     "rollup": "^3.20.6",
     "rollup-plugin-serve": "^2.0.2",
@@ -88,7 +86,7 @@
   "scripts": {
     "build": "npm-run-all build:sass sass:render cssLint dist:js bundler postinstall build:api",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render",
-    "build:api": "wca analyze 'src/auro-badge.js' --outFiles docs/api.md",
+    "build:api": "wca analyze 'src/**/auro-*.js' --outFiles docs/api.md",
     "build:watch": "nodemon -e scss,js --watch src --exec npm run build:dev:assets",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
@@ -110,12 +108,6 @@
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "prepare": "husky install",
     "types": "tsc"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm-run-all test lint bundler postinstall",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "release": {
     "branch": "master",
