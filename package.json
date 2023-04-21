@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "lit": "^2.7.2"
+    "lit": "^2.7.2",
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "@alaskaairux/design-tokens": "^3.12.1",
@@ -76,7 +77,7 @@
     "sinon": "^15.0.3",
     "stylelint": "^15.4.0",
     "stylelint-config-standard": "^32.0.0",
-    "typescript": "^5.0.3",
+    "typescript": "^5.0.4",
     "wc-sass-render": "^1.4.0",
     "web-component-analyzer": "^1.1.6",
     "webpack-merge": "^5.8.0",
@@ -86,6 +87,7 @@
   "browserslist": [
     "last 2 Chrome versions",
     "last 2 iOS major versions",
+    "ie 11",
     "last 2 Firefox versions",
     "last 2 Edge versions",
     "last 2 Safari major versions"
