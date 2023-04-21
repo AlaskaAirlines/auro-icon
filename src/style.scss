@@ -4,13 +4,13 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
-@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/core";
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 
 // Support for auroElement styles
-@import "./../node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/auroElement/auroElement";
 
-@import "./../node_modules/@alaskaairux/icons/dist/icons";
+@import "./node_modules/@alaskaairux/icons/dist/icons";
 
 :host {
   color: currentColor;
