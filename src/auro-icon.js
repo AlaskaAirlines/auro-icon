@@ -6,7 +6,7 @@
 // ---------------------------------------------------------------------
 
 import { html, css } from "lit";
-import { classMap } from 'lit/directives/class-map.js';
+import { classMap } from 'lit-html/directives/class-map';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import BaseIcon from "./baseIcon";
 import styleCss from "./iconStyle-css.js";
