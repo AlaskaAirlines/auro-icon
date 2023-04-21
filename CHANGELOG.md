@@ -1,5 +1,36 @@
 # Semantic Release Automated Changelog
 
+## [3.4.4](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.3...v3.4.4) (2023-04-21)
+
+
+### Reverts
+
+* Revert "perf(es5): Remove legacy es5 bundling resources #63" ([82669c2](https://github.com/AlaskaAirlines/auro-icon/commit/82669c2ce7cbfcd867ff4d55da0f1342254af68e)), closes [#63](https://github.com/AlaskaAirlines/auro-icon/issues/63)
+* Revert "perf(sass): Update Sass to use dart-sass dependency #64" ([dded5b0](https://github.com/AlaskaAirlines/auro-icon/commit/dded5b049a21fdcc7e76c1a6ffc12a99267ab45f)), closes [#64](https://github.com/AlaskaAirlines/auro-icon/issues/64)
+* Revert "perf(husky): pre-commit and husky update #65" ([654a082](https://github.com/AlaskaAirlines/auro-icon/commit/654a082a3d05a65408036c573548f98e39c19509)), closes [#65](https://github.com/AlaskaAirlines/auro-icon/issues/65)
+* Revert "docs(template): update issue templates #70" ([7419b12](https://github.com/AlaskaAirlines/auro-icon/commit/7419b12582d77b1377123d3b02c45b333b18d224)), closes [#70](https://github.com/AlaskaAirlines/auro-icon/issues/70)
+* Revert "build(npm): update npm namespace #71" ([f03729f](https://github.com/AlaskaAirlines/auro-icon/commit/f03729fc1fd7e9a2ebccbce434b595659b65656b)), closes [#71](https://github.com/AlaskaAirlines/auro-icon/issues/71)
+* Revert "feat(ts): add support for typescript users #69" ([1b45723](https://github.com/AlaskaAirlines/auro-icon/commit/1b4572300af07d20a4454b855b3c1ca680dc1d03)), closes [#69](https://github.com/AlaskaAirlines/auro-icon/issues/69)
+* Revert "chore(deps): full dependency update" ([25bb33c](https://github.com/AlaskaAirlines/auro-icon/commit/25bb33cf70b6693578385a875b9a303de2e6d67b))
+* Revert "perf(lit): update component to Lit2.0 #68" ([687e89a](https://github.com/AlaskaAirlines/auro-icon/commit/687e89a8ef86c9e6f14c3e0e1207b7624a89486f)), closes [#68](https://github.com/AlaskaAirlines/auro-icon/issues/68)
+* Revert "perf(server): update to use single shell" ([034e846](https://github.com/AlaskaAirlines/auro-icon/commit/034e8467a92923c9936809a5286a5bc9fd062a6b))
+* Revert "perf(node18): update core features to support node 18+ #66" ([1b0fb9a](https://github.com/AlaskaAirlines/auro-icon/commit/1b0fb9acc0d23928d6d5017eadbaa13229d0e158)), closes [#66](https://github.com/AlaskaAirlines/auro-icon/issues/66)
+* Revert "chore(configs): release is missing required assets #74" ([bc6f712](https://github.com/AlaskaAirlines/auro-icon/commit/bc6f71242daebd88466461f0ebcb0b900dadba95)), closes [#74](https://github.com/AlaskaAirlines/auro-icon/issues/74)
+* Revert "feat() : support element name extension feature #62" ([d9fe35a](https://github.com/AlaskaAirlines/auro-icon/commit/d9fe35a0a51e92018a987f479ec0ae0663fbfdcb)), closes [#62](https://github.com/AlaskaAirlines/auro-icon/issues/62)
+* Revert "docs(issues): update bug template" ([2221afd](https://github.com/AlaskaAirlines/auro-icon/commit/2221afd1d252579debca85007269cb9400d81ab0))
+* Revert "feat(ts): move the package of typescript into devDependencies" ([789a6f4](https://github.com/AlaskaAirlines/auro-icon/commit/789a6f4c6a5c93ed147344f2f0f9c6b8f89535a3))
+* Revert "chore(deps): full dependency update" ([26aadc9](https://github.com/AlaskaAirlines/auro-icon/commit/26aadc9d1231a8b02f03069932ada17bc9525511))
+* Revert "chore: additional cleanup of legacy code This commit removes legacy content from current resources and deleted files that are no longer required." ([79c61dc](https://github.com/AlaskaAirlines/auro-icon/commit/79c61dcf3b7a3c7921ee2a77497c3c46daebf1b1))
+* Revert "deps: remove unused resources" ([9eaba53](https://github.com/AlaskaAirlines/auro-icon/commit/9eaba53a052785a0478d2d767c2e2e8a2681140a))
+* Revert "chore: remove unused resource" ([a720ef9](https://github.com/AlaskaAirlines/auro-icon/commit/a720ef9555ef55b50f488f0b87fe1751629da989))
+* Revert "chore: cleanup of legacy code" ([d2151d0](https://github.com/AlaskaAirlines/auro-icon/commit/d2151d036f9c8690978f0114890cdfabe3824862))
+* Revert "build(husky): remove package.json config #65" ([d2b00ee](https://github.com/AlaskaAirlines/auro-icon/commit/d2b00eebb9b565ae8d865a4b049078761b50740b)), closes [#65](https://github.com/AlaskaAirlines/auro-icon/issues/65)
+* Revert "build(husky): update package-lock.json" ([0dc802c](https://github.com/AlaskaAirlines/auro-icon/commit/0dc802c51ffe9b52d390cabf589b96d7157cf523))
+* Revert "build: update automated api generation script" ([b3a8021](https://github.com/AlaskaAirlines/auro-icon/commit/b3a80214ec1b7fbc3902f8da7f7a915babc2a7df))
+* Revert "docs: update to component registration function" ([fe459d3](https://github.com/AlaskaAirlines/auro-icon/commit/fe459d3c3a97db8a952e1fd3426a9a5d3e86bc25))
+* Revert "build(husky): update resource to be executable #65" ([f1d83e0](https://github.com/AlaskaAirlines/auro-icon/commit/f1d83e0c12f7759dfa0d758a20b1dbb1860fc548)), closes [#65](https://github.com/AlaskaAirlines/auro-icon/issues/65)
+* Revert "docs: update postinstall message" ([361a4a0](https://github.com/AlaskaAirlines/auro-icon/commit/361a4a04bfe315f199edb00ab917f052460e843e))
+
 ## [3.4.3](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.2...v3.4.3) (2023-04-18)
 
 
