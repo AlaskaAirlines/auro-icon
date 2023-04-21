@@ -88,7 +88,7 @@
   "scripts": {
     "build": "npm-run-all build:sass sass:render cssLint dist:js bundler postinstall build:api",
     "build:dev:assets": "npm-run-all build:sass:component postCss:component sass:render",
-    "build:api": "wca analyze 'src/auro-badge.js' --outFiles docs/api.md",
+    "build:api": "wca analyze 'src/**/auro-*.js' --outFiles docs/api.md",
     "build:watch": "nodemon -e scss,js --watch src --exec npm run build:dev:assets",
     "bundler": "rollup -c",
     "bundle:test": "rollup -c -w",
