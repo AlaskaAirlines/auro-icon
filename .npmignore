@@ -1,20 +1,17 @@
 # standard ignore
-*config*
-*conf*
-
-.github/
 .gitignore
-.eslintrc
 .stylelintrc
-
-coverage/
-docs/
+karma.conf.js
+rollup.config.js
+babel.config.js
+.github/
+index.html
 scripts/
 test/
-demo/**/*.css
-demo/**/*.scss
-demo/**/*.html
+demo/css
+demo/sass
+coverage/
 
-# ignore src styles
+# ignore src
 src/**/*.scss
 src/**/*.css
