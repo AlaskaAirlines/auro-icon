@@ -111,6 +111,12 @@
     "prepare": "husky install",
     "types": "tsc"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all test lint bundler postinstall",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "release": {
     "branch": "master",
     "plugins": [
