@@ -4,8 +4,8 @@
 
 // ---------------------------------------------------------------------
 
-import { html, css } from "lit-element";
-import { classMap } from 'lit-html/directives/class-map';
+import { html, css } from "lit";
+import { classMap } from 'lit/directives/class-map.js';
 import BaseIcon from "./baseIcon";
 
 import as400 from '@alaskaairux/icons/dist/restricted/AS-400_es6.js';
@@ -149,8 +149,7 @@ class AuroAlaska extends BaseIcon {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-alaska")) {
   customElements.define("auro-alaska", AuroAlaska);
 }

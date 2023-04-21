@@ -6,7 +6,7 @@
 // ---------------------------------------------------------------------
 
 import { html, css } from "lit";
-import { classMap } from 'lit-html/directives/class-map';
+import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import BaseIcon from "./baseIcon";
 import styleCss from "./iconStyle-css.js";
@@ -166,8 +166,7 @@ export class AuroIcon extends BaseIcon {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-icon")) {
   customElements.define("auro-icon", AuroIcon);
 }
