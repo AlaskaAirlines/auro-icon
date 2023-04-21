@@ -149,8 +149,7 @@ class AuroAlaska extends BaseIcon {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-alaska")) {
   customElements.define("auro-alaska", AuroAlaska);
 }
