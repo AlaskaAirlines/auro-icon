@@ -4,7 +4,7 @@
 
 // ---------------------------------------------------------------------
 
-import { css } from "lit";
+import { css } from "lit-element";
 import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
 import cacheFetch from './cacheFetch';
