@@ -166,7 +166,8 @@ export class AuroIcon extends BaseIcon {
   }
 }
 
-// default internal definition
+/* istanbul ignore else */
+// define the name of the custom component
 if (!customElements.get("auro-icon")) {
   customElements.define("auro-icon", AuroIcon);
 }
