@@ -8,12 +8,12 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-icon/testPublish.yml?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/[namespace]-[name]/actions/workflows/testPublish.yml)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-icon?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-icon)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-icon/testPublish.yml?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/[namespace]-[name]/actions?query=workflow%3A%22test+and+publish%22)
+[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-icon?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-icon)
 [![License](https://img.shields.io/npm/l/@alaskaairux/auro-icon?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurodesignsystem/auro-icon
+$ npm i @alaskaairux/auro-icon
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -42,30 +42,22 @@ import "@alaskaairux/auro-icon";
 <auro-icon category="alert" name="error" accent></auro-icon>
 ```
 
-## CDN Use
+## Install bundled assets from CDN
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-### Install
-
-Include the following example HTML code in the `<head>` element of your page.
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
 <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.es5.js" nomodule></script>
 <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-icon__bundled.js" type="module"></script>
 
 <script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.es5.js" nomodule></script>
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.js" type="module"></script>
+<script src="https://unpkg.com/@alaskaairux/auro-icon@latest/dist/auro-alaska__bundled.js" type="module"></script>
 ```
-
-**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
-
-### CDN options
-
-Both [Unpkg](https://www.unpkg.com/) and [JSDelivr](https://www.jsdelivr.com/) are free open source options that you can use. These are 3rd party resources and Auro is not responsible for their uptime. **Use at your own risk.** These bundle resources are included with the npm package, you are free to use any CDN resource that fits your needs.
 
 ### IE11 Support
 
