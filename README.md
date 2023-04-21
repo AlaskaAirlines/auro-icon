@@ -129,21 +129,17 @@ Please be sure to review the [contribution guidelines](https://auro.alaskaair.co
 
 ### Start development environment
 
-Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open a shell session to run the **dev server**.
+Once the project has been cloned to your local resource and you have installed all the dependencies you will need to open two different shell sessions. One is for the **npm tasks**, the second is to run the **server**.
 
 ```shell
 // shell terminal one
 $ npm run dev
+
+// shell terminal two
+$ npm run serve
 ```
 
 Open [localhost:3001](http://localhost:3001/)
-
-If running separate sessions is preferred, please run the following commands in individual terminal shells.
-
-```shell
-$ npm run build:watch
-$ npm run serve
-```
 
 ### Testing
 Automated tests are required for every Auro component. See `.\test\auro-icon.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
