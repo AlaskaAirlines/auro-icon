@@ -1,5 +1,38 @@
 # Semantic Release Automated Changelog
 
+# [4.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.4...v4.0.0) (2023-04-22)
+
+
+### Build System
+
+* **npm:** update npm namespace [#71](https://github.com/AlaskaAirlines/auro-icon/issues/71) ([cb46d4f](https://github.com/AlaskaAirlines/auro-icon/commit/cb46d4fb7f8cc857d4b5b64fdb6d7dcdd11084ef))
+
+
+### Features
+
+* **ts:** add support for typescript users [#69](https://github.com/AlaskaAirlines/auro-icon/issues/69) ([d01bbb6](https://github.com/AlaskaAirlines/auro-icon/commit/d01bbb625fc9a747d3985765f0bda74e901d80ee))
+* **ts:** move the package of typescript into devDependencies ([684f626](https://github.com/AlaskaAirlines/auro-icon/commit/684f626927994b71425b1a4ae970abc2416cf880))
+
+
+### Performance Improvements
+
+* **es5:** Remove legacy es5 bundling resources [#63](https://github.com/AlaskaAirlines/auro-icon/issues/63) ([e9842a5](https://github.com/AlaskaAirlines/auro-icon/commit/e9842a59203b92786ef3caa49480069203bdf829))
+* **husky:** pre-commit and husky update [#65](https://github.com/AlaskaAirlines/auro-icon/issues/65) ([4a0996d](https://github.com/AlaskaAirlines/auro-icon/commit/4a0996d7f616de9b4e40b48b83c69aa6b0d4ec0b))
+* **lit:** update component to Lit2.0 [#68](https://github.com/AlaskaAirlines/auro-icon/issues/68) ([e962e25](https://github.com/AlaskaAirlines/auro-icon/commit/e962e25de80b3b565c9aeb57c554928f73187ed5))
+* **node18:** update core features to support node 18+ [#66](https://github.com/AlaskaAirlines/auro-icon/issues/66) ([e1e5f97](https://github.com/AlaskaAirlines/auro-icon/commit/e1e5f9721637e5ab243cd63ff1d24cdf2bb04e4d))
+* **sass:** Update Sass to use dart-sass dependency [#64](https://github.com/AlaskaAirlines/auro-icon/issues/64) ([e38f7de](https://github.com/AlaskaAirlines/auro-icon/commit/e38f7deffd226ea11207cc71757b04ef2bea22bc))
+* **server:** update to use single shell ([15f74ac](https://github.com/AlaskaAirlines/auro-icon/commit/15f74aca8b23a20943fde5ae29c01e3ec82e80e6))
+
+
+### BREAKING CHANGES
+
+* **npm:** This update requires a MAJOR release
+as the namespace of the element has been changed.
+
+Changes to be committed:
+modified:   README.md
+modified:   package.json
+
 ## [3.4.4](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.3...v3.4.4) (2023-04-21)
 
 
