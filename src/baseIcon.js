@@ -5,7 +5,7 @@
 // ---------------------------------------------------------------------
 
 import { css } from "lit";
-import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
+import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
 import error from '@alaskaairux/icons/dist/icons/alert/error_es6.js';
 import cacheFetch from './cacheFetch';
 import styleCss from "./style-css.js";

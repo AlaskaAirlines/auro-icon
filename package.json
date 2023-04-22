@@ -25,12 +25,12 @@
   },
   "peerDependencies": {
     "@alaskaairux/design-tokens": "^3.13.0",
-    "@alaskaairux/webcorestylesheets": "^3.7.3"
+    "@aurodesignsystem/webcorestylesheets": "^4.3.0"
   },
   "devDependencies": {
     "@alaskaairux/design-tokens": "^3.13.0",
     "@alaskaairux/icons": "^4.25.0",
-    "@alaskaairux/webcorestylesheets": "^3.7.3",
+    "@aurodesignsystem/webcorestylesheets": "^4.3.0",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@open-wc/testing": "^3.1.8",
