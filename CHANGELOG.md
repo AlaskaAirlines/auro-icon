@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [4.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.0.0...v4.0.1) (2023-05-17)
+
+
+### Bug Fixes
+
+* **bundle:** correct file reference [#79](https://github.com/AlaskaAirlines/auro-icon/issues/79) ([dcee568](https://github.com/AlaskaAirlines/auro-icon/commit/dcee568f82ace516cbc5d8368b745286eb38614f))
+
+
+### Performance Improvements
+
+* update npmignore to remove unnecessary files ([2c070a9](https://github.com/AlaskaAirlines/auro-icon/commit/2c070a9d2fd0502408f33c8ec74b3dccf269de7d))
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v3.4.4...v4.0.0) (2023-04-22)
 
 
