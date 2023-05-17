@@ -1,6 +1,8 @@
 # standard ignore
 *config*
 *conf*
+LICENSE
+NOTICE
 
 .github/
 .gitignore
@@ -11,9 +13,17 @@ coverage/
 docs/
 scripts/
 test/
+apiExamples/
+docTemplates/
 demo/**/*.css
 demo/**/*.scss
 demo/**/*.html
+
+dist/auro-*.js
+dist/*-css.js
+dist/baseIcon.js
+dist/cacheFetch.js
+!dist/auro-*__bundled.js
 
 # ignore src styles
 src/**/*.scss
