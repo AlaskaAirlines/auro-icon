@@ -19,12 +19,13 @@ demo/**/*.css
 demo/**/*.scss
 demo/**/*.html
 
+dist/es5.js
 dist/auro-*.js
-dist/*-css.js
-dist/baseIcon.js
-dist/cacheFetch.js
 !dist/auro-*__bundled.js
+dist/style-css.js
 
-# ignore src styles
+index.html
+
+# ignore src
 src/**/*.scss
 src/**/*.css
