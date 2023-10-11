@@ -3,12 +3,21 @@
 
 // ---------------------------------------------------------------------
 
+// Support for fallback values
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss";
+
 // Support for auroElement styles
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 
 :host {
   display: inline-block;
+  // listing both legacy and newer tokens to support
+  // transition to new naming spec.
+  //
+  // TO DO: Remove --auro token when confident
+  // that new spec has been adopted
   --auro-size-lg: 100%;
+  --ds-size-300: 100%;
 
   width: 100%;
   height: 100%;
@@ -17,6 +26,6 @@
 :host([onDark]) {
 
   .logo {
-    color: var(--auro-color-base-white);
+    color: var(--ds-color-base-white, $ds-color-base-white);
   }
 }

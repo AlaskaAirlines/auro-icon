@@ -3,6 +3,9 @@
 
 // ---------------------------------------------------------------------
 
+// Support for fallback values
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss";
+
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 
 :host {
@@ -10,75 +13,81 @@
   line-height: unset;
 
   .primary {
-    color: var(--auro-color-icon-primary-on-light);
+    color: var(--ds-color-icon-primary-default, $ds-color-icon-primary-default);
   }
 
   .emphasis {
-    color: var(--auro-color-icon-emphasis-on-light);
+    color: var(--ds-color-icon-emphasis-default, $ds-color-icon-emphasis-default);
   }
 
   .accent {
-    color: var(--auro-color-icon-accent-on-light);
+    color: var(--ds-color-icon-accent-default, $ds-color-icon-accent-default);
   }
 
   .disabled {
-    color: var(--auro-color-icon-disabled-on-light);
+    color: var(--ds-color-icon-disabled-default, $ds-color-icon-disabled-default);
   }
 
   .error {
-    color: var(--auro-color-alert-error-on-light);
+    color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
   }
 
   .success {
-    color: var(--auro-color-alert-success-on-light);
+    color: var(--ds-color-alert-success-default, $ds-color-alert-success-default);
   }
 
   .advisory {
-    color: var(--auro-color-alert-advisory-on-light);
+    color: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
   }
 
   .warning {
-    color: var(--auro-color-alert-warning-on-light);
+    color: var(--ds-color-alert-warning-default, $ds-color-alert-warning-default);
   }
 }
 
 :host([onDark]) {
 
   .logo {
-    color: var(--auro-color-base-white);
+    color: var(--ds-color-base-white, $ds-color-base-white);
   }
 
   .primary {
-    color: var(--auro-color-icon-primary-on-dark);
+    color: var(--ds-color-icon-primary-inverse, $ds-color-icon-primary-inverse);
   }
 
   .emphasis {
-    color: var(--auro-color-icon-emphasis-on-dark);
+    color: var(--ds-color-icon-emphasis-inverse, $ds-color-icon-emphasis-inverse);
   }
 
   .accent {
-    color: var(--auro-color-icon-accent-on-dark);
+    color: var(--ds-color-icon-accent-inverse, $ds-color-brand-breeze-300);
   }
 
   .disabled {
-    color: var(--auro-color-icon-disabled-on-dark);
+    color: var(--ds-color-icon-disabled-inverse, $ds-color-base-white-opacity-40);
   }
 
   .error {
-    color: var(--auro-color-alert-error-on-dark);
+    color: var(--ds-color-alert-error-inverse, $ds-color-state-error-100);
   }
 
   .success {
-    color: var(--auro-color-alert-success-on-dark);
+    color: var(--ds-color-alert-success-inverse, $ds-color-state-success-100);
   }
 
   .advisory {
-    color: var(--auro-color-alert-advisory-on-dark);
+    color: var(--ds-color-alert-advisory-inverse, $ds-color-alert-advisory-default);
   }
 }
 
 :host([customSize]) {
+  // listing both legacy and newer tokens to support
+  // transition to new naming spec.
+  //
+  // TO DO: Remove --auro token when confident
+  // that new spec has been adopted
   --auro-size-lg: 100%;
+  --ds-size-300: 100%;
 
   width: 100%;
   height: 100%;
@@ -89,6 +98,6 @@
   align-items: flex-start;
 
   svg {
-    margin: 0 var(--auro-size-xxs);
+    margin: 0 var(--ds-size-50, $ds-size-50);
   }
 }
