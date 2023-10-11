@@ -24,13 +24,15 @@
     "lit": "^2.7.2"
   },
   "peerDependencies": {
-    "@alaskaairux/design-tokens": "^3.13.0",
-    "@aurodesignsystem/webcorestylesheets": "^4.3.0"
+    "@alaskaairux/design-tokens": "^3.15.5",
+    "@aurodesignsystem/design-tokens": "^4.1.1",
+    "@aurodesignsystem/webcorestylesheets": "^5.0.3"
   },
   "devDependencies": {
-    "@alaskaairux/design-tokens": "^3.13.0",
-    "@alaskaairux/icons": "^4.25.0",
-    "@aurodesignsystem/webcorestylesheets": "^4.3.0",
+    "@alaskaairux/design-tokens": "^3.15.5",
+    "@alaskaairux/icons": "^4.28.2",
+    "@aurodesignsystem/design-tokens": "^4.1.1",
+    "@aurodesignsystem/webcorestylesheets": "^5.0.4",
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@open-wc/testing": "^3.1.8",
