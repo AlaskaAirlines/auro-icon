@@ -24,13 +24,11 @@
     "lit": "^3.0.0"
   },
   "peerDependencies": {
-    "@alaskaairux/design-tokens": "^3.15.5",
     "@aurodesignsystem/design-tokens": "^4.1.1",
     "@aurodesignsystem/webcorestylesheets": "^5.0.3"
   },
   "devDependencies": {
-    "@alaskaairux/design-tokens": "^3.15.5",
-    "@alaskaairux/icons": "^4.28.2",
+    "@alaskaairux/icons": "^4.29.2",
     "@aurodesignsystem/design-tokens": "^4.1.1",
     "@aurodesignsystem/webcorestylesheets": "^5.0.4",
     "@commitlint/cli": "^17.7.2",
@@ -40,8 +38,8 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^11.0.0",
-    "@web/dev-server": "^0.3.2",
-    "@web/test-runner": "^0.17.1",
+    "@web/dev-server": "^0.3.3",
+    "@web/test-runner": "^0.17.2",
     "autoprefixer": "^10.4.16",
     "compression": "^1.7.4",
     "concat": "^1.0.3",
