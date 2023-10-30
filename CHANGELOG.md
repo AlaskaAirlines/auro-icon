@@ -1,5 +1,20 @@
 # Semantic Release Automated Changelog
 
+# [4.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.0.2...v4.1.0) (2023-10-30)
+
+
+### Features
+
+* upgrade to supoprt new Auro design tokens [#94](https://github.com/AlaskaAirlines/auro-icon/issues/94) ([16b3e34](https://github.com/AlaskaAirlines/auro-icon/commit/16b3e34cd3efefd6627856b6762b394f87c4897f))
+
+
+### Performance Improvements
+
+* add types to build script ([8d3151f](https://github.com/AlaskaAirlines/auro-icon/commit/8d3151f1142f3a1404dd3515924d1397ab534152))
+* remove legacy token dependnecy ([5baa678](https://github.com/AlaskaAirlines/auro-icon/commit/5baa678533c04fafe3c24f70649811f30ec4addb))
+* update default URI reference ([16d5634](https://github.com/AlaskaAirlines/auro-icon/commit/16d5634f0032ef84a154ab3fdc9429b55f3f6853))
+* update dependencies ([3407545](https://github.com/AlaskaAirlines/auro-icon/commit/3407545ad5e68882c25bbd183997739cc7e1dd65))
+
 ## [4.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v4.0.1...v4.0.2) (2023-06-05)
 
 
