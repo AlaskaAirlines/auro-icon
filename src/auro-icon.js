@@ -38,7 +38,7 @@ export class AuroIcon extends BaseIcon {
   constructor() {
     super();
 
-    this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
+    this.uri = 'https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist';
 
     this.privateDefaults();
   }
