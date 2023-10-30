@@ -49,7 +49,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `onDark`         | `onDark`         | `Boolean` | false                                            | Set value for on-dark version of auro-icon       |
 | `primary`        | `primary`        | `Boolean` |                                                  | Sets the icon to use the baseline primary icon style. |
 | `success`        | `success`        | `Boolean` |                                                  | Sets the icon to use the success style.          |
-| `uri`            | `uri`            | `String`  | "https://unpkg.com/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
+| `uri`            | `uri`            | `String`  | "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
 | `warning`        | `warning`        | `Boolean` |                                                  | Sets the icon to use the warning style.          |
 
 ## Slots
