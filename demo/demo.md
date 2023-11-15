@@ -12,7 +12,7 @@ The following is an example of the default use of the `auro-icon` element.
   <auro-icon category="interface" name="pin-trip"></auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -29,7 +29,7 @@ By default `aria-hidden` on the SVG inside the `auro-icon` element is set to `tr
   <auro-icon category="interface" name="pin-trip" ariaHidden="false"></auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -46,7 +46,7 @@ If the description you intend to be read back is different than the content in t
   <auro-icon category="interface" name="pin-trip">Your trip starts here!</auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -65,7 +65,7 @@ In situations where the icon is to be listed with a descriptive label, simply us
   <auro-icon label category="in-flight" name="wifi">Your flight is enabled with super fast Wi-Fi</auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -92,7 +92,7 @@ See the [API](/components/auro/icon/api) for details and use cases.
   <auro-icon category="interface" name="pin-trip" advisory></auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -119,7 +119,7 @@ All compatible with `ondark` attribute.
   <auro-icon ondark category="interface" name="pin-trip" advisory></auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -144,7 +144,7 @@ The `auro-icon` by default apply the `primary` selector for color application. T
   <auro-icon category="interface" name="pin-trip" customColor style="color: orange;"></auro-icon> applies the color from the style attribute
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -163,7 +163,7 @@ Auro icon's by default are set to the value of the `--auro-size-lg` token. To cu
   <auro-icon style="width: 30rem" category="interface" name="pin-trip" success customSize></auro-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -196,7 +196,7 @@ This will create a new custom element that you can use in your HTML that will fu
   <custom-icon category="interface" name="pin-trip"></custom-icon>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
