@@ -14,6 +14,7 @@
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/auro-icon"
   },
+  "type": "module",
   "main": "index.js",
   "license": "Apache-2.0",
   "engines": {
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@alaskaairux/icons": "^4.29.2",
+    "@aurodesignsystem/auro-library": "^2.2.6",
     "@aurodesignsystem/design-tokens": "^4.1.1",
     "@aurodesignsystem/webcorestylesheets": "^5.0.4",
     "@commitlint/cli": "^18.2.0",
@@ -100,7 +102,7 @@
     "build:sass:dev": "npm-run-all build:sass:component postCss:component sass:render",
     "build:sass:demo": "sass ./demo/sass/ --output ./demo/css/",
     "build:sass:component": "sass --no-source-map src:src",
-    "postCss:component": "node ./scripts/postCss.js",
+    "postCss:component": "node ./scripts/postCss.mjs",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "prepare": "husky install",
     "types": "tsc"
