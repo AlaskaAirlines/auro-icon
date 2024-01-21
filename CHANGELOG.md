@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [4.2.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.1.0...v4.2.0) (2024-01-21)
+
+
+### Features
+
+* add suport for SSR projects [#98](https://github.com/AlaskaAirlines/auro-icon/issues/98) ([7e2b715](https://github.com/AlaskaAirlines/auro-icon/commit/7e2b715987112d50599677d94de1e1b87128c69c))
+
+
+### Performance Improvements
+
+* update node policy ([bdbf87b](https://github.com/AlaskaAirlines/auro-icon/commit/bdbf87b8b8578e16189fcba6bbbef0a7a7c40933))
+
 # [4.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.0.2...v4.1.0) (2023-10-30)
 
 
