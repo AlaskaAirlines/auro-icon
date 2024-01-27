@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.0...v4.2.1) (2024-01-27)
+
+
+### Performance Improvements
+
+* update index per SSR support ([aaeadc6](https://github.com/AlaskaAirlines/auro-icon/commit/aaeadc6ab010979923bc1f730156dd7b1ea22e95))
+
 # [4.2.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.1.0...v4.2.0) (2024-01-21)
 
 
