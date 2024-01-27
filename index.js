@@ -1,4 +1,4 @@
-import { AuroIcon } from "./src/auro-icon";
+import { AuroIcon } from "./src/auro-icon.js";
 
 /**
  * Register Custom Element.
