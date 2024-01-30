@@ -8,14 +8,14 @@ import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import BaseIcon from "./baseIcon";
 
-import as400 from '@alaskaairux/icons/dist/restricted/AS-400_es6.js';
-import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
-import as200 from '@alaskaairux/icons/dist/restricted/AS-200_es6.js';
-import as100 from '@alaskaairux/icons/dist/restricted/AS-100_es6.js';
-import official400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400_es6.js';
-import official300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
-import official200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.js';
-import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
+import as400 from '@aurodesignsystem/icons/dist/restricted/AS-400_es6.js';
+import as300 from '@aurodesignsystem/icons/dist/restricted/AS-300_es6.js';
+import as200 from '@aurodesignsystem/icons/dist/restricted/AS-200_es6.js';
+import as100 from '@aurodesignsystem/icons/dist/restricted/AS-100_es6.js';
+import official400 from '@aurodesignsystem/icons/dist/restricted/AS-tagline-400_es6.js';
+import official300 from '@aurodesignsystem/icons/dist/restricted/AS-tagline-300_es6.js';
+import official200 from '@aurodesignsystem/icons/dist/restricted/AS-tagline-200_es6.js';
+import official100 from '@aurodesignsystem/icons/dist/restricted/AS-tagline-100_es6.js';
 
 // Import touch detection lib
 import styleCss from "./alaskaStyle-css.js";
@@ -41,7 +41,7 @@ class AuroAlaska extends BaseIcon {
    * @returns {void}
    */
   privateDefaults() {
-    this.uri = 'https://unpkg.com/@alaskaairux/icons@latest/dist';
+    this.uri = 'https://unpkg.com/@aurodesignsystem/icons@latest/dist';
     this.sm = 107;
     this.md = 191;
     this.lg = 527;
