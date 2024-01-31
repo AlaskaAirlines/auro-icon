@@ -10,12 +10,6 @@
 // Support for auroElement styles
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 
-// Legacy Sass variables need to be loaded to support variables within
-// @alaskaairux/icons v4.28.2
-//
-// TODO: This legacy token reference can be removed once auro icons has
-// been updated to support the new token spec.
-// @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables.scss";
 @import "./../node_modules/@alaskaairux/icons/dist/icons";
 
 :host {
