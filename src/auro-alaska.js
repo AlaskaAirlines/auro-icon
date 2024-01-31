@@ -41,7 +41,7 @@ class AuroAlaska extends BaseIcon {
    * @returns {void}
    */
   privateDefaults() {
-    this.uri = 'https://unpkg.com/@aurodesignsystem/icons@latest/dist';
+    this.uri = 'https://cdn.jsdelivr.net/npm/@aurodesignsystem/icons@latest/dist';
     this.sm = 107;
     this.md = 191;
     this.lg = 527;
