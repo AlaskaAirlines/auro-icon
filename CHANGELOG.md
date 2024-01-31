@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [4.2.2](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.1...v4.2.2) (2024-01-31)
+
+
+### Bug Fixes
+
+* **icons:** update link namespace for icons repo ([7f2407d](https://github.com/AlaskaAirlines/auro-icon/commit/7f2407d9a486f8dc375d75e66596f53bb4714b96))
+
+
+### Performance Improvements
+
+* alaskaairux ref updates ([580b1f9](https://github.com/AlaskaAirlines/auro-icon/commit/580b1f9eb4eff5205ae74693ecdf81df23585e7d))
+* **cdn:** update links from unpkg to jsdelivr ([03569a2](https://github.com/AlaskaAirlines/auro-icon/commit/03569a2fe1c6eb16c961bea5a976ee8d9fd81b3e))
+
 ## [4.2.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.0...v4.2.1) (2024-01-27)
 
 
