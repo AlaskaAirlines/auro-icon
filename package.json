@@ -105,7 +105,8 @@
     "postCss:component": "node ./scripts/postCss.mjs",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "prepare": "husky install",
-    "types": "tsc"
+    "types": "tsc",
+    "postversion": "npm-run-all build:api build:docs"
   },
   "release": {
     "branch": "master",
@@ -124,8 +125,12 @@
         "@semantic-release/git",
         {
           "assets": [
+            "./package.json",
             "./CHANGELOG.md",
-            "package.json"
+            "./README.md",
+            "./docs/api.md",
+            "./demo/demo.md",
+            "./demo/apiExamples.md"
           ]
         }
       ],
