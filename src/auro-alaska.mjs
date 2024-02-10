@@ -6,16 +6,16 @@
 
 import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
-import BaseIcon from "./baseIcon";
+import BaseIcon from "./baseIcon.mjs";
 
-import as400 from '@alaskaairux/icons/dist/restricted/AS-400_es6.js';
-import as300 from '@alaskaairux/icons/dist/restricted/AS-300_es6.js';
-import as200 from '@alaskaairux/icons/dist/restricted/AS-200_es6.js';
-import as100 from '@alaskaairux/icons/dist/restricted/AS-100_es6.js';
-import official400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400_es6.js';
-import official300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300_es6.js';
-import official200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200_es6.js';
-import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100_es6.js';
+import as400 from '@alaskaairux/icons/dist/restricted/AS-400.mjs';
+import as300 from '@alaskaairux/icons/dist/restricted/AS-300.mjs';
+import as200 from '@alaskaairux/icons/dist/restricted/AS-200.mjs';
+import as100 from '@alaskaairux/icons/dist/restricted/AS-100.mjs';
+import official400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400.mjs';
+import official300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300.mjs';
+import official200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200.mjs';
+import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100.mjs';
 
 // Import touch detection lib
 import styleCss from "./alaskaStyle-css.js";

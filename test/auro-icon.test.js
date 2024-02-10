@@ -8,8 +8,8 @@
 /* eslint-disable no-undef */
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import '../src/auro-icon.js';
-import '../src/auro-alaska.js';
+import '../src/auro-icon.mjs';
+import '../src/auro-alaska.mjs';
 
 const fetchStub = sinon.stub(window, 'fetch');
 

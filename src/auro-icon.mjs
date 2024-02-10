@@ -8,7 +8,7 @@
 import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import BaseIcon from "./baseIcon";
+import BaseIcon from "./baseIcon.mjs";
 import styleCss from "./iconStyle-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
