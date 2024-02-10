@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [4.2.3](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.2...v4.2.3) (2024-02-10)
+
+
+### Bug Fixes
+
+* remove incorrect script request ([a48d94d](https://github.com/AlaskaAirlines/auro-icon/commit/a48d94d95f58ecc05b3cc664a1fe8d0a74da2dff))
+
+
+### Performance Improvements
+
+* update to support ES6 dependencies ([357832d](https://github.com/AlaskaAirlines/auro-icon/commit/357832d1c5a5b9b14784b5a35f33a2b2e5ee0e4a))
+
 ## [4.2.2](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.1...v4.2.2) (2024-01-31)
 
 
