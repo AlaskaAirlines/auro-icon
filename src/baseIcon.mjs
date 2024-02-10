@@ -5,9 +5,9 @@
 // ---------------------------------------------------------------------
 
 import { css } from "lit";
-import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement';
+import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs';
 import error from '@alaskaairux/icons/dist/icons/alert/error.mjs';
-import cacheFetch from './cacheFetch';
+import cacheFetch from './cacheFetch.js';
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
