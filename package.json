@@ -106,7 +106,7 @@
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "prepare": "husky install",
     "types": "tsc",
-    "postversion": "npm-run-all build:api build:docs"
+    "postversion": "npm-run-all build:api"
   },
   "release": {
     "branch": "master",
