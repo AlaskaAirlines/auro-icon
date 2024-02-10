@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [4.2.5](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.4...v4.2.5) (2024-02-10)
+
+
+### Performance Improvements
+
+* update deps for updated ref to auroElement ([38e08f9](https://github.com/AlaskaAirlines/auro-icon/commit/38e08f9ba011f2758691a5e1d82a13969a3a2a87))
+* update refs to support SSR ([bfd4f6d](https://github.com/AlaskaAirlines/auro-icon/commit/bfd4f6d4a5c3f6ae5ed4df44361fea32b4e45e32))
+
 ## [4.2.4](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.3...v4.2.4) (2024-02-10)
 
 
