@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.6](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.5...v4.2.6) (2024-02-13)
+
+
+### Performance Improvements
+
+* update auro dependencies ([ace573d](https://github.com/AlaskaAirlines/auro-icon/commit/ace573d9aeb07d2938b967889396488f212c4fe0))
+
 ## [4.2.5](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.4...v4.2.5) (2024-02-10)
 
 
