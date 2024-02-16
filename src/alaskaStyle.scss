@@ -13,12 +13,7 @@
 
 :host {
   display: inline-block;
-  // listing both legacy and newer tokens to support
-  // transition to new naming spec.
-  //
-  // TO DO: Remove --auro token when confident
-  // that new spec has been adopted
-  --auro-size-lg: 100%;
+  
   --ds-size-300: 100%;
 
   width: 100%;
