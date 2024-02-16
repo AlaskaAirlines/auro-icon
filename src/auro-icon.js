@@ -1,14 +1,14 @@
-/* eslint-disable one-var */
-/* eslint-disable no-console */
 // Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable one-var, no-console, jsdoc/require-description-complete-sentence */
+
 import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
-import BaseIcon from "./baseIcon.mjs";
+import BaseIcon from "./baseIcon.js";
 import styleCss from "./iconStyle-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -44,7 +44,8 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
-   * @private internal defaults
+   * Internal Defaults.
+   * @private
    * @returns {void}
    */
   /* eslint-disable max-statements */
@@ -141,12 +142,12 @@ export class AuroIcon extends BaseIcon {
       'advisory': this.advisory,
       'warning': this.warning,
       'label': this.label
-    }
+    };
 
     const a11y = {
       'labelContainer': true,
       'util_displayHiddenVisually': !this.label
-    }
+    };
 
     return html`
       <div
