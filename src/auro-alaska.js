@@ -4,9 +4,11 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable jsdoc/require-description-complete-sentence */
+
 import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
-import BaseIcon from "./baseIcon.mjs";
+import BaseIcon from "./baseIcon.js";
 
 import as400 from '@alaskaairux/icons/dist/restricted/AS-400.mjs';
 import as300 from '@alaskaairux/icons/dist/restricted/AS-300.mjs';
@@ -37,7 +39,8 @@ class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * @private internal defaults
+   * Internal defaults.
+   * @private
    * @returns {void}
    */
   privateDefaults() {
@@ -69,9 +72,10 @@ class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * @private async function to decide which logo to use
-   * @param {number} iconWidth size of parent icon is in
-   * @returns {object} SVG to be appended to DOM
+   * Async function to decide which logo to use.
+   * @private
+   * @param {number} iconWidth - Size of parent icon is in.
+   * @returns {void}
    */
   alaskaLogoDef(iconWidth) {
     if (this.alaska) {
@@ -88,9 +92,10 @@ class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * @private async function to decide which logo to use
-   * @param {number} iconWidth size of parent icon is in
-   * @returns {object} SVG to be appended to DOM
+   * Async function to decide which logo to use.
+   * @private
+   * @param {number} iconWidth - Size of parent icon is in.
+   * @returns {void}
    */
   alaskaOfficialDef(iconWidth) {
     if (this.official) {
@@ -136,7 +141,7 @@ class AuroAlaska extends BaseIcon {
     const classes = {
       'icon': true,
       'logo': this.alaska || this.official,
-    }
+    };
 
     return html`
       <div class="${classMap(classes)}">

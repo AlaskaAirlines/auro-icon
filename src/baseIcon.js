@@ -49,10 +49,11 @@ export default class BaseIcon extends AuroElement {
   }
 
   /**
-   * @private async function to fetch requested icon from npm CDN
-   * @param {string} category icon category
-   * @param {string} name icon name
-   * @returns {dom} DOM ready HTML to be appended
+   * Async function to fetch requested icon from npm CDN.
+   * @private
+   * @param {string} category - Icon category.
+   * @param {string} name - Icon name.
+   * @returns {SVGElement} DOM - Ready HTML to be appended.
    */
   async fetchIcon(category, name) {
     let iconHTML = '';

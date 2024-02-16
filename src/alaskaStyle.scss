@@ -9,6 +9,8 @@
 // Support for auroElement styles
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 
+/* stylelint-disable rule-empty-line-before, scss/comment-no-empty, scss/double-slash-comment-empty-line-before */
+
 :host {
   display: inline-block;
   // listing both legacy and newer tokens to support
