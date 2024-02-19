@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [4.2.7](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.6...v4.2.7) (2024-02-19)
+
+
+### Bug Fixes
+
+* **release:** fix branch name for release ([70de136](https://github.com/AlaskaAirlines/auro-icon/commit/70de1368432d469f1ed08149930c15acd1dd3c43))
+
+
+### Performance Improvements
+
+* **demo:** implement modern Auro demo system [#101](https://github.com/AlaskaAirlines/auro-icon/issues/101) ([1f2265d](https://github.com/AlaskaAirlines/auro-icon/commit/1f2265dbda28ef607e2e6b9e94b31baadf0b1066))
+* **deps:** udpate dependencies ([58be48d](https://github.com/AlaskaAirlines/auro-icon/commit/58be48d1370a1edf9dc3957ce685ac6cbb4ae2c9))
+* **linter:** update code to fix linting errors ([7718e11](https://github.com/AlaskaAirlines/auro-icon/commit/7718e11f2f951230a0b6d937a0c99cea9776bda0))
+
 ## [4.2.6](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.5...v4.2.6) (2024-02-13)
 
 
