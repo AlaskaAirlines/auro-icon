@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.8](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.7...v4.2.8) (2024-02-19)
+
+
+### Performance Improvements
+
+* **docs:** restore alaska.md file ([d657625](https://github.com/AlaskaAirlines/auro-icon/commit/d6576259e5131e6ff02b723a0bd942167ab62959))
+
 ## [4.2.7](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.6...v4.2.7) (2024-02-19)
 
 
