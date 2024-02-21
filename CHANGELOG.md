@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.2.9](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.8...v4.2.9) (2024-02-21)
+
+
+### Bug Fixes
+
+* **bundle:** add auro-alaska.js to the bundler [#105](https://github.com/AlaskaAirlines/auro-icon/issues/105) ([53e4ef0](https://github.com/AlaskaAirlines/auro-icon/commit/53e4ef0315f9ee6fd7b30780e197851a00e79e59))
+
 ## [4.2.8](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.7...v4.2.8) (2024-02-19)
 
 
