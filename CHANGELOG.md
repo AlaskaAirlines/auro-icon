@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.3.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.9...v4.3.0) (2024-02-26)
+
+
+### Features
+
+* **part:** add CSS part for styling the SVG file ([1509208](https://github.com/AlaskaAirlines/auro-icon/commit/1509208800045ee18b2acffc20eb1d0ba5c5935d))
+
 ## [4.2.9](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.8...v4.2.9) (2024-02-21)
 
 
