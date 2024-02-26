@@ -155,7 +155,7 @@ export class AuroIcon extends BaseIcon {
         title="${ifDefined(this.title ? this.title : undefined)}"
         >
 
-        <span aria-hidden="${ifDefined(this.ariaHidden ? this.ariaHidden : true)}">
+        <span aria-hidden="${ifDefined(this.ariaHidden ? this.ariaHidden : true)}" part="svg">
           ${this.svg}
         </span>
 
