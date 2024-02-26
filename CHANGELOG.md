@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.3.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.0...v4.3.1) (2024-02-26)
+
+
+### Performance Improvements
+
+* **svg:** restore 100% overwrite on --auro-size-lg ([9b21217](https://github.com/AlaskaAirlines/auro-icon/commit/9b21217670e92850358d0879820563d203192bd0))
+
 # [4.3.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.2.9...v4.3.0) (2024-02-26)
 
 
