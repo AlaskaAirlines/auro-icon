@@ -10,7 +10,27 @@
 
 /* stylelint-disable rule-empty-line-before, scss/comment-no-empty */
 
+$ds-color-icon-error-default: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+$ds-color-icon-success-default: var(--ds-color-alert-success-default, $ds-color-alert-success-default);
+$ds-color-icon-advisory-default: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
+$ds-color-icon-warning-default: var(--ds-color-alert-warning-default, $ds-color-alert-warning-default);
+
+$ds-color-icon-logo-inverse: var(--ds-color-base-white, $ds-color-base-white);
+$ds-color-icon-error-inverse: var(--ds-color-alert-error-inverse, $ds-color-alert-error-inverse);
+$ds-color-icon-success-inverse: var(--ds-color-alert-success-inverse, $ds-color-alert-success-inverse);
+$ds-color-icon-advisory-inverse: var(--ds-color-alert-advisory-inverse, $ds-color-alert-advisory-inverse);
+
 :host {
+  --ds-color-icon-error-default: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+  --ds-color-icon-success-default: var(--ds-color-alert-success-default, $ds-color-alert-success-default);
+  --ds-color-icon-advisory-default: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
+  --ds-color-icon-warning-default: var(--ds-color-alert-warning-default, $ds-color-alert-warning-default);
+
+  --ds-color-icon-logo-inverse: var(--ds-color-base-white, $ds-color-base-white);
+  --ds-color-icon-error-inverse: var(--ds-color-alert-error-inverse, $ds-color-alert-error-inverse);
+  --ds-color-icon-success-inverse: var(--ds-color-alert-success-inverse, $ds-color-alert-success-inverse);
+  --ds-color-icon-advisory-inverse: var(--ds-color-alert-advisory-inverse, $ds-color-alert-advisory-inverse);
+
   display: inline-block;
   line-height: unset;
 
@@ -31,26 +51,25 @@
   }
 
   .error {
-    color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+    color: var(--ds-color-icon-error-default, $ds-color-icon-error-default);
   }
 
   .success {
-    color: var(--ds-color-alert-success-default, $ds-color-alert-success-default);
+    color: var(--ds-color-icon-success-default, $ds-color-icon-success-default);
   }
 
   .advisory {
-    color: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
+    color: var(--ds-color-icon-advisory-default, $ds-color-icon-advisory-default);
   }
 
   .warning {
-    color: var(--ds-color-alert-warning-default, $ds-color-alert-warning-default);
+    color: var(--ds-color-icon-warning-default, $ds-color-icon-warning-default);
   }
 }
 
 :host([onDark]) {
-
   .logo {
-    color: var(--ds-color-base-white, $ds-color-base-white);
+    color: var(--ds-color-icon-logo-inverse, $ds-color-icon-logo-inverse);
   }
 
   .primary {
@@ -70,15 +89,15 @@
   }
 
   .error {
-    color: var(--ds-color-alert-error-inverse, $ds-color-state-error-100);
+    color: var(--ds-color-icon-error-inverse, $ds-color-icon-error-inverse);
   }
 
   .success {
-    color: var(--ds-color-alert-success-inverse, $ds-color-state-success-100);
+    color: var(--ds-color-icon-success-inverse, $ds-color-icon-success-inverse);
   }
 
   .advisory {
-    color: var(--ds-color-alert-advisory-inverse, $ds-color-alert-advisory-default);
+    color: var(--ds-color-icon-advisory-inverse, $ds-color-icon-advisory-inverse);
   }
 }
 

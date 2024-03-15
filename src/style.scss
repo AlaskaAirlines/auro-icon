@@ -14,13 +14,17 @@
 
 /* stylelint-disable value-keyword-case, order/properties-order */
 
+$ds-color-icon-logo-default: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
+
 :host {
+  --ds-color-icon-logo-default: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
+
   color: currentColor;
   vertical-align: middle;
   line-height: 1;
 
   .logo {
-    color: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
+    color: var(--ds-color-icon-logo-default, $ds-color-icon-logo-default);
   }
 }
 
