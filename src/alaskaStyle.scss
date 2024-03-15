@@ -11,9 +11,12 @@
 
 /* stylelint-disable rule-empty-line-before, scss/comment-no-empty, scss/double-slash-comment-empty-line-before */
 
+$ds-color-icon-logo-inverse: var(--ds-color-base-white, $ds-color-base-white);
+
 :host {
   display: inline-block;
   
+  --ds-color-icon-logo-inverse: var(--ds-color-base-white, $ds-color-base-white);
   --ds-size-300: 100%;
 
   width: 100%;
@@ -21,8 +24,7 @@
 }
 
 :host([onDark]) {
-
   .logo {
-    color: var(--ds-color-base-white, $ds-color-base-white);
+    color: var(--ds-color-icon-logo-inverse, $ds-color-icon-logo-inverse);
   }
 }
