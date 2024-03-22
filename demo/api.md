@@ -16,7 +16,6 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | Property         | Attribute        | Type      | Default                                          | Description                                      |
 |------------------|------------------|-----------|--------------------------------------------------|--------------------------------------------------|
 | [accent](#accent)         | `accent`         | `Boolean` |                                                  | Sets the icon to use the accent style.           |
-| [advisory](#advisory)       | `advisory`       | `Boolean` |                                                  | Sets the icon to use the advisory style.         |
 | [ariaHidden](#ariaHidden)     | `ariaHidden`     | `String`  |                                                  | Set aria-hidden value. Default is `true`. Option is `false`. |
 | [category](#category)       | `category`       | `String`  |                                                  | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
 | [customColor](#customColor)    | `customColor`    | `Boolean` |                                                  | Removes primary selector.                        |
@@ -26,13 +25,23 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | [hidden](#hidden)         | `hidden`         | `Boolean` |                                                  | If present, the component will be hidden both visually and from screen readers |
 | [hiddenAudible](#hiddenAudible)  | `hiddenAudible`  | `Boolean` |                                                  | If present, the component will be hidden from screen readers, but seen visually |
 | [hiddenVisually](#hiddenVisually) | `hiddenVisually` | `Boolean` |                                                  | If present, the component will be hidden visually, but still read by screen readers |
+| [info](#info)           | `info`           | `Boolean` |                                                  | Sets the icon to use the info style.             |
 | [label](#label)          | `label`          | `Boolean` |                                                  | Exposes content in slot as icon label.           |
 | [name](#name)           | `name`           | `String`  |                                                  | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage |
 | [onDark](#onDark)         | `onDark`         | `Boolean` | false                                            | Set value for on-dark version of auro-icon       |
-| [primary](#primary)        | `primary`        | `Boolean` |                                                  | Sets the icon to use the baseline primary icon style. |
+| [primary](#primary)        | `primary`        | `Boolean` |                                                  | DEPRECATED: Sets the icon to use the baseline primary icon style. |
+| [secondary](#secondary)      | `secondary`      | `Boolean` |                                                  | Sets the icon to use the secondary style.        |
+| [subtle](#subtle)         | `subtle`         | `Boolean` |                                                  | Sets the icon to use the subtle style.           |
 | [success](#success)        | `success`        | `Boolean` |                                                  | Sets the icon to use the success style.          |
+| [tertiary](#tertiary)       | `tertiary`       | `Boolean` |                                                  | Sets the icon to use the tertiary style.         |
 | [uri](#uri)            | `uri`            | `String`  | "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
 | [warning](#warning)        | `warning`        | `Boolean` |                                                  | Sets the icon to use the warning style.          |
+
+## Methods
+
+| Method                | Type                                      | Description                                      |
+|-----------------------|-------------------------------------------|--------------------------------------------------|
+| [handleCustomTagName](#handleCustomTagName) | `(name: string, elem: HTMLElement): void` | If component is registered as a custom name,<br />this function will add an attribute to the element<br />with the default name. This is so that other parent<br />components can still this the element.<br /><br />**name**: The default tag name.<br />**elem**: The element to add the attribute to. |
 
 ## Slots
 
@@ -92,13 +101,18 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/visualState.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/visualState.html -->
-  <auro-icon category="interface" name="pin-trip"></auro-icon>
-  <auro-icon category="interface" name="pin-trip" emphasis></auro-icon>
-  <auro-icon category="interface" name="pin-trip" accent></auro-icon>
-  <auro-icon category="interface" name="pin-trip" disabled></auro-icon>
-  <auro-icon category="interface" name="pin-trip" error></auro-icon>
-  <auro-icon category="interface" name="pin-trip" success></auro-icon>
-  <auro-icon category="interface" name="pin-trip" advisory></auro-icon>
+  <auro-icon category="logos" name="tail-AS"></auro-icon> default<br />
+  <auro-icon category="interface" name="pin-trip"></auro-icon> default<br />
+  <auro-icon category="interface" name="pin-trip" accent></auro-icon> accent<br />
+  <auro-icon category="interface" name="pin-trip" disabled></auro-icon> disabled<br />
+  <auro-icon category="interface" name="pin-trip" emphasis></auro-icon> emphasis<br />
+  <auro-icon category="interface" name="pin-trip" error></auro-icon> error<br />
+  <auro-icon category="interface" name="pin-trip" info></auro-icon> info<br />
+  <auro-icon category="interface" name="pin-trip" secondary></auro-icon> secondary<br />
+  <auro-icon category="interface" name="pin-trip" subtle></auro-icon> subtle<br />
+  <auro-icon category="interface" name="pin-trip" success></auro-icon> success<br />
+  <auro-icon category="interface" name="pin-trip" tertiary></auro-icon>tertiary<br />
+  <auro-icon category="interface" name="pin-trip" warning></auro-icon> warning
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -107,31 +121,40 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 <!-- The below code snippet is automatically added from ./../../apiExamples/visualState.html -->
 
 ```html
-<auro-icon category="interface" name="pin-trip"></auro-icon>
-<auro-icon category="interface" name="pin-trip" emphasis></auro-icon>
-<auro-icon category="interface" name="pin-trip" accent></auro-icon>
-<auro-icon category="interface" name="pin-trip" disabled></auro-icon>
-<auro-icon category="interface" name="pin-trip" error></auro-icon>
-<auro-icon category="interface" name="pin-trip" success></auro-icon>
-<auro-icon category="interface" name="pin-trip" advisory></auro-icon>
+<auro-icon category="logos" name="tail-AS"></auro-icon> default<br />
+<auro-icon category="interface" name="pin-trip"></auro-icon> default<br />
+<auro-icon category="interface" name="pin-trip" accent></auro-icon> accent<br />
+<auro-icon category="interface" name="pin-trip" disabled></auro-icon> disabled<br />
+<auro-icon category="interface" name="pin-trip" emphasis></auro-icon> emphasis<br />
+<auro-icon category="interface" name="pin-trip" error></auro-icon> error<br />
+<auro-icon category="interface" name="pin-trip" info></auro-icon> info<br />
+<auro-icon category="interface" name="pin-trip" secondary></auro-icon> secondary<br />
+<auro-icon category="interface" name="pin-trip" subtle></auro-icon> subtle<br />
+<auro-icon category="interface" name="pin-trip" success></auro-icon> success<br />
+<auro-icon category="interface" name="pin-trip" tertiary></auro-icon>tertiary<br />
+<auro-icon category="interface" name="pin-trip" warning></auro-icon> warning
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### ondark visual state
+#### onDark visual state
 
-All compatible with `ondark` attribute.
+All compatible with `onDark` attribute.
 
 <div class="exampleWrapper" style="background: repeating-linear-gradient(45deg, var(--ds-color-background-darkest, #00274a), var(--ds-color-background-darkest, #00274a) 10px, var(--ds-color-background-darker, #01426a) 10px, var(--ds-color-background-darker, #01426a) 20px);">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/onDark.html -->
-  <auro-icon ondark category="interface" name="pin-trip"></auro-icon>
-  <auro-icon ondark category="interface" name="pin-trip" emphasis></auro-icon>
-  <auro-icon ondark category="interface" name="pin-trip" accent></auro-icon>
-  <auro-icon ondark category="interface" name="pin-trip" disabled></auro-icon>
-  <auro-icon ondark category="interface" name="pin-trip" error></auro-icon>
-  <auro-icon ondark category="interface" name="pin-trip" success></auro-icon>
-  <auro-icon ondark category="interface" name="pin-trip" advisory></auro-icon>
+  <auro-icon category="interface" name="pin-trip" onDark>default</auro-icon> <span style="color: var(--ds-color-base-white)">default</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark accent></auro-icon> <span style="color: var(--ds-color-base-white)">accent</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark disabled></auro-icon> <span style="color: var(--ds-color-base-white)">disabled</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark emphasis></auro-icon> <span style="color: var(--ds-color-base-white)">emphasis</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark error></auro-icon> <span style="color: var(--ds-color-base-white)">error</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark info></auro-icon> <span style="color: var(--ds-color-base-white)">info</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark secondary></auro-icon> <span style="color: var(--ds-color-base-white)">secondary</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark subtle></auro-icon> <span style="color: var(--ds-color-base-white)">subtle</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark success></auro-icon> <span style="color: var(--ds-color-base-white)">success</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark tertiary></auro-icon><span style="color: var(--ds-color-base-white)">tertiary</span><br />
+  <auro-icon category="interface" name="pin-trip" onDark warning></auro-icon> <span style="color: var(--ds-color-base-white)">warning</span>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -140,13 +163,17 @@ All compatible with `ondark` attribute.
 <!-- The below code snippet is automatically added from ./../../apiExamples/onDark.html -->
 
 ```html
-<auro-icon ondark category="interface" name="pin-trip"></auro-icon>
-<auro-icon ondark category="interface" name="pin-trip" emphasis></auro-icon>
-<auro-icon ondark category="interface" name="pin-trip" accent></auro-icon>
-<auro-icon ondark category="interface" name="pin-trip" disabled></auro-icon>
-<auro-icon ondark category="interface" name="pin-trip" error></auro-icon>
-<auro-icon ondark category="interface" name="pin-trip" success></auro-icon>
-<auro-icon ondark category="interface" name="pin-trip" advisory></auro-icon>
+<auro-icon category="interface" name="pin-trip" onDark>default</auro-icon> <span style="color: var(--ds-color-base-white)">default</span><br />
+<auro-icon category="interface" name="pin-trip" onDark accent></auro-icon> <span style="color: var(--ds-color-base-white)">accent</span><br />
+<auro-icon category="interface" name="pin-trip" onDark disabled></auro-icon> <span style="color: var(--ds-color-base-white)">disabled</span><br />
+<auro-icon category="interface" name="pin-trip" onDark emphasis></auro-icon> <span style="color: var(--ds-color-base-white)">emphasis</span><br />
+<auro-icon category="interface" name="pin-trip" onDark error></auro-icon> <span style="color: var(--ds-color-base-white)">error</span><br />
+<auro-icon category="interface" name="pin-trip" onDark info></auro-icon> <span style="color: var(--ds-color-base-white)">info</span><br />
+<auro-icon category="interface" name="pin-trip" onDark secondary></auro-icon> <span style="color: var(--ds-color-base-white)">secondary</span><br />
+<auro-icon category="interface" name="pin-trip" onDark subtle></auro-icon> <span style="color: var(--ds-color-base-white)">subtle</span><br />
+<auro-icon category="interface" name="pin-trip" onDark success></auro-icon> <span style="color: var(--ds-color-base-white)">success</span><br />
+<auro-icon category="interface" name="pin-trip" onDark tertiary></auro-icon><span style="color: var(--ds-color-base-white)">tertiary</span><br />
+<auro-icon category="interface" name="pin-trip" onDark warning></auro-icon> <span style="color: var(--ds-color-base-white)">warning</span>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -196,3 +223,17 @@ Auro icon's by default are set to the value of the `--ds-size-300` token. To cus
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+## Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+
+```scss
+:host {
+  --ds-auro-icon-color: var(--ds-color-icon-primary-default, $ds-color-icon-primary-default);
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->
