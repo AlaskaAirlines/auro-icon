@@ -10,76 +10,85 @@
 
 /* stylelint-disable rule-empty-line-before, scss/comment-no-empty */
 
-:host {
-  display: inline-block;
-  line-height: unset;
-
-  .primary {
-    color: var(--ds-color-icon-primary-default, $ds-color-icon-primary-default);
-  }
-
-  .emphasis {
-    color: var(--ds-color-icon-emphasis-default, $ds-color-icon-emphasis-default);
-  }
-
-  .accent {
-    color: var(--ds-color-icon-accent-default, $ds-color-icon-accent-default);
-  }
-
-  .disabled {
-    color: var(--ds-color-icon-disabled-default, $ds-color-icon-disabled-default);
-  }
-
-  .error {
-    color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
-  }
-
-  .success {
-    color: var(--ds-color-alert-success-default, $ds-color-alert-success-default);
-  }
-
-  .advisory {
-    color: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
-  }
-
-  .warning {
-    color: var(--ds-color-alert-warning-default, $ds-color-alert-warning-default);
-  }
+:root {
+  // NEW TIER 2 TOKENS
+  --ds-color-icon-accent-inverse: var(--ds-color-brand-breeze-300, $ds-color-brand-breeze-300);
+  --ds-color-icon-disabled-inverse: var(--ds-color-base-white-opacity-40, $ds-color-base-white-opacity-40);
+  --ds-color-alert-error-inverse: var(--ds-color-state-error-100, $ds-color-state-error-100);
+  --ds-color-alert-success-inverse: var(--ds-color-state-success-100, $ds-color-state-success-100);
+  --ds-color-alert-advisory-inverse: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
 }
 
-:host([onDark]) {
+:host {
+  --ds-auro-icon-color: var(--ds-color-icon-primary-default, $ds-color-icon-primary-default);
 
-  .logo {
-    color: var(--ds-color-base-white, $ds-color-base-white);
-  }
+  display: inline-block;
+  color: var(--ds-auro-icon-color);
+  line-height: unset;
+}
 
-  .primary {
-    color: var(--ds-color-icon-primary-inverse, $ds-color-icon-primary-inverse);
-  }
+:host([customColor]) {
+  color: inherit;
+}
 
-  .emphasis {
-    color: var(--ds-color-icon-emphasis-inverse, $ds-color-icon-emphasis-inverse);
-  }
+:host(:not([onDark])[emphasis]) {
+  --ds-auro-icon-color: var(--ds-color-icon-emphasis-default, $ds-color-icon-emphasis-default);
+}
 
-  .accent {
-    color: var(--ds-color-icon-accent-inverse, $ds-color-brand-breeze-300);
-  }
+:host(:not([onDark])[accent]) {
+  --ds-auro-icon-color: var(--ds-color-icon-accent-default, $ds-color-icon-accent-default);
+}
 
-  .disabled {
-    color: var(--ds-color-icon-disabled-inverse, $ds-color-base-white-opacity-40);
-  }
+:host(:not([onDark])[disabled]) {
+  --ds-auro-icon-color: var(--ds-color-icon-disabled-default, $ds-color-icon-disabled-default);
+}
 
-  .error {
-    color: var(--ds-color-alert-error-inverse, $ds-color-state-error-100);
-  }
+:host(:not([onDark])[error]) {
+  --ds-auro-icon-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+}
 
-  .success {
-    color: var(--ds-color-alert-success-inverse, $ds-color-state-success-100);
-  }
+:host(:not([onDark])[success]) {
+  --ds-auro-icon-color: var(--ds-color-alert-success-default, $ds-color-alert-success-default);
+}
 
-  .advisory {
-    color: var(--ds-color-alert-advisory-inverse, $ds-color-alert-advisory-default);
-  }
+:host(:not([onDark])[advisory]) {
+  --ds-auro-icon-color: var(--ds-color-alert-advisory-default, $ds-color-alert-advisory-default);
+}
+
+:host(:not([onDark])[warning]) {
+  --ds-auro-icon-color: var(--ds-color-alert-warning-default, $ds-color-alert-warning-default);
+}
+
+:host([onDark][emphasis]) {
+  --ds-auro-icon-color: var(--ds-color-icon-emphasis-inverse, $ds-color-icon-emphasis-inverse);
+}
+
+:host([onDark][accent]) {
+  --ds-auro-icon-color: var(--ds-color-icon-accent-inverse, $ds-color-icon-accent-inverse);
+}
+
+:host([onDark][disabled]) {
+  --ds-auro-icon-color: var(--ds-color-icon-disabled-inverse, $ds-color-icon-disabled-inverse);
+}
+
+:host([onDark][error]) {
+  --ds-auro-icon-color: var(--ds-color-alert-error-inverse, $ds-color-alert-error-inverse);
+}
+
+:host([onDark][success]) {
+  --ds-auro-icon-color: var(--ds-color-alert-success-inverse, $ds-color-alert-success-inverse);
+}
+
+:host([onDark][advisory]) {
+  --ds-auro-icon-color: var(--ds-color-alert-advisory-inverse, $ds-color-alert-advisory-inverse);
+}
+
+:host([onDark][warning]) {
+  --ds-auro-icon-color: var(--ds-color-alert-warning-inverse, $ds-color-alert-warning-inverse);
+}
+
+:host([onDark][alaska][official]) {
+  --ds-auro-icon-color: var(--ds-color-alert-warning-inverse, $ds-color-alert-warning-inverse);
 }
 
 :host([customSize]) {

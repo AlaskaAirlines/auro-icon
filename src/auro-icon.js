@@ -130,20 +130,28 @@ export class AuroIcon extends BaseIcon {
     ];
   }
 
+  /**
+   * If component is registered as a custom name,
+   * this function will add an attribute to the element
+   * with the default name. This is so that other parent
+   * components can still this the element.
+   * @param {string} name - The default tag name.
+   * @param {HTMLElement} elem - The element to add the attribute to.
+   * @returns {void}
+   */
+  handleCustomTagName(name, elem) {
+    if (name.toLowerCase() !== elem.tagName.toLowerCase()) {
+      elem.setAttribute(name, true);
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.handleCustomTagName('auro-icon', this);
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const classes = {
-      'primary': true && !this.alaska && !this.alaskaTagline && !this.customColor,
-      'emphasis': this.emphasis,
-      'accent': this.accent,
-      'disabled': this.disabled,
-      'error': this.error,
-      'success': this.success,
-      'advisory': this.advisory,
-      'warning': this.warning,
-      'label': this.label
-    };
-
     const a11y = {
       'labelContainer': true,
       'util_displayHiddenVisually': !this.label
@@ -151,7 +159,6 @@ export class AuroIcon extends BaseIcon {
 
     return html`
       <div
-        class="${classMap(classes)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         >
 
