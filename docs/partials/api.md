@@ -18,6 +18,23 @@
 
 </auro-accordion>
 
+### Custom SVG icons
+
+Using the `customSvg` attribute, the component may render any icon svg content required. The `auro-icon` component will continue to render with all the variant and theme styles applied.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/customSvg.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/customSvg.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ### Default component with label (accessibility recommendation)
 
 While you may place the icon alone, it is considered best practice to combine the icon with a description statement. The `auro-icon` element easily supports this with the use of the `label` attribute. By using the `label` attribute, content you enter into the `slot` of the element will appear next to the icon of choice. Changing the `aria-hidden` state of the icon is NOT needed. The assistive technologies will bypass the icon and announce the label string of content.
@@ -54,9 +71,9 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 
 </auro-accordion>
 
-#### ondark visual state
+#### onDark visual state
 
-All compatible with `ondark` attribute.
+All compatible with `onDark` attribute.
 
 <div class="exampleWrapper" style="background: repeating-linear-gradient(45deg, var(--ds-color-background-darkest, #00274a), var(--ds-color-background-darkest, #00274a) 10px, var(--ds-color-background-darker, #01426a) 10px, var(--ds-color-background-darker, #01426a) 20px);">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
@@ -105,5 +122,9 @@ Auro icon's by default are set to the value of the `--ds-size-300` token. To cus
 
 </auro-accordion>
 
+## Theme Support
 
+The component may be restyled using the following code sample and changing the values of the following token(s).
 
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:END -->

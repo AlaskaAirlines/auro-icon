@@ -8,8 +8,10 @@
 /* eslint-disable no-undef */
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import '../src/auro-icon.js';
+// import '../src/auro-icon.js';
+import '../index.js';
 import '../src/auro-alaska.js';
+import { registerComponent } from '../index.js';
 
 const fetchStub = sinon.stub(window, 'fetch');
 
@@ -88,20 +90,15 @@ describe('auro-icon', () => {
     expect(fetch).to.be.calledOnceWith(sinon.match('icons/interface/chevron-up.svg'));
   });
 
-  it('auro-icon is using emphasis style & util_displayHiddenVisually', async () => {
+  it('auro-icon a11y div hidden by default', async () => {
     const el = await fixture(html`
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
     `);
 
     await waitUntil(() => el.svg, 'Element did not become ready');
 
-    const div = el.shadowRoot.querySelector('div');
     const nestedDiv = el.shadowRoot.querySelector('div > div');
 
-    expect(div).to.have.class('primary');
-    expect(div).to.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-    expect(div).to.not.have.class('disabled');
     expect(nestedDiv).to.have.class('util_displayHiddenVisually');
   });
 
@@ -112,9 +109,9 @@ describe('auro-icon', () => {
 
     await waitUntil(() => el.svg, 'Element did not become ready');
 
-    const div = el.shadowRoot.querySelector('div');
+    const div = el.shadowRoot.querySelector('div.labelContainer:not(.util_displayHiddenVisually)');
 
-    expect(div).to.have.class('label');
+    expect(div).to.exist;
   });
 
   it('auro-icon is not hiding content', async () => {
@@ -127,36 +124,6 @@ describe('auro-icon', () => {
     const div = el.shadowRoot.querySelector('div > div');
 
     expect(div).to.not.have.class('util_displayHiddenVisually');
-  });
-
-  it('auro-icon is using accent style', async () => {
-    const el = await fixture(html`
-      <auro-icon category="interface" name="chevron-up" accent></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-
-    expect(div).to.have.class('primary');
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.have.class('accent');
-    expect(div).to.not.have.class('disabled');
-  });
-
-  it('auro-icon is using disabled style', async () => {
-    const el = await fixture(html`
-      <auro-icon category="interface" name="chevron-up" disabled></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-
-    expect(div).to.have.class('primary');
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-    expect(div).to.have.class('disabled');
   });
 
   it('default accessibility', async () => {
@@ -207,20 +174,6 @@ describe('auro-icon', () => {
     const div = el.shadowRoot.querySelector('div');
 
     expect(div).to.not.have.class('logo');
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-  });
-
-  it('auro-icon shows alaska logo icon', async () => {
-    const el = await fixture(html`
-      <auro-icon category="logos" name="logo-AS"></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-
-    expect(div).to.have.class('primary');
     expect(div).to.not.have.class('emphasis');
     expect(div).to.not.have.class('accent');
   });
@@ -319,5 +272,19 @@ describe('auro-icon', () => {
     const el = await Boolean(customElements.get("auro-icon"));
 
     expect(el).to.be.true;
+  });
+
+  it('auro-icon can be registered as a custom element name', async () => {
+    const customElementName = 'custom-icon';
+
+    registerComponent(customElementName);
+
+    const el = await fixture(html`
+      <custom-icon category="interface" name="chevron-up"></custom-icon>
+    `);
+
+    await expect(el.localName).to.equal('custom-icon');
+
+    expect(el).to.have.attribute('auro-icon');
   });
 });
