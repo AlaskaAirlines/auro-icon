@@ -13,7 +13,6 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | Property         | Attribute        | Type      | Default                                          | Description                                      |
 |------------------|------------------|-----------|--------------------------------------------------|--------------------------------------------------|
 | `accent`         | `accent`         | `Boolean` |                                                  | Sets the icon to use the accent style.           |
-| `advisory`       | `advisory`       | `Boolean` |                                                  | Sets the icon to use the advisory style.         |
 | `ariaHidden`     | `ariaHidden`     | `String`  |                                                  | Set aria-hidden value. Default is `true`. Option is `false`. |
 | `category`       | `category`       | `String`  |                                                  | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
 | `customColor`    | `customColor`    | `Boolean` |                                                  | Removes primary selector.                        |
@@ -23,13 +22,23 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `hidden`         | `hidden`         | `Boolean` |                                                  | If present, the component will be hidden both visually and from screen readers |
 | `hiddenAudible`  | `hiddenAudible`  | `Boolean` |                                                  | If present, the component will be hidden from screen readers, but seen visually |
 | `hiddenVisually` | `hiddenVisually` | `Boolean` |                                                  | If present, the component will be hidden visually, but still read by screen readers |
+| `info`           | `info`           | `Boolean` |                                                  | Sets the icon to use the info style.             |
 | `label`          | `label`          | `Boolean` |                                                  | Exposes content in slot as icon label.           |
 | `name`           | `name`           | `String`  |                                                  | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage |
 | `onDark`         | `onDark`         | `Boolean` | false                                            | Set value for on-dark version of auro-icon       |
-| `primary`        | `primary`        | `Boolean` |                                                  | Sets the icon to use the baseline primary icon style. |
+| `primary`        | `primary`        | `Boolean` |                                                  | DEPRECATED: Sets the icon to use the baseline primary icon style. |
+| `secondary`      | `secondary`      | `Boolean` |                                                  | Sets the icon to use the secondary style.        |
+| `subtle`         | `subtle`         | `Boolean` |                                                  | Sets the icon to use the subtle style.           |
 | `success`        | `success`        | `Boolean` |                                                  | Sets the icon to use the success style.          |
+| `tertiary`       | `tertiary`       | `Boolean` |                                                  | Sets the icon to use the tertiary style.         |
 | `uri`            | `uri`            | `String`  | "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
 | `warning`        | `warning`        | `Boolean` |                                                  | Sets the icon to use the warning style.          |
+
+## Methods
+
+| Method                | Type                                      | Description                                      |
+|-----------------------|-------------------------------------------|--------------------------------------------------|
+| `handleCustomTagName` | `(name: string, elem: HTMLElement): void` | If component is registered as a custom name,<br />this function will add an attribute to the element<br />with the default name. This is so that other parent<br />components can still this the element.<br /><br />**name**: The default tag name.<br />**elem**: The element to add the attribute to. |
 
 ## Slots
 

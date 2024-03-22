@@ -54,9 +54,9 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 
 </auro-accordion>
 
-#### ondark visual state
+#### onDark visual state
 
-All compatible with `ondark` attribute.
+All compatible with `onDark` attribute.
 
 <div class="exampleWrapper" style="background: repeating-linear-gradient(45deg, var(--ds-color-background-darkest, #00274a), var(--ds-color-background-darkest, #00274a) 10px, var(--ds-color-background-darker, #01426a) 10px, var(--ds-color-background-darker, #01426a) 20px);">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
@@ -105,5 +105,9 @@ Auro icon's by default are set to the value of the `--ds-size-300` token. To cus
 
 </auro-accordion>
 
+## Theme Support
 
+The component may be restyled using the following code sample and changing the values of the following token(s).
 
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:END -->

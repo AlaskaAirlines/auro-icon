@@ -14,7 +14,7 @@ import "@alaskaairux/auro-icon/dist/auro-alaska";
   <auro-alaska style="width: 192px"></auro-alaska>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -27,7 +27,7 @@ import "@alaskaairux/auro-icon/dist/auro-alaska";
   <auro-alaska onDark style="width: 192px"></auro-alaska>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -44,7 +44,7 @@ Using the `official` property will display the Alaska Airlines logo with the off
   <auro-alaska official style="width: 192px"></auro-alaska>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -57,7 +57,7 @@ Using the `official` property will display the Alaska Airlines logo with the off
   <auro-alaska official ondark style="width: 192px"></auro-alaska>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -77,7 +77,7 @@ The Alaska Airline logo has a preferred version of the logo depending in the siz
   <auro-alaska style="width: 528px"></auro-alaska>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -96,7 +96,7 @@ The Alaska Airline logo has a preferred version of the logo depending in the siz
   <auro-alaska official style="width: 528px"></auro-alaska>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
