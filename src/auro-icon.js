@@ -9,7 +9,9 @@ import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import BaseIcon from "./baseIcon.js";
-import styleCss from "./iconStyle-css.js";
+import tokensCss from "./tokens-css.js";
+import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -20,13 +22,16 @@ import styleCss from "./iconStyle-css.js";
  * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage
  * @attr {Boolean} customColor - Removes primary selector.
  * @attr {Boolean} label - Exposes content in slot as icon label.
- * @attr {Boolean} primary - Sets the icon to use the baseline primary icon style.
- * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
+ * @attr {Boolean} primary - DEPRECATED: Sets the icon to use the baseline primary icon style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
- * @attr {Boolean} advisory - Sets the icon to use the advisory style.
- * @attr {Boolean} success - Sets the icon to use the success style.
- * @attr {Boolean} error - Sets the icon to use the error style.
+ * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
  * @attr {Boolean} disabled - Sets the icon to use the disabled style.
+ * @attr {Boolean} error - Sets the icon to use the error style.
+ * @attr {Boolean} info - Sets the icon to use the info style.
+ * @attr {Boolean} secondary - Sets the icon to use the secondary style.
+ * @attr {Boolean} tertiary - Sets the icon to use the tertiary style.
+ * @attr {Boolean} subtle - Sets the icon to use the subtle style.
+ * @attr {Boolean} success - Sets the icon to use the success style.
  * @attr {Boolean} warning - Sets the icon to use the warning style.
  * @attr {String} ariaHidden - Set aria-hidden value. Default is `true`. Option is `false`.
  * @attr {String} uri - Set the uri for CDN used when fetching icons
@@ -50,24 +55,58 @@ export class AuroIcon extends BaseIcon {
    */
   /* eslint-disable max-statements */
   privateDefaults() {
-    this.primary = false;
-    this.label = false;
-    this.emphasis = false;
     this.accent = false;
-    this.disabled = false;
-    this.error = false;
-    this.success = false;
-    this.advisory = false;
-    this.warning = false;
     this.customColor = false;
+    this.disabled = false;
+    this.emphasis = false;
+    this.error = false;
+    this.info = false;
+    this.label = false;
+    this.primary = false;
+    this.secondary = false;
+    this.subtle = false;
+    this.success = false;
+    this.tertiary = false;
+    this.warning = false;
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
       ...super.properties,
+      accent: {
+        type: Boolean,
+        reflect: true
+      },
+      ariaHidden: {
+        type: String,
+        reflect: true
+      },
       category: {
         type: String,
+        reflect: true
+      },
+      customColor: {
+        type: Boolean
+      },
+      disabled: {
+        type: Boolean,
+        reflect: true
+      },
+      emphasis: {
+        type: Boolean,
+        reflect: true
+      },
+      error: {
+        type: Boolean,
+        reflect: true
+      },
+      info: {
+        type: Boolean,
+        reflect: true
+      },
+      label: {
+        type: Boolean,
         reflect: true
       },
       name: {
@@ -78,23 +117,11 @@ export class AuroIcon extends BaseIcon {
         type: Boolean,
         reflect: true
       },
-      label: {
+      secondary: {
         type: Boolean,
         reflect: true
       },
-      emphasis: {
-        type: Boolean,
-        reflect: true
-      },
-      accent: {
-        type: Boolean,
-        reflect: true
-      },
-      disabled: {
-        type: Boolean,
-        reflect: true
-      },
-      error: {
+      subtle: {
         type: Boolean,
         reflect: true
       },
@@ -102,23 +129,16 @@ export class AuroIcon extends BaseIcon {
         type: Boolean,
         reflect: true
       },
-      advisory: {
+      tertiary: {
         type: Boolean,
-        reflect: true
-      },
-      warning: {
-        type: Boolean,
-        reflect: true
-      },
-      customColor: {
-        type: Boolean
-      },
-      ariaHidden: {
-        type: String,
         reflect: true
       },
       uri: {
         type: String
+      },
+      warning: {
+        type: Boolean,
+        reflect: true
       }
     };
   }
@@ -126,7 +146,9 @@ export class AuroIcon extends BaseIcon {
   static get styles() {
     return [
       super.styles,
-      css`${styleCss}`
+      css`${tokensCss}`,
+      css`${styleCss}`,
+      css`${colorCss}`
     ];
   }
 
@@ -153,18 +175,6 @@ export class AuroIcon extends BaseIcon {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const classes = {
-      'primary': true && !this.alaska && !this.alaskaTagline && !this.customColor,
-      'emphasis': this.emphasis,
-      'accent': this.accent,
-      'disabled': this.disabled,
-      'error': this.error,
-      'success': this.success,
-      'advisory': this.advisory,
-      'warning': this.warning,
-      'label': this.label
-    };
-
     const a11y = {
       'labelContainer': true,
       'util_displayHiddenVisually': !this.label
@@ -172,7 +182,6 @@ export class AuroIcon extends BaseIcon {
 
     return html`
       <div
-        class="${classMap(classes)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         >
 
