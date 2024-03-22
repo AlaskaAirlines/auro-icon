@@ -186,7 +186,6 @@ export class AuroIcon extends BaseIcon {
 
     return html`
       <div
-        class="${classMap(classes)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         >
 
