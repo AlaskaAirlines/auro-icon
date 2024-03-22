@@ -12,4 +12,4 @@ import { AuroIcon } from './src/auro-icon.js';
   }
 }
 
-export { registerComponent }
+export { registerComponent };
