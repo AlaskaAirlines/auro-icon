@@ -144,17 +144,19 @@ All compatible with `onDark` attribute.
 <div class="exampleWrapper" style="background: repeating-linear-gradient(45deg, var(--ds-color-background-darkest, #00274a), var(--ds-color-background-darkest, #00274a) 10px, var(--ds-color-background-darker, #01426a) 10px, var(--ds-color-background-darker, #01426a) 20px);">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onDark.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/onDark.html -->
-  <auro-icon category="interface" name="pin-trip" onDark>default</auro-icon> <span style="color: var(--ds-color-base-white)">default</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark accent></auro-icon> <span style="color: var(--ds-color-base-white)">accent</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark disabled></auro-icon> <span style="color: var(--ds-color-base-white)">disabled</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark emphasis></auro-icon> <span style="color: var(--ds-color-base-white)">emphasis</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark error></auro-icon> <span style="color: var(--ds-color-base-white)">error</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark info></auro-icon> <span style="color: var(--ds-color-base-white)">info</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark secondary></auro-icon> <span style="color: var(--ds-color-base-white)">secondary</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark subtle></auro-icon> <span style="color: var(--ds-color-base-white)">subtle</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark success></auro-icon> <span style="color: var(--ds-color-base-white)">success</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark tertiary></auro-icon><span style="color: var(--ds-color-base-white)">tertiary</span><br />
-  <auro-icon category="interface" name="pin-trip" onDark warning></auro-icon> <span style="color: var(--ds-color-base-white)">warning</span>
+  <span style="color: var(--ds-color-text-primary-inverse)">
+    <auro-icon category="interface" name="pin-trip" onDark></auro-icon>default<br />
+    <auro-icon category="interface" name="pin-trip" onDark accent></auro-icon>accent<br />
+    <auro-icon category="interface" name="pin-trip" onDark disabled></auro-icon>disabled<br />
+    <auro-icon category="interface" name="pin-trip" onDark emphasis></auro-icon>emphasis<br />
+    <auro-icon category="interface" name="pin-trip" onDark error></auro-icon>error<br />
+    <auro-icon category="interface" name="pin-trip" onDark info></auro-icon>info<br />
+    <auro-icon category="interface" name="pin-trip" onDark secondary></auro-icon>secondary<br />
+    <auro-icon category="interface" name="pin-trip" onDark subtle></auro-icon>subtle<br />
+    <auro-icon category="interface" name="pin-trip" onDark success></auro-icon>success<br />
+    <auro-icon category="interface" name="pin-trip" onDark tertiary></auro-icon>tertiary<br />
+    <auro-icon category="interface" name="pin-trip" onDark warning></auro-icon>warning
+  </span>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -163,17 +165,19 @@ All compatible with `onDark` attribute.
 <!-- The below code snippet is automatically added from ./../../apiExamples/onDark.html -->
 
 ```html
-<auro-icon category="interface" name="pin-trip" onDark>default</auro-icon> <span style="color: var(--ds-color-base-white)">default</span><br />
-<auro-icon category="interface" name="pin-trip" onDark accent></auro-icon> <span style="color: var(--ds-color-base-white)">accent</span><br />
-<auro-icon category="interface" name="pin-trip" onDark disabled></auro-icon> <span style="color: var(--ds-color-base-white)">disabled</span><br />
-<auro-icon category="interface" name="pin-trip" onDark emphasis></auro-icon> <span style="color: var(--ds-color-base-white)">emphasis</span><br />
-<auro-icon category="interface" name="pin-trip" onDark error></auro-icon> <span style="color: var(--ds-color-base-white)">error</span><br />
-<auro-icon category="interface" name="pin-trip" onDark info></auro-icon> <span style="color: var(--ds-color-base-white)">info</span><br />
-<auro-icon category="interface" name="pin-trip" onDark secondary></auro-icon> <span style="color: var(--ds-color-base-white)">secondary</span><br />
-<auro-icon category="interface" name="pin-trip" onDark subtle></auro-icon> <span style="color: var(--ds-color-base-white)">subtle</span><br />
-<auro-icon category="interface" name="pin-trip" onDark success></auro-icon> <span style="color: var(--ds-color-base-white)">success</span><br />
-<auro-icon category="interface" name="pin-trip" onDark tertiary></auro-icon><span style="color: var(--ds-color-base-white)">tertiary</span><br />
-<auro-icon category="interface" name="pin-trip" onDark warning></auro-icon> <span style="color: var(--ds-color-base-white)">warning</span>
+<span style="color: var(--ds-color-text-primary-inverse)">
+  <auro-icon category="interface" name="pin-trip" onDark></auro-icon>default<br />
+  <auro-icon category="interface" name="pin-trip" onDark accent></auro-icon>accent<br />
+  <auro-icon category="interface" name="pin-trip" onDark disabled></auro-icon>disabled<br />
+  <auro-icon category="interface" name="pin-trip" onDark emphasis></auro-icon>emphasis<br />
+  <auro-icon category="interface" name="pin-trip" onDark error></auro-icon>error<br />
+  <auro-icon category="interface" name="pin-trip" onDark info></auro-icon>info<br />
+  <auro-icon category="interface" name="pin-trip" onDark secondary></auro-icon>secondary<br />
+  <auro-icon category="interface" name="pin-trip" onDark subtle></auro-icon>subtle<br />
+  <auro-icon category="interface" name="pin-trip" onDark success></auro-icon>success<br />
+  <auro-icon category="interface" name="pin-trip" onDark tertiary></auro-icon>tertiary<br />
+  <auro-icon category="interface" name="pin-trip" onDark warning></auro-icon>warning
+</span>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
