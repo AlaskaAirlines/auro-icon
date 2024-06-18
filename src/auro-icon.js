@@ -157,6 +157,7 @@ export class AuroIcon extends BaseIcon {
    * this function will add an attribute to the element
    * with the default name. This is so that other parent
    * components can still this the element.
+   * @private
    * @param {string} name - The default tag name.
    * @param {HTMLElement} elem - The element to add the attribute to.
    * @returns {void}

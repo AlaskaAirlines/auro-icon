@@ -37,12 +37,6 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | [uri](#uri)            | `uri`            | `String`  | "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
 | [warning](#warning)        | `warning`        | `Boolean` |                                                  | Sets the icon to use the warning style.          |
 
-## Methods
-
-| Method                | Type                                      | Description                                      |
-|-----------------------|-------------------------------------------|--------------------------------------------------|
-| [handleCustomTagName](#handleCustomTagName) | `(name: string, elem: HTMLElement): void` | If component is registered as a custom name,<br />this function will add an attribute to the element<br />with the default name. This is so that other parent<br />components can still this the element.<br /><br />**name**: The default tag name.<br />**elem**: The element to add the attribute to. |
-
 ## Slots
 
 | Name | Description                                      |
@@ -101,7 +95,6 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/visualState.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/visualState.html -->
-  <auro-icon category="logos" name="tail-AS"></auro-icon> default<br />
   <auro-icon category="interface" name="pin-trip"></auro-icon> default<br />
   <auro-icon category="interface" name="pin-trip" accent></auro-icon> accent<br />
   <auro-icon category="interface" name="pin-trip" disabled></auro-icon> disabled<br />
@@ -121,7 +114,6 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 <!-- The below code snippet is automatically added from ./../../apiExamples/visualState.html -->
 
 ```html
-<auro-icon category="logos" name="tail-AS"></auro-icon> default<br />
 <auro-icon category="interface" name="pin-trip"></auro-icon> default<br />
 <auro-icon category="interface" name="pin-trip" accent></auro-icon> accent<br />
 <auro-icon category="interface" name="pin-trip" disabled></auro-icon> disabled<br />
