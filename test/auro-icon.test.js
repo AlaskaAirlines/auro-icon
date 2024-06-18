@@ -8,8 +8,10 @@
 /* eslint-disable no-undef */
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-import '../src/auro-icon.js';
+// import '../src/auro-icon.js';
+import '../index.js';
 import '../src/auro-alaska.js';
+import { registerComponent } from '../index.js';
 
 const fetchStub = sinon.stub(window, 'fetch');
 
@@ -270,5 +272,19 @@ describe('auro-icon', () => {
     const el = await Boolean(customElements.get("auro-icon"));
 
     expect(el).to.be.true;
+  });
+
+  it('auro-icon can be registered as a custom element name', async () => {
+    const customElementName = 'custom-icon';
+
+    registerComponent(customElementName);
+
+    const el = await fixture(html`
+      <custom-icon category="interface" name="chevron-up"></custom-icon>
+    `);
+
+    await expect(el.localName).to.equal('custom-icon');
+
+    expect(el).to.have.attribute('auro-icon');
   });
 });
