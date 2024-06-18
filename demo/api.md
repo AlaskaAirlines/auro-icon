@@ -101,7 +101,6 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/visualState.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/visualState.html -->
-  <auro-icon category="logos" name="tail-AS"></auro-icon> default<br />
   <auro-icon category="interface" name="pin-trip"></auro-icon> default<br />
   <auro-icon category="interface" name="pin-trip" accent></auro-icon> accent<br />
   <auro-icon category="interface" name="pin-trip" disabled></auro-icon> disabled<br />
@@ -121,7 +120,6 @@ Mono-color icons support the following attributes to illustrate visual state. Th
 <!-- The below code snippet is automatically added from ./../../apiExamples/visualState.html -->
 
 ```html
-<auro-icon category="logos" name="tail-AS"></auro-icon> default<br />
 <auro-icon category="interface" name="pin-trip"></auro-icon> default<br />
 <auro-icon category="interface" name="pin-trip" accent></auro-icon> accent<br />
 <auro-icon category="interface" name="pin-trip" disabled></auro-icon> disabled<br />

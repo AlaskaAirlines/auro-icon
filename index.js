@@ -6,10 +6,8 @@ import { AuroIcon } from './src/auro-icon.js';
  * @returns {void}
  */
  const registerComponent = (name = 'custom-icon') => {
-  console.warn('registerComponent', name);
   // alias definition
   if (!customElements.get(name)) {
-    console.warn('custom name not yet defined');
     customElements.define(name, class extends AuroIcon {});
   }
 }
