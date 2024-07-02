@@ -130,6 +130,27 @@ export class AuroIcon extends BaseIcon {
     ];
   }
 
+  /**
+   * If component is registered as a custom name,
+   * this function will add an attribute to the element
+   * with the default name. This is so that other parent
+   * components can still this the element.
+   * @private
+   * @param {string} name - The default tag name.
+   * @param {HTMLElement} elem - The element to add the attribute to.
+   * @returns {void}
+   */
+  handleCustomTagName(name, elem) {
+    if (name.toLowerCase() !== elem.tagName.toLowerCase()) {
+      elem.setAttribute(name, true);
+    }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.handleCustomTagName('auro-icon', this);
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const classes = {
