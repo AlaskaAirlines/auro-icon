@@ -180,8 +180,13 @@ export class AuroIcon extends BaseIcon {
       'util_displayHiddenVisually': !this.label
     };
 
+    const classes = {
+      'label': this.label
+    };
+
     return html`
       <div
+        class="${classMap(classes)}"
         title="${ifDefined(this.title ? this.title : undefined)}"
         >
 
