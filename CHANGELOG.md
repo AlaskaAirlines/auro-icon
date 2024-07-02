@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.4.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v4.4.0) (2024-07-02)
+
+
+### Features
+
+* **custom:** add function to handle custom element tag name ([bf38f92](https://github.com/AlaskaAirlines/auro-icon/commit/bf38f929cf0abc4aa3dcde416c484e1c624b9e91))
+
 ## [4.3.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.0...v4.3.1) (2024-02-26)
 
 
