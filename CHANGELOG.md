@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0-beta.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v5.0.0-beta.1) (2024-07-02)
+
+
+### Bug Fixes
+
+* **label:** add classmap for label attribute ([e0a1ca5](https://github.com/AlaskaAirlines/auro-icon/commit/e0a1ca59355d2d68cc9e0de060afb8d2b64797f4))
+
+
+### Features
+
+* **tokens:** add component level tokens for theming ([a14ed35](https://github.com/AlaskaAirlines/auro-icon/commit/a14ed35b91c5cf89d233f86660227cb1d81ed3dc))
+
+
+### BREAKING CHANGES
+
+* **tokens:** Advisory variant has been removed. Warning variant is the intended replacement.
+
 # [5.0.0-beta.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v5.0.0-beta.1) (2024-06-18)
 
 
