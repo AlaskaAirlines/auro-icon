@@ -21,6 +21,7 @@ import colorCss from "./color-css.js";
  * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
  * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage
  * @attr {Boolean} customColor - Removes primary selector.
+ * @attr {Boolean} customSvg - When true, auro-icon will render a custom SVG inside the default slot.
  * @attr {Boolean} label - Exposes content in slot as icon label.
  * @attr {Boolean} primary - DEPRECATED: Sets the icon to use the baseline primary icon style.
  * @attr {Boolean} accent - Sets the icon to use the accent style.
@@ -36,6 +37,7 @@ import colorCss from "./color-css.js";
  * @attr {String} ariaHidden - Set aria-hidden value. Default is `true`. Option is `false`.
  * @attr {String} uri - Set the uri for CDN used when fetching icons
  * @slot - Hidden from visibility, used for a11y if icon description is needed.
+ * @slot svg - Used for custom SVG content.
  */
 
 // build the component class
@@ -57,6 +59,7 @@ export class AuroIcon extends BaseIcon {
   privateDefaults() {
     this.accent = false;
     this.customColor = false;
+    this.customSvg = false;
     this.disabled = false;
     this.emphasis = false;
     this.error = false;
@@ -87,6 +90,9 @@ export class AuroIcon extends BaseIcon {
         reflect: true
       },
       customColor: {
+        type: Boolean
+      },
+      customSvg: {
         type: Boolean
       },
       disabled: {
@@ -190,7 +196,12 @@ export class AuroIcon extends BaseIcon {
         >
 
         <span aria-hidden="${ifDefined(this.ariaHidden ? this.ariaHidden : true)}" part="svg">
-          ${this.svg}
+          ${this.customSvg ? html`
+              <slot name="svg"></slot>
+            ` : html`
+              ${this.svg}
+            `
+          }
         </span>
 
         <div class="${classMap(a11y)}">
