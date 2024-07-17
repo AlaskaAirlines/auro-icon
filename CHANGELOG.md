@@ -1,24 +1,20 @@
 # Semantic Release Automated Changelog
 
-<<<<<<< HEAD
-# [4.4.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v4.4.0) (2024-07-02)
-=======
 # [5.0.0-beta.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v5.0.0-beta.1) (2024-06-18)
->>>>>>> c40f76c (chore(release): 5.0.0-beta.1 [skip ci])
-
 
 ### Features
 
-<<<<<<< HEAD
-* **custom:** add function to handle custom element tag name ([bf38f92](https://github.com/AlaskaAirlines/auro-icon/commit/bf38f929cf0abc4aa3dcde416c484e1c624b9e91))
-=======
 * **tokens:** add component level tokens for theming ([b1ee061](https://github.com/AlaskaAirlines/auro-icon/commit/b1ee06106c76ae59774a3f401716eb175b9ad939))
 
+# [4.4.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v4.4.0) (2024-07-02)
+
+### Features
+
+* **custom:** add function to handle custom element tag name ([bf38f92](https://github.com/AlaskaAirlines/auro-icon/commit/bf38f929cf0abc4aa3dcde416c484e1c624b9e91))
 
 ### BREAKING CHANGES
 
 * **tokens:** Advisory variant has been removed. Warning variant is the intended replacement.
->>>>>>> c40f76c (chore(release): 5.0.0-beta.1 [skip ci])
 
 ## [4.3.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.0...v4.3.1) (2024-02-26)
 
