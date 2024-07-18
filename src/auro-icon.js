@@ -192,9 +192,8 @@ export class AuroIcon extends BaseIcon {
 
     return html`
       <div
-        title="${ifDefined(this.title ? this.title : undefined)}"
-        >
-
+        class="${classMap(classes)}"
+        title="${ifDefined(this.title ? this.title : undefined)}">
         <span aria-hidden="${ifDefined(this.ariaHidden ? this.ariaHidden : true)}" part="svg">
           ${this.customSvg ? html`
               <slot name="svg"></slot>
