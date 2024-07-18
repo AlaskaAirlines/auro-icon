@@ -35,12 +35,6 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `uri`            | `uri`            | `String`  | "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
 | `warning`        | `warning`        | `Boolean` |                                                  | Sets the icon to use the warning style.          |
 
-## Methods
-
-| Method                | Type                                      | Description                                      |
-|-----------------------|-------------------------------------------|--------------------------------------------------|
-| `handleCustomTagName` | `(name: string, elem: HTMLElement): void` | If component is registered as a custom name,<br />this function will add an attribute to the element<br />with the default name. This is so that other parent<br />components can still this the element.<br /><br />**name**: The default tag name.<br />**elem**: The element to add the attribute to. |
-
 ## Slots
 
 | Name  | Description                                      |
