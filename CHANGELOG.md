@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [4.5.0-beta.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.4.0...v4.5.0-beta.1) (2024-07-19)
+
+
+### Features
+
+* update to support component theming ([c6fcdb3](https://github.com/AlaskaAirlines/auro-icon/commit/c6fcdb3f1643f0138941303315a283e39e93c8e8)), closes [#124](https://github.com/AlaskaAirlines/auro-icon/issues/124)
+
 # [4.4.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.3.1...v4.4.0) (2024-07-02)
 
 ### Features
