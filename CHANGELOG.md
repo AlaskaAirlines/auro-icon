@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [4.5.1-beta.1](https://github.com/AlaskaAirlines/auro-icon/compare/v4.5.0...v4.5.1-beta.1) (2024-08-21)
+
+
+### Performance Improvements
+
+* refactor how the component registers the custom element ([542eac3](https://github.com/AlaskaAirlines/auro-icon/commit/542eac339b0f14cbd645d6d636a670f66aeabefc))
+
 # [4.5.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.4.0...v4.5.0) (2024-08-20)
 
 
