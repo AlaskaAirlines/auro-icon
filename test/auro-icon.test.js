@@ -8,10 +8,10 @@
 /* eslint-disable no-undef */
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-// import '../src/auro-icon.js';
+import { AuroIcon } from '../src/auro-icon.js';
 import '../index.js';
 import '../src/auro-alaska.js';
-import { registerComponent } from '../index.js';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
 const fetchStub = sinon.stub(window, 'fetch');
 
@@ -275,9 +275,8 @@ describe('auro-icon', () => {
   });
 
   it('auro-icon can be registered as a custom element name', async () => {
-    const customElementName = 'custom-icon';
-
-    registerComponent(customElementName);
+    expect(RuntimeUtils.default.prototype.registerComponent).to.not.be.undefined;
+    RuntimeUtils.default.prototype.registerComponent('custom-icon', AuroIcon);
 
     const el = await fixture(html`
       <custom-icon category="interface" name="chevron-up"></custom-icon>
