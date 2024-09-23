@@ -13,6 +13,8 @@ import tokensCss from "./tokens-css.js";
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
@@ -70,6 +72,7 @@ export class AuroIcon extends BaseIcon {
     this.success = false;
     this.tertiary = false;
     this.warning = false;
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   // function to define props used within the scope of this component
@@ -157,25 +160,11 @@ export class AuroIcon extends BaseIcon {
     ];
   }
 
-  /**
-   * If component is registered as a custom name,
-   * this function will add an attribute to the element
-   * with the default name. This is so that other parent
-   * components can still this the element.
-   * @private
-   * @param {string} name - The default tag name.
-   * @param {HTMLElement} elem - The element to add the attribute to.
-   * @returns {void}
-   */
-  handleCustomTagName(name, elem) {
-    if (name.toLowerCase() !== elem.tagName.toLowerCase()) {
-      elem.setAttribute(name, true);
-    }
-  }
-
   connectedCallback() {
     super.connectedCallback();
-    this.handleCustomTagName('auro-icon', this);
+
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-icon');
   }
 
   // function that renders the HTML and CSS into  the scope of the component
