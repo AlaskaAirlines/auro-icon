@@ -8,10 +8,10 @@
 /* eslint-disable no-undef */
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
-// import '../src/auro-icon.js';
+import { AuroIcon } from '../src/auro-icon.js';
+import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import '../index.js';
 import '../src/auro-alaska.js';
-import { registerComponent } from '../index.js';
 
 const fetchStub = sinon.stub(window, 'fetch');
 
@@ -77,6 +77,12 @@ describe('auro-icon', () => {
     expect(div).to.not.have.class('accent');
     expect(div).to.not.have.class('disabled');
     expect(svg).to.not.be.null;
+  });
+
+  it('successfully registers custom component', async () => {
+    RuntimeUtils.default.prototype.registerComponent('custom-icon', AuroIcon);
+
+    expect(typeof customElements.get('custom-icon')).to.equal(typeof AuroIcon);
   });
 
   it('does not duplicate requests for same icon source', async () => {
@@ -277,7 +283,7 @@ describe('auro-icon', () => {
   it('auro-icon can be registered as a custom element name', async () => {
     const customElementName = 'custom-icon';
 
-    registerComponent(customElementName);
+    RuntimeUtils.default.prototype.registerComponent('custom-icon', AuroIcon);
 
     const el = await fixture(html`
       <custom-icon category="interface" name="chevron-up"></custom-icon>
