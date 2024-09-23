@@ -21,7 +21,7 @@
 }
 
 :host(:not([onDark])[disabled]) {
-  --ds-auro-icon-color: var(--ds-color-icon-ui-disabled-default, #{$ds-color-icon-ui-disabled-default});
+  --ds-auro-icon-color: var(--ds-color-icon-ui-primary-disabled-default, #{$ds-color-icon-ui-primary-disabled-default});
 }
 
 :host(:not([onDark])[emphasis]) {
@@ -65,7 +65,7 @@
 }
 
 :host([onDark][disabled]) {
-  --ds-auro-icon-color: var(--ds-color-icon-ui-disabled-inverse, #{$ds-color-icon-ui-disabled-inverse});
+  --ds-auro-icon-color: var(--ds-color-icon-ui-primary-disabled-inverse, #{$ds-color-icon-ui-primary-disabled-inverse});
 }
 
 :host([onDark][emphasis]) {
