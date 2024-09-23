@@ -1,4 +1,3 @@
-/* eslint-disable one-var */
 // Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 

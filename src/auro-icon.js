@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-/* eslint-disable one-var, no-console, jsdoc/require-description-complete-sentence */
+/* eslint-disable jsdoc/require-description-complete-sentence */
 
 import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
@@ -55,7 +55,6 @@ export class AuroIcon extends BaseIcon {
    * @private
    * @returns {void}
    */
-  /* eslint-disable max-statements */
   privateDefaults() {
     this.accent = false;
     this.customColor = false;
