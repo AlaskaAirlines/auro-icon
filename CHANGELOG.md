@@ -1,5 +1,24 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.5.0...v5.0.0) (2024-09-23)
+
+
+### Bug Fixes
+
+* update color name based on new design tokens ([8343796](https://github.com/AlaskaAirlines/auro-icon/commit/8343796dbc86b65d21c19c6c5842f781c2cd515d))
+
+
+### Performance Improvements
+
+* refactor custom component registration config ([8ffc453](https://github.com/AlaskaAirlines/auro-icon/commit/8ffc453d6efcaeb41b59fdc93fcd651a211c76ac))
+* update dependencies and lint configs ([caf2be8](https://github.com/AlaskaAirlines/auro-icon/commit/caf2be84a908727fb95a15832a0ead1c48e4e864))
+* use auro-library component tag rename ([6cf581b](https://github.com/AlaskaAirlines/auro-icon/commit/6cf581bd6fce91ded4caffc3b28b3acd8d95a974))
+
+
+### BREAKING CHANGES
+
+* trigger major release for color theming support
+
 # [4.5.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.4.0...v4.5.0) (2024-08-20)
 
 
