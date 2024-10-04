@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v5.0.0...v5.0.1) (2024-10-04)
+
+
+### Bug Fixes
+
+* correct typo in style sheet [#128](https://github.com/AlaskaAirlines/auro-icon/issues/128) ([01c892b](https://github.com/AlaskaAirlines/auro-icon/commit/01c892b65b72a3ac3e2ed423ab5e4773eb3b9373))
+
 # [5.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v4.5.0...v5.0.0) (2024-09-23)
 
 
