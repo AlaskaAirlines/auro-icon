@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v5.0.1...v5.0.2) (2024-10-07)
+
+
+### Bug Fixes
+
+* moves auro library to dependencies ([5fe8ebb](https://github.com/AlaskaAirlines/auro-icon/commit/5fe8ebb11a47899a1a79518e06f9c4a3b7a1faed))
+
 ## [5.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v5.0.0...v5.0.1) (2024-10-04)
 
 
