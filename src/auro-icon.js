@@ -160,6 +160,18 @@ export class AuroIcon extends BaseIcon {
     ];
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-icon"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroIcon.register("custom-icon") // this will register this element to <custom-icon/>
+   *
+   */
+  static register(name = "auro-icon") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroIcon);
+  }
+
   connectedCallback() {
     super.connectedCallback();
 
@@ -197,9 +209,4 @@ export class AuroIcon extends BaseIcon {
       </div>
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-icon")) {
-  customElements.define("auro-icon", AuroIcon);
 }

@@ -1,4 +1,5 @@
 import { AuroIcon } from './src/auro-icon.js';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { AuroAlaska } from './src/auro-alaska.js';
 
-RuntimeUtils.default.prototype.registerComponent('custom-icon', AuroIcon);
+AuroIcon.register();
+AuroAlaska.register();

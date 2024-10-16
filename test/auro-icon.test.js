@@ -9,9 +9,7 @@
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import sinon from 'sinon';
 import { AuroIcon } from '../src/auro-icon.js';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 import '../index.js';
-import '../src/auro-alaska.js';
 
 const fetchStub = sinon.stub(window, 'fetch');
 
@@ -80,7 +78,7 @@ describe('auro-icon', () => {
   });
 
   it('successfully registers custom component', async () => {
-    RuntimeUtils.default.prototype.registerComponent('custom-icon', AuroIcon);
+    AuroIcon.register('custom-icon');
 
     expect(typeof customElements.get('custom-icon')).to.equal(typeof AuroIcon);
   });
@@ -281,9 +279,7 @@ describe('auro-icon', () => {
   });
 
   it('auro-icon can be registered as a custom element name', async () => {
-    const customElementName = 'custom-icon';
-
-    RuntimeUtils.default.prototype.registerComponent('custom-icon', AuroIcon);
+    AuroIcon.register('custom-icon');
 
     const el = await fixture(html`
       <custom-icon category="interface" name="chevron-up"></custom-icon>
@@ -292,5 +288,8 @@ describe('auro-icon', () => {
     await expect(el.localName).to.equal('custom-icon');
 
     expect(el).to.have.attribute('auro-icon');
+    expect(el).to.be.an.instanceof(AuroIcon);
+    expect(el.category).to.equal('interface');
+    expect(el.name).to.equal('chevron-up');
   });
 });
