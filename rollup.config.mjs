@@ -21,22 +21,24 @@ const modernConfig = {
   ]
 };
 
-const alaskaConfig = {
+const indexExamplesConfig = {
   input: {
-    ['auro-alaska__bundled']: './src/auro-alaska.js',
+    ['index.min']: './demo/index.js',
   },
   output: {
     format: 'esm',
-    dir: 'dist/'
-  },
-  plugins: [
-    nodeResolve(),
-    !production &&
-      serve({
-        open: true,
-        openPage: '/docs/'
-      })
-  ]
+    dir: 'demo/'
+  }
 };
 
-export default [modernConfig, alaskaConfig];
+const alaskaExampleConfig = {
+  input: {
+    ['alaska.min']: './demo/alaska.js',
+  },
+  output: {
+    format: 'esm',
+    dir: 'demo/'
+  }
+};
+
+export default [modernConfig, alaskaExampleConfig, indexExamplesConfig];
