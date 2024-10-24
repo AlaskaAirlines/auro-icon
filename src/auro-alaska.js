@@ -21,6 +21,8 @@ import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100.mjs';
 // Import touch detection lib
 import styleCss from "./alaskaStyle-css.js";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * auro-alaska provides users a way to use the Alaska Airline logos.
@@ -30,7 +32,7 @@ import styleCss from "./alaskaStyle-css.js";
  */
 
 // build the component class
-class AuroAlaska extends BaseIcon {
+export class AuroAlaska extends BaseIcon {
   constructor() {
     super();
 
@@ -68,6 +70,18 @@ class AuroAlaska extends BaseIcon {
         reflect: true
       },
     };
+  }
+
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-alaska"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroAlaska.register("custom-alaska") // this will register this element to <custom-alaska/>
+   *
+   */
+  static register(name = "auro-alaska") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroAlaska);
   }
 
   /**
@@ -151,9 +165,4 @@ class AuroAlaska extends BaseIcon {
       </div>
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-alaska")) {
-  customElements.define("auro-alaska", AuroAlaska);
 }
