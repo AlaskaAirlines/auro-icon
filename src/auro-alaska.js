@@ -51,6 +51,7 @@ export class AuroAlaska extends BaseIcon {
     this.lg = 527;
     this.alaska = true;
     this.official = false;
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   // function to define props used within the scope of this component
@@ -122,6 +123,13 @@ export class AuroAlaska extends BaseIcon {
         this.svg = new DOMParser().parseFromString(official400.svg, 'text/html').body.firstChild;
       }
     }
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-alaska');
   }
 
   // lifecycle function for the purpose of
