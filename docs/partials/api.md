@@ -105,9 +105,16 @@ The `auro-icon` by default apply the `primary` selector for color application. T
 
 </auro-accordion>
 
+## Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
 ### Custom Size
 
-Auro icon's by default are set to the value of the `--ds-size-300` token. To customize the icon size, add the `customSize` attribute and adjust the `width` of the parent element.
+Auro Icon supports setting a custom size using the `--ds-auro-icon-size` token. The icons height and width will be set to the token value, preserving the square shape that is standard for all icons.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/customSize.html) -->
@@ -121,10 +128,3 @@ Auro icon's by default are set to the value of the `--ds-size-300` token. To cus
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
-
-## Theme Support
-
-The component may be restyled using the following code sample and changing the values of the following token(s).
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- AURO-GENERATED-CONTENT:END -->
