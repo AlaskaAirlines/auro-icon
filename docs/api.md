@@ -2,12 +2,6 @@
 
 auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
 
-## Attributes
-
-| Attribute    | Type      | Description                 |
-|--------------|-----------|-----------------------------|
-| `customSize` | `Boolean` | Allows for custom size use. |
-
 ## Properties
 
 | Property         | Attribute        | Type      | Default                                          | Description                                      |

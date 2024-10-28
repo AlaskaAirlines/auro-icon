@@ -19,7 +19,6 @@ import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/util
 /**
  * auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
  *
- * @attr {Boolean} customSize - Allows for custom size use.
  * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
  * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage
  * @attr {Boolean} customColor - Removes primary selector.

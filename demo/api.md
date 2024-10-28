@@ -5,12 +5,6 @@
 
 auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
 
-## Attributes
-
-| Attribute    | Type      | Description                 |
-|--------------|-----------|-----------------------------|
-| [customSize](#customSize) | `Boolean` | Allows for custom size use. |
-
 ## Properties
 
 | Property         | Attribute        | Type      | Default                                          | Description                                      |
@@ -238,27 +232,6 @@ The `auro-icon` by default apply the `primary` selector for color application. T
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Custom Size
-
-Auro icon's by default are set to the value of the `--ds-size-300` token. To customize the icon size, add the `customSize` attribute and adjust the `width` of the parent element.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/customSize.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/customSize.html -->
-  <auro-icon style="width: 30rem" category="interface" name="pin-trip" success customSize></auro-icon>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/customSize.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/customSize.html -->
-
-```html
-<auro-icon style="width: 30rem" category="interface" name="pin-trip" success customSize></auro-icon>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
 ## Theme Support
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
@@ -268,7 +241,32 @@ The component may be restyled using the following code sample and changing the v
 
 ```scss
 :host {
+  // COLOR
   --ds-auro-icon-color: var(--ds-color-icon-primary-default, $ds-color-icon-primary-default);
+
+  // SIZE
+  --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
+
+### Custom Size
+
+Auro Icon supports setting a custom size using the `--ds-auro-icon-size` token. The icons height and width will be set to the token value, preserving the square shape that is standard for all icons.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/customSize.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/customSize.html -->
+  <auro-icon style="--ds-auro-icon-size: 30rem;" category="interface" name="pin-trip" success></auro-icon>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/customSize.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/customSize.html -->
+
+```html
+<auro-icon style="--ds-auro-icon-size: 30rem;" category="interface" name="pin-trip" success></auro-icon>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
