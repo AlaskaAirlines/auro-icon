@@ -1,5 +1,37 @@
 # Semantic Release Automated Changelog
 
+# [6.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v5.0.2...v6.0.0) (2024-10-28)
+
+
+### Bug Fixes
+
+* change how we support custom size [#147](https://github.com/AlaskaAirlines/auro-icon/issues/147) ([5cbb375](https://github.com/AlaskaAirlines/auro-icon/commit/5cbb37551ece8208b5829d88165c88fbc6003621))
+
+
+### Features
+
+* add tag name as attribute when custom registered ([669997a](https://github.com/AlaskaAirlines/auro-icon/commit/669997abae991c950bc06eeec8075e57eb3a6014))
+* **api:** importing ./src/auro-icon.js will no longer define <auro-icon> as a customElement [#144](https://github.com/AlaskaAirlines/auro-icon/issues/144) ([353d5c3](https://github.com/AlaskaAirlines/auro-icon/commit/353d5c3438ae1a35cee344165ebc79d854591664))
+
+
+### Performance Improvements
+
+* update deps ([2d91c53](https://github.com/AlaskaAirlines/auro-icon/commit/2d91c53531143d8c12f012224570a3328e09bf76))
+* update sweep npm script ([4f2a171](https://github.com/AlaskaAirlines/auro-icon/commit/4f2a1713b3a2094bbb883cc467db2b32f47506a0))
+
+
+### BREAKING CHANGES
+
+* the old customSize attribute is no longer supported. See new documentation on API page under Theme Support.
+* **api:** `auro-alaska` must be registered to use the `src/auro-alaska.js` import.
+
+- Update dependency versions
+- `AuroIcon.register` is to easily register the element without extra importing
+- `import '@aurodesignsystem/auro-icon'` will still register this element to `<auro-icon>`
+- `import { AuroIcon } from '../src/auro-icon.js` wont register this element until `AuroIcon.register` gets called
+- Similarly, `AuroAlaska` now needs to be registered using `AuroAlaska.register` before you can use `<auro-alaska>,` if you're importing `auro-alaska.js`.
+To skip the registration step, you can simply import `@aurodesignsystem/auro-icon`.
+
 ## [5.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v5.0.1...v5.0.2) (2024-10-07)
 
 
