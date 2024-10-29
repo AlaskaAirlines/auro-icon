@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v6.0.0...v6.0.1) (2024-10-29)
+
+
+### Bug Fixes
+
+* refactor token assignment to directly override the svg [#149](https://github.com/AlaskaAirlines/auro-icon/issues/149) ([2b91806](https://github.com/AlaskaAirlines/auro-icon/commit/2b9180678ceea2cc90385b1935488978fdaaceca))
+
 # [6.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v5.0.2...v6.0.0) (2024-10-28)
 
 
