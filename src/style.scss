@@ -19,8 +19,6 @@
   vertical-align: middle;
   line-height: 1;
   display: inline-block;
-  width: var(--ds-auro-icon-size);
-  height: var(--ds-auro-icon-size);
 
   .logo {
     color: var(--ds-color-brand-midnight-400, $ds-color-brand-midnight-400);
@@ -28,8 +26,9 @@
 }
 
 svg {
-  width: 100% !important; // stylelint-disable-line declaration-no-important
-  height: 100% !important; // stylelint-disable-line declaration-no-important
+  min-width: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
+  width: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
+  height: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
 }
 
 .label {
