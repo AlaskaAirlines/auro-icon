@@ -1,5 +1,15 @@
 # Semantic Release Automated Changelog
 
+## [6.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v6.0.1...v6.0.2) (2024-10-30)
+
+
+### Bug Fixes
+
+* add package.lock ([b00ea6e](https://github.com/AlaskaAirlines/auro-icon/commit/b00ea6e77bbe0aa5512bf3503fec7dc43df9b3c3))
+* limit auro-library version to patch updates ([478a2e5](https://github.com/AlaskaAirlines/auro-icon/commit/478a2e552386976f7ca9b67b4c80b05100ff2cf1))
+* rollback auro-library to fix generateDoc scripting ([8da750e](https://github.com/AlaskaAirlines/auro-icon/commit/8da750e87cfb5980242eca1f194339f69a0ef79e))
+* running build after package update ([3865fad](https://github.com/AlaskaAirlines/auro-icon/commit/3865fad7260c1b395f08eca1dfe2131caa135d46))
+
 ## [6.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v6.0.0...v6.0.1) (2024-10-29)
 
 
