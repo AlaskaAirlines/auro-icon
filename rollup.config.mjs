@@ -29,7 +29,8 @@ function createExampleConfig(entryPoint) {
     output: {
       format: 'esm',
       dir: 'demo/'
-    },  
+    },
+    plugins: [nodeResolve()],
   };
 }
 
