@@ -1,13 +1,13 @@
 <!--
 The index.md file is a compiled document. No edits should be made directly to this file.
 README.md is created by running `npm run build:docs`.
-This file is generated based on a template fetched from `./docs/partials/index.md`
+This file is generated based on a template fetched from `../docs/partials/index.md`
 -->
 
 # Icon
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
-<!-- The below content is automatically added from ./description.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
+<!-- The below content is automatically added from ../docs/partials/description.md -->
 Icons can be used to represent concepts or provide context to options and/or actions within an experience.
 
 The `<auro-icon>` web component comes pre-configured with all the available [Auro Icons](https://auro.alaskaair.com/icons) . Simply add the `category` and `name` of the icon for quick and easy results.
@@ -18,15 +18,15 @@ The `<auro-icon>` web component comes pre-configured with all the available [Aur
 ### Default
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-icon category="interface" name="pin-trip"></auro-icon>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-icon category="interface" name="pin-trip"></auro-icon>
@@ -41,15 +41,15 @@ The `<auro-icon>` web component comes pre-configured with all the available [Aur
 By default `aria-hidden` on the SVG inside the `auro-icon` element is set to `true`. Using the `ariaHidden` attribute on `auro-icon` you can set that value to `false`. This will allow the screen reader to announce the content from the SVG's `title` element.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/ariaHidden.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/ariaHidden.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ariaHidden.html) -->
+  <!-- The below content is automatically added from ../apiExamples/ariaHidden.html -->
   <auro-icon category="interface" name="pin-trip" ariaHidden="false"></auro-icon>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/ariaHidden.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/ariaHidden.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ariaHidden.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/ariaHidden.html -->
 
 ```html
 <auro-icon category="interface" name="pin-trip" ariaHidden="false"></auro-icon>
@@ -62,15 +62,15 @@ By default `aria-hidden` on the SVG inside the `auro-icon` element is set to `tr
 If the description you intend to be read back is different than the content in the default `title` element of the SVG, leave the `aria-hidden="true"` default on the SVG and enter the custom description into the `auro-icon` slot.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/accessDescr.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/accessDescr.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/accessDescr.html) -->
+  <!-- The below content is automatically added from ../apiExamples/accessDescr.html -->
   <auro-icon category="interface" name="pin-trip">Your trip starts here!</auro-icon>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/accessDescr.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/accessDescr.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/accessDescr.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/accessDescr.html -->
 
 ```html
 <auro-icon category="interface" name="pin-trip">Your trip starts here!</auro-icon>
@@ -96,15 +96,15 @@ This will create a new custom element that you can use in your HTML that will fu
 If you want to use `<auro-alaska>` without registering, add `import @aurodesignsystem/auro-icon` instead of `import @aurodesignsystem/auro-icon/src/auro-alaska.js`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom.html -->
   <custom-icon category="interface" name="pin-trip"></custom-icon>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom.html -->
 
 ```html
 <custom-icon category="interface" name="pin-trip"></custom-icon>
