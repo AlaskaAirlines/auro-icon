@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [6.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v6.0.2...v6.0.3) (2024-11-13)
+
+
+### Bug Fixes
+
+* update markdown partial pathing to consume new auro lib [#155](https://github.com/AlaskaAirlines/auro-icon/issues/155) ([cc3a97f](https://github.com/AlaskaAirlines/auro-icon/commit/cc3a97ff340092ed1ef737273c94c3c4bbe52252))
+* update size token to use new icon-size token [#153](https://github.com/AlaskaAirlines/auro-icon/issues/153) ([2ba4d7a](https://github.com/AlaskaAirlines/auro-icon/commit/2ba4d7abd0f5aa54ae36d9d76c69f6b92d63ded8))
+
 ## [6.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v6.0.1...v6.0.2) (2024-10-30)
 
 
