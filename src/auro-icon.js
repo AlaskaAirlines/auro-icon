@@ -178,6 +178,13 @@ export class AuroIcon extends BaseIcon {
     this.runtimeUtils.handleComponentTagRename(this, 'auro-icon');
   }
 
+  /**
+   * @returns {void} Exposes CSS parts for styling from parent components.
+   */
+  exposeCssParts() {
+    this.setAttribute('exportparts', 'iconSvg:svg');
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const a11y = {
