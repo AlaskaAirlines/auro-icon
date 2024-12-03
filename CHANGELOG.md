@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.1](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.0...v6.1.1) (2024-12-03)
+
+
+### Bug Fixes
+
+* correct naming in function for exporting css parts ([c81ee28](https://github.com/AlaskaAirlines/auro-icon/commit/c81ee289eb03ab1f20d736a68b3aef2e0f0d0f79))
+
 # [6.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v6.0.3...v6.1.0) (2024-12-03)
 
 
