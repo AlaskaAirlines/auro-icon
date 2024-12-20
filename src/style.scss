@@ -40,6 +40,10 @@ svg {
   }
 }
 
+.wrapper {
+  height: var(--ds-auro-icon-size);
+  width: var(--ds-auro-icon-size);
+}
 
 .labelContainer {
   line-height: 1.8;

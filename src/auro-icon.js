@@ -193,7 +193,8 @@ export class AuroIcon extends BaseIcon {
     };
 
     const classes = {
-      'label': this.label
+      'label': this.label,
+      'wrapper': true,
     };
 
     return html`
