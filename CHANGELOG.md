@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [6.1.2](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.1...v6.1.2) (2024-12-21)
+
+
+### Bug Fixes
+
+* make wrapper size match icon size ([d12f597](https://github.com/AlaskaAirlines/auro-icon/commit/d12f597b2107a41a1dbac4a4a27a18c8267f070a))
+* replace master with main in package.json ([597d1f5](https://github.com/AlaskaAirlines/auro-icon/commit/597d1f5bd7153486ce333d2942a740ae2f9c687b))
+
+
+### Performance Improvements
+
+* update node to version 22 ([1f2986b](https://github.com/AlaskaAirlines/auro-icon/commit/1f2986b8b8c4d77032a847c8dd58e5a37ec5fa61))
+
 ## [6.1.1](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.0...v6.1.1) (2024-12-03)
 
 
