@@ -185,6 +185,20 @@ export class AuroIcon extends BaseIcon {
     this.setAttribute('exportparts', 'svg:iconSvg');
   }
 
+  async firstUpdated() {
+    await super.firstUpdated();
+
+    // Removes the SVG description for screenreader if ariaHidden is set to true
+    if (!this.hasAttribute('ariaHidden')) {
+      const svgDesc = this.svg.querySelector('desc');
+
+      if (svgDesc) {
+        svgDesc.remove();
+        this.svg.removeAttribute('aria-labelledby');
+      }
+    }
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const a11y = {
@@ -201,7 +215,7 @@ export class AuroIcon extends BaseIcon {
       <div
         class="${classMap(classes)}"
         title="${ifDefined(this.title || undefined)}">
-        <span aria-hidden="${ifDefined(this.ariaHidden ? this.ariaHidden : true)}" part="svg">
+        <span aria-hidden="${ifDefined(this.ariaHidden || true)}" part="svg">
           ${this.customSvg ? html`
               <slot name="svg"></slot>
             ` : html`
