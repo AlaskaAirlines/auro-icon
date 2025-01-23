@@ -28,12 +28,6 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `tertiary`       | `tertiary`       | `boolean` |         | Sets the icon to use the tertiary style.         |
 | `warning`        | `warning`        | `boolean` |         | Sets the icon to use the warning style.          |
 
-## Methods
-
-| Method           | Type       |
-|------------------|------------|
-| `exposeCssParts` | `(): void` |
-
 ## Slots
 
 | Name  | Description                                      |
