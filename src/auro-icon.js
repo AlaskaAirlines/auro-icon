@@ -236,30 +236,31 @@ export class AuroIcon extends BaseIcon {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const a11y = {
-      'labelContainer': true,
+    const labelClasses = {
+      'labelWrapper': true,
       'util_displayHiddenVisually': !this.label
     };
 
-    const classes = {
-      'label': this.label,
-      'wrapper': true,
+    const svgClasses = {
+      'svgWrapper': true,
     };
 
     return html`
-      <div
-        class="${classMap(classes)}"
-        title="${ifDefined(this.title || undefined)}">
-        <span aria-hidden="${ifDefined(this.ariaHidden || true)}" part="svg">
-          ${this.customSvg ? html`
-              <slot name="svg"></slot>
-            ` : html`
-              ${this.svg}
-            `
-          }
-        </span>
+      <div class="componentWrapper">
+        <div
+          class="${classMap(svgClasses)}"
+          title="${ifDefined(this.title || undefined)}">
+          <span aria-hidden="${ifDefined(this.ariaHidden || true)}" part="svg">
+            ${this.customSvg ? html`
+                <slot name="svg"></slot>
+              ` : html`
+                ${this.svg}
+              `
+            }
+          </span>
+        </div>
 
-        <div class="${classMap(a11y)}">
+        <div class="${classMap(labelClasses)}">
           <slot></slot>
         </div>
       </div>
