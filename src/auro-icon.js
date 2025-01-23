@@ -214,6 +214,7 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
+   * @private
    * @returns {void} Exposes CSS parts for styling from parent components.
    */
   exposeCssParts() {
