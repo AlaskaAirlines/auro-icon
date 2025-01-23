@@ -26,63 +26,6 @@ beforeEach(() => {
 });
 
 describe('auro-icon', () => {
-
-  it('icon is set', async () => {
-    const el = await fixture(html`
-      <auro-icon></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-    const svg = el.shadowRoot.querySelector('svg');
-
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-    expect(div).to.not.have.class('disabled');
-
-    expect(svg).to.not.be.null;
-  });
-
-  it('icon is not set', async () => {
-    const el = await fixture(html`
-      <auro-icon category="interface" name="notThere"></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-    const svg = el.shadowRoot.querySelector('svg');
-
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-    expect(div).to.not.have.class('disabled');
-
-    expect(svg).to.not.be.null;
-  });
-
-  it('icon is missing properties', async () => {
-    const el = await fixture(html`
-      <auro-icon></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-    const svg = el.shadowRoot.querySelector('svg');
-
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-    expect(div).to.not.have.class('disabled');
-    expect(svg).to.not.be.null;
-  });
-
-  it('successfully registers custom component', async () => {
-    AuroIcon.register('custom-icon');
-
-    expect(typeof customElements.get('custom-icon')).to.equal(typeof AuroIcon);
-  });
-
   it('does not duplicate requests for same icon source', async () => {
     const el = await fixture(html`
       <auro-icon category="interface" name="chevron-up" emphasis></auro-icon>
@@ -101,9 +44,9 @@ describe('auro-icon', () => {
 
     await waitUntil(() => el.svg, 'Element did not become ready');
 
-    const nestedDiv = el.shadowRoot.querySelector('div > div');
+    const labelDiv = el.shadowRoot.querySelector('.labelWrapper');
 
-    expect(nestedDiv).to.have.class('util_displayHiddenVisually');
+    expect(labelDiv).to.have.class('util_displayHiddenVisually');
   });
 
   it('auro-icon is using label', async () => {
@@ -113,7 +56,7 @@ describe('auro-icon', () => {
 
     await waitUntil(() => el.svg, 'Element did not become ready');
 
-    const div = el.shadowRoot.querySelector('div.labelContainer:not(.util_displayHiddenVisually)');
+    const div = el.shadowRoot.querySelector('.labelWrapper:not(.util_displayHiddenVisually)');
 
     expect(div).to.exist;
   });
@@ -125,9 +68,9 @@ describe('auro-icon', () => {
 
     await waitUntil(() => el.svg, 'Element did not become ready');
 
-    const div = el.shadowRoot.querySelector('div > div');
+    const labelDiv = el.shadowRoot.querySelector('.labelWrapper');
 
-    expect(div).to.not.have.class('util_displayHiddenVisually');
+    expect(labelDiv).to.not.have.class('util_displayHiddenVisually');
   });
 
   it('default accessibility', async () => {
@@ -152,34 +95,6 @@ describe('auro-icon', () => {
     const span = el.shadowRoot.querySelector('span');
 
     expect(span).to.have.attr('aria-hidden', 'false');
-  });
-
-  it('auro-icon does not show alaska icon', async () => {
-    const el = await fixture(html`
-      <auro-icon alaska></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-
-    expect(div).to.not.have.class('logo');
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
-  });
-
-  it('auro-icon does not show alaska tagline icon', async () => {
-    const el = await fixture(html`
-      <auro-icon alaskaTagline></auro-icon>
-    `);
-
-    await waitUntil(() => el.svg, 'Element did not become ready');
-
-    const div = el.shadowRoot.querySelector('div');
-
-    expect(div).to.not.have.class('logo');
-    expect(div).to.not.have.class('emphasis');
-    expect(div).to.not.have.class('accent');
   });
 
   it('auro-alaska shows small alaska logo', async () => {

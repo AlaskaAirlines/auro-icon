@@ -31,20 +31,16 @@ svg {
   height: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
 }
 
-.label {
+.componentWrapper {
   display: flex;
-  align-items: flex-start;
-
-  svg {
-    margin: 0 var(--ds-size-50, $ds-size-50);
-  }
 }
 
-.wrapper {
+.svgWrapper {
   height: var(--ds-auro-icon-size);
   width: var(--ds-auro-icon-size);
 }
 
-.labelContainer {
+.labelWrapper {
+  margin-left: var(--ds-size-50, $ds-size-50);
   line-height: 1.8;
 }
