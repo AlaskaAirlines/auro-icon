@@ -3,8 +3,6 @@
 
 // ---------------------------------------------------------------------
 
-/* eslint-disable jsdoc/require-description-complete-sentence */
-
 import { html, css } from "lit";
 import { classMap } from 'lit/directives/class-map.js';
 import { ifDefined } from 'lit/directives/if-defined.js';
@@ -15,38 +13,9 @@ import colorCss from "./color-css.js";
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-// See https://git.io/JJ6SJ for "How to document your components using JSDoc"
-/**
- * auro-icon provides users a way to use the Auro Icons by simply passing in the category and name.
- *
- * @attr {String} category - The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
- * @attr {String} name - The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage
- * @attr {Boolean} customColor - Removes primary selector.
- * @attr {Boolean} customSvg - When true, auro-icon will render a custom SVG inside the default slot.
- * @attr {Boolean} label - Exposes content in slot as icon label.
- * @attr {Boolean} primary - DEPRECATED: Sets the icon to use the baseline primary icon style.
- * @attr {Boolean} accent - Sets the icon to use the accent style.
- * @attr {Boolean} emphasis - Sets the icon to use the emphasis style.
- * @attr {Boolean} disabled - Sets the icon to use the disabled style.
- * @attr {Boolean} error - Sets the icon to use the error style.
- * @attr {Boolean} info - Sets the icon to use the info style.
- * @attr {Boolean} secondary - Sets the icon to use the secondary style.
- * @attr {Boolean} tertiary - Sets the icon to use the tertiary style.
- * @attr {Boolean} subtle - Sets the icon to use the subtle style.
- * @attr {Boolean} success - Sets the icon to use the success style.
- * @attr {Boolean} warning - Sets the icon to use the warning style.
- * @attr {String} ariaHidden - Set aria-hidden value. Default is `true`. Option is `false`.
- * @attr {String} uri - Set the uri for CDN used when fetching icons
- * @slot - Hidden from visibility, used for a11y if icon description is needed.
- * @slot svg - Used for custom SVG content.
- */
-
-// build the component class
 export class AuroIcon extends BaseIcon {
   constructor() {
     super();
-
-    this.uri = 'https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist';
 
     this.privateDefaults();
   }
@@ -71,6 +40,7 @@ export class AuroIcon extends BaseIcon {
     this.success = false;
     this.tertiary = false;
     this.warning = false;
+    this.uri = 'https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist';
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
@@ -78,71 +48,136 @@ export class AuroIcon extends BaseIcon {
   static get properties() {
     return {
       ...super.properties,
+
+      /**
+       * Sets the icon to use the accent style.
+       */
       accent: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Set aria-hidden value. Default is `true`. Option is `false`.
+       */
       ariaHidden: {
         type: String,
         reflect: true
       },
+
+      /**
+       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
+       */
       category: {
         type: String,
         reflect: true
       },
+
+      /**
+       * Allows custom color to be set.
+       */
       customColor: {
         type: Boolean
       },
+
+      /**
+       * When true, auro-icon will render a custom SVG inside the default slot.
+       */
       customSvg: {
         type: Boolean
       },
+
+      /**
+       * Sets the icon to use the disabled style.
+       */
       disabled: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the emphasis style.
+       */
       emphasis: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the error style.
+       */
       error: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the info style.
+       */
       info: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Exposes content in slot as icon label.
+       */
       label: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage.
+       */
       name: {
         type: String,
         reflect: true
       },
+
+      /**
+       * DEPRECATED: Sets the icon to use the baseline primary icon style.
+       */
       primary: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the secondary style.
+       */
       secondary: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the subtle style.
+       */
       subtle: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the success style.
+       */
       success: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets the icon to use the tertiary style.
+       */
       tertiary: {
         type: Boolean,
         reflect: true
       },
-      uri: {
-        type: String
-      },
+
+      /**
+       * Sets the icon to use the warning style.
+       */
       warning: {
         type: Boolean,
         reflect: true
