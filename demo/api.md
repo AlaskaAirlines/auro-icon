@@ -7,30 +7,35 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 
 ## Properties
 
-| Property         | Attribute        | Type      | Default                                          | Description                                      |
-|------------------|------------------|-----------|--------------------------------------------------|--------------------------------------------------|
-| [accent](#accent)         | `accent`         | `Boolean` |                                                  | Sets the icon to use the accent style.           |
-| [ariaHidden](#ariaHidden)     | `ariaHidden`     | `String`  |                                                  | Set aria-hidden value. Default is `true`. Option is `false`. |
-| [category](#category)       | `category`       | `String`  |                                                  | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
-| [customColor](#customColor)    | `customColor`    | `Boolean` |                                                  | Removes primary selector.                        |
-| [customSvg](#customSvg)      | `customSvg`      | `Boolean` |                                                  | When true, auro-icon will render a custom SVG inside the default slot. |
-| [disabled](#disabled)       | `disabled`       | `Boolean` |                                                  | Sets the icon to use the disabled style.         |
-| [emphasis](#emphasis)       | `emphasis`       | `Boolean` |                                                  | Sets the icon to use the emphasis style.         |
-| [error](#error)          | `error`          | `Boolean` |                                                  | Sets the icon to use the error style.            |
-| [hidden](#hidden)         | `hidden`         | `Boolean` |                                                  | If present, the component will be hidden both visually and from screen readers |
-| [hiddenAudible](#hiddenAudible)  | `hiddenAudible`  | `Boolean` |                                                  | If present, the component will be hidden from screen readers, but seen visually |
-| [hiddenVisually](#hiddenVisually) | `hiddenVisually` | `Boolean` |                                                  | If present, the component will be hidden visually, but still read by screen readers |
-| [info](#info)           | `info`           | `Boolean` |                                                  | Sets the icon to use the info style.             |
-| [label](#label)          | `label`          | `Boolean` |                                                  | Exposes content in slot as icon label.           |
-| [name](#name)           | `name`           | `String`  |                                                  | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage |
-| [onDark](#onDark)         | `onDark`         | `Boolean` | false                                            | Set value for on-dark version of auro-icon       |
-| [primary](#primary)        | `primary`        | `Boolean` |                                                  | DEPRECATED: Sets the icon to use the baseline primary icon style. |
-| [secondary](#secondary)      | `secondary`      | `Boolean` |                                                  | Sets the icon to use the secondary style.        |
-| [subtle](#subtle)         | `subtle`         | `Boolean` |                                                  | Sets the icon to use the subtle style.           |
-| [success](#success)        | `success`        | `Boolean` |                                                  | Sets the icon to use the success style.          |
-| [tertiary](#tertiary)       | `tertiary`       | `Boolean` |                                                  | Sets the icon to use the tertiary style.         |
-| [uri](#uri)            | `uri`            | `String`  | "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist" | Set the uri for CDN used when fetching icons     |
-| [warning](#warning)        | `warning`        | `Boolean` |                                                  | Sets the icon to use the warning style.          |
+| Property         | Attribute        | Type      | Default | Description                                      |
+|------------------|------------------|-----------|---------|--------------------------------------------------|
+| [accent](#accent)         | `accent`         | `boolean` |         | Sets the icon to use the accent style.           |
+| [ariaHidden](#ariaHidden)     | `ariaHidden`     | `string`  |         | Set aria-hidden value. Default is `true`. Option is `false`. |
+| [category](#category)       | `category`       | `string`  |         | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
+| [customColor](#customColor)    | `customColor`    | `boolean` |         | Allows custom color to be set.                   |
+| [customSvg](#customSvg)      | `customSvg`      | `boolean` |         | When true, auro-icon will render a custom SVG inside the default slot. |
+| [disabled](#disabled)       | `disabled`       | `boolean` |         | Sets the icon to use the disabled style.         |
+| [emphasis](#emphasis)       | `emphasis`       | `boolean` |         | Sets the icon to use the emphasis style.         |
+| [error](#error)          | `error`          | `boolean` |         | Sets the icon to use the error style.            |
+| [hidden](#hidden)         | `hidden`         | `Boolean` |         | If present, the component will be hidden both visually and from screen readers |
+| [hiddenAudible](#hiddenAudible)  | `hiddenAudible`  | `Boolean` |         | If present, the component will be hidden from screen readers, but seen visually |
+| [hiddenVisually](#hiddenVisually) | `hiddenVisually` | `Boolean` |         | If present, the component will be hidden visually, but still read by screen readers |
+| [info](#info)           | `info`           | `boolean` |         | Sets the icon to use the info style.             |
+| [label](#label)          | `label`          | `boolean` |         | Exposes content in slot as icon label.           |
+| [name](#name)           | `name`           | `string`  |         | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage. |
+| [onDark](#onDark)         | `onDark`         | `Boolean` | false   | Set value for on-dark version of auro-icon       |
+| [primary](#primary)        | `primary`        | `boolean` |         | DEPRECATED: Sets the icon to use the baseline primary icon style. |
+| [secondary](#secondary)      | `secondary`      | `boolean` |         | Sets the icon to use the secondary style.        |
+| [subtle](#subtle)         | `subtle`         | `boolean` |         | Sets the icon to use the subtle style.           |
+| [success](#success)        | `success`        | `boolean` |         | Sets the icon to use the success style.          |
+| [tertiary](#tertiary)       | `tertiary`       | `boolean` |         | Sets the icon to use the tertiary style.         |
+| [warning](#warning)        | `warning`        | `boolean` |         | Sets the icon to use the warning style.          |
+
+## Methods
+
+| Method           | Type       |
+|------------------|------------|
+| [exposeCssParts](#exposeCssParts) | `(): void` |
 
 ## Slots
 
