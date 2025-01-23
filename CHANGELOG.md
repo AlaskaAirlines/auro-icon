@@ -1,5 +1,19 @@
 # Semantic Release Automated Changelog
 
+## [6.1.3](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.2...v6.1.3) (2025-01-23)
+
+
+### Bug Fixes
+
+* make label text stop wrapping [#166](https://github.com/AlaskaAirlines/auro-icon/issues/166) ([5b7487a](https://github.com/AlaskaAirlines/auro-icon/commit/5b7487a1723fd8b6b6e2eac5d8459ca8ac69d4a4))
+
+
+### Performance Improvements
+
+* make exposeCssParts function private ([73403c1](https://github.com/AlaskaAirlines/auro-icon/commit/73403c1955c3c8b5cabc338f2413f28c456614a5))
+* remove SVG description for screenreaders by default [#165](https://github.com/AlaskaAirlines/auro-icon/issues/165) ([9a55760](https://github.com/AlaskaAirlines/auro-icon/commit/9a557606489c1db46e71c224f6afe4155b6637ab))
+* update dependencies ([2407f6c](https://github.com/AlaskaAirlines/auro-icon/commit/2407f6c120b051cbe3e9b58432e2522ac2a3af98))
+
 ## [6.1.2](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.1...v6.1.2) (2024-12-21)
 
 
