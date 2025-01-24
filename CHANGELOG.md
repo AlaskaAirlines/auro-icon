@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.4](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.3...v6.1.4) (2025-01-24)
+
+
+### Bug Fixes
+
+* improve screenreader description statement [#168](https://github.com/AlaskaAirlines/auro-icon/issues/168) ([76a9e02](https://github.com/AlaskaAirlines/auro-icon/commit/76a9e0200cbce447a56d98a87ee724cf03d8a624))
+
 ## [6.1.3](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.2...v6.1.3) (2025-01-23)
 
 
