@@ -225,7 +225,7 @@ export class AuroIcon extends BaseIcon {
     await super.firstUpdated();
 
     // Removes the SVG description for screenreader if ariaHidden is set to true
-    if (!this.hasAttribute('ariaHidden')) {
+    if (!this.hasAttribute('ariaHidden') && this.svg) {
       const svgDesc = this.svg.querySelector('desc');
 
       if (svgDesc) {
