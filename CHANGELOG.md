@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.5](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.4...v6.1.5) (2025-01-27)
+
+
+### Performance Improvements
+
+* remove cached markdown files [#170](https://github.com/AlaskaAirlines/auro-icon/issues/170) ([4762134](https://github.com/AlaskaAirlines/auro-icon/commit/4762134f791deebca68706689937f6d9a9045f7e))
+
 ## [6.1.4](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.3...v6.1.4) (2025-01-24)
 
 
