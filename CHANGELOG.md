@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.6](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.5...v6.1.6) (2025-01-28)
+
+
+### Bug Fixes
+
+* add alaska.md to processed doc files [#170](https://github.com/AlaskaAirlines/auro-icon/issues/170) ([b6d2a6d](https://github.com/AlaskaAirlines/auro-icon/commit/b6d2a6da8e49b537678490c96c2d589cab618ef2))
+
 ## [6.1.5](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.4...v6.1.5) (2025-01-27)
 
 
