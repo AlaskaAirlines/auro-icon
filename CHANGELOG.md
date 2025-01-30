@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.7](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.6...v6.1.7) (2025-01-30)
+
+
+### Bug Fixes
+
+* add brackets around css variable for processing [#173](https://github.com/AlaskaAirlines/auro-icon/issues/173) ([8768409](https://github.com/AlaskaAirlines/auro-icon/commit/876840927cf5e5366e48017188828b8ca8d56a2f))
+
 ## [6.1.6](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.5...v6.1.6) (2025-01-28)
 
 
