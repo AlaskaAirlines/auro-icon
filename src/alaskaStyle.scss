@@ -21,7 +21,6 @@
 }
 
 :host([onDark]) {
-
   .logo {
     color: var(--ds-color-base-white, $ds-color-base-white);
   }
