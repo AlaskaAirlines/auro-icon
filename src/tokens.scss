@@ -1,7 +1,9 @@
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
 :host {
   // COLOR
-  --ds-auro-icon-color: var(--ds-color-icon-primary-default, $ds-color-icon-primary-default);
+  --ds-auro-icon-color: var(--ds-color-icon-primary-default, #{$ds-color-icon-primary-default});
 
   // SIZE
-  --ds-auro-icon-size: var(--ds-size-300, $ds-size-300);
+  --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
 }
