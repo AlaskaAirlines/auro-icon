@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [6.1.8](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.7...v6.1.8) (2025-02-07)
+
+
+### Bug Fixes
+
+* update webcorestylesheet to support node 22 ([168a7da](https://github.com/AlaskaAirlines/auro-icon/commit/168a7da1aa201e6aed72cf47036570212f815003))
+
 ## [6.1.7](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.6...v6.1.7) (2025-01-30)
 
 
