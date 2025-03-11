@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [7.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v7.0.0...v7.0.1) (2025-03-11)
+
+
+### Performance Improvements
+
+* update @alaskaairux/icons to 5.3.0 [#282](https://github.com/AlaskaAirlines/auro-icon/issues/282) ([d399c12](https://github.com/AlaskaAirlines/auro-icon/commit/d399c129249770a181807c0d51eb612ad5f53f78))
+
 # [7.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v6.1.9...v7.0.0) (2025-02-28)
 
 
