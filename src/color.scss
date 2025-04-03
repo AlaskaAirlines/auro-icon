@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 // Support for fallback values
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 /* stylelint-disable rule-empty-line-before, scss/comment-no-empty */
 
@@ -16,86 +16,95 @@
   color: inherit;
 }
 
-:host(:not([onDark])[accent]) {
-  --ds-auro-icon-color: var(--ds-color-icon-accent-default, #{$ds-color-icon-accent-default});
+:host(:not([onDark])[variant="accent1"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-accent1, #{$ds-basic-color-texticon-accent1});
 }
 
-:host(:not([onDark])[disabled]) {
-  --ds-auro-icon-color: var(--ds-color-icon-ui-primary-disabled-default, #{$ds-color-icon-ui-primary-disabled-default});
+:host(:not([onDark])[variant="disabled"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-disabled, #{$ds-basic-color-texticon-disabled});
 }
 
-:host(:not([onDark])[emphasis]) {
-  --ds-auro-icon-color: var(--ds-color-icon-emphasis-default, #{$ds-color-icon-emphasis-default});
+:host(:not([onDark])[variant="muted"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
 }
 
-:host(:not([onDark])[error]) {
-  --ds-auro-icon-color: var(--ds-color-icon-error-default, #{$ds-color-icon-error-default});
+/* Status Styles */
+:host(:not([onDark])[variant="statusDefault"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-default, #{$ds-basic-color-status-default});
 }
 
-:host(:not([onDark])[info]) {
-  --ds-auro-icon-color: var(--ds-color-icon-info-default, #{$ds-color-icon-info-default});
+:host(:not([onDark])[variant="statusInfo"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-info, #{$ds-basic-color-status-info});
 }
 
-:host(:not([onDark])[secondary]) {
-  --ds-auro-icon-color: var(--ds-color-icon-secondary-default, #{$ds-color-icon-secondary-default});
+:host(:not([onDark])[variant="statusSuccess"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-success, #{$ds-basic-color-status-success});
 }
 
-:host(:not([onDark])[subtle]) {
-  --ds-auro-icon-color: var(--ds-color-icon-subtle-default, #{$ds-color-icon-subtle-default});
+:host(:not([onDark])[variant="statusWarning"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-warning, #{$ds-basic-color-status-warning});
 }
 
-:host(:not([onDark])[success]) {
-  --ds-auro-icon-color: var(--ds-color-icon-success-default, #{$ds-color-icon-success-default});
+:host(:not([onDark])[variant="statusError"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-error, #{$ds-basic-color-status-error});
 }
 
-:host(:not([onDark])[tertiary]) {
-  --ds-auro-icon-color: var(--ds-color-icon-tertiary-default, #{$ds-color-icon-tertiary-default});
+/* Subtle Status Styles */
+:host(:not([onDark])[variant="statusInfoSubtle"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-info-subtle, #{$ds-basic-color-status-info-subtle});
 }
 
-:host(:not([onDark])[warning]) {
-  --ds-auro-icon-color: var(--ds-color-icon-warning-default, #{$ds-color-icon-warning-default});
+:host(:not([onDark])[variant="statusSuccessSubtle"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-success-subtle, #{$ds-basic-color-status-success-subtle});
 }
 
+:host(:not([onDark])[variant="statusWarningSubtle"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-warning-subtle, #{$ds-basic-color-status-warning-subtle});
+}
+
+:host(:not([onDark])[variant="statusErrorSubtle"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-status-error-subtle, #{$ds-basic-color-status-error-subtle});
+}
+
+/* Fare Classes */
+:host(:not([onDark])[variant="fareBasicEconomy"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-basiceconomy, #{$ds-basic-color-fare-basiceconomy});
+}
+
+:host(:not([onDark])[variant="fareBusiness"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-business, #{$ds-basic-color-fare-business});
+}
+
+:host(:not([onDark])[variant="fareEconomy"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-economy, #{$ds-basic-color-fare-economy});
+}
+
+:host(:not([onDark])[variant="fareFirst"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-first, #{$ds-basic-color-fare-first});
+}
+
+:host(:not([onDark])[variant="farePremiumEconomy"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-premiumeconomy, #{$ds-basic-color-fare-premiumeconomy});
+}
+
+/* OneWorld Alliance Colors */
+:host(:not([onDark])[variant="fareOneWorldEmerald"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-oneworld-emerald, #{$ds-basic-color-fare-oneworld-emerald});
+}
+
+:host(:not([onDark])[variant="fareOneWorldSapphire"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-oneworld-sapphire, #{$ds-basic-color-fare-oneworld-sapphire});
+}
+
+:host(:not([onDark])[variant="fareOneWorldRuby"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-fare-oneworld-ruby, #{$ds-basic-color-fare-oneworld-ruby});
+}
+
+/* Support for dark mode */
 :host([onDark]) {
-  --ds-auro-icon-color: var(--ds-color-icon-primary-inverse, #{$ds-color-icon-primary-inverse});
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-inverse, #{$ds-basic-color-texticon-inverse});
 }
 
-:host([onDark][accent]) {
-  --ds-auro-icon-color: var(--ds-color-icon-accent-inverse, #{$ds-color-icon-accent-inverse});
-}
-
-:host([onDark][disabled]) {
-  --ds-auro-icon-color: var(--ds-color-icon-ui-primary-disabled-inverse, #{$ds-color-icon-ui-primary-disabled-inverse});
-}
-
-:host([onDark][emphasis]) {
-  --ds-auro-icon-color: var(--ds-color-icon-emphasis-inverse, #{$ds-color-icon-emphasis-inverse});
-}
-
-:host([onDark][error]) {
-  --ds-auro-icon-color: var(--ds-color-icon-error-inverse, #{$ds-color-icon-error-inverse});
-}
-
-:host([onDark][info]) {
-  --ds-auro-icon-color: var(--ds-color-icon-info-inverse, #{$ds-color-icon-info-inverse});
-}
-
-:host([onDark][secondary]) {
-  --ds-auro-icon-color: var(--ds-color-icon-secondary-inverse, #{$ds-color-icon-secondary-inverse});
-}
-
-:host([onDark][subtle]) {
-  --ds-auro-icon-color: var(--ds-color-icon-subtle-inverse, #{$ds-color-icon-subtle-inverse});
-}
-
-:host([onDark][success]) {
-  --ds-auro-icon-color: var(--ds-color-icon-success-inverse, #{$ds-color-icon-success-inverse});
-}
-
-:host([onDark][tertiary]) {
-  --ds-auro-icon-color: var(--ds-color-icon-tertiary-inverse, #{$ds-color-icon-tertiary-inverse});
-}
-
-:host([onDark][warning]) {
-  --ds-auro-icon-color: var(--ds-color-icon-warning-inverse, #{$ds-color-icon-warning-inverse});
+:host([onDark][variant="disabled"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-disabled-inverse, #{$ds-basic-color-texticon-disabled-inverse});
 }

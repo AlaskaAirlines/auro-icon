@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 // Support for fallback values
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
 
 // Support for auroElement styles
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
@@ -18,10 +18,12 @@
 
   width: 100%;
   height: 100%;
+
+  .logo {
+    color: var(--ds-auro-alaska-color);
+  }
 }
 
 :host([onDark]) {
-  .logo {
-    color: var(--ds-color-base-white, $ds-color-base-white);
-  }
+  --ds-auro-alaska-color: #FFF; // Hardcoded hex value for logo in order to prevent color change
 }

@@ -1,8 +1,10 @@
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
   // COLOR
-  --ds-auro-icon-color: var(--ds-color-icon-primary-default, #{$ds-color-icon-primary-default});
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-alaska-color: #02426D; // Hardcoded hex value for logo in order to prevent color change
 
   // SIZE
   --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
