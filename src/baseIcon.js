@@ -11,7 +11,6 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * @attr {Boolean} onDark - Set value for on-dark version of auro-icon
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -26,6 +25,10 @@ export default class BaseIcon extends AuroElement {
   static get properties() {
     return {
       ...super.properties,
+
+      /**
+       * Set value for on-dark version of auro-icon.
+       */
       onDark: {
         type: Boolean,
         reflect: true

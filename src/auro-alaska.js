@@ -20,6 +20,7 @@ import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100.mjs';
 
 // Import touch detection lib
 import styleCss from "./alaskaStyle-css.js";
+import tokensCss from "./tokens-css.js";
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
@@ -153,6 +154,7 @@ export class AuroAlaska extends BaseIcon {
   static get styles() {
     return [
       super.styles,
+      css`${tokensCss}`,
       css`${styleCss}`
     ];
   }

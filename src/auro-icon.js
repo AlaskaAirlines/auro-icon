@@ -1,4 +1,4 @@
-// Copyright (c) 2020 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// Copyright (c) 2025 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
@@ -17,6 +17,7 @@ export class AuroIcon extends BaseIcon {
   constructor() {
     super();
 
+    this.variant = undefined;
     this.privateDefaults();
   }
 
@@ -26,20 +27,6 @@ export class AuroIcon extends BaseIcon {
    * @returns {void}
    */
   privateDefaults() {
-    this.accent = false;
-    this.customColor = false;
-    this.customSvg = false;
-    this.disabled = false;
-    this.emphasis = false;
-    this.error = false;
-    this.info = false;
-    this.label = false;
-    this.primary = false;
-    this.secondary = false;
-    this.subtle = false;
-    this.success = false;
-    this.tertiary = false;
-    this.warning = false;
     this.uri = 'https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist';
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
@@ -48,14 +35,6 @@ export class AuroIcon extends BaseIcon {
   static get properties() {
     return {
       ...super.properties,
-
-      /**
-       * Sets the icon to use the accent style.
-       */
-      accent: {
-        type: Boolean,
-        reflect: true
-      },
 
       /**
        * Set aria-hidden value. Default is `true`. Option is `false`.
@@ -88,38 +67,6 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets the icon to use the disabled style.
-       */
-      disabled: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the emphasis style.
-       */
-      emphasis: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the error style.
-       */
-      error: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the info style.
-       */
-      info: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
        * Exposes content in slot as icon label.
        */
       label: {
@@ -136,50 +83,10 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * DEPRECATED: Sets the icon to use the baseline primary icon style.
+       * The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `fareOneWorldEmerald`, `fareOneWorldSapphire`, `fareOneWorldRuby`.
        */
-      primary: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the secondary style.
-       */
-      secondary: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the subtle style.
-       */
-      subtle: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the success style.
-       */
-      success: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the tertiary style.
-       */
-      tertiary: {
-        type: Boolean,
-        reflect: true
-      },
-
-      /**
-       * Sets the icon to use the warning style.
-       */
-      warning: {
-        type: Boolean,
+      variant: {
+        type: String,
         reflect: true
       }
     };
