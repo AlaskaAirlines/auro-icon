@@ -12,5 +12,3 @@ class AuroIconWCA extends AuroIcon {}
 if (!customElements.get("auro-icon")) {
   customElements.define("auro-icon", AuroIconWCA);
 }
-
-  
