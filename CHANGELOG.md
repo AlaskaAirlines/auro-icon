@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [8.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v7.0.1...v8.0.0) (2025-04-07)
+
+
+### Performance Improvements
+
+* update component to use newly released theming tokens [#184](https://github.com/AlaskaAirlines/auro-icon/issues/184) ([c8ea42d](https://github.com/AlaskaAirlines/auro-icon/commit/c8ea42d1745df94e4d367f19c948d18ebe3190ce))
+* update dependencies and tsconfig ([78baf0c](https://github.com/AlaskaAirlines/auro-icon/commit/78baf0c29efb243efbf41820a2fcb8b2aa511798))
+
+
+### BREAKING CHANGES
+
+* There is a significant refactor of component attributes to support new icon styles.
+
 ## [7.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v7.0.0...v7.0.1) (2025-03-11)
 
 
