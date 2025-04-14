@@ -175,12 +175,13 @@ Mono-color icons support the following attributes to illustrate visual state.
 
 All compatible with `onDark` attribute.
 
-<div class="exampleWrapper" style="background: repeating-linear-gradient(45deg, var(--ds-basic-color-surface-inverse, #{$ds-basic-color-surface-inverse}), var(--ds-basic-color-surface-inverse, #{$ds-basic-color-surface-inverse}) 10px, var(--ds-basic-color-surface-inverse-subtle, #{$ds-basic-color-surface-inverse-subtle}) 10px, var(--ds-basic-color-surface-inverse-subtle, #{$ds-basic-color-surface-inverse-subtle}) 20px);">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onDark.html) -->
   <!-- The below content is automatically added from ../apiExamples/onDark.html -->
   <span style="color: var(--ds-basic-color-texticon-inverse)">
     <auro-icon category="interface" name="pin-trip" onDark></auro-icon> default<br />
     <auro-icon category="interface" name="pin-trip" onDark variant="disabled"></auro-icon> disabled<br />
+    <auro-icon category="interface" name="pin-trip" onDark variant="muted"></auro-icon> muted<br />
   </span>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -193,6 +194,7 @@ All compatible with `onDark` attribute.
 <span style="color: var(--ds-basic-color-texticon-inverse)">
   <auro-icon category="interface" name="pin-trip" onDark></auro-icon> default<br />
   <auro-icon category="interface" name="pin-trip" onDark variant="disabled"></auro-icon> disabled<br />
+  <auro-icon category="interface" name="pin-trip" onDark variant="muted"></auro-icon> muted<br />
 </span>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

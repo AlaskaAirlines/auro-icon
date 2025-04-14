@@ -75,7 +75,7 @@ Mono-color icons support the following attributes to illustrate visual state.
 
 All compatible with `onDark` attribute.
 
-<div class="exampleWrapper" style="background: repeating-linear-gradient(45deg, var(--ds-basic-color-surface-inverse, #{$ds-basic-color-surface-inverse}), var(--ds-basic-color-surface-inverse, #{$ds-basic-color-surface-inverse}) 10px, var(--ds-basic-color-surface-inverse-subtle, #{$ds-basic-color-surface-inverse-subtle}) 10px, var(--ds-basic-color-surface-inverse-subtle, #{$ds-basic-color-surface-inverse-subtle}) 20px);">
+<div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onDark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
