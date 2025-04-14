@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.0...v8.0.1) (2025-04-14)
+
+
+### Performance Improvements
+
+* add on dark muted variant [#187](https://github.com/AlaskaAirlines/auro-icon/issues/187) ([59dff7a](https://github.com/AlaskaAirlines/auro-icon/commit/59dff7a2f954a5dabbfc58e9b8c450b693e80ab4))
+
 # [8.0.0](https://github.com/AlaskaAirlines/auro-icon/compare/v7.0.1...v8.0.0) (2025-04-07)
 
 
