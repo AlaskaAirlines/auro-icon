@@ -16,7 +16,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | `label`          | `label`          | `boolean` |             | Exposes content in slot as icon label.           |
 | `name`           | `name`           | `string`  |             | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage. |
 | `onDark`         | `onDark`         | `boolean` | false       | Set value for on-dark version of auro-icon.      |
-| `variant`        | `variant`        | `string`  | "undefined" | The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `fareOneWorldEmerald`, `fareOneWorldSapphire`, `fareOneWorldRuby`. |
+| `variant`        | `variant`        | `string`  | "undefined" | The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `tierOneWorldEmerald`, `tierOneWorldSapphire`, `tierOneWorldRuby`. |
 
 ## Slots
 

@@ -19,7 +19,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | [label](#label)          | `label`          | `boolean` |             | Exposes content in slot as icon label.           |
 | [name](#name)           | `name`           | `string`  |             | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage. |
 | [onDark](#onDark)         | `onDark`         | `boolean` | false       | Set value for on-dark version of auro-icon.      |
-| [variant](#variant)        | `variant`        | `string`  | "undefined" | The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `fareOneWorldEmerald`, `fareOneWorldSapphire`, `fareOneWorldRuby`. |
+| [variant](#variant)        | `variant`        | `string`  | "undefined" | The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `tierOneWorldEmerald`, `tierOneWorldSapphire`, `tierOneWorldRuby`. |
 
 ## Slots
 
@@ -135,9 +135,9 @@ Mono-color icons support the following attributes to illustrate visual state.
   <auro-icon category="interface" name="pin-trip" variant="fareEconomy"></auro-icon> fare economy<br />
   <auro-icon category="interface" name="pin-trip" variant="fareFirst"></auro-icon> fare first<br />
   <auro-icon category="interface" name="pin-trip" variant="farePremiumEconomy"></auro-icon> fare premium economy<br />
-  <auro-icon category="interface" name="pin-trip" variant="fareOneWorldEmerald"></auro-icon> fare oneworld emerald<br />
-  <auro-icon category="interface" name="pin-trip" variant="fareOneWorldSapphire"></auro-icon> fare oneworld sapphire<br />
-  <auro-icon category="interface" name="pin-trip" variant="fareOneWorldRuby"></auro-icon> fare oneworld ruby<br />
+  <auro-icon category="interface" name="pin-trip" variant="tierOneWorldEmerald"></auro-icon> fare oneworld emerald<br />
+  <auro-icon category="interface" name="pin-trip" variant="tierOneWorldSapphire"></auro-icon> fare oneworld sapphire<br />
+  <auro-icon category="interface" name="pin-trip" variant="tierOneWorldRuby"></auro-icon> fare oneworld ruby<br />
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -164,9 +164,9 @@ Mono-color icons support the following attributes to illustrate visual state.
 <auro-icon category="interface" name="pin-trip" variant="fareEconomy"></auro-icon> fare economy<br />
 <auro-icon category="interface" name="pin-trip" variant="fareFirst"></auro-icon> fare first<br />
 <auro-icon category="interface" name="pin-trip" variant="farePremiumEconomy"></auro-icon> fare premium economy<br />
-<auro-icon category="interface" name="pin-trip" variant="fareOneWorldEmerald"></auro-icon> fare oneworld emerald<br />
-<auro-icon category="interface" name="pin-trip" variant="fareOneWorldSapphire"></auro-icon> fare oneworld sapphire<br />
-<auro-icon category="interface" name="pin-trip" variant="fareOneWorldRuby"></auro-icon> fare oneworld ruby<br />
+<auro-icon category="interface" name="pin-trip" variant="tierOneWorldEmerald"></auro-icon> fare oneworld emerald<br />
+<auro-icon category="interface" name="pin-trip" variant="tierOneWorldSapphire"></auro-icon> fare oneworld sapphire<br />
+<auro-icon category="interface" name="pin-trip" variant="tierOneWorldRuby"></auro-icon> fare oneworld ruby<br />
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

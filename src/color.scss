@@ -88,16 +88,16 @@
 }
 
 /* OneWorld Alliance Colors */
-:host(:not([onDark])[variant="fareOneWorldEmerald"]) {
-  --ds-auro-icon-color: var(--ds-basic-color-fare-oneworld-emerald, #{$ds-basic-color-fare-oneworld-emerald});
+:host(:not([onDark])[variant="tierOneWorldEmerald"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-tier-program-oneworld-emerald, #{$ds-basic-color-tier-program-oneworld-emerald});
 }
 
-:host(:not([onDark])[variant="fareOneWorldSapphire"]) {
-  --ds-auro-icon-color: var(--ds-basic-color-fare-oneworld-sapphire, #{$ds-basic-color-fare-oneworld-sapphire});
+:host(:not([onDark])[variant="tierOneWorldSapphire"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-tier-program-oneworld-sapphire, #{$ds-basic-color-tier-program-oneworld-sapphire});
 }
 
-:host(:not([onDark])[variant="fareOneWorldRuby"]) {
-  --ds-auro-icon-color: var(--ds-basic-color-fare-oneworld-ruby, #{$ds-basic-color-fare-oneworld-ruby});
+:host(:not([onDark])[variant="tierOneWorldRuby"]) {
+  --ds-auro-icon-color: var(--ds-basic-color-tier-program-oneworld-ruby, #{$ds-basic-color-tier-program-oneworld-ruby});
 }
 
 /* Support for dark mode */
