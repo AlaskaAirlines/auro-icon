@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.1...v8.0.2) (2025-04-30)
+
+
+### Performance Improvements
+
+* update reference to refactored tier tokens [#189](https://github.com/AlaskaAirlines/auro-icon/issues/189) ([e4e1d65](https://github.com/AlaskaAirlines/auro-icon/commit/e4e1d65e49f82efde768c6f4eb1ce1ef38169de2))
+
 ## [8.0.1](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.0...v8.0.1) (2025-04-14)
 
 
