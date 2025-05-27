@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.2...v8.0.3) (2025-05-27)
+
+
+### Performance Improvements
+
+* add onDark version of statusError variant [#191](https://github.com/AlaskaAirlines/auro-icon/issues/191) ([28ff9b3](https://github.com/AlaskaAirlines/auro-icon/commit/28ff9b398e5ba3420d2f7bc8e30e2d4d297572e5))
+
 ## [8.0.2](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.1...v8.0.2) (2025-04-30)
 
 
