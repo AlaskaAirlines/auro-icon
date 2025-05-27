@@ -112,3 +112,7 @@
 :host([onDark][variant="muted"]) {
   --ds-auro-icon-color: var(--ds-basic-color-texticon-inverse-muted, #{$ds-basic-color-texticon-inverse-muted});
 }
+
+:host([onDark][variant="statusError"]) {
+  --ds-auro-icon-color: var(--ds-advanced-color-state-error-inverse, #{$ds-advanced-color-state-error-inverse});
+}
