@@ -182,6 +182,7 @@ All compatible with `onDark` attribute.
     <auro-icon category="interface" name="pin-trip" onDark></auro-icon> default<br />
     <auro-icon category="interface" name="pin-trip" onDark variant="disabled"></auro-icon> disabled<br />
     <auro-icon category="interface" name="pin-trip" onDark variant="muted"></auro-icon> muted<br />
+    <auro-icon category="interface" name="pin-trip" onDark variant="statusError"></auro-icon> status error<br />
   </span>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -195,6 +196,7 @@ All compatible with `onDark` attribute.
   <auro-icon category="interface" name="pin-trip" onDark></auro-icon> default<br />
   <auro-icon category="interface" name="pin-trip" onDark variant="disabled"></auro-icon> disabled<br />
   <auro-icon category="interface" name="pin-trip" onDark variant="muted"></auro-icon> muted<br />
+  <auro-icon category="interface" name="pin-trip" onDark variant="statusError"></auro-icon> status error<br />
 </span>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
