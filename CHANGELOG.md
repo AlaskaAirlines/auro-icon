@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.0.4](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.3...v8.0.4) (2025-06-10)
+
+
+### Bug Fixes
+
+* restore a11y label behavior for screenreader support ([923f60b](https://github.com/AlaskaAirlines/auro-icon/commit/923f60bc8679e0243b8c62393af799f0d34e0e45))
+
 ## [8.0.3](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.2...v8.0.3) (2025-05-27)
 
 
