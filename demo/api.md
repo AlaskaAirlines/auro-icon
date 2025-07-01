@@ -235,16 +235,16 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 :host {
   // COLOR
-  --ds-auro-icon-color: var(--ds-basic-color-texticon-default, #{$ds-basic-color-texticon-default});
+  --ds-auro-icon-color: var(--ds-basic-color-texticon-default, #{v.$ds-basic-color-texticon-default});
   --ds-auro-alaska-color: #02426D; // Hardcoded hex value for logo in order to prevent color change
 
   // SIZE
-  --ds-auro-icon-size: var(--ds-size-300, #{$ds-size-300});
+  --ds-auro-icon-size: var(--ds-size-300, #{vac.$ds-size-300});
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
