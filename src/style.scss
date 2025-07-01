@@ -4,13 +4,13 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 // Support for auroElement styles
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
+@use "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 
-@import "./../node_modules/@alaskaairux/icons/dist/icons";
+@use "@alaskaairux/icons/dist/icons";
 
 /* stylelint-disable value-keyword-case, order/properties-order */
 
@@ -22,9 +22,9 @@
 }
 
 svg {
-  min-width: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
-  width: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
-  height: var(--ds-auro-icon-size, $ds-size-300) !important; // stylelint-disable-line declaration-no-important
+  min-width: var(--ds-auro-icon-size, vac.$ds-size-300) !important; // stylelint-disable-line declaration-no-important
+  width: var(--ds-auro-icon-size, vac.$ds-size-300) !important; // stylelint-disable-line declaration-no-important
+  height: var(--ds-auro-icon-size, vac.$ds-size-300) !important; // stylelint-disable-line declaration-no-important
 }
 
 .componentWrapper {
@@ -37,6 +37,6 @@ svg {
 }
 
 .labelWrapper {
-  margin-left: var(--ds-size-50, $ds-size-50);
+  margin-left: var(--ds-size-50, vac.$ds-size-50);
   line-height: 1.8;
 }
