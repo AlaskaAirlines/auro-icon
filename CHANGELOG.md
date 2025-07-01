@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [8.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.4...v8.1.0) (2025-07-01)
+
+
+### Bug Fixes
+
+* update docs head content ([4e3ff52](https://github.com/AlaskaAirlines/auro-icon/commit/4e3ff52b1231fcc037285fc0c13b88aa71b91bbb))
+
+
+### Features
+
+* update type tokens ([b0f199f](https://github.com/AlaskaAirlines/auro-icon/commit/b0f199f95297f4e41304d094c3b1c9b60bdbac39))
+
 ## [8.0.4](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.3...v8.0.4) (2025-06-10)
 
 
