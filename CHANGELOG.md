@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.1.1](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.0...v8.1.1) (2025-07-18)
+
+
+### Bug Fixes
+
+* add reflect to customColor ([e8f09ee](https://github.com/AlaskaAirlines/auro-icon/commit/e8f09eecdf79557dfb902b624d6668548bf9add7))
+
 # [8.1.0](https://github.com/AlaskaAirlines/auro-icon/compare/v8.0.4...v8.1.0) (2025-07-01)
 
 
