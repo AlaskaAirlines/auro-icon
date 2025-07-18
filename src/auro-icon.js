@@ -56,7 +56,8 @@ export class AuroIcon extends BaseIcon {
        * Allows custom color to be set.
        */
       customColor: {
-        type: Boolean
+        type: Boolean,
+        reflect: true
       },
 
       /**
