@@ -73,16 +73,21 @@ export default class BaseIcon extends AuroElement {
 
   // lifecycle function
   async firstUpdated() {
-    if (!this.customSvg) {
-      const svg = await this.fetchIcon(this.category, this.name);
+    try {
+      if (!this.customSvg) {
+        const svg = await this.fetchIcon(this.category, this.name);
 
-      if (svg) {
-        this.svg = svg;
-      } else if (!svg) {
-        const penDOM = new DOMParser().parseFromString(error.svg, 'text/html');
+        if (svg) {
+          this.svg = svg;
+        } else if (!svg) {
+          const penDOM = new DOMParser().parseFromString(error.svg, 'text/html');
 
-        this.svg = penDOM.body.firstChild;
+          this.svg = penDOM.body.firstChild;
+        }
       }
+    // eslint-disable-next-line no-unused-vars
+    } catch (err) {
+      this.svg = undefined;
     }
   }
 }
