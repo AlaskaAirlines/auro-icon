@@ -144,10 +144,15 @@ export class AuroAlaska extends BaseIcon {
       this.alaska = false;
     }
 
-    if (this.alaska) {
-      this.alaskaLogoDef(iconWidth);
-    } else if (this.official) {
-      this.alaskaOfficialDef(iconWidth);
+    try {
+      if (this.alaska) {
+        this.alaskaLogoDef(iconWidth);
+      } else if (this.official) {
+        this.alaskaOfficialDef(iconWidth);
+      }
+    // eslint-disable-next-line no-unused-vars
+    } catch (err) {
+      this.svg = undefined;
     }
   }
 
