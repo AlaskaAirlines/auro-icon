@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.1.2](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.1...v8.1.2) (2025-07-28)
+
+
+### Bug Fixes
+
+* try catch DOMParser for nodejs env ([ac3217a](https://github.com/AlaskaAirlines/auro-icon/commit/ac3217a639eafb88bfa72cb4a03e9236fb56d654))
+
 ## [8.1.1](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.0...v8.1.1) (2025-07-18)
 
 
