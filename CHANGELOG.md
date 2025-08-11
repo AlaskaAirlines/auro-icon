@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.1.3](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.2...v8.1.3) (2025-08-11)
+
+
+### Bug Fixes
+
+* auro library was causing aqua scan failures ([1f07cc1](https://github.com/AlaskaAirlines/auro-icon/commit/1f07cc11f66dd3e7e117ce6da5f49fa98263b939))
+
 ## [8.1.2](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.1...v8.1.2) (2025-07-28)
 
 
