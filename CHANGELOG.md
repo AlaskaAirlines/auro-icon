@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [8.1.4](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.3...v8.1.4) (2025-08-14)
+
+
+### Bug Fixes
+
+* update auro-library to latest version ([b5533a6](https://github.com/AlaskaAirlines/auro-icon/commit/b5533a643c85ac51930a0a507c9c2b7ac9e14861))
+
 ## [8.1.3](https://github.com/AlaskaAirlines/auro-icon/compare/v8.1.2...v8.1.3) (2025-08-11)
 
 
