@@ -4,13 +4,13 @@
 // ---------------------------------------------------------------------
 
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-import { css, html } from "lit";
+import { html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import BaseIcon from "./baseIcon.js";
-import colorCss from "./color-css.js";
-import styleCss from "./style-css.js";
-import tokensCss from "./tokens-css.js";
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 export class AuroIcon extends BaseIcon {
   constructor() {
@@ -93,12 +93,7 @@ export class AuroIcon extends BaseIcon {
   }
 
   static get styles() {
-    return [
-      BaseIcon.styles,
-      css`${tokensCss}`,
-      css`${styleCss}`,
-      css`${colorCss}`,
-    ];
+    return [BaseIcon.styles, tokensCss, styleCss, colorCss];
   }
 
   /**

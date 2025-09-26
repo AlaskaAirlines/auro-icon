@@ -69,8 +69,7 @@ There are two important parts of every Auro component. The <a href="https://deve
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `AuroIcon.register(name)` method and pass in a unique name.
 
 ```js
-import { AuroIcon } from './src/auro-icon.js';
-import { AuroAlaska } from './src/auro-alaska.js';
+import { AuroIcon, AuroAlaska } from '@aurodesignsystem/auro-icon/class';
 
 AuroIcon.register('custom-icon');
 AuroAlaska.register('custom-alaska');

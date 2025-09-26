@@ -9,7 +9,7 @@
 import { expect, fixture, html, waitUntil } from "@open-wc/testing";
 import sinon from "sinon";
 import { AuroIcon } from "../src/auro-icon.js";
-import "../index.js";
+import "../src/registered";
 
 const fetchStub = sinon.stub(window, "fetch");
 
