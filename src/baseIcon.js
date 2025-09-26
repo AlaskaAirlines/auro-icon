@@ -3,10 +3,10 @@
 
 // ---------------------------------------------------------------------
 
+import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import AuroElement from "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs";
 import { css } from "lit";
-import AuroElement from '@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs';
-import error from '@alaskaairux/icons/dist/icons/alert/error.mjs';
-import cacheFetch from './cacheFetch.js';
+import cacheFetch from "./cacheFetch.js";
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -24,14 +24,14 @@ export default class BaseIcon extends AuroElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      ...super.properties,
+      ...AuroElement.properties,
 
       /**
        * Set value for on-dark version of auro-icon.
        */
       onDark: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -39,8 +39,8 @@ export default class BaseIcon extends AuroElement {
        */
       svg: {
         attribute: false,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
@@ -58,17 +58,17 @@ export default class BaseIcon extends AuroElement {
    * @returns {SVGElement} DOM - Ready HTML to be appended.
    */
   async fetchIcon(category, name) {
-    let iconHTML = '';
+    let iconHTML = "";
 
-    if (category === 'logos') {
+    if (category === "logos") {
       iconHTML = await cacheFetch(`${this.uri}/${category}/${name}.svg`);
     } else {
       iconHTML = await cacheFetch(`${this.uri}/icons/${category}/${name}.svg`);
     }
 
-    const dom = new DOMParser().parseFromString(iconHTML, 'text/html');
+    const dom = new DOMParser().parseFromString(iconHTML, "text/html");
 
-    return dom.body.querySelector('svg');
+    return dom.body.querySelector("svg");
   }
 
   // lifecycle function
@@ -80,13 +80,16 @@ export default class BaseIcon extends AuroElement {
         if (svg) {
           this.svg = svg;
         } else if (!svg) {
-          const penDOM = new DOMParser().parseFromString(error.svg, 'text/html');
+          const penDOM = new DOMParser().parseFromString(
+            error.svg,
+            "text/html",
+          );
 
           this.svg = penDOM.body.firstChild;
         }
       }
-    // eslint-disable-next-line no-unused-vars
-    } catch (err) {
+      // eslint-disable-next-line no-unused-vars
+    } catch (_err) {
       this.svg = undefined;
     }
   }
