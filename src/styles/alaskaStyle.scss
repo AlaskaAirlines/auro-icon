@@ -3,13 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-// Support for fallback values
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables";
-
 // Support for auroElement styles
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
-
-/* stylelint-disable rule-empty-line-before, scss/comment-no-empty, scss/double-slash-comment-empty-line-before */
+@use "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement";
 
 :host {
   display: inline-block;

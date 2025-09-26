@@ -15,13 +15,12 @@ import official200 from "@alaskaairux/icons/dist/restricted/AS-tagline-200.mjs";
 import official300 from "@alaskaairux/icons/dist/restricted/AS-tagline-300.mjs";
 import official400 from "@alaskaairux/icons/dist/restricted/AS-tagline-400.mjs";
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
-import { css, html } from "lit";
+import { html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
-
-// Import touch detection lib
-import styleCss from "./alaskaStyle-css.js";
 import BaseIcon from "./baseIcon.js";
-import tokensCss from "./tokens-css.js";
+// Import touch detection lib
+import styleCss from "./styles/alaskaStyle.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -180,7 +179,7 @@ export class AuroAlaska extends BaseIcon {
   }
 
   static get styles() {
-    return [BaseIcon.styles, css`${tokensCss}`, css`${styleCss}`];
+    return [BaseIcon.styles, tokensCss, styleCss];
   }
 
   // function that renders the HTML and CSS into  the scope of the component

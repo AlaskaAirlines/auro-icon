@@ -5,9 +5,8 @@
 
 import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
 import AuroElement from "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs";
-import { css } from "lit";
 import cacheFetch from "./cacheFetch.js";
-import styleCss from "./style-css.js";
+import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -45,9 +44,7 @@ export default class BaseIcon extends AuroElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return styleCss;
   }
 
   /**
