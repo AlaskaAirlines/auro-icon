@@ -19,7 +19,8 @@ const _fetchMap = new Map();
  * @returns {Promise}
  */
 const cacheFetch = (uri, options = {}) => {
-  const responseParser = options.responseParser || ((response) => response.text());
+  const responseParser =
+    options.responseParser || ((response) => response.text());
   if (!_fetchMap.has(uri)) {
     _fetchMap.set(uri, fetch(uri).then(responseParser));
   }
