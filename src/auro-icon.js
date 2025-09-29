@@ -3,15 +3,14 @@
 
 // ---------------------------------------------------------------------
 
-import { html, css } from "lit";
-import { classMap } from 'lit/directives/class-map.js';
-import { ifDefined } from 'lit/directives/if-defined.js';
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import { html } from "lit";
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 import BaseIcon from "./baseIcon.js";
-import tokensCss from "./tokens-css.js";
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 export class AuroIcon extends BaseIcon {
   constructor() {
@@ -27,21 +26,21 @@ export class AuroIcon extends BaseIcon {
    * @returns {void}
    */
   privateDefaults() {
-    this.uri = 'https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist';
+    this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      ...super.properties,
+      ...BaseIcon.properties,
 
       /**
        * Set aria-hidden value. Default is `true`. Option is `false`.
        */
       ariaHidden: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -49,7 +48,7 @@ export class AuroIcon extends BaseIcon {
        */
       category: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -57,14 +56,14 @@ export class AuroIcon extends BaseIcon {
        */
       customColor: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
        * When true, auro-icon will render a custom SVG inside the default slot.
        */
       customSvg: {
-        type: Boolean
+        type: Boolean,
       },
 
       /**
@@ -72,7 +71,7 @@ export class AuroIcon extends BaseIcon {
        */
       label: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -80,7 +79,7 @@ export class AuroIcon extends BaseIcon {
        */
       name: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -88,18 +87,13 @@ export class AuroIcon extends BaseIcon {
        */
       variant: {
         type: String,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
   static get styles() {
-    return [
-      super.styles,
-      css`${tokensCss}`,
-      css`${styleCss}`,
-      css`${colorCss}`
-    ];
+    return [BaseIcon.styles, tokensCss, styleCss, colorCss];
   }
 
   /**
@@ -118,7 +112,7 @@ export class AuroIcon extends BaseIcon {
     super.connectedCallback();
 
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-icon');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-icon");
   }
 
   /**
@@ -126,7 +120,7 @@ export class AuroIcon extends BaseIcon {
    * @returns {void} Exposes CSS parts for styling from parent components.
    */
   exposeCssParts() {
-    this.setAttribute('exportparts', 'svg:iconSvg');
+    this.setAttribute("exportparts", "svg:iconSvg");
   }
 
   async firstUpdated() {
@@ -137,12 +131,12 @@ export class AuroIcon extends BaseIcon {
      * depend on this description to provide context for the user using a screen reader.
      * Removes the SVG description for screen reader if ariaHidden is set to true.
      */
-    if (this.hasAttribute('ariaHidden') && this.svg) {
-      const svgDesc = this.svg.querySelector('desc');
+    if (this.hasAttribute("ariaHidden") && this.svg) {
+      const svgDesc = this.svg.querySelector("desc");
 
       if (svgDesc) {
         svgDesc.remove();
-        this.svg.removeAttribute('aria-labelledby');
+        this.svg.removeAttribute("aria-labelledby");
       }
     }
   }
@@ -150,12 +144,12 @@ export class AuroIcon extends BaseIcon {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const labelClasses = {
-      'labelWrapper': true,
-      'util_displayHiddenVisually': !this.label
+      labelWrapper: true,
+      util_displayHiddenVisually: !this.label,
     };
 
     const svgClasses = {
-      'svgWrapper': true,
+      svgWrapper: true,
     };
 
     return html`
@@ -164,9 +158,12 @@ export class AuroIcon extends BaseIcon {
           class="${classMap(svgClasses)}"
           title="${ifDefined(this.title || undefined)}">
           <span aria-hidden="${ifDefined(this.ariaHidden || true)}" part="svg">
-            ${this.customSvg ? html`
+            ${
+              this.customSvg
+                ? html`
                 <slot name="svg"></slot>
-              ` : html`
+              `
+                : html`
                 ${this.svg}
               `
             }

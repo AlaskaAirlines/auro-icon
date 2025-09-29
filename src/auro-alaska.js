@@ -5,24 +5,22 @@
 
 /* eslint-disable jsdoc/require-description-complete-sentence */
 
-import { html, css } from "lit";
-import { classMap } from 'lit/directives/class-map.js';
+import as100 from "@alaskaairux/icons/dist/restricted/AS-100.mjs";
+import as200 from "@alaskaairux/icons/dist/restricted/AS-200.mjs";
+import as300 from "@alaskaairux/icons/dist/restricted/AS-300.mjs";
+
+import as400 from "@alaskaairux/icons/dist/restricted/AS-400.mjs";
+import official100 from "@alaskaairux/icons/dist/restricted/AS-tagline-100.mjs";
+import official200 from "@alaskaairux/icons/dist/restricted/AS-tagline-200.mjs";
+import official300 from "@alaskaairux/icons/dist/restricted/AS-tagline-300.mjs";
+import official400 from "@alaskaairux/icons/dist/restricted/AS-tagline-400.mjs";
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import { html } from "lit";
+import { classMap } from "lit/directives/class-map.js";
 import BaseIcon from "./baseIcon.js";
-
-import as400 from '@alaskaairux/icons/dist/restricted/AS-400.mjs';
-import as300 from '@alaskaairux/icons/dist/restricted/AS-300.mjs';
-import as200 from '@alaskaairux/icons/dist/restricted/AS-200.mjs';
-import as100 from '@alaskaairux/icons/dist/restricted/AS-100.mjs';
-import official400 from '@alaskaairux/icons/dist/restricted/AS-tagline-400.mjs';
-import official300 from '@alaskaairux/icons/dist/restricted/AS-tagline-300.mjs';
-import official200 from '@alaskaairux/icons/dist/restricted/AS-tagline-200.mjs';
-import official100 from '@alaskaairux/icons/dist/restricted/AS-tagline-100.mjs';
-
 // Import touch detection lib
-import styleCss from "./alaskaStyle-css.js";
-import tokensCss from "./tokens-css.js";
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import styleCss from "./styles/alaskaStyle.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -46,7 +44,7 @@ export class AuroAlaska extends BaseIcon {
    * @returns {void}
    */
   privateDefaults() {
-    this.uri = 'https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist';
+    this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.sm = 107;
     this.md = 191;
     this.lg = 527;
@@ -58,18 +56,18 @@ export class AuroAlaska extends BaseIcon {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      ...super.properties,
+      ...BaseIcon.properties,
 
       /**
        * @private
        */
       alaska: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       official: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
     };
   }
@@ -95,13 +93,25 @@ export class AuroAlaska extends BaseIcon {
   alaskaLogoDef(iconWidth) {
     if (this.alaska) {
       if (iconWidth <= this.sm) {
-        this.svg = new DOMParser().parseFromString(as100.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          as100.svg,
+          "text/html",
+        ).body.firstChild;
       } else if (iconWidth > this.sm && iconWidth <= this.md) {
-        this.svg = new DOMParser().parseFromString(as200.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          as200.svg,
+          "text/html",
+        ).body.firstChild;
       } else if (iconWidth > this.md && iconWidth <= this.lg) {
-        this.svg = new DOMParser().parseFromString(as300.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          as300.svg,
+          "text/html",
+        ).body.firstChild;
       } else {
-        this.svg = new DOMParser().parseFromString(as400.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          as400.svg,
+          "text/html",
+        ).body.firstChild;
       }
     }
   }
@@ -115,13 +125,25 @@ export class AuroAlaska extends BaseIcon {
   alaskaOfficialDef(iconWidth) {
     if (this.official) {
       if (iconWidth <= this.sm) {
-        this.svg = new DOMParser().parseFromString(official100.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          official100.svg,
+          "text/html",
+        ).body.firstChild;
       } else if (iconWidth > this.sm && iconWidth <= this.md) {
-        this.svg = new DOMParser().parseFromString(official200.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          official200.svg,
+          "text/html",
+        ).body.firstChild;
       } else if (iconWidth > this.md && iconWidth <= this.lg) {
-        this.svg = new DOMParser().parseFromString(official300.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          official300.svg,
+          "text/html",
+        ).body.firstChild;
       } else {
-        this.svg = new DOMParser().parseFromString(official400.svg, 'text/html').body.firstChild;
+        this.svg = new DOMParser().parseFromString(
+          official400.svg,
+          "text/html",
+        ).body.firstChild;
       }
     }
   }
@@ -130,14 +152,14 @@ export class AuroAlaska extends BaseIcon {
     super.connectedCallback();
 
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-alaska');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-alaska");
   }
 
   // lifecycle function for the purpose of
   // displaying the correct Alaska logo
   // with the correct Restricted icon
   firstUpdated() {
-    const iconContainer = this.shadowRoot.querySelector('.icon');
+    const iconContainer = this.shadowRoot.querySelector(".icon");
     const iconWidth = iconContainer.clientWidth;
 
     if (this.official) {
@@ -150,25 +172,21 @@ export class AuroAlaska extends BaseIcon {
       } else if (this.official) {
         this.alaskaOfficialDef(iconWidth);
       }
-    // eslint-disable-next-line no-unused-vars
-    } catch (err) {
+      // eslint-disable-next-line no-unused-vars
+    } catch (_err) {
       this.svg = undefined;
     }
   }
 
   static get styles() {
-    return [
-      super.styles,
-      css`${tokensCss}`,
-      css`${styleCss}`
-    ];
+    return [BaseIcon.styles, tokensCss, styleCss];
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const classes = {
-      'icon': true,
-      'logo': this.alaska || this.official,
+      icon: true,
+      logo: this.alaska || this.official,
     };
 
     return html`
