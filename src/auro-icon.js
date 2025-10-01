@@ -170,7 +170,7 @@ export class AuroIcon extends BaseIcon {
           </span>
         </div>
 
-        <div class="${classMap(labelClasses)}">
+        <div class="${classMap(labelClasses)}" part="label">
           <slot></slot>
         </div>
       </div>
