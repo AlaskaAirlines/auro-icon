@@ -5,6 +5,7 @@ import { AuroIcon } from "../../src/auro-icon.js";
  *
  * @slot - Hidden from visibility, used for a11y if icon description is needed.
  * @slot svg - Used for custom SVG content.
+ * @csspart label - Used for customizing the style of the icon label.
  */
 class AuroIconWCA extends AuroIcon {}
 
