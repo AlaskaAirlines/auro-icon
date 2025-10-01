@@ -24,3 +24,9 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 |-------|--------------------------------------------------|
 |       | Hidden from visibility, used for a11y if icon description is needed. |
 | `svg` | Used for custom SVG content.                     |
+
+## CSS Shadow Parts
+
+| Part    | Description                                      |
+|---------|--------------------------------------------------|
+| `label` | Used for customizing the style of the icon label. |
