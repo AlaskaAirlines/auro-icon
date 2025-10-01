@@ -12,6 +12,11 @@ import colorCss from "./styles/color.scss";
 import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
+/**
+ * @slot - Hidden from visibility, used for a11y if icon description is needed.
+ * @slot svg - Used for custom SVG content.
+ * @csspart label - Used for customizing the style of the icon label.
+ */
 export class AuroIcon extends BaseIcon {
   constructor() {
     super();
