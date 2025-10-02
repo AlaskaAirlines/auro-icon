@@ -19,6 +19,7 @@
   }
 }
 
-:host([onDark]) {
+:host([onDark]),
+:host([appearance="inverse"]) {
   --ds-auro-alaska-color: #FFF; // Hardcoded hex value for logo in order to prevent color change
 }

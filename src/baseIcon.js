@@ -18,6 +18,7 @@ export default class BaseIcon extends AuroElement {
   constructor() {
     super();
     this.onDark = false;
+    this.appearance = "default";
   }
 
   // function to define props used within the scope of this component
@@ -26,11 +27,21 @@ export default class BaseIcon extends AuroElement {
       ...AuroElement.properties,
 
       /**
-       * Set value for on-dark version of auro-icon.
+       * DEPRECATED - use `appearance` instead.
        */
       onDark: {
         type: Boolean,
         reflect: true,
+      },
+
+      /**
+       * Defines whether the button will be on lighter or darker backgrounds.
+       * @property {'default', 'inverse'}
+       * @default 'default'
+       */
+      appearance: {
+        type: String,
+        reflect: true
       },
 
       /**
