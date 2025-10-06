@@ -9,6 +9,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 
 | Property         | Attribute        | Type      | Default     | Description                                      |
 |------------------|------------------|-----------|-------------|--------------------------------------------------|
+| [appearance](#appearance)     | `appearance`     | `string`  | "'default'" | Defines whether the button will be on lighter or darker backgrounds. |
 | [ariaHidden](#ariaHidden)     | `ariaHidden`     | `string`  |             | Set aria-hidden value. Default is `true`. Option is `false`. |
 | [category](#category)       | `category`       | `string`  |             | The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage. |
 | [customColor](#customColor)    | `customColor`    | `boolean` |             | Allows custom color to be set.                   |
@@ -18,7 +19,7 @@ auro-icon provides users a way to use the Auro Icons by simply passing in the ca
 | [hiddenVisually](#hiddenVisually) | `hiddenVisually` | `Boolean` |             | If present, the component will be hidden visually, but still read by screen readers |
 | [label](#label)          | `label`          | `boolean` |             | Exposes content in slot as icon label.           |
 | [name](#name)           | `name`           | `string`  |             | The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage. |
-| [onDark](#onDark)         | `onDark`         | `boolean` | false       | Set value for on-dark version of auro-icon.      |
+| [onDark](#onDark)         | `onDark`         | `boolean` | false       | DEPRECATED - use `appearance` instead.           |
 | [variant](#variant)        | `variant`        | `string`  | "undefined" | The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `tierOneWorldEmerald`, `tierOneWorldSapphire`, `tierOneWorldRuby`. |
 
 ## Slots
@@ -177,32 +178,32 @@ Mono-color icons support the following attributes to illustrate visual state.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### onDark visual state
+#### Visual state on Dark background
 
-All compatible with `onDark` attribute.
+All compatible with `appearance="inverse"` attribute.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onDark.html) -->
-  <!-- The below content is automatically added from ../apiExamples/onDark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverseAppearance.html) -->
+  <!-- The below content is automatically added from ../apiExamples/inverseAppearance.html -->
   <span style="color: var(--ds-basic-color-texticon-inverse)">
-    <auro-icon category="interface" name="pin-trip" onDark></auro-icon> default<br />
-    <auro-icon category="interface" name="pin-trip" onDark variant="disabled"></auro-icon> disabled<br />
-    <auro-icon category="interface" name="pin-trip" onDark variant="muted"></auro-icon> muted<br />
-    <auro-icon category="interface" name="pin-trip" onDark variant="statusError"></auro-icon> status error<br />
+    <auro-icon category="interface" name="pin-trip" appearance="inverse"></auro-icon> default<br />
+    <auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"></auro-icon> disabled<br />
+    <auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"></auro-icon> muted<br />
+    <auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"></auro-icon> status error<br />
   </span>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/onDark.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/onDark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/inverseAppearance.html -->
 
 ```html
 <span style="color: var(--ds-basic-color-texticon-inverse)">
-  <auro-icon category="interface" name="pin-trip" onDark></auro-icon> default<br />
-  <auro-icon category="interface" name="pin-trip" onDark variant="disabled"></auro-icon> disabled<br />
-  <auro-icon category="interface" name="pin-trip" onDark variant="muted"></auro-icon> muted<br />
-  <auro-icon category="interface" name="pin-trip" onDark variant="statusError"></auro-icon> status error<br />
+  <auro-icon category="interface" name="pin-trip" appearance="inverse"></auro-icon> default<br />
+  <auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"></auro-icon> disabled<br />
+  <auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"></auro-icon> muted<br />
+  <auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"></auro-icon> status error<br />
 </span>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
