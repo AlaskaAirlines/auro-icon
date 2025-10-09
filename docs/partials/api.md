@@ -71,19 +71,19 @@ Mono-color icons support the following attributes to illustrate visual state.
 
 </auro-accordion>
 
-#### onDark visual state
+#### Visual state on Dark background
 
-All compatible with `onDark` attribute.
+All compatible with `appearance="inverse"` attribute.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onDark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/onDark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

@@ -24,14 +24,14 @@ import "@alaskaairux/auro-icon";
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <auro-alaska onDark style="width: 192px"></auro-alaska>
+  <auro-alaska appearance="inverse" style="width: 192px"></auro-alaska>
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-alaska onDark style="width: 192px"></auro-alaska>
+  <auro-alaska appearance="inverse" style="width: 192px"></auro-alaska>
   ```
 
 </auro-accordion>
@@ -54,14 +54,14 @@ Using the `official` property will display the Alaska Airlines logo with the off
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <auro-alaska official ondark style="width: 192px"></auro-alaska>
+  <auro-alaska official appearance="inverse" style="width: 192px"></auro-alaska>
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-alaska official ondark style="width: 192px"></auro-alaska>
+  <auro-alaska official appearance="inverse" style="width: 192px"></auro-alaska>
   ```
 
 </auro-accordion>
