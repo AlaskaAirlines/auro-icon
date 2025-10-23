@@ -94,9 +94,11 @@ Using the `customSvg` attribute, the component may render any icon svg content r
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Default component with label (accessibility recommendation)
-
-While you may place the icon alone, it is considered best practice to combine the icon with a description statement. The `auro-icon` element easily supports this with the use of the `label` attribute. By using the `label` attribute, content you enter into the `slot` of the element will appear next to the icon of choice. Changing the `aria-hidden` state of the icon is NOT needed. The assistive technologies will bypass the icon and announce the label string of content.
+### Default component with label (accessibility recommendation) <a name="label"></a>
+While you may place the icon alone, it is considered best practice to combine the icon with a description statement.
+The `auro-icon` element easily supports this with the use of the `label` attribute.
+By using the `label` attribute, content you enter into the `slot` of the element will appear next to the icon of choice.
+Changing the `aria-hidden` state of the icon is NOT needed. The assistive technologies will bypass the icon and announce the label string of content.
 
 In situations where the icon is to be listed with a descriptive label, simply use the `label` attribute and the text in the `slot` will appear next to the icon.
 
@@ -113,6 +115,61 @@ In situations where the icon is to be listed with a descriptive label, simply us
 
 ```html
 <auro-icon label category="in-flight" name="wifi">Your flight is enabled with super fast Wi-Fi</auro-icon>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### label with typography classes
+
+When using the `label` attribute, you may apply typography classes to the `slot` element to match your design system needs.
+
+Below is an example of mixing and matching typography styles with the `auro-icon` component.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/mixMatchTypography.html) -->
+  <!-- The below content is automatically added from ../apiExamples/mixMatchTypography.html -->
+  <auro-icon category="interface" name="chevron-right" label>Icon with body-default slot (Recommended)</span></auro-icon>
+  <div class="body-default"><auro-icon category="interface" name="chevron-right"></auro-icon>Icon inside of body-default container</div>
+  <auro-icon category="interface" name="chevron-right"></auro-icon><span class="body-default">Icon next to body-default text</span>
+  <br><br>
+  <auro-icon category="interface" name="chevron-right" label class="heading-lg">Icon with heading-lg slot (Recommended)</auro-icon>
+  <div class="heading-lg"><auro-icon category="interface" name="chevron-right"></auro-icon>Icon inside of heading-lg container</div>
+  <auro-icon category="interface" name="chevron-right"></auro-icon><span class="heading-lg">Icon next to heading-lg text</span>
+  <br><br>
+  <auro-icon category="interface" name="chevron-right" label class="body-xs">Icon with body-xs slot (Recommended)</auro-icon>
+  <div class="body-xs"><auro-icon category="interface" name="chevron-right"></auro-icon>Icon inside of body-xs container</div>
+  <auro-icon category="interface" name="chevron-right"></auro-icon><span class="body-xs">Icon next to body-xs text</span>
+  <br><br>
+  <auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 3rem" label>Big icon with slotted text (Recommended)</auro-icon>
+  <div><auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 3rem"></auro-icon>Big icon next to text</div>
+  <br><br>
+  <auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 0.8rem" label>Small icon with slotted text (Recommended)</auro-icon>
+  <div><auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 0.8rem"></auro-icon>Small icon next to text</div>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/mixMatchTypography.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/mixMatchTypography.html -->
+
+```html
+<auro-icon category="interface" name="chevron-right" label>Icon with body-default slot (Recommended)</span></auro-icon>
+<div class="body-default"><auro-icon category="interface" name="chevron-right"></auro-icon>Icon inside of body-default container</div>
+<auro-icon category="interface" name="chevron-right"></auro-icon><span class="body-default">Icon next to body-default text</span>
+<br><br>
+<auro-icon category="interface" name="chevron-right" label class="heading-lg">Icon with heading-lg slot (Recommended)</auro-icon>
+<div class="heading-lg"><auro-icon category="interface" name="chevron-right"></auro-icon>Icon inside of heading-lg container</div>
+<auro-icon category="interface" name="chevron-right"></auro-icon><span class="heading-lg">Icon next to heading-lg text</span>
+<br><br>
+<auro-icon category="interface" name="chevron-right" label class="body-xs">Icon with body-xs slot (Recommended)</auro-icon>
+<div class="body-xs"><auro-icon category="interface" name="chevron-right"></auro-icon>Icon inside of body-xs container</div>
+<auro-icon category="interface" name="chevron-right"></auro-icon><span class="body-xs">Icon next to body-xs text</span>
+<br><br>
+<auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 3rem" label>Big icon with slotted text (Recommended)</auro-icon>
+<div><auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 3rem"></auro-icon>Big icon next to text</div>
+<br><br>
+<auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 0.8rem" label>Small icon with slotted text (Recommended)</auro-icon>
+<div><auro-icon category="interface" name="chevron-right" style="--ds-auro-icon-size: 0.8rem"></auro-icon>Small icon next to text</div>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
