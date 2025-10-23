@@ -17,7 +17,6 @@
 :host {
   color: currentColor;
   vertical-align: middle;
-  line-height: 1;
   display: inline-block;
 }
 
@@ -29,14 +28,24 @@ svg {
 
 .componentWrapper {
   display: flex;
+  line-height: var(--ds-auro-icon-size);
 }
 
 .svgWrapper {
   height: var(--ds-auro-icon-size);
   width: var(--ds-auro-icon-size);
+
+  [part="svg"] {
+    display: flex;
+  }
 }
 
 .labelWrapper {
   margin-left: var(--ds-size-50, vac.$ds-size-50);
-  line-height: 1.8;
+
+  ::slotted(*) {
+    // This is to make the icon and label vertically align properly in the middle
+    line-height: inherit !important; // stylelint-disable-line declaration-no-important
+  }
 }
+
