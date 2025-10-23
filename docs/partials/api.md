@@ -35,9 +35,12 @@ Using the `customSvg` attribute, the component may render any icon svg content r
 
 </auro-accordion>
 
-### Default component with label (accessibility recommendation)
+### Default component with label (accessibility recommendation) <a name="label"></a>
 
-While you may place the icon alone, it is considered best practice to combine the icon with a description statement. The `auro-icon` element easily supports this with the use of the `label` attribute. By using the `label` attribute, content you enter into the `slot` of the element will appear next to the icon of choice. Changing the `aria-hidden` state of the icon is NOT needed. The assistive technologies will bypass the icon and announce the label string of content.
+While you may place the icon alone, it is considered best practice to combine the icon with a description statement.
+The `auro-icon` element easily supports this with the use of the `label` attribute.
+By using the `label` attribute, content you enter into the `slot` of the element will appear next to the icon of choice.
+Changing the `aria-hidden` state of the icon is NOT needed. The assistive technologies will bypass the icon and announce the label string of content.
 
 In situations where the icon is to be listed with a descriptive label, simply use the `label` attribute and the text in the `slot` will appear next to the icon.
 
@@ -50,6 +53,25 @@ In situations where the icon is to be listed with a descriptive label, simply us
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/accessRec.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### label with typography classes
+
+When using the `label` attribute, you may apply typography classes to the `slot` element to match your design system needs.
+
+Below is an example of mixing and matching typography styles with the `auro-icon` component.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/mixMatchTypography.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/mixMatchTypography.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
