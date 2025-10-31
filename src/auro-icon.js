@@ -49,7 +49,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
+       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/ways-to-use.
        */
       category: {
         type: String,
@@ -80,7 +80,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage.
+       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/ways-to-use.
        */
       name: {
         type: String,
