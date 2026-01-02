@@ -24,9 +24,9 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-alaska provides users a way to use the Alaska Airline logos.
+ * The `auro-alaska` element provides users a way to use the Alaska Airline logos.
+ * @customElement auro-alaska
  *
- * @attr {Boolean} official - Set value for alaska airlines logo with official tagline
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
 
@@ -35,7 +35,7 @@ export class AuroAlaska extends BaseIcon {
   constructor() {
     super();
 
-    this.privateDefaults();
+    this._initializeDefaults();
   }
 
   /**
@@ -43,7 +43,7 @@ export class AuroAlaska extends BaseIcon {
    * @private
    * @returns {void}
    */
-  privateDefaults() {
+  _initializeDefaults() {
     this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.sm = 107;
     this.md = 191;
@@ -65,6 +65,10 @@ export class AuroAlaska extends BaseIcon {
         type: Boolean,
         reflect: true,
       },
+
+      /**
+       * Set value for alaska airlines logo with official tagline.
+       */
       official: {
         type: Boolean,
         reflect: true,
