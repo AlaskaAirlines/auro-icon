@@ -12,11 +12,19 @@ import styleCss from "./styles/style.scss";
 /**
  * @slot - Hidden from visibility, used for a11y if icon description is needed
  */
-
-// build the component class
 export default class BaseIcon extends AuroElement {
   constructor() {
     super();
+    
+    this._initializeDefaults();
+  }
+
+  /**
+   * Internal defaults.
+   * @private
+   * @returns {void}
+   */
+  _initializeDefaults() {
     this.onDark = false;
     this.appearance = "default";
   }
@@ -27,7 +35,7 @@ export default class BaseIcon extends AuroElement {
       ...AuroElement.properties,
 
       /**
-       * DEPRECATED - use `appearance` instead.
+       * DEPRECATED - use `appearance="inverse"` instead.
        */
       onDark: {
         type: Boolean,
@@ -36,7 +44,7 @@ export default class BaseIcon extends AuroElement {
 
       /**
        * Defines whether the button will be on lighter or darker backgrounds.
-       * @property {'default', 'inverse'}
+       * @property {'default' | 'inverse'}
        * @default 'default'
        */
       appearance: {

@@ -13,6 +13,9 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
+ * The `auro-icon` element provides users a way to use the Alaska Airlines icon library.
+ * @customElement auro-icon
+ * 
  * @slot - Hidden from visibility, used for a11y if icon description is needed.
  * @slot svg - Used for custom SVG content.
  * @csspart label - Used for customizing the style of the icon label.
@@ -21,8 +24,7 @@ export class AuroIcon extends BaseIcon {
   constructor() {
     super();
 
-    this.variant = undefined;
-    this.privateDefaults();
+    this._initializeDefaults();
   }
 
   /**
@@ -30,7 +32,8 @@ export class AuroIcon extends BaseIcon {
    * @private
    * @returns {void}
    */
-  privateDefaults() {
+  _initializeDefaults() {
+    this.variant = undefined;
     this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
@@ -42,18 +45,20 @@ export class AuroIcon extends BaseIcon {
 
       /**
        * Set aria-hidden value. Default is `true`. Option is `false`.
+       * @type {'true' | 'false'}
+       * @default 'true'
        */
       ariaHidden: {
         type: String,
-        reflect: true,
+        reflect: true
       },
 
       /**
-       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/usage.
+       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/ways-to-use.
        */
       category: {
         type: String,
-        reflect: true,
+        reflect: true
       },
 
       /**
@@ -61,14 +66,14 @@ export class AuroIcon extends BaseIcon {
        */
       customColor: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
 
       /**
        * When true, auro-icon will render a custom SVG inside the default slot.
        */
       customSvg: {
-        type: Boolean,
+        type: Boolean
       },
 
       /**
@@ -76,23 +81,24 @@ export class AuroIcon extends BaseIcon {
        */
       label: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
 
       /**
-       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/usage.
+       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/ways-to-use.
        */
       name: {
         type: String,
-        reflect: true,
+        reflect: true
       },
 
       /**
-       * The style of the icon. The accepted variants are `accent1`, `disabled`, `muted`, `statusDefault`, `statusInfo`, `statusSuccess`, `statusWarning`, `statusError`, `statusInfoSubtle`, `statusSuccessSubtle`, `statusWarningSubtle`, `statusErrorSubtle`, `fareBasicEconomy`, `fareBusiness`, `fareEconomy`, `fareFirst`, `farePremiumEconomy`, `tierOneWorldEmerald`, `tierOneWorldSapphire`, `tierOneWorldRuby`.
+       * The style of the icon.
+       * @type {'accent1' | 'disabled' | 'muted' | 'statusDefault' | 'statusInfo' | 'statusSuccess' | 'statusWarning' | 'statusError' | 'statusInfoSubtle' | 'statusSuccessSubtle' | 'statusWarningSubtle' | 'statusErrorSubtle' | 'fareBasicEconomy' | 'fareBusiness' | 'fareEconomy' | 'fareFirst' | 'farePremiumEconomy' | 'tierOneWorldEmerald' | 'tierOneWorldSapphire' | 'tierOneWorldRuby'}
        */
       variant: {
         type: String,
-        reflect: true,
+        reflect: true
       },
     };
   }
