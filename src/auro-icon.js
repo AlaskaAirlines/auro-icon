@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import { html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
@@ -93,6 +94,15 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
+       * When true, renders the default tail livery image when the requested tail fails to load,
+       * instead of the generic error icon.
+       */
+      tailFallback: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
        * The style of the icon.
        * @type {'accent1' | 'disabled' | 'muted' | 'statusDefault' | 'statusInfo' | 'statusSuccess' | 'statusWarning' | 'statusError' | 'statusInfoSubtle' | 'statusSuccessSubtle' | 'statusWarningSubtle' | 'statusErrorSubtle' | 'fareBasicEconomy' | 'fareBusiness' | 'fareEconomy' | 'fareFirst' | 'farePremiumEconomy' | 'tierOneWorldEmerald' | 'tierOneWorldSapphire' | 'tierOneWorldRuby'}
        */
@@ -124,6 +134,22 @@ export class AuroIcon extends BaseIcon {
 
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, "auro-icon");
+  }
+
+  /**
+   * @protected
+   * @override
+   * @returns {Element} The tail-DEFAULT fallback SVG when `tailFallback` is set;
+   *   otherwise delegates to the base error icon fallback.
+   */
+  _getErrorFallback() {
+    if (this.tailFallback) {
+      const dom = new DOMParser().parseFromString(tailDefault.svg, "text/html");
+
+      return dom.body.querySelector("svg");
+    }
+
+    return super._getErrorFallback();
   }
 
   /**

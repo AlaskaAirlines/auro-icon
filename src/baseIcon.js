@@ -87,6 +87,18 @@ export default class BaseIcon extends AuroElement {
     return dom.body.querySelector("svg");
   }
 
+  /**
+   * Returns the fallback SVG element to display when an icon fails to load.
+   * Subclasses may override this to provide a different fallback.
+   * @protected
+   * @returns {Element} DOM element to use as fallback.
+   */
+  _getErrorFallback() {
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+
+    return penDOM.body.querySelector("svg");
+  }
+
   // lifecycle function
   async firstUpdated() {
     try {
@@ -96,12 +108,7 @@ export default class BaseIcon extends AuroElement {
         if (svg) {
           this.svg = svg;
         } else if (!svg) {
-          const penDOM = new DOMParser().parseFromString(
-            error.svg,
-            "text/html",
-          );
-
-          this.svg = penDOM.body.firstChild;
+          this.svg = this._getErrorFallback();
         }
       }
       // eslint-disable-next-line no-unused-vars
