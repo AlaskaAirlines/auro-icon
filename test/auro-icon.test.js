@@ -8,6 +8,8 @@
 /* eslint-disable no-undef */
 import { expect, fixture, html, waitUntil } from "@open-wc/testing";
 import sinon from "sinon";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
+import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
 import { AuroIcon } from "../src/auro-icon.js";
 import "../src/registered";
 
@@ -210,5 +212,35 @@ describe("auro-icon", () => {
     expect(el).to.be.an.instanceof(AuroIcon);
     expect(el.category).to.equal("interface");
     expect(el.name).to.equal("chevron-up");
+  });
+
+  it("tailFallback renders tail-DEFAULT SVG when icon fails to load", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos" name="tail-N-fallback-test" tailFallback></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(tailDefault.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  it("renders generic error icon when icon fails to load and tailFallback is not set", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos" name="tail-N-error-test"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
   });
 });
