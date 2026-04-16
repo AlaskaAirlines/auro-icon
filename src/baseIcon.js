@@ -88,15 +88,23 @@ export default class BaseIcon extends AuroElement {
   }
 
   /**
+   * Parses an SVG string and returns the SVG element.
+   * @protected
+   * @param {string} svgString - Raw SVG markup to parse.
+   * @returns {Element} The parsed SVG element.
+   */
+  static _parseSvg(svgString) {
+    return new DOMParser().parseFromString(svgString, "text/html").body.querySelector("svg");
+  }
+
+  /**
    * Returns the fallback SVG element to display when an icon fails to load.
    * Subclasses may override this to provide a different fallback.
    * @protected
    * @returns {Element} DOM element to use as fallback.
    */
   _getErrorFallback() {
-    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
-
-    return penDOM.body.querySelector("svg");
+    return BaseIcon._parseSvg(error.svg);
   }
 
   // lifecycle function
