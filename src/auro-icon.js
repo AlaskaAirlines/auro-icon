@@ -143,13 +143,7 @@ export class AuroIcon extends BaseIcon {
    *   otherwise delegates to the base error icon fallback.
    */
   _getErrorFallback() {
-    if (this.tailFallback) {
-      const dom = new DOMParser().parseFromString(tailDefault.svg, "text/html");
-
-      return dom.body.querySelector("svg");
-    }
-
-    return super._getErrorFallback();
+    return this.tailFallback ? BaseIcon._parseSvg(tailDefault.svg) : super._getErrorFallback();
   }
 
   /**
