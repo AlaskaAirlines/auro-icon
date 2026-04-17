@@ -392,6 +392,13 @@ All compatible with `appearance="inverse"` attribute.
 
 When an icon is not found, the component will attempt to render a fallback icon. By default, the error icon will be used. If the name of the icon starts with `tail-`, the component will attempt to render the default tail logo as a fallback. 
 
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/fallback.html) -->
+<!-- The below content is automatically added from ../apiExamples/fallback.html -->
+<!-- Default Fallback Icon -->
+Default Icon fallback: <auro-icon category="interface" name="icon-INVALID"></auro-icon>
+<!-- Tail Fallback Icon -->
+Tail Icon fallback: <auro-icon category="logos" name="tail-INVALID"></auro-icon>
+<!-- AURO-GENERATED-CONTENT:END -->
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/fallback.html) -->
@@ -399,9 +406,9 @@ When an icon is not found, the component will attempt to render a fallback icon.
 
 ```html
 <!-- Default Fallback Icon -->
-<auro-icon category="interface" name="icon-INVALID"></auro-icon>
+Default Icon fallback: <auro-icon category="interface" name="icon-INVALID"></auro-icon>
 <!-- Tail Fallback Icon -->
-<auro-icon category="logos" name="tail-INVALID"></auro-icon>
+Tail Icon fallback: <auro-icon category="logos" name="tail-INVALID"></auro-icon>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
