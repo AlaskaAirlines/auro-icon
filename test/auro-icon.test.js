@@ -190,7 +190,7 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not become ready");
 
-    expect(el).to.be.accessible();
+    await expect(el).to.be.accessible();
   });
 
   it("auro-icon custom element is defined", async () => {
@@ -239,6 +239,21 @@ describe("auro-icon", () => {
     await waitUntil(() => el.svg, "Element did not set fallback svg");
 
     const penDOM = new DOMParser().parseFromString(tailDefault.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  it("renders generic error icon when name is missing", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
