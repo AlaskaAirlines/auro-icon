@@ -401,7 +401,7 @@ When an icon is not found, the component will attempt to render a fallback icon.
 <!-- Default Fallback Icon -->
 <auro-icon category="interface" name="icon-INVALID"></auro-icon>
 <!-- Tail Fallback Icon -->
-<auro-icon category="interface" name="tail-INVALID"></auro-icon>
+<auro-icon category="logos" name="tail-INVALID"></auro-icon>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
