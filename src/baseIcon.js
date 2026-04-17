@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 
 import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import AuroElement from "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs";
 import cacheFetch from "./cacheFetch.js";
 import styleCss from "./styles/style.scss";
@@ -87,26 +88,6 @@ export default class BaseIcon extends AuroElement {
     return dom.body.querySelector("svg");
   }
 
-  /**
-   * Parses an SVG string and returns the SVG element.
-   * @protected
-   * @param {string} svgString - Raw SVG markup to parse.
-   * @returns {Element} The parsed SVG element.
-   */
-  static _parseSvg(svgString) {
-    return new DOMParser().parseFromString(svgString, "text/html").body.querySelector("svg");
-  }
-
-  /**
-   * Returns the fallback SVG element to display when an icon fails to load.
-   * Subclasses may override this to provide a different fallback.
-   * @protected
-   * @returns {Element} DOM element to use as fallback.
-   */
-  _getErrorFallback() {
-    return BaseIcon._parseSvg(error.svg);
-  }
-
   // lifecycle function
   async firstUpdated() {
     try {
@@ -116,7 +97,9 @@ export default class BaseIcon extends AuroElement {
         if (svg) {
           this.svg = svg;
         } else if (!svg) {
-          this.svg = this._getErrorFallback();
+          const fallbackSvg = this.name?.startsWith('tail-') ? tailDefault.svg : error.svg;
+
+          this.svg = new DOMParser().parseFromString(fallbackSvg, "text/html").body.querySelector("svg");
         }
       }
       // eslint-disable-next-line no-unused-vars

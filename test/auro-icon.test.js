@@ -214,11 +214,26 @@ describe("auro-icon", () => {
     expect(el.name).to.equal("chevron-up");
   });
 
-  it("tailFallback renders tail-DEFAULT SVG when icon fails to load", async () => {
+  it("renders generic error icon when no name attribute is provided", async () => {
     fetchStub.resolves(mockIconResponse(""));
 
     const el = await fixture(html`
-      <auro-icon category="logos" name="tail-N-fallback-test" tailFallback></auro-icon>
+      <auro-icon category="interface"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  it("renders tail-DEFAULT SVG when a tail icon name fails to load", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos" name="tail-N-fallback-test"></auro-icon>
     `);
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
@@ -229,11 +244,11 @@ describe("auro-icon", () => {
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
   });
 
-  it("renders generic error icon when icon fails to load and tailFallback is not set", async () => {
+  it("renders generic error icon when a non-tail icon fails to load", async () => {
     fetchStub.resolves(mockIconResponse(""));
 
     const el = await fixture(html`
-      <auro-icon category="logos" name="tail-N-error-test"></auro-icon>
+      <auro-icon category="logos" name="nonexistent-icon"></auro-icon>
     `);
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
