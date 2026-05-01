@@ -4,6 +4,7 @@
 // ---------------------------------------------------------------------
 
 import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import AuroElement from "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs";
 import cacheFetch from "./cacheFetch.js";
 import styleCss from "./styles/style.scss";
@@ -96,12 +97,9 @@ export default class BaseIcon extends AuroElement {
         if (svg) {
           this.svg = svg;
         } else if (!svg) {
-          const penDOM = new DOMParser().parseFromString(
-            error.svg,
-            "text/html",
-          );
+          const fallbackSvg = this.name?.startsWith('tail-') ? tailDefault.svg : error.svg;
 
-          this.svg = penDOM.body.firstChild;
+          this.svg = new DOMParser().parseFromString(fallbackSvg, "text/html").body.querySelector("svg");
         }
       }
       // eslint-disable-next-line no-unused-vars

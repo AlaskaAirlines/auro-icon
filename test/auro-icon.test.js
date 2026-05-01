@@ -8,6 +8,8 @@
 /* eslint-disable no-undef */
 import { expect, fixture, html, waitUntil } from "@open-wc/testing";
 import sinon from "sinon";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
+import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
 import { AuroIcon } from "../src/auro-icon.js";
 import "../src/registered";
 
@@ -188,7 +190,7 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not become ready");
 
-    expect(el).to.be.accessible();
+    await expect(el).to.be.accessible();
   });
 
   it("auro-icon custom element is defined", async () => {
@@ -210,5 +212,65 @@ describe("auro-icon", () => {
     expect(el).to.be.an.instanceof(AuroIcon);
     expect(el.category).to.equal("interface");
     expect(el.name).to.equal("chevron-up");
+  });
+
+  it("renders generic error icon when no name attribute is provided", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="interface"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  it("renders tail-DEFAULT SVG when a tail icon name fails to load", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos" name="tail-N-fallback-test"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(tailDefault.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  it("renders generic error icon when name is missing", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  it("renders generic error icon when a non-tail icon fails to load", async () => {
+    fetchStub.resolves(mockIconResponse(""));
+
+    const el = await fixture(html`
+      <auro-icon category="logos" name="nonexistent-icon"></auro-icon>
+    `);
+
+    await waitUntil(() => el.svg, "Element did not set fallback svg");
+
+    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const expectedSvg = penDOM.body.querySelector("svg");
+
+    expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
   });
 });
