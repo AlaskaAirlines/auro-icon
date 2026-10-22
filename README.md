@@ -21,9 +21,9 @@ The following sections are editable by making changes to the following files:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/description.md) -->
 <!-- The below content is automatically added from ./docs/partials/description.md -->
-Icons can be used to represent concepts or provide context to options and/or actions within an experience.
+Icons represent concepts and add context to options and actions.
 
-The `<auro-icon>` element comes pre-configured with all the available [Auro Icons](https://auro.alaskaair.com/icons) . Simply add the `category` and `name` of the icon for quick and easy results.
+The `<auro-icon>` element can show any icon in the [Auro icon library](https://auro.alaskaair.com/icons). Set the icon's `category` and `name`.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
@@ -34,11 +34,11 @@ The `<auro-icon>` element comes pre-configured with all the available [Auro Icon
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./docs/partials/useCases.md -->
-The `<auro-icon>` element should be used in situations where users may:
+Use `<auro-icon>` when people:
 
-* Benefit from additional context provided by an icon alongside text
-* Need to quickly identify actions or options represented by icons
-* Require visual indicators to enhance usability and navigation within an interface
+* Benefit from an icon that adds context to nearby text
+* Need to quickly recognize an action or option by its icon
+* Rely on visual cues to find their way around an interface
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
@@ -101,7 +101,7 @@ import { AuroIcon } from '@aurodesignsystem/auro-icon/class';
 &#10;// Register with a custom name if desired
 AuroIcon.register('custom-icon');</code></pre>
 
-This will create a new custom element `<custom-icon>` that behaves exactly like `<auro-icon>`, allowing both to coexist on the same page without interfering with each other.
+This creates a `<custom-icon>` element that works the same as `<auro-icon>`, so both can be used on the same page without conflicting.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->

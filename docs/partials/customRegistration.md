@@ -6,4 +6,4 @@ import { AuroIcon } from '@aurodesignsystem/auro-icon/class';
 AuroIcon.register('custom-icon');
 ```
 
-This will create a new custom element `<custom-icon>` that behaves exactly like `<auro-icon>`, allowing both to coexist on the same page without interfering with each other.
+This creates a `<custom-icon>` element that works the same as `<auro-icon>`, so both can be used on the same page without conflicting.

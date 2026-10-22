@@ -1,5 +1,5 @@
-The `<auro-icon>` element should be used in situations where users may:
+Use `<auro-icon>` when people:
 
-* Benefit from additional context provided by an icon alongside text
-* Need to quickly identify actions or options represented by icons
-* Require visual indicators to enhance usability and navigation within an interface
+* Benefit from an icon that adds context to nearby text
+* Need to quickly recognize an action or option by its icon
+* Rely on visual cues to find their way around an interface
