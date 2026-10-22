@@ -22,12 +22,9 @@
 
 #### Default Component with Label (Accessibility Recommendation)
 
-While you may place the icon alone, it is considered best practice to combine the icon with a description statement.
-The `auro-icon` element easily supports this with the use of the `label` attribute.
-By using the `label` attribute, content you enter into the `slot` of the element will appear next to the icon of choice.
-Changing the `aria-hidden` state of the icon is NOT needed. The assistive technologies will bypass the icon and announce the label string of content.
+Pair an icon with a text label whenever you can. Put the text in the default slot and add the `label` attribute to show it next to the icon.
 
-In situations where the icon is to be listed with a descriptive label, simply use the `label` attribute and the text in the `slot` will appear next to the icon.
+Screen readers skip the icon's graphic and read the label, so you don't need to change `ariaHidden`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/access-rec.html) -->
@@ -44,7 +41,9 @@ In situations where the icon is to be listed with a descriptive label, simply us
 
 #### Aria Hidden
 
-By default `aria-hidden` on the SVG inside the `auro-icon` element is set to `true`. Using the `ariaHidden` attribute on `auro-icon` you can set that value to `false`. This will allow the screen reader to announce the content from the SVG's `title` element.
+By default, the icon's graphic is hidden from screen readers. Set the `ariaHidden` attribute (not the native `aria-hidden`) to `"false"` to expose it.
+
+**Known issue:** setting `ariaHidden` also removes the icon's built-in description, so screen readers find an image with no name. To describe an icon, use the default slot instead, as shown in the next example.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->
@@ -61,7 +60,7 @@ By default `aria-hidden` on the SVG inside the `auro-icon` element is set to `tr
 
 #### Alter the Accessibility Description
 
-If the description you intend to be read back is different than the content in the default `title` element of the SVG, leave the `aria-hidden="true"` default on the SVG and enter the custom description into the `auro-icon` slot.
+To describe an icon to screen readers without showing any text, put the description in the default slot and leave `label` off. The text stays hidden on screen, and screen readers read it in place of the graphic.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/access-descr.html) -->
@@ -78,7 +77,7 @@ If the description you intend to be read back is different than the content in t
 
 ### Custom Color
 
-The `auro-icon` by default apply the `primary` selector for color application. This can be over written using the defined API listed above. Custom colors are also allowed when using the `customColor` attribute and a parent element with a color setting.
+By default, the icon uses the standard text-and-icon color, or the color of its `variant`. Add the `customColor` attribute to make the icon inherit the color of its surrounding text instead, then set that color on the icon or a parent element.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-color.html) -->
@@ -95,7 +94,7 @@ The `auro-icon` by default apply the `primary` selector for color application. T
 
 ### Custom Size
 
-Auro Icon supports setting a custom size using the `--ds-auro-icon-size` token. The icons height and width will be set to the token value, preserving the square shape that is standard for all icons.
+Set the `--ds-auro-icon-size` custom property to change the icon's size. It sets both the width and height, so the icon stays square.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-size.html) -->
@@ -112,7 +111,7 @@ Auro Icon supports setting a custom size using the `--ds-auro-icon-size` token. 
 
 ### Custom SVG
 
-Using the `customSvg` attribute, the component may render any icon svg content required. The `auro-icon` component will continue to render with all the variant and theme styles applied.
+Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. Variant and `appearance` colors still apply when the SVG uses `fill: currentColor`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-svg.html) -->
@@ -129,9 +128,7 @@ Using the `customSvg` attribute, the component may render any icon svg content r
 
 ### Label with typography classes
 
-When using the `label` attribute, you may apply typography classes to the `slot` element to match your design system needs.
-
-Below is an example of mixing and matching typography styles with the `auro-icon` component.
+With the `label` attribute, add an Auro typography class to `auro-icon` to style its label. The examples below compare that with placing an icon inside or next to styled text.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/typography.html) -->
@@ -150,7 +147,7 @@ Below is an example of mixing and matching typography styles with the `auro-icon
 
 #### Icons illustrating Visual State
 
-Mono-color icons support the following `variant` types to illustrate visual state.
+Use `variant` to color a single-color icon by meaning.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/visual-state.html) -->
@@ -167,7 +164,7 @@ Mono-color icons support the following `variant` types to illustrate visual stat
 
 #### Visual State on Dark background
 
-All compatible with `appearance="inverse"` attribute.
+On dark backgrounds, add `appearance="inverse"`. In this mode, only the `disabled`, `muted`, and `statusError` variants change the color; the others use the default inverse color.
 
 <div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/appearance-inverse.html) -->
@@ -186,7 +183,7 @@ All compatible with `appearance="inverse"` attribute.
 
 ### Fallback Icons
 
-When an icon is not found, the component will attempt to render a fallback icon. By default, the error icon will be used. If the name of the icon starts with `tail-`, the component will attempt to render the default tail logo as a fallback. 
+If an icon isn't found, an error icon is shown in its place. For icon names that start with `tail-`, the default tail logo is shown instead.
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/fallback.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -202,7 +199,7 @@ When an icon is not found, the component will attempt to render a fallback icon.
 
 ## Restyle Component with CSS Variables
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following custom properties.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->
