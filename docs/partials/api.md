@@ -41,9 +41,7 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 #### Aria Hidden
 
-By default, the icon's graphic is hidden from screen readers. Set the `ariaHidden` attribute (not the native `aria-hidden`) to `"false"` to expose it.
-
-**Known issue:** setting `ariaHidden` also removes the icon's built-in description, so screen readers find an image with no name. To describe an icon, use the default slot instead, as shown in the next example.
+By default, the icon's graphic is hidden from screen readers. Set the `ariaHidden` attribute (not the native `aria-hidden`) to `"false"` to expose it, so screen readers announce the icon's built-in description.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->
