@@ -66,7 +66,7 @@ export class AuroIcon extends BaseIcon {
       ...BaseIcon.properties,
 
       /**
-       * Controls whether screen readers skip the icon's graphic. When unset, the graphic is hidden from screen readers, so describe meaningful icons with the default slot. Setting `"false"` exposes the graphic, but also removes the icon's built-in description, so screen readers find an image with no name. This is the `ariahidden` attribute, not the native `aria-hidden`.
+       * Controls whether screen readers skip the icon's graphic. When unset, the graphic is hidden from screen readers, so describe meaningful icons with the default slot. Set to `"false"` to expose the graphic, so screen readers announce the icon's built-in description. This is the `ariahidden` attribute, not the native `aria-hidden`.
        * @type {"true" | "false"}
        * @category a11y
        */
@@ -175,9 +175,9 @@ export class AuroIcon extends BaseIcon {
      * icons provide a description for screen readers. Icon only instances Auro-button
      * depend on this description to provide context for the user using a screen reader.
      * Removes the SVG description for screen reader if ariaHidden is set to true.
-     * Note: this runs whenever the `ariahidden` attribute is present, including `ariahidden="false"`.
+     * `ariahidden="false"` keeps it, so the exposed graphic still has a name.
      */
-    if (this.hasAttribute("ariaHidden") && this.svg) {
+    if (this.hasAttribute("ariaHidden") && this.ariaHidden !== "false" && this.svg) {
       const svgDesc = this.svg.querySelector("desc");
 
       if (svgDesc) {

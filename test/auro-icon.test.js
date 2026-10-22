@@ -103,6 +103,44 @@ describe("auro-icon", () => {
     expect(span).to.have.attr("aria-hidden", "false");
   });
 
+  describe("built-in SVG description", () => {
+    const describedSvg =
+      '<svg aria-labelledby="described__desc" role="img"><title/><desc id="described__desc">Described icon</desc></svg>';
+
+    beforeEach(() => {
+      fetchStub.callsFake(async () => new window.Response(describedSvg));
+    });
+
+    async function renderIcon(template) {
+      const el = await fixture(template);
+
+      await waitUntil(() => el.svg, "Element did not become ready");
+      await el.updateComplete;
+
+      return el.shadowRoot.querySelector("span svg");
+    }
+
+    it("is kept when ariaHidden is \"false\", so the exposed graphic has a name", async () => {
+      const svg = await renderIcon(html`
+        <auro-icon category="described" name="kept" ariaHidden="false"></auro-icon>
+      `);
+
+      expect(svg).to.exist;
+      expect(svg.querySelector("desc")).to.exist;
+      expect(svg).to.have.attr("aria-labelledby", "described__desc");
+    });
+
+    it("is removed when ariaHidden is \"true\"", async () => {
+      const svg = await renderIcon(html`
+        <auro-icon category="described" name="removed" ariaHidden="true"></auro-icon>
+      `);
+
+      expect(svg).to.exist;
+      expect(svg.querySelector("desc")).to.not.exist;
+      expect(svg).to.not.have.attr("aria-labelledby");
+    });
+  });
+
   it("binds camelCase and lowercase attribute spellings to the same properties", async () => {
     const camel = await fixture(html`
       <auro-icon category="interface" name="chevron-up" onDark customColor customSvg ariaHidden="false"></auro-icon>
