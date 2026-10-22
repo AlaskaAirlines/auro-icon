@@ -3,7 +3,7 @@
 const _fetchMap = new Map();
 
 /**
- * Reads the body of a fetch response.
+ * Called when the response arrives, to read its body.
  *
  * @callback ResponseParser
  * @param {Response} response - The response to read.
