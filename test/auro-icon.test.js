@@ -103,6 +103,47 @@ describe("auro-icon", () => {
     expect(span).to.have.attr("aria-hidden", "false");
   });
 
+  it("binds camelCase and lowercase attribute spellings to the same properties", async () => {
+    const camel = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" onDark customColor customSvg ariaHidden="false"></auro-icon>
+    `);
+    const lower = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" ondark customcolor customsvg ariahidden="false"></auro-icon>
+    `);
+
+    for (const el of [camel, lower]) {
+      expect(el.onDark).to.be.true;
+      expect(el.customColor).to.be.true;
+      expect(el.customSvg).to.be.true;
+      expect(el.ariaHidden).to.equal("false");
+    }
+  });
+
+  it("deprecated ondark applies the same color as appearance=\"inverse\"", async () => {
+    const plain = await fixture(html`<auro-icon customSvg></auro-icon>`);
+    const inverse = await fixture(html`<auro-icon customSvg appearance="inverse"></auro-icon>`);
+    const ondark = await fixture(html`<auro-icon customSvg ondark></auro-icon>`);
+
+    const plainColor = getComputedStyle(plain).color;
+    const inverseColor = getComputedStyle(inverse).color;
+
+    expect(inverseColor).to.not.equal(plainColor);
+    expect(getComputedStyle(ondark).color).to.equal(inverseColor);
+  });
+
+  it("customcolor inherits the surrounding text color", async () => {
+    const wrapper = await fixture(html`
+      <div style="color: rgb(1, 2, 3)">
+        <auro-icon customSvg></auro-icon>
+        <auro-icon customSvg customcolor></auro-icon>
+      </div>
+    `);
+    const [plain, custom] = wrapper.querySelectorAll("auro-icon");
+
+    expect(getComputedStyle(plain).color).to.not.equal("rgb(1, 2, 3)");
+    expect(getComputedStyle(custom).color).to.equal("rgb(1, 2, 3)");
+  });
+
   it("auro-alaska shows small alaska logo", async () => {
     const el = await fixture(html`
       <auro-alaska style="width: 72px" alaska></auro-alaska>

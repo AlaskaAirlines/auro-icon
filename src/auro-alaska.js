@@ -23,14 +23,28 @@ import styleCss from "./styles/alaskaStyle.scss";
 import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
+// build the component class
 /**
- * The `auro-alaska` element provides users a way to use the Alaska Airline logos.
+ * Shows the Alaska Airlines logo, with or without the official tagline.
+ *
+ * **Key capabilities**
+ * - **Fills its container**: the logo stretches to the width of its container, and the
+ *   artwork best suited to that width is picked when the element first renders.
+ * - **Official tagline**: `official` switches to the logo with the tagline.
+ * - **Light & dark backgrounds**: `appearance="inverse"` shows the logo in white for dark
+ *   backgrounds.
+ *
+ * **Example**
+ * ```html
+ * <auro-alaska>Alaska Airlines</auro-alaska>
+ * ```
+ *
+ * @summary Alaska Airlines logo that fills its container, with an optional official tagline.
  * @customElement auro-alaska
  *
- * @slot - Hidden from visibility, used for a11y if icon description is needed
+ * @slot - Text read by screen readers to describe the logo, such as "Alaska Airlines". It isn't shown on screen. {@category a11y}
+ * @cssprop {Color} --ds-auro-alaska-color - Color of the logo.
  */
-
-// build the component class
 export class AuroAlaska extends BaseIcon {
   constructor() {
     super();
@@ -67,7 +81,9 @@ export class AuroAlaska extends BaseIcon {
       },
 
       /**
-       * Set value for alaska airlines logo with official tagline.
+       * Shows the Alaska Airlines logo with the official tagline.
+       * @default false
+       * @category ui
        */
       official: {
         type: Boolean,
@@ -77,11 +93,11 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-alaska"] - The name of element that you want to register to.
+   * Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-alaska` on the same page.
+   * @param {string} [name="auro-alaska"] - The tag name to register the element under.
    *
    * @example
-   * AuroAlaska.register("custom-alaska") // this will register this element to <custom-alaska/>
+   * AuroAlaska.register("custom-alaska") // makes the element available as <custom-alaska>
    *
    */
   static register(name = "auro-alaska") {
@@ -89,7 +105,7 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * Async function to decide which logo to use.
+   * Picks the logo artwork that best fits the given width.
    * @private
    * @param {number} iconWidth - Size of parent icon is in.
    * @returns {void}
@@ -121,7 +137,7 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * Async function to decide which logo to use.
+   * Picks the logo artwork that best fits the given width.
    * @private
    * @param {number} iconWidth - Size of parent icon is in.
    * @returns {void}
