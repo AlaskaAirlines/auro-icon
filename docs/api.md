@@ -90,10 +90,10 @@ Auro interfaces.
 
 ### CSS Shadow Parts
 
-| Name  | Description                                                                          |
-| ----- | ------------------------------------------------------------------------------------ |
-| label | The `<div>` wrapping the default slot's text, visually hidden unless `label` is set. |
-| svg   | The `<span>` wrapping the icon's SVG.                                                |
+| Name  | Description                                                                                                                                                           |
+| ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| label | The `<div>` wrapping the default slot's text, visually hidden unless `label` is set.                                                                                  |
+| svg   | The `<span>` wrapping the icon's SVG. Library icons also set this part on their `<svg>`, so `::part(svg)` styles both; a custom SVG in the `svg` slot doesn't get it. |
 
 ### CSS Custom Properties
 
