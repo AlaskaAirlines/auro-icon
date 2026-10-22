@@ -130,6 +130,16 @@ describe("auro-icon", () => {
       expect(svg).to.have.attr("aria-labelledby", "described__desc");
     });
 
+    it("is kept when ariaHidden is unset", async () => {
+      const svg = await renderIcon(html`
+        <auro-icon category="described" name="unset"></auro-icon>
+      `);
+
+      expect(svg).to.exist;
+      expect(svg.querySelector("desc")).to.exist;
+      expect(svg).to.have.attr("aria-labelledby", "described__desc");
+    });
+
     it("is removed when ariaHidden is \"true\"", async () => {
       const svg = await renderIcon(html`
         <auro-icon category="described" name="removed" ariaHidden="true"></auro-icon>
