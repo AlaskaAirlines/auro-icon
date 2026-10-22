@@ -12,7 +12,6 @@ import styleCss from "./styles/style.scss";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * Shared base class for `auro-icon` and `auro-alaska`. It isn't registered as an element on its own.
- * @slot - Text read by screen readers to describe the icon. It isn't shown on screen. {@category a11y}
  */
 export default class BaseIcon extends AuroElement {
   constructor() {
