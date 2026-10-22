@@ -18,12 +18,12 @@ import tokensCss from "./styles/tokens.scss";
  *
  * **Key capabilities**
  * - **Library icons**: set `category` and `name` to load any icon from the Auro icon
- *   library. If the icon isn't found, an error icon is shown instead.
+ *   library.
  * - **Custom SVGs**: set `customSvg` and put your own `<svg>` in the `svg` slot.
  * - **Color**: `variant` colors the icon by meaning, such as `statusError` or `fareFirst`,
  *   and `customColor` makes it inherit the surrounding text color.
- * - **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
- *   dark backgrounds.
+ * - **Light and dark backgrounds**: `appearance="inverse"` switches the default, `disabled`,
+ *   `muted`, and `statusError` colors to versions designed for dark backgrounds.
  * - **Labels**: text in the default slot describes the icon to screen readers, and `label`
  *   also shows it next to the icon.
  *
@@ -35,10 +35,10 @@ import tokensCss from "./styles/tokens.scss";
  * @summary Icon from the Auro icon library or a custom SVG, with color variants and an optional label.
  * @customElement auro-icon
  *
- * @slot - Text that describes the icon. Screen readers read it; it's shown on screen only when `label` is set. {@category a11y}
+ * @slot - Text that describes the icon to screen readers, such as "Your trip starts here". Leave it empty for decorative icons, which screen readers skip. It's shown on screen only when `label` is set. {@category a11y}
  * @slot svg - The custom `<svg>` to show in place of a library icon. {@requiredWhen customSvg} {@category ui}
- * @csspart label - The element wrapping the default slot's text.
- * @csspart svg - The element wrapping the icon's SVG.
+ * @csspart label - The `<div>` wrapping the default slot's text, visually hidden unless `label` is set.
+ * @csspart svg - The `<span>` wrapping the icon's SVG.
  * @cssprop {Color} --ds-auro-icon-color - Color of the icon. Ignored when `customColor` is set.
  * @cssprop {Length} --ds-auro-icon-size - Width and height of the icon.
  */
@@ -50,7 +50,7 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
-   * Internal Defaults.
+   * Sets the element's default values.
    * @private
    * @returns {void}
    */
@@ -66,7 +66,7 @@ export class AuroIcon extends BaseIcon {
       ...BaseIcon.properties,
 
       /**
-       * Controls whether screen readers skip the icon's graphic. When unset, the graphic is hidden from screen readers, so describe meaningful icons with the default slot. Set to `"false"` to expose the graphic, so screen readers announce the icon's built-in description. This is the `ariahidden` attribute, not the native `aria-hidden`.
+       * Sets whether screen readers skip the icon's graphic. When unset or `true`, they skip it, so describe meaningful icons in the default slot; use `false` to have them announce the icon's built-in description. This is the `ariahidden` attribute, not the native `aria-hidden`.
        * @type {"true" | "false"}
        * @category a11y
        */
@@ -77,7 +77,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * The icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`. See https://auro.alaskaair.com/icons/ways-to-use.
+       * Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`; see https://auro.alaskaair.com/icons/ways-to-use.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -115,7 +115,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * The icon's file name in the Auro icon library, without the extension, such as `pin-trip`. Use it with `category`. If the icon isn't found, an error icon is shown instead, or the default tail logo for names that start with `tail-`. See https://auro.alaskaair.com/icons/ways-to-use.
+       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip`. Use it with `category`; see https://auro.alaskaair.com/icons/ways-to-use. If the icon isn't found, an error icon is shown instead, or the default tail logo for names that start with `tail-`.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -125,7 +125,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Colors the icon to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` change the color.
+       * Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.
        * @type {"accent1" | "disabled" | "muted" | "statusDefault" | "statusInfo" | "statusSuccess" | "statusWarning" | "statusError" | "statusInfoSubtle" | "statusSuccessSubtle" | "statusWarningSubtle" | "statusErrorSubtle" | "fareBasicEconomy" | "fareBusiness" | "fareEconomy" | "fareFirst" | "farePremiumEconomy" | "tierOneWorldEmerald" | "tierOneWorldSapphire" | "tierOneWorldRuby"}
        * @relevantWhen !customColor
        * @category ui

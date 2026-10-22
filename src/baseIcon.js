@@ -11,7 +11,7 @@ import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * Shared base for `auro-icon` and `auro-alaska`. Not registered as an element.
+ * Shared base class for `auro-icon` and `auro-alaska`. It isn't registered as an element on its own.
  * @slot - Text read by screen readers to describe the icon. It isn't shown on screen. {@category a11y}
  */
 export default class BaseIcon extends AuroElement {
@@ -22,7 +22,7 @@ export default class BaseIcon extends AuroElement {
   }
 
   /**
-   * Internal defaults.
+   * Sets the element's default values.
    * @private
    * @returns {void}
    */
@@ -49,7 +49,7 @@ export default class BaseIcon extends AuroElement {
       },
 
       /**
-       * Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
+       * Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
        * @type {"default" | "inverse"}
        * @default "default"
        * @category ui
@@ -75,9 +75,9 @@ export default class BaseIcon extends AuroElement {
   /**
    * Fetches the requested icon's SVG from the npm CDN.
    * @private
-   * @param {string} category - Icon category.
-   * @param {string} name - Icon name.
-   * @returns {SVGElement} DOM - Ready HTML to be appended.
+   * @param {string} category - The icon's category, such as `interface`.
+   * @param {string} name - The icon's file name, without the extension.
+   * @returns {Promise<SVGElement|null>} The icon's `<svg>` element, or null if the response doesn't contain one.
    */
   async fetchIcon(category, name) {
     let iconHTML = "";

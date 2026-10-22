@@ -31,18 +31,18 @@ import tokensCss from "./styles/tokens.scss";
  * - **Fills its container**: the logo stretches to the width of its container, and the
  *   artwork best suited to that width is picked when the element first renders.
  * - **Official tagline**: `official` switches to the logo with the tagline.
- * - **Light & dark backgrounds**: `appearance="inverse"` shows the logo in white for dark
+ * - **Light and dark backgrounds**: `appearance="inverse"` shows the logo in white for dark
  *   backgrounds.
  *
  * **Example**
  * ```html
- * <auro-alaska>Alaska Airlines</auro-alaska>
+ * <auro-alaska></auro-alaska>
  * ```
  *
  * @summary Alaska Airlines logo that fills its container, with an optional official tagline.
  * @customElement auro-alaska
  *
- * @slot - Text read by screen readers to describe the logo, such as "Alaska Airlines". It isn't shown on screen. {@category a11y}
+ * @slot - Extra text read by screen readers along with the logo's built-in name, "Alaska Airlines". Leave it empty unless the logo needs more context, because screen readers already announce that name. It isn't shown on screen. {@category a11y}
  * @cssprop {Color} --ds-auro-alaska-color - Color of the logo.
  */
 export class AuroAlaska extends BaseIcon {
@@ -53,7 +53,7 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * Internal defaults.
+   * Sets the element's default values.
    * @private
    * @returns {void}
    */
@@ -107,7 +107,7 @@ export class AuroAlaska extends BaseIcon {
   /**
    * Picks the logo artwork that best fits the given width.
    * @private
-   * @param {number} iconWidth - Size of parent icon is in.
+   * @param {number} iconWidth - The width of the logo's wrapper element, in pixels.
    * @returns {void}
    */
   alaskaLogoDef(iconWidth) {
@@ -139,7 +139,7 @@ export class AuroAlaska extends BaseIcon {
   /**
    * Picks the logo artwork that best fits the given width.
    * @private
-   * @param {number} iconWidth - Size of parent icon is in.
+   * @param {number} iconWidth - The width of the logo's wrapper element, in pixels.
    * @returns {void}
    */
   alaskaOfficialDef(iconWidth) {
