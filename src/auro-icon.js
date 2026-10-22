@@ -13,12 +13,34 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
- * The `auro-icon` element provides users a way to use the Alaska Airlines icon library.
+ * Shows an icon from the Auro icon library, or a custom SVG, sized and colored to match
+ * Auro interfaces.
+ *
+ * **Key capabilities**
+ * - **Library icons**: set `category` and `name` to load any icon from the Auro icon
+ *   library. If the icon isn't found, an error icon is shown instead.
+ * - **Custom SVGs**: set `customSvg` and put your own `<svg>` in the `svg` slot.
+ * - **Color**: `variant` colors the icon by meaning, such as `statusError` or `fareFirst`,
+ *   and `customColor` makes it inherit the surrounding text color.
+ * - **Light & dark backgrounds**: `appearance="inverse"` switches to colors designed for
+ *   dark backgrounds.
+ * - **Labels**: text in the default slot describes the icon to screen readers, and `label`
+ *   also shows it next to the icon.
+ *
+ * **Example**
+ * ```html
+ * <auro-icon category="interface" name="pin-trip">Your trip starts here</auro-icon>
+ * ```
+ *
+ * @summary Icon from the Auro icon library or a custom SVG, with color variants and an optional label.
  * @customElement auro-icon
- * 
- * @slot - Hidden from visibility, used for a11y if icon description is needed.
- * @slot svg - Used for custom SVG content.
- * @csspart label - Used for customizing the style of the icon label.
+ *
+ * @slot - Text that describes the icon. Screen readers read it; it's shown on screen only when `label` is set. {@category a11y}
+ * @slot svg - The custom `<svg>` to show in place of a library icon. {@requiredWhen customSvg} {@category ui}
+ * @csspart label - The element wrapping the default slot's text.
+ * @csspart svg - The element wrapping the icon's SVG.
+ * @cssprop {Color} --ds-auro-icon-color - Color of the icon. Ignored when `customColor` is set.
+ * @cssprop {Length} --ds-auro-icon-size - Width and height of the icon.
  */
 export class AuroIcon extends BaseIcon {
   constructor() {
@@ -44,17 +66,20 @@ export class AuroIcon extends BaseIcon {
       ...BaseIcon.properties,
 
       /**
-       * Set aria-hidden value. Default is `true`. Option is `false`.
-       * @type {'true' | 'false'}
-       * @default 'true'
+       * Controls whether screen readers skip the icon's graphic. When unset, the graphic is hidden from screen readers, so describe meaningful icons with the default slot. Setting `"false"` exposes the graphic, but also removes the icon's built-in description, so screen readers find an image with no name. This is the `ariahidden` attribute, not the native `aria-hidden`.
+       * @type {"true" | "false"}
+       * @category a11y
        */
       ariaHidden: {
         type: String,
+        attribute: "ariahidden",
         reflect: true
       },
 
       /**
-       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/ways-to-use.
+       * The icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`. See https://auro.alaskaair.com/icons/ways-to-use.
+       * @relevantWhen !customSvg
+       * @category ui
        */
       category: {
         type: String,
@@ -62,22 +87,27 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Allows custom color to be set.
+       * Makes the icon inherit the color of the surrounding text, in place of the `variant` color or `--ds-auro-icon-color`.
+       * @category ui
        */
       customColor: {
         type: Boolean,
+        attribute: "customcolor",
         reflect: true
       },
 
       /**
-       * When true, auro-icon will render a custom SVG inside the default slot.
+       * Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. `category` and `name` are ignored.
+       * @category behavior
        */
       customSvg: {
-        type: Boolean
+        type: Boolean,
+        attribute: "customsvg"
       },
 
       /**
-       * Exposes content in slot as icon label.
+       * Shows the default slot's text next to the icon. Without it, the text is hidden on screen and read only by screen readers.
+       * @category ui
        */
       label: {
         type: Boolean,
@@ -85,7 +115,9 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/ways-to-use.
+       * The icon's file name in the Auro icon library, without the extension, such as `pin-trip`. Use it with `category`. If the icon isn't found, an error icon is shown instead, or the default tail logo for names that start with `tail-`. See https://auro.alaskaair.com/icons/ways-to-use.
+       * @relevantWhen !customSvg
+       * @category ui
        */
       name: {
         type: String,
@@ -93,8 +125,10 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * The style of the icon.
-       * @type {'accent1' | 'disabled' | 'muted' | 'statusDefault' | 'statusInfo' | 'statusSuccess' | 'statusWarning' | 'statusError' | 'statusInfoSubtle' | 'statusSuccessSubtle' | 'statusWarningSubtle' | 'statusErrorSubtle' | 'fareBasicEconomy' | 'fareBusiness' | 'fareEconomy' | 'fareFirst' | 'farePremiumEconomy' | 'tierOneWorldEmerald' | 'tierOneWorldSapphire' | 'tierOneWorldRuby'}
+       * Colors the icon to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` change the color.
+       * @type {"accent1" | "disabled" | "muted" | "statusDefault" | "statusInfo" | "statusSuccess" | "statusWarning" | "statusError" | "statusInfoSubtle" | "statusSuccessSubtle" | "statusWarningSubtle" | "statusErrorSubtle" | "fareBasicEconomy" | "fareBusiness" | "fareEconomy" | "fareFirst" | "farePremiumEconomy" | "tierOneWorldEmerald" | "tierOneWorldSapphire" | "tierOneWorldRuby"}
+       * @relevantWhen !customColor
+       * @category ui
        */
       variant: {
         type: String,
@@ -108,11 +142,11 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-icon"] - The name of element that you want to register to.
+   * Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-icon` on the same page.
+   * @param {string} [name="auro-icon"] - The tag name to register the element under.
    *
    * @example
-   * AuroIcon.register("custom-icon") // this will register this element to <custom-icon/>
+   * AuroIcon.register("custom-icon") // makes the element available as <custom-icon>
    *
    */
   static register(name = "auro-icon") {
@@ -141,6 +175,7 @@ export class AuroIcon extends BaseIcon {
      * icons provide a description for screen readers. Icon only instances Auro-button
      * depend on this description to provide context for the user using a screen reader.
      * Removes the SVG description for screen reader if ariaHidden is set to true.
+     * Note: this runs whenever the `ariahidden` attribute is present, including `ariahidden="false"`.
      */
     if (this.hasAttribute("ariaHidden") && this.svg) {
       const svgDesc = this.svg.querySelector("desc");

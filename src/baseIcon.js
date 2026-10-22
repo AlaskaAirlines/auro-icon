@@ -11,7 +11,8 @@ import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * @slot - Hidden from visibility, used for a11y if icon description is needed
+ * Shared base for `auro-icon` and `auro-alaska`. Not registered as an element.
+ * @slot - Text read by screen readers to describe the icon. It isn't shown on screen. {@category a11y}
  */
 export default class BaseIcon extends AuroElement {
   constructor() {
@@ -36,17 +37,22 @@ export default class BaseIcon extends AuroElement {
       ...AuroElement.properties,
 
       /**
-       * DEPRECATED - use `appearance="inverse"` instead.
+       * Deprecated: Use `appearance="inverse"` instead.
+       * @deprecated Use `appearance="inverse"` instead.
+       * @default false
+       * @category ui
        */
       onDark: {
         type: Boolean,
+        attribute: "ondark",
         reflect: true,
       },
 
       /**
-       * Defines whether the button will be on lighter or darker backgrounds.
-       * @property {'default' | 'inverse'}
-       * @default 'default'
+       * Matches the component's colors to the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
+       * @type {"default" | "inverse"}
+       * @default "default"
+       * @category ui
        */
       appearance: {
         type: String,
@@ -58,7 +64,6 @@ export default class BaseIcon extends AuroElement {
        */
       svg: {
         attribute: false,
-        reflect: true,
       },
     };
   }
@@ -68,7 +73,7 @@ export default class BaseIcon extends AuroElement {
   }
 
   /**
-   * Async function to fetch requested icon from npm CDN.
+   * Fetches the requested icon's SVG from the npm CDN.
    * @private
    * @param {string} category - Icon category.
    * @param {string} name - Icon name.
