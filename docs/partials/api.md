@@ -16,11 +16,11 @@
 
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Accessibility
 
-#### Default Component with Label (Accessibility Recommendation)
+#### Default component with label (accessibility recommendation)
 
 Pair an icon with a text label whenever you can. Put the text in the default slot and add the `label` attribute to show it next to the icon.
 
@@ -39,9 +39,9 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 </auro-accordion>
 
-#### Aria Hidden
+#### ARIA hidden
 
-By default, the icon's graphic is hidden from screen readers. Set the `ariaHidden` attribute (not the native `aria-hidden`) to `"false"` to expose it, so screen readers announce the icon's built-in description.
+By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->
@@ -56,7 +56,7 @@ By default, the icon's graphic is hidden from screen readers. Set the `ariaHidde
 
 </auro-accordion>
 
-#### Alter the Accessibility Description
+#### Alter the accessibility description
 
 To describe an icon to screen readers without showing any text, put the description in the default slot and leave `label` off. The text stays hidden on screen, and screen readers read it in place of the graphic.
 
@@ -73,7 +73,7 @@ To describe an icon to screen readers without showing any text, put the descript
 
 </auro-accordion>
 
-### Custom Color
+### Custom color
 
 By default, the icon uses the standard text-and-icon color, or the color of its `variant`. Add the `customColor` attribute to make the icon inherit the color of its surrounding text instead, then set that color on the icon or a parent element.
 
@@ -90,7 +90,7 @@ By default, the icon uses the standard text-and-icon color, or the color of its 
 
 </auro-accordion>
 
-### Custom Size
+### Custom size
 
 Set the `--ds-auro-icon-size` custom property to change the icon's size. It sets both the width and height, so the icon stays square.
 
@@ -109,7 +109,7 @@ Set the `--ds-auro-icon-size` custom property to change the icon's size. It sets
 
 ### Custom SVG
 
-Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. Variant and `appearance` colors still apply when the SVG uses `fill: currentColor`.
+Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. The `variant` and `appearance` colors still apply when the SVG uses `fill: currentColor`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-svg.html) -->
@@ -143,7 +143,7 @@ With the `label` attribute, add an Auro typography class to `auro-icon` to style
 
 ### Variants
 
-#### Icons illustrating Visual State
+#### Icons illustrating visual state
 
 Use `variant` to color a single-color icon by meaning.
 
@@ -160,9 +160,9 @@ Use `variant` to color a single-color icon by meaning.
 
 </auro-accordion>
 
-#### Visual State on Dark background
+#### Visual state on dark backgrounds
 
-On dark backgrounds, add `appearance="inverse"`. In this mode, only the `disabled`, `muted`, and `statusError` variants change the color; the others use the default inverse color.
+On dark backgrounds, add `appearance="inverse"`. Only the `disabled`, `muted`, and `statusError` variants switch to colors designed for dark backgrounds; the other variants keep their standard colors.
 
 <div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/appearance-inverse.html) -->
@@ -177,9 +177,9 @@ On dark backgrounds, add `appearance="inverse"`. In this mode, only the `disable
 
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Fallback Icons
+### Fallback icons
 
 If an icon isn't found, an error icon is shown in its place. For icon names that start with `tail-`, the default tail logo is shown instead.
 
@@ -195,7 +195,7 @@ If an icon isn't found, an error icon is shown in its place. For icon names that
 </auro-accordion>
 
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
 Restyle the component by changing the values of the following custom properties.
 
