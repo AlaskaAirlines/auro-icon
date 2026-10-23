@@ -116,7 +116,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip`. Use it with `category`; see https://auro.alaskaair.com/icons/ways-to-use. If the icon isn't found, an error icon is shown instead, or the default tail logo for names that start with `tail-`. Changing it after the icon first renders doesn't currently load the new icon.
+       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip`. Use it with `category`; see https://auro.alaskaair.com/icons/ways-to-use. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`. Changing it after the icon first renders doesn't currently load the new icon.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -175,10 +175,10 @@ export class AuroIcon extends BaseIcon {
     await super.firstUpdated();
 
     /**
-     * Library icons carry a built-in description that screen readers announce, and
-     * icon-only auro-button instances rely on it. When `ariahidden` is set to anything
-     * other than "false", the graphic is hidden, so remove the description and its
-     * `aria-labelledby` reference. When `ariahidden` is unset or "false", keep both.
+     * Library icons carry a built-in description that screen readers announce when
+     * `ariahidden` is "false". When `ariahidden` is set to anything other than "false",
+     * the graphic is hidden, so remove the description and its `aria-labelledby`
+     * reference. When `ariahidden` is unset or "false", keep both.
      */
     if (
       this.hasAttribute("ariaHidden") &&

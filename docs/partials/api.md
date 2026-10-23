@@ -41,7 +41,7 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 #### ARIA hidden
 
-By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Set it in the markup: changing it after the icon first renders doesn't currently restore the description.
+By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->
@@ -181,7 +181,7 @@ On dark backgrounds, add `appearance="inverse"`. Only the `disabled`, `muted`, a
 
 ### Fallback icons
 
-If an icon isn't found, an error icon is shown in its place. For icon names that start with `tail-`, the default tail logo is shown instead.
+If an icon isn't found, `auro-icon` shows an error icon in its place. For icon names that start with `tail-`, it shows the default tail logo instead.
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/fallback.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
