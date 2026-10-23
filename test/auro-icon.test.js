@@ -203,6 +203,8 @@ describe("auro-icon", () => {
     `);
     const [plain, custom] = wrapper.querySelectorAll("auro-icon");
 
+    await Promise.all([plain.updateComplete, custom.updateComplete]);
+
     expect(getComputedStyle(plain).color).to.not.equal("rgb(1, 2, 3)");
     expect(getComputedStyle(custom).color).to.equal("rgb(1, 2, 3)");
   });
