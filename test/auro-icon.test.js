@@ -152,6 +152,16 @@ describe("auro-icon", () => {
     });
   });
 
+  it("applies the documented appearance and onDark defaults to both elements", async () => {
+    const icon = await fixture(html`<auro-icon customSvg></auro-icon>`);
+    const alaska = await fixture(html`<auro-alaska></auro-alaska>`);
+
+    for (const el of [icon, alaska]) {
+      expect(el.appearance).to.equal("default");
+      expect(el.onDark).to.equal(false);
+    }
+  });
+
   it("binds camelCase and lowercase attribute spellings to the same properties", async () => {
     const camel = await fixture(html`
       <auro-icon category="interface" name="chevron-up" onDark customColor customSvg ariaHidden="false"></auro-icon>
