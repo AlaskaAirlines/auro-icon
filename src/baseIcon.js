@@ -37,6 +37,7 @@ export default class BaseIcon extends AuroElement {
 
       /**
        * Deprecated: Use `appearance="inverse"` instead.
+       * Switches the component's default colors to versions designed for dark backgrounds.
        * @deprecated Use `appearance="inverse"` instead.
        * @default false
        * @category ui

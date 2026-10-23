@@ -162,8 +162,10 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
+   * Forwards the `svg` part to the parent's scope as `iconSvg`, so a component that contains the icon can style it with `::part(iconSvg)`.
+   * Nothing in this component calls it.
    * @private
-   * @returns {void} Exposes CSS parts for styling from parent components.
+   * @returns {void}
    */
   exposeCssParts() {
     this.setAttribute("exportparts", "svg:iconSvg");
@@ -173,10 +175,10 @@ export class AuroIcon extends BaseIcon {
     await super.firstUpdated();
 
     /**
-     * icons provide a description for screen readers. Icon only instances Auro-button
-     * depend on this description to provide context for the user using a screen reader.
-     * Removes the SVG description for screen reader if ariaHidden is set to true.
-     * `ariahidden="false"` keeps it, so the exposed graphic still has a name.
+     * Library icons carry a built-in description that screen readers announce, and
+     * icon-only auro-button instances rely on it. When `ariahidden` is set to anything
+     * other than "false", the graphic is hidden, so remove the description and its
+     * `aria-labelledby` reference. When `ariahidden` is unset or "false", keep both.
      */
     if (
       this.hasAttribute("ariaHidden") &&
