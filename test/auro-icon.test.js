@@ -6,10 +6,11 @@
 /* eslint-disable no-console */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
+
+import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import { expect, fixture, html, waitUntil } from "@open-wc/testing";
 import sinon from "sinon";
-import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
-import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
 import { AuroIcon } from "../src/auro-icon.js";
 import "../src/registered";
 
@@ -120,7 +121,7 @@ describe("auro-icon", () => {
       return el.shadowRoot.querySelector("span svg");
     }
 
-    it("is kept when ariaHidden is \"false\", so the exposed graphic has a name", async () => {
+    it('is kept when ariaHidden is "false", so the exposed graphic has a name', async () => {
       const svg = await renderIcon(html`
         <auro-icon category="described" name="kept" ariaHidden="false"></auro-icon>
       `);
@@ -140,7 +141,7 @@ describe("auro-icon", () => {
       expect(svg).to.have.attr("aria-labelledby", "described__desc");
     });
 
-    it("is removed when ariaHidden is \"true\"", async () => {
+    it('is removed when ariaHidden is "true"', async () => {
       const svg = await renderIcon(html`
         <auro-icon category="described" name="removed" ariaHidden="true"></auro-icon>
       `);
@@ -167,10 +168,14 @@ describe("auro-icon", () => {
     }
   });
 
-  it("deprecated ondark applies the same color as appearance=\"inverse\"", async () => {
+  it('deprecated ondark applies the same color as appearance="inverse"', async () => {
     const plain = await fixture(html`<auro-icon customSvg></auro-icon>`);
-    const inverse = await fixture(html`<auro-icon customSvg appearance="inverse"></auro-icon>`);
-    const ondark = await fixture(html`<auro-icon customSvg ondark></auro-icon>`);
+    const inverse = await fixture(
+      html`<auro-icon customSvg appearance="inverse"></auro-icon>`,
+    );
+    const ondark = await fixture(
+      html`<auro-icon customSvg ondark></auro-icon>`,
+    );
 
     const plainColor = getComputedStyle(plain).color;
     const inverseColor = getComputedStyle(inverse).color;
@@ -327,7 +332,10 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
 
-    const penDOM = new DOMParser().parseFromString(tailDefault.svg, "text/html");
+    const penDOM = new DOMParser().parseFromString(
+      tailDefault.svg,
+      "text/html",
+    );
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;

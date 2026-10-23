@@ -16,7 +16,7 @@ import styleCss from "./styles/style.scss";
 export default class BaseIcon extends AuroElement {
   constructor() {
     super();
-    
+
     this._initializeDefaults();
   }
 
@@ -55,7 +55,7 @@ export default class BaseIcon extends AuroElement {
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -101,9 +101,13 @@ export default class BaseIcon extends AuroElement {
         if (svg) {
           this.svg = svg;
         } else if (!svg) {
-          const fallbackSvg = this.name?.startsWith('tail-') ? tailDefault.svg : error.svg;
+          const fallbackSvg = this.name?.startsWith("tail-")
+            ? tailDefault.svg
+            : error.svg;
 
-          this.svg = new DOMParser().parseFromString(fallbackSvg, "text/html").body.querySelector("svg");
+          this.svg = new DOMParser()
+            .parseFromString(fallbackSvg, "text/html")
+            .body.querySelector("svg");
         }
       }
       // eslint-disable-next-line no-unused-vars

@@ -73,7 +73,7 @@ export class AuroIcon extends BaseIcon {
       ariaHidden: {
         type: String,
         attribute: "ariahidden",
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -83,7 +83,7 @@ export class AuroIcon extends BaseIcon {
        */
       category: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -93,7 +93,7 @@ export class AuroIcon extends BaseIcon {
       customColor: {
         type: Boolean,
         attribute: "customcolor",
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -102,7 +102,7 @@ export class AuroIcon extends BaseIcon {
        */
       customSvg: {
         type: Boolean,
-        attribute: "customsvg"
+        attribute: "customsvg",
       },
 
       /**
@@ -111,7 +111,7 @@ export class AuroIcon extends BaseIcon {
        */
       label: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -121,7 +121,7 @@ export class AuroIcon extends BaseIcon {
        */
       name: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -132,7 +132,7 @@ export class AuroIcon extends BaseIcon {
        */
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
     };
   }
@@ -177,7 +177,11 @@ export class AuroIcon extends BaseIcon {
      * Removes the SVG description for screen reader if ariaHidden is set to true.
      * `ariahidden="false"` keeps it, so the exposed graphic still has a name.
      */
-    if (this.hasAttribute("ariaHidden") && this.ariaHidden !== "false" && this.svg) {
+    if (
+      this.hasAttribute("ariaHidden") &&
+      this.ariaHidden !== "false" &&
+      this.svg
+    ) {
       const svgDesc = this.svg.querySelector("desc");
 
       if (svgDesc) {
