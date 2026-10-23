@@ -29,7 +29,7 @@ import tokensCss from "./styles/tokens.scss";
  *
  * **Key capabilities**
  * - **Fills its container**: the logo stretches to the width of its container, and the
- *   artwork best suited to that width is picked when the element first renders.
+ *   element picks the artwork that best suits that width when it first renders.
  * - **Official tagline**: `official` switches to the logo with the tagline.
  * - **Light and dark backgrounds**: `appearance="inverse"` shows the logo in white for dark
  *   backgrounds.

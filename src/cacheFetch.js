@@ -15,7 +15,7 @@ const _fetchMap = new Map();
  * Results stay cached until the page reloads, including failed requests.
  *
  * @param {string} uri - The URL to fetch.
- * @param {{ responseParser?: ResponseParser }} [options] - The options for reading the response. Set `responseParser` to change how the body is read; by default it's read as text.
+ * @param {{ responseParser?: ResponseParser }} [options] - The options for reading the response. Set `responseParser` to change how the body is read; by default it's read as text. Only the first call for a URL uses its `responseParser`, because later calls share that call's result.
  * @returns {Promise<*>} The parsed response body, shared by every call for the same URL.
  */
 const cacheFetch = (uri, options = {}) => {
