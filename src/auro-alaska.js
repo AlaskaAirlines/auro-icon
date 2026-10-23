@@ -83,7 +83,6 @@ export class AuroAlaska extends BaseIcon {
 
       /**
        * Shows the Alaska Airlines logo with the official tagline. Changing it after the logo first renders doesn't currently switch the artwork.
-       * @default false
        * @category ui
        */
       official: {
