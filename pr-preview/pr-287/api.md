@@ -20,8 +20,8 @@ Shows the Alaska Airlines logo, with or without the official tagline.
 | Properties | Attributes | Modifiers | Type                   | Default   | Description                                                                                                                              |
 | ---------- | ---------- | --------- | ---------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | appearance | appearance |           | "default" \| "inverse" | `default` | Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                |
-| official   | official   |           | boolean                | `false`   | Shows the Alaska Airlines logo with the official tagline. Changing it after the logo first renders doesn't currently switch the artwork. |
-| onDark     | ondark     |           | boolean                | `false`   | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component's default colors to versions designed for dark backgrounds.    |
+| official   | official   |           | boolean                |           | Shows the Alaska Airlines logo with the official tagline. Changing it after the logo first renders doesn't currently switch the artwork. |
+| onDark     | ondark     |           | boolean                |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component's default colors to versions designed for dark backgrounds.    |
 
 ### Methods
 
@@ -72,7 +72,7 @@ Auro interfaces.
 | label       | label       |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Shows the default slot's text next to the icon. Without it, the text is hidden on screen and read only by screen readers.                                                                                                                                                                                                                                                                  |
 | name        | name        |           | string                                                                                                                                                                                                                                                                                                                                                                                               |           | Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip`. Use it with `category`; see https://auro.alaskaair.com/icons/ways-to-use. If the icon isn't found, an error icon is shown instead, or the default tail logo for names that start with `tail-`. Changing it after the icon first renders doesn't currently load the new icon. |
 | variant     | variant     |           | "accent1" \| "disabled" \| "muted" \| "statusDefault" \| "statusInfo" \| "statusSuccess" \| "statusWarning" \| "statusError" \| "statusInfoSubtle" \| "statusSuccessSubtle" \| "statusWarningSubtle" \| "statusErrorSubtle" \| "fareBasicEconomy" \| "fareBusiness" \| "fareEconomy" \| "fareFirst" \| "farePremiumEconomy" \| "tierOneWorldEmerald" \| "tierOneWorldSapphire" \| "tierOneWorldRuby" |           | Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.                             |
-| onDark      | ondark      |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              | `false`   | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component's default colors to versions designed for dark backgrounds.                                                                                                                                                                                                                                                      |
+| onDark      | ondark      |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component's default colors to versions designed for dark backgrounds.                                                                                                                                                                                                                                                      |
 
 ### Methods
 
@@ -385,10 +385,10 @@ On dark backgrounds, add `appearance="inverse"`. Only the `disabled`, `muted`, a
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/appearance-inverse.html) -->
 <!-- The below content is automatically added from ../apiExamples/appearance-inverse.html -->
 <span style="color: var(--ds-basic-color-texticon-inverse)">
-<auro-icon category="interface" name="pin-trip" appearance="inverse"></auro-icon> default<br />
-<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"></auro-icon> disabled<br />
-<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"></auro-icon> muted<br />
-<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"></auro-icon> status error<br />
+<auro-icon category="interface" name="pin-trip" appearance="inverse"></auro-icon> Default<br />
+<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"></auro-icon> Disabled<br />
+<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"></auro-icon> Muted<br />
+<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"></auro-icon> Status error<br />
 </span>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -398,10 +398,10 @@ On dark backgrounds, add `appearance="inverse"`. Only the `disabled`, `muted`, a
 <!-- The below code snippet is automatically added from ../apiExamples/appearance-inverse.html -->
 
 <pre class="language-html"><code class="language-html">&lt;span style="color: var(--ds-basic-color-texticon-inverse)"&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse"&gt;&lt;/auro-icon&gt; default&lt;br /&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"&gt;&lt;/auro-icon&gt; disabled&lt;br /&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"&gt;&lt;/auro-icon&gt; muted&lt;br /&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"&gt;&lt;/auro-icon&gt; status error&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse"&gt;&lt;/auro-icon&gt; Default&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"&gt;&lt;/auro-icon&gt; Disabled&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"&gt;&lt;/auro-icon&gt; Muted&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"&gt;&lt;/auro-icon&gt; Status error&lt;br /&gt;
 &lt;/span&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -414,9 +414,9 @@ If an icon isn't found, an error icon is shown in its place. For icon names that
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/fallback.html) -->
 <!-- The below content is automatically added from ../apiExamples/fallback.html -->
-<!-- Default Fallback Icon -->
+<!-- Default fallback -->
 Default fallback: <auro-icon category="interface" name="icon-INVALID"></auro-icon>
-<!-- Tail Fallback Icon -->
+<!-- Tail logo fallback -->
 Tail logo fallback: <auro-icon category="logos" name="tail-INVALID"></auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 <auro-accordion alignRight>
@@ -424,9 +424,9 @@ Tail logo fallback: <auro-icon category="logos" name="tail-INVALID"></auro-icon>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/fallback.html) -->
 <!-- The below code snippet is automatically added from ../apiExamples/fallback.html -->
 
-<pre class="language-html"><code class="language-html">&lt;!-- Default Fallback Icon --&gt;
+<pre class="language-html"><code class="language-html">&lt;!-- Default fallback --&gt;
 Default fallback: &lt;auro-icon category="interface" name="icon-INVALID"&gt;&lt;/auro-icon&gt;
-&#10;&lt;!-- Tail Fallback Icon --&gt;
+&#10;&lt;!-- Tail logo fallback --&gt;
 Tail logo fallback: &lt;auro-icon category="logos" name="tail-INVALID"&gt;&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

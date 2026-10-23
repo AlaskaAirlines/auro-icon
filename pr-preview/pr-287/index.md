@@ -1,6 +1,6 @@
 <!--
  THIS PAGE'S CONTENT SHOULD BE KEPT MINIMAL.
- ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE — THE BASIC EXAMPLE IS USUALLY ENOUGH.
+ ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE. THE BASIC EXAMPLE IS USUALLY ENOUGH.
  ALL OTHER EXAMPLES SHOULD GO IN THE API DOCUMENTATION.
 -->
 
@@ -13,7 +13,7 @@ Icons represent concepts and add context to options and actions.
 The `<auro-icon>` element can show any icon in the [Auro icon library](https://auro.alaskaair.com/icons). Set the icon's `category` and `name`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
@@ -24,7 +24,7 @@ Use `<auro-icon>` when people:
 * Rely on visual cues to find their way around an interface
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Example(s)
+## Examples
 
 ### Basic
 
