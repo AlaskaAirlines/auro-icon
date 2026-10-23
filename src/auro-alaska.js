@@ -58,6 +58,7 @@ export class AuroAlaska extends BaseIcon {
    * @returns {void}
    */
   _initializeDefaults() {
+    super._initializeDefaults();
     this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.sm = 107;
     this.md = 191;

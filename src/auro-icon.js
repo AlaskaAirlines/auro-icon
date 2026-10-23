@@ -55,6 +55,7 @@ export class AuroIcon extends BaseIcon {
    * @returns {void}
    */
   _initializeDefaults() {
+    super._initializeDefaults();
     this.variant = undefined;
     this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
