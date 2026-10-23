@@ -11,17 +11,17 @@ import styleCss from "./styles/style.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * @slot - Hidden from visibility, used for a11y if icon description is needed
+ * Shared base class for `auro-icon` and `auro-alaska`. It isn't registered as an element on its own.
  */
 export default class BaseIcon extends AuroElement {
   constructor() {
     super();
-    
+
     this._initializeDefaults();
   }
 
   /**
-   * Internal defaults.
+   * Sets the element's default values.
    * @private
    * @returns {void}
    */
@@ -36,21 +36,26 @@ export default class BaseIcon extends AuroElement {
       ...AuroElement.properties,
 
       /**
-       * DEPRECATED - use `appearance="inverse"` instead.
+       * Deprecated: Use `appearance="inverse"` instead.
+       * Switches the component's default colors to versions designed for dark backgrounds.
+       * @deprecated Use `appearance="inverse"` instead.
+       * @category ui
        */
       onDark: {
         type: Boolean,
+        attribute: "ondark",
         reflect: true,
       },
 
       /**
-       * Defines whether the button will be on lighter or darker backgrounds.
-       * @property {'default' | 'inverse'}
-       * @default 'default'
+       * Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.
+       * @type {"default" | "inverse"}
+       * @default "default"
+       * @category ui
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -58,7 +63,6 @@ export default class BaseIcon extends AuroElement {
        */
       svg: {
         attribute: false,
-        reflect: true,
       },
     };
   }
@@ -68,11 +72,11 @@ export default class BaseIcon extends AuroElement {
   }
 
   /**
-   * Async function to fetch requested icon from npm CDN.
+   * Fetches the requested icon's SVG from the npm CDN.
    * @private
-   * @param {string} category - Icon category.
-   * @param {string} name - Icon name.
-   * @returns {SVGElement} DOM - Ready HTML to be appended.
+   * @param {string} category - The icon's category, such as `interface`.
+   * @param {string} name - The icon's file name, without the extension.
+   * @returns {Promise<SVGElement|null>} The icon's `<svg>` element, or null if the response doesn't contain one.
    */
   async fetchIcon(category, name) {
     let iconHTML = "";
@@ -97,9 +101,13 @@ export default class BaseIcon extends AuroElement {
         if (svg) {
           this.svg = svg;
         } else if (!svg) {
-          const fallbackSvg = this.name?.startsWith('tail-') ? tailDefault.svg : error.svg;
+          const fallbackSvg = this.name?.startsWith("tail-")
+            ? tailDefault.svg
+            : error.svg;
 
-          this.svg = new DOMParser().parseFromString(fallbackSvg, "text/html").body.querySelector("svg");
+          this.svg = new DOMParser()
+            .parseFromString(fallbackSvg, "text/html")
+            .body.querySelector("svg");
         }
       }
       // eslint-disable-next-line no-unused-vars

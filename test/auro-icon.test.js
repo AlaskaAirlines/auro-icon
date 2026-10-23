@@ -6,10 +6,11 @@
 /* eslint-disable no-console */
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
+
+import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import { expect, fixture, html, waitUntil } from "@open-wc/testing";
 import sinon from "sinon";
-import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
-import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
 import { AuroIcon } from "../src/auro-icon.js";
 import "../src/registered";
 
@@ -101,6 +102,111 @@ describe("auro-icon", () => {
     const span = el.shadowRoot.querySelector("span");
 
     expect(span).to.have.attr("aria-hidden", "false");
+  });
+
+  describe("built-in SVG description", () => {
+    const describedSvg =
+      '<svg aria-labelledby="described__desc" role="img"><title/><desc id="described__desc">Described icon</desc></svg>';
+
+    beforeEach(() => {
+      fetchStub.callsFake(async () => new window.Response(describedSvg));
+    });
+
+    async function renderIcon(template) {
+      const el = await fixture(template);
+
+      await waitUntil(() => el.svg, "Element did not become ready");
+      await el.updateComplete;
+
+      return el.shadowRoot.querySelector("span svg");
+    }
+
+    it('is kept when ariaHidden is "false", so the exposed graphic has a name', async () => {
+      const svg = await renderIcon(html`
+        <auro-icon category="described" name="kept" ariaHidden="false"></auro-icon>
+      `);
+
+      expect(svg).to.exist;
+      expect(svg.querySelector("desc")).to.exist;
+      expect(svg).to.have.attr("aria-labelledby", "described__desc");
+    });
+
+    it("is kept when ariaHidden is unset", async () => {
+      const svg = await renderIcon(html`
+        <auro-icon category="described" name="unset"></auro-icon>
+      `);
+
+      expect(svg).to.exist;
+      expect(svg.querySelector("desc")).to.exist;
+      expect(svg).to.have.attr("aria-labelledby", "described__desc");
+    });
+
+    it('is removed when ariaHidden is "true"', async () => {
+      const svg = await renderIcon(html`
+        <auro-icon category="described" name="removed" ariaHidden="true"></auro-icon>
+      `);
+
+      expect(svg).to.exist;
+      expect(svg.querySelector("desc")).to.not.exist;
+      expect(svg).to.not.have.attr("aria-labelledby");
+    });
+  });
+
+  it("applies the documented appearance and onDark defaults to both elements", async () => {
+    const icon = await fixture(html`<auro-icon customSvg></auro-icon>`);
+    const alaska = await fixture(html`<auro-alaska></auro-alaska>`);
+
+    for (const el of [icon, alaska]) {
+      expect(el.appearance).to.equal("default");
+      expect(el.onDark).to.equal(false);
+    }
+  });
+
+  it("binds camelCase and lowercase attribute spellings to the same properties", async () => {
+    const camel = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" onDark customColor customSvg ariaHidden="false"></auro-icon>
+    `);
+    const lower = await fixture(html`
+      <auro-icon category="interface" name="chevron-up" ondark customcolor customsvg ariahidden="false"></auro-icon>
+    `);
+
+    for (const el of [camel, lower]) {
+      expect(el.onDark).to.be.true;
+      expect(el.customColor).to.be.true;
+      expect(el.customSvg).to.be.true;
+      expect(el.ariaHidden).to.equal("false");
+    }
+  });
+
+  it('deprecated ondark applies the same color as appearance="inverse"', async () => {
+    const plain = await fixture(html`<auro-icon customSvg></auro-icon>`);
+    const inverse = await fixture(
+      html`<auro-icon customSvg appearance="inverse"></auro-icon>`,
+    );
+    const ondark = await fixture(
+      html`<auro-icon customSvg ondark></auro-icon>`,
+    );
+
+    const plainColor = getComputedStyle(plain).color;
+    const inverseColor = getComputedStyle(inverse).color;
+
+    expect(inverseColor).to.not.equal(plainColor);
+    expect(getComputedStyle(ondark).color).to.equal(inverseColor);
+  });
+
+  it("customcolor inherits the surrounding text color", async () => {
+    const wrapper = await fixture(html`
+      <div style="color: rgb(1, 2, 3)">
+        <auro-icon customSvg></auro-icon>
+        <auro-icon customSvg customcolor></auro-icon>
+      </div>
+    `);
+    const [plain, custom] = wrapper.querySelectorAll("auro-icon");
+
+    await Promise.all([plain.updateComplete, custom.updateComplete]);
+
+    expect(getComputedStyle(plain).color).to.not.equal("rgb(1, 2, 3)");
+    expect(getComputedStyle(custom).color).to.equal("rgb(1, 2, 3)");
   });
 
   it("auro-alaska shows small alaska logo", async () => {
@@ -238,7 +344,10 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
 
-    const penDOM = new DOMParser().parseFromString(tailDefault.svg, "text/html");
+    const penDOM = new DOMParser().parseFromString(
+      tailDefault.svg,
+      "text/html",
+    );
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
