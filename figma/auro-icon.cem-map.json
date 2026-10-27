@@ -1,0 +1,130 @@
+{
+  "tag": "auro-icon",
+  "className": "AuroIcon",
+  "attributes": [
+    {
+      "name": "appearance",
+      "kind": "string",
+      "values": null,
+      "default": "default",
+      "description": "Defines whether the button will be on lighter or darker backgrounds.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": "BaseIcon"
+    },
+    {
+      "name": "ariaHidden",
+      "kind": "enum",
+      "values": [
+        "true",
+        "false"
+      ],
+      "default": "true",
+      "description": "Set aria-hidden value. Default is `true`. Option is `false`.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    },
+    {
+      "name": "category",
+      "kind": "string",
+      "values": null,
+      "default": null,
+      "description": "The category of the icon you are looking for. See https://auro.alaskaair.com/icons/ways-to-use.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    },
+    {
+      "name": "customColor",
+      "kind": "boolean",
+      "values": null,
+      "default": null,
+      "description": "Allows custom color to be set.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    },
+    {
+      "name": "customSvg",
+      "kind": "boolean",
+      "values": null,
+      "default": null,
+      "description": "When true, auro-icon will render a custom SVG inside the default slot.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    },
+    {
+      "name": "label",
+      "kind": "boolean",
+      "values": null,
+      "default": null,
+      "description": "Exposes content in slot as icon label.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    },
+    {
+      "name": "name",
+      "kind": "string",
+      "values": null,
+      "default": null,
+      "description": "The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/ways-to-use.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    },
+    {
+      "name": "onDark",
+      "kind": "boolean",
+      "values": null,
+      "default": null,
+      "description": "DEPRECATED - use `appearance=\"inverse\"` instead.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": "BaseIcon"
+    },
+    {
+      "name": "variant",
+      "kind": "enum",
+      "values": [
+        "accent1",
+        "disabled",
+        "muted",
+        "statusDefault",
+        "statusInfo",
+        "statusSuccess",
+        "statusWarning",
+        "statusError",
+        "statusInfoSubtle",
+        "statusSuccessSubtle",
+        "statusWarningSubtle",
+        "statusErrorSubtle",
+        "fareBasicEconomy",
+        "fareBusiness",
+        "fareEconomy",
+        "fareFirst",
+        "farePremiumEconomy",
+        "tierOneWorldEmerald",
+        "tierOneWorldSapphire",
+        "tierOneWorldRuby"
+      ],
+      "default": null,
+      "description": "The style of the icon.",
+      "deprecated": false,
+      "privacy": "public",
+      "inheritedFrom": null
+    }
+  ],
+  "slots": [
+    {
+      "name": "(default)",
+      "description": "Hidden from visibility, used for a11y if icon description is needed."
+    },
+    {
+      "name": "svg",
+      "description": "Used for custom SVG content."
+    }
+  ]
+}
