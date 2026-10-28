@@ -41,7 +41,7 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 #### ARIA hidden
 
-By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
+By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Some library icons, such as `wifi`, don't have one and stay hidden. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->
@@ -109,7 +109,7 @@ Set the `--ds-auro-icon-size` custom property to change the icon's size. It sets
 
 ### Custom SVG
 
-Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. The `variant` and `appearance` colors still apply when the SVG uses `fill: currentColor`.
+Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. Give the SVG a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon. The `variant` and `appearance` colors still apply when the SVG uses `fill: currentColor`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-svg.html) -->
