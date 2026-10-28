@@ -5,7 +5,7 @@
 | Figma component | Icon (category/name, or n/a) | Notes |
 |---|---|---|
 | `club49` | `programs/club49` | Figma name has no category |
-| `destination/car-rental-filled` | TBD |  |
+| `destination/car-rental-filled` | n/a | No filled icon in the package; `car-rental` and `car-rental-stroke` are the same stroke drawing. Missing filled icon to be raised with the Icons repo |
 | `destination/cruise-filled` | TBD |  |
 | `easybiz/contract-fare` | `easybiz/contract-fare-filled` |  |
 | `easybiz/contract-mixed-fare` | `easybiz/contract-mixed-fare-filled` |  |
@@ -14,17 +14,14 @@
 | `easybiz/government-mixed-fare` | `easybiz/government-mixed-fare-filled` |  |
 | `in-flight/carry-on` | `in-flight/carry-on-filled` |  |
 | `in-flight/child-stroke` | `in-flight/child` |  |
-| `in-flight/paw-filled` | TBD |  |
-| `in-flight/paw-stroke` | TBD |  |
-| `in-flight/seat-lie-flat` | TBD |  |
 | `in-flight/seat-standard-legroom` | TBD |  |
 | `in-flight/seat-suite` | TBD |  |
-| `interface/locked-filled` | TBD |  |
-| `interface/locked-stroke` | TBD |  |
-| `interface/sell/recommended-for-standby-travel-but-watch` | TBD | `-stroke` is not in the package; only `-filled` is |
-| `interface/unlocked-filled` | `interface/unlock-filled` |  |
-| `interface/unlocked-stroke` | `interface/unlock-stroke` |  |
 | `payment/wallet-stroke` | `payment/travel-wallet` |  |
-| `programs/huaka'i` | `programs/huakai` |  |
-| `shop/certificate-stroke` | `shop/gift-certificate` |  |
-| `utility/placeholder` | TBD |  |
+| `utility/placeholder` | n/a | No code icon |
+| `hazmat/power-bank-filled` | TBD | |
+| `hazmat/power-bank-stroke` | TBD | |
+| `in-flight/fully-flat-bed` | TBD | |
+| `in-flight/pet-filled` | TBD | |
+| `in-flight/pet-stroke` | TBD | |
+| `in-flight/private-enclosed-suite` | TBD | |
+| `in-flight/seat-lieflat` | TBD | |
