@@ -42,7 +42,7 @@ import tokensCss from "./styles/tokens.scss";
  * @summary Alaska Airlines logo that fills its container, with an optional official tagline.
  * @customElement auro-alaska
  *
- * @slot - Extra text read by screen readers along with the logo's built-in name, which already reads "Alaska Airlines Logo image for Alaska Airlines". Leave it empty unless the logo needs more context. It isn't shown on screen. {@category a11y}
+ * @slot - Extra text read by screen readers along with the logo's built-in name, which already reads "Alaska Airlines Logo image for Alaska Airlines". Leave it empty unless the logo needs more context. It stays off screen. {@category a11y}
  * @cssprop {Color} --ds-auro-alaska-color - Color of the logo.
  */
 export class AuroAlaska extends BaseIcon {

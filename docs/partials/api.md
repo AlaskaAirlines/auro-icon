@@ -22,7 +22,7 @@
 
 #### Default component with label (accessibility recommendation)
 
-Pair an icon with a text label whenever you can. Put the text in the default slot and add the `label` attribute to show it next to the icon.
+Pair an icon with a text label whenever possible. Put the text in the default slot and add the `label` attribute to show it next to the icon.
 
 Screen readers skip the icon's graphic and read the label, so you don't need to change `ariaHidden`.
 
@@ -41,7 +41,7 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 #### ARIA hidden
 
-By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Some library icons, such as `wifi`, don't have one and stay hidden. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
+By default, screen readers skip the icon's graphic. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Some library icons, such as `wifi`, don't have one and stay hidden. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->

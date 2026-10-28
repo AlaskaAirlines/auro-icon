@@ -35,7 +35,7 @@ import tokensCss from "./styles/tokens.scss";
  * @summary Icon from the Auro icon library or a custom SVG, with color variants and an optional label.
  * @customElement auro-icon
  *
- * @slot - Text that describes the icon to screen readers, such as "Your trip starts here". Leave it empty for decorative icons, which screen readers skip. It's shown on screen only when `label` is set. {@category a11y}
+ * @slot - Text that describes the icon to screen readers, such as "Your trip starts here". Leave it empty for decorative icons, which screen readers skip. Setting `label` also shows it on screen. {@category a11y}
  * @slot svg - The custom `<svg>` to show in place of a library icon. Give it a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon. {@requiredWhen customSvg} {@category ui}
  * @csspart label - The `<div>` wrapping the default slot's text, visually hidden unless `label` is set.
  * @csspart svg - The `<span>` wrapping the icon's SVG. Library icons also set this part on their `<svg>`, so `::part(svg)` styles both; a custom SVG in the `svg` slot doesn't get it.
@@ -98,7 +98,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. `category` and `name` are ignored. Turning it off after the icon first renders doesn't currently load a library icon.
+       * Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. The icon then ignores `category` and `name`. Turning it off after the icon first renders doesn't currently load a library icon.
        * @category behavior
        */
       customSvg: {
@@ -107,7 +107,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Shows the default slot's text next to the icon. Without it, the text is hidden on screen and read only by screen readers.
+       * Shows the default slot's text next to the icon. Without it, the text stays off screen, and only screen readers read it.
        * @category ui
        */
       label: {
@@ -176,9 +176,9 @@ export class AuroIcon extends BaseIcon {
 
     /**
      * Most library icons carry a built-in description that screen readers announce when
-     * `ariahidden` is "false". When `ariahidden` is set to anything other than "false",
-     * the graphic is hidden, so remove the description and its `aria-labelledby`
-     * reference. When `ariahidden` is unset or "false", keep both.
+     * `ariahidden` is "false". When `ariahidden` has any value other than "false",
+     * screen readers skip the graphic, so remove the description and its
+     * `aria-labelledby` reference. When `ariahidden` is unset or "false", keep both.
      */
     if (
       this.hasAttribute("ariaHidden") &&
