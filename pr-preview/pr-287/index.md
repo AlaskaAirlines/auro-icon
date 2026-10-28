@@ -31,7 +31,7 @@ Use `<auro-icon>` when people:
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
 <!-- The below content is automatically added from ./../apiExamples/basic.html -->
-<auro-icon category="interface" name="pin-trip"></auro-icon>
+<auro-icon category="interface" name="pin-trip-filled">Your trip starts here</auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -39,6 +39,6 @@ Use `<auro-icon>` when people:
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

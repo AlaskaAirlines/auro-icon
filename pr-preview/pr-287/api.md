@@ -58,21 +58,21 @@ Auro interfaces.
   also shows it next to the icon.
 
 **Example**
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 
 ### Properties & Attributes
 
-| Properties  | Attributes  | Modifiers | Type                                                                                                                                                                                                                                                                                                                                                                                                 | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                         |
-| ----------- | ----------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance  | appearance  |           | "default" \| "inverse"                                                                                                                                                                                                                                                                                                                                                                               | `default` | Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                                                                                                           |
-| ariaHidden  | ariahidden  |           | "true" \| "false"                                                                                                                                                                                                                                                                                                                                                                                    |           | Sets whether screen readers skip the icon's graphic. When unset or `true`, they skip it, so describe meaningful icons in the default slot; use `false` to have them announce the icon's built-in description. This is the `ariahidden` attribute, not the native `aria-hidden`. Changing it after the icon first renders doesn't currently restore a removed description.                           |
-| category    | category    |           | string                                                                                                                                                                                                                                                                                                                                                                                               |           | Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`; see https://auro.alaskaair.com/icons/ways-to-use. Changing it after the icon first renders doesn't currently load the new icon.                                                                                                                                                          |
-| customColor | customcolor |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Makes the icon inherit the color of the surrounding text, in place of the `variant` color or `--ds-auro-icon-color`.                                                                                                                                                                                                                                                                                |
-| customSvg   | customsvg   |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. `category` and `name` are ignored. Turning it off after the icon first renders doesn't currently load a library icon.                                                                                                                                                                                              |
-| label       | label       |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Shows the default slot's text next to the icon. Without it, the text is hidden on screen and read only by screen readers.                                                                                                                                                                                                                                                                           |
-| name        | name        |           | string                                                                                                                                                                                                                                                                                                                                                                                               |           | Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip`. Use it with `category`; see https://auro.alaskaair.com/icons/ways-to-use. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`. Changing it after the icon first renders doesn't currently load the new icon. |
-| variant     | variant     |           | "accent1" \| "disabled" \| "muted" \| "statusDefault" \| "statusInfo" \| "statusSuccess" \| "statusWarning" \| "statusError" \| "statusInfoSubtle" \| "statusSuccessSubtle" \| "statusWarningSubtle" \| "statusErrorSubtle" \| "fareBasicEconomy" \| "fareBusiness" \| "fareEconomy" \| "fareFirst" \| "farePremiumEconomy" \| "tierOneWorldEmerald" \| "tierOneWorldSapphire" \| "tierOneWorldRuby" |           | Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.                                      |
-| onDark      | ondark      |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component's default colors to versions designed for dark backgrounds.                                                                                                                                                                                                                                                               |
+| Properties  | Attributes  | Modifiers | Type                                                                                                                                                                                                                                                                                                                                                                                                 | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------- | ----------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance  | appearance  |           | "default" \| "inverse"                                                                                                                                                                                                                                                                                                                                                                               | `default` | Sets the component's colors for the background it sits on. Use `inverse` on dark backgrounds and `default` on light ones.                                                                                                                                                                                                                                                                                                               |
+| ariaHidden  | ariahidden  |           | "true" \| "false"                                                                                                                                                                                                                                                                                                                                                                                    |           | Sets whether screen readers skip the icon's graphic. When unset or `true`, they skip it, so describe meaningful icons in the default slot; use `false` to have them announce the icon's built-in description, if it has one. This is the `ariahidden` attribute, not the native `aria-hidden`. Changing it after the icon first renders doesn't currently restore a removed description.                                                |
+| category    | category    |           | string                                                                                                                                                                                                                                                                                                                                                                                               |           | Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`; see https://auro.alaskaair.com/icons/ways-to-use. Changing it after the icon first renders doesn't currently load the new icon.                                                                                                                                                                                              |
+| customColor | customcolor |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Makes the icon inherit the color of the surrounding text, in place of the `variant` color or `--ds-auro-icon-color`.                                                                                                                                                                                                                                                                                                                    |
+| customSvg   | customsvg   |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. `category` and `name` are ignored. Turning it off after the icon first renders doesn't currently load a library icon.                                                                                                                                                                                                                                  |
+| label       | label       |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Shows the default slot's text next to the icon. Without it, the text is hidden on screen and read only by screen readers.                                                                                                                                                                                                                                                                                                               |
+| name        | name        |           | string                                                                                                                                                                                                                                                                                                                                                                                               |           | Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip-filled`. Use it with `category`, and find available names in the icon list at https://auro.alaskaair.com/icons. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`. Changing it after the icon first renders doesn't currently load the new icon. |
+| variant     | variant     |           | "accent1" \| "disabled" \| "muted" \| "statusDefault" \| "statusInfo" \| "statusSuccess" \| "statusWarning" \| "statusError" \| "statusInfoSubtle" \| "statusSuccessSubtle" \| "statusWarningSubtle" \| "statusErrorSubtle" \| "fareBasicEconomy" \| "fareBusiness" \| "fareEconomy" \| "fareFirst" \| "farePremiumEconomy" \| "tierOneWorldEmerald" \| "tierOneWorldSapphire" \| "tierOneWorldRuby" |           | Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.                                                                          |
+| onDark      | ondark      |           | boolean                                                                                                                                                                                                                                                                                                                                                                                              |           | Deprecated: Use `appearance="inverse"` instead.<br>Switches the component's default colors to versions designed for dark backgrounds.                                                                                                                                                                                                                                                                                                   |
 
 ### Methods
 
@@ -85,7 +85,7 @@ Auro interfaces.
 | Name      | Description                                                                                                                                                                                     |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (default) | Text that describes the icon to screen readers, such as "Your trip starts here". Leave it empty for decorative icons, which screen readers skip. It's shown on screen only when `label` is set. |
-| svg       | The custom `<svg>` to show in place of a library icon.                                                                                                                                          |
+| svg       | The custom `<svg>` to show in place of a library icon. Give it a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon.                                   |
 
 ### CSS Shadow Parts
 
@@ -107,7 +107,7 @@ Auro interfaces.
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
 <!-- The below content is automatically added from ./../apiExamples/basic.html -->
-<auro-icon category="interface" name="pin-trip"></auro-icon>
+<auro-icon category="interface" name="pin-trip-filled">Your trip starts here</auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -115,7 +115,7 @@ Auro interfaces.
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -146,12 +146,12 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 #### ARIA hidden
 
-By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
+By default, the icon's graphic is hidden from screen readers. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Some library icons, such as `wifi`, don't have one and stay hidden. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->
 <!-- The below content is automatically added from ../apiExamples/aria-hidden.html -->
-<auro-icon category="interface" name="pin-trip" ariaHidden="false"></auro-icon>
+<auro-icon category="interface" name="pin-trip-filled" ariaHidden="false"></auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -159,7 +159,7 @@ By default, the icon's graphic is hidden from screen readers. To expose it, set 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/aria-hidden.html) -->
 <!-- The below code snippet is automatically added from ../apiExamples/aria-hidden.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip" ariaHidden="false"&gt;&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled" ariaHidden="false"&gt;&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -170,7 +170,7 @@ To describe an icon to screen readers without showing any text, put the descript
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/access-descr.html) -->
 <!-- The below content is automatically added from ../apiExamples/access-descr.html -->
-<auro-icon category="interface" name="pin-trip">Your trip starts here!</auro-icon>
+<auro-icon category="interface" name="pin-trip-filled">Your trip starts here!</auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -178,7 +178,7 @@ To describe an icon to screen readers without showing any text, put the descript
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/access-descr.html) -->
 <!-- The below code snippet is automatically added from ../apiExamples/access-descr.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;Your trip starts here!&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here!&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -189,9 +189,9 @@ By default, the icon uses the standard text-and-icon color, or the color of its 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-color.html) -->
 <!-- The below content is automatically added from ../apiExamples/custom-color.html -->
-<auro-icon category="interface" name="pin-trip"></auro-icon> Default color<br/>
-<auro-icon category="interface" name="pin-trip" customColor></auro-icon> Inherits the surrounding text color<br/>
-<auro-icon category="interface" name="pin-trip" customColor style="color: orange;"></auro-icon> Uses the color from its style attribute
+<auro-icon category="interface" name="pin-trip-filled"></auro-icon> Default color<br/>
+<auro-icon category="interface" name="pin-trip-filled" customColor></auro-icon> Inherits the surrounding text color<br/>
+<auro-icon category="interface" name="pin-trip-filled" customColor style="color: orange;"></auro-icon> Uses the color from its style attribute
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -199,9 +199,9 @@ By default, the icon uses the standard text-and-icon color, or the color of its 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom-color.html) -->
 <!-- The below code snippet is automatically added from ../apiExamples/custom-color.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;&lt;/auro-icon&gt; Default color&lt;br/&gt;
-&lt;auro-icon category="interface" name="pin-trip" customColor&gt;&lt;/auro-icon&gt; Inherits the surrounding text color&lt;br/&gt;
-&lt;auro-icon category="interface" name="pin-trip" customColor style="color: orange;"&gt;&lt;/auro-icon&gt; Uses the color from its style attribute</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;&lt;/auro-icon&gt; Default color&lt;br/&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" customColor&gt;&lt;/auro-icon&gt; Inherits the surrounding text color&lt;br/&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" customColor style="color: orange;"&gt;&lt;/auro-icon&gt; Uses the color from its style attribute</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -212,7 +212,7 @@ Set the `--ds-auro-icon-size` custom property to change the icon's size. It sets
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-size.html) -->
 <!-- The below content is automatically added from ../apiExamples/custom-size.html -->
-<auro-icon style="--ds-auro-icon-size: 30rem;" category="interface" name="pin-trip" variant="statusSuccess"></auro-icon>
+<auro-icon style="--ds-auro-icon-size: 30rem;" category="interface" name="pin-trip-filled" variant="statusSuccess">Your trip starts here</auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -220,28 +220,28 @@ Set the `--ds-auro-icon-size` custom property to change the icon's size. It sets
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom-size.html) -->
 <!-- The below code snippet is automatically added from ../apiExamples/custom-size.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon style="--ds-auro-icon-size: 30rem;" category="interface" name="pin-trip" variant="statusSuccess"&gt;&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon style="--ds-auro-icon-size: 30rem;" category="interface" name="pin-trip-filled" variant="statusSuccess"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
 ### Custom SVG
 
-Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. The `variant` and `appearance` colors still apply when the SVG uses `fill: currentColor`.
+Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show it in place of a library icon. Give the SVG a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon. The `variant` and `appearance` colors still apply when the SVG uses `fill: currentColor`.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-svg.html) -->
 <!-- The below content is automatically added from ../apiExamples/custom-svg.html -->
 <auro-icon customSvg>
     Trip location
-<svg slot="svg" viewBox="0 0 24 24" style="width: var(--ds-auro-icon-size); height: var(--ds-auro-icon-size); fill: currentColor;"><path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"></path></svg>
+<svg slot="svg" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"></path></svg>
 </auro-icon>
 <auro-icon customSvg variant="statusSuccess">
     Trip location
-<svg slot="svg" viewBox="0 0 24 24" style="width: var(--ds-auro-icon-size); height: var(--ds-auro-icon-size); fill: currentColor;"><path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"></path></svg>
+<svg slot="svg" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"></path></svg>
 </auro-icon>
 <auro-icon customSvg variant="statusError">
     Trip location
-<svg slot="svg" viewBox="0 0 24 24" style="width: var(--ds-auro-icon-size); height: var(--ds-auro-icon-size); fill: currentColor;"><path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"></path></svg>
+<svg slot="svg" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"></path></svg>
 </auro-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -252,15 +252,15 @@ Add the `customSvg` attribute and put your own `<svg>` in the `svg` slot to show
 
 <pre class="language-html"><code class="language-html">&lt;auro-icon customSvg&gt;
   Trip location
-  &lt;svg slot="svg" viewBox="0 0 24 24" style="width: var(--ds-auro-icon-size); height: var(--ds-auro-icon-size); fill: currentColor;"&gt;&lt;path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"&gt;&lt;/path&gt;&lt;/svg&gt;
+  &lt;svg slot="svg" viewBox="0 0 24 24" style="fill: currentColor;"&gt;&lt;path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"&gt;&lt;/path&gt;&lt;/svg&gt;
 &lt;/auro-icon&gt;
 &lt;auro-icon customSvg variant="statusSuccess"&gt;
   Trip location
-  &lt;svg slot="svg" viewBox="0 0 24 24" style="width: var(--ds-auro-icon-size); height: var(--ds-auro-icon-size); fill: currentColor;"&gt;&lt;path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"&gt;&lt;/path&gt;&lt;/svg&gt;
+  &lt;svg slot="svg" viewBox="0 0 24 24" style="fill: currentColor;"&gt;&lt;path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"&gt;&lt;/path&gt;&lt;/svg&gt;
 &lt;/auro-icon&gt;
 &lt;auro-icon customSvg variant="statusError"&gt;
   Trip location
-  &lt;svg slot="svg" viewBox="0 0 24 24" style="width: var(--ds-auro-icon-size); height: var(--ds-auro-icon-size); fill: currentColor;"&gt;&lt;path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"&gt;&lt;/path&gt;&lt;/svg&gt;
+  &lt;svg slot="svg" viewBox="0 0 24 24" style="fill: currentColor;"&gt;&lt;path d="M10.045 3.345a.75.75 0 0 1 .785-.714l.05.003a.75.75 0 0 1-.082 1.498l-.04-.002a.75.75 0 0 1-.713-.785m-1.217.22a.75.75 0 0 1-.357 1l-.034.016a.75.75 0 0 1-.655-1.35l.047-.022a.75.75 0 0 1 .999.357m3.949.186a.75.75 0 0 1 1.012-.318l.045.023a.75.75 0 0 1-.703 1.326l-.035-.019a.75.75 0 0 1-.319-1.012M6.508 5.057a.75.75 0 0 1 .2 1.041l-.01.017a.75.75 0 1 1-1.246-.836l.014-.022a.75.75 0 0 1 1.042-.2m8.577.22a.75.75 0 0 1 1.038.218l.028.044a.75.75 0 0 1-1.264.808l-.02-.032a.75.75 0 0 1 .218-1.038m6.02 7.014c0-2.789-2.44-4.88-4.88-4.88s-4.881 2.091-4.881 4.88q0 2.559 4.11 8.496l.199.285.055.068a.697.697 0 0 0 1.088-.068q4.31-6.16 4.309-8.781m-6.275 0a1.394 1.394 0 1 1 2.789 0 1.394 1.394 0 0 1-2.789 0M4.635 10.704a1.74 1.74 0 1 0 0-3.48 1.74 1.74 0 0 0 0 3.48"&gt;&lt;/path&gt;&lt;/svg&gt;
 &lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -325,27 +325,27 @@ Use `variant` to color a single-color icon by meaning.
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/visual-state.html) -->
 <!-- The below content is automatically added from ../apiExamples/visual-state.html -->
-<auro-icon category="interface" name="pin-trip"></auro-icon> Default<br />
-<auro-icon category="interface" name="pin-trip" variant="disabled"></auro-icon> Disabled<br />
-<auro-icon category="interface" name="pin-trip" variant="muted"></auro-icon> Muted<br />
-<auro-icon category="interface" name="pin-trip" variant="accent1"></auro-icon> Accent1<br />
-<auro-icon category="interface" name="pin-trip" variant="statusDefault"></auro-icon> Status default<br />
-<auro-icon category="interface" name="pin-trip" variant="statusInfo"></auro-icon> Status info<br />
-<auro-icon category="interface" name="pin-trip" variant="statusSuccess"></auro-icon> Status success<br />
-<auro-icon category="interface" name="pin-trip" variant="statusWarning"></auro-icon> Status warning<br />
-<auro-icon category="interface" name="pin-trip" variant="statusError"></auro-icon> Status error<br />
-<auro-icon category="interface" name="pin-trip" variant="statusInfoSubtle"></auro-icon> Status info subtle<br />
-<auro-icon category="interface" name="pin-trip" variant="statusSuccessSubtle"></auro-icon> Status success subtle<br />
-<auro-icon category="interface" name="pin-trip" variant="statusWarningSubtle"></auro-icon> Status warning subtle<br />
-<auro-icon category="interface" name="pin-trip" variant="statusErrorSubtle"></auro-icon> Status error subtle<br />
-<auro-icon category="interface" name="pin-trip" variant="fareBasicEconomy"></auro-icon> Fare basic economy<br />
-<auro-icon category="interface" name="pin-trip" variant="fareBusiness"></auro-icon> Fare business<br />
-<auro-icon category="interface" name="pin-trip" variant="fareEconomy"></auro-icon> Fare economy<br />
-<auro-icon category="interface" name="pin-trip" variant="fareFirst"></auro-icon> Fare first<br />
-<auro-icon category="interface" name="pin-trip" variant="farePremiumEconomy"></auro-icon> Fare premium economy<br />
-<auro-icon category="interface" name="pin-trip" variant="tierOneWorldEmerald"></auro-icon> oneworld Emerald tier<br />
-<auro-icon category="interface" name="pin-trip" variant="tierOneWorldSapphire"></auro-icon> oneworld Sapphire tier<br />
-<auro-icon category="interface" name="pin-trip" variant="tierOneWorldRuby"></auro-icon> oneworld Ruby tier<br />
+<auro-icon category="interface" name="pin-trip-filled"></auro-icon> Default<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="disabled"></auro-icon> Disabled<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="muted"></auro-icon> Muted<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="accent1"></auro-icon> Accent1<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusDefault"></auro-icon> Status default<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusInfo"></auro-icon> Status info<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusSuccess"></auro-icon> Status success<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusWarning"></auro-icon> Status warning<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusError"></auro-icon> Status error<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusInfoSubtle"></auro-icon> Status info subtle<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusSuccessSubtle"></auro-icon> Status success subtle<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusWarningSubtle"></auro-icon> Status warning subtle<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="statusErrorSubtle"></auro-icon> Status error subtle<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="fareBasicEconomy"></auro-icon> Fare basic economy<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="fareBusiness"></auro-icon> Fare business<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="fareEconomy"></auro-icon> Fare economy<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="fareFirst"></auro-icon> Fare first<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="farePremiumEconomy"></auro-icon> Fare premium economy<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="tierOneWorldEmerald"></auro-icon> oneworld Emerald tier<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="tierOneWorldSapphire"></auro-icon> oneworld Sapphire tier<br />
+<auro-icon category="interface" name="pin-trip-filled" variant="tierOneWorldRuby"></auro-icon> oneworld Ruby tier<br />
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -353,27 +353,27 @@ Use `variant` to color a single-color icon by meaning.
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/visual-state.html) -->
 <!-- The below code snippet is automatically added from ../apiExamples/visual-state.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;&lt;/auro-icon&gt; Default&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="disabled"&gt;&lt;/auro-icon&gt; Disabled&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="muted"&gt;&lt;/auro-icon&gt; Muted&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="accent1"&gt;&lt;/auro-icon&gt; Accent1&lt;br /&gt;
-&#10;&lt;auro-icon category="interface" name="pin-trip" variant="statusDefault"&gt;&lt;/auro-icon&gt; Status default&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusInfo"&gt;&lt;/auro-icon&gt; Status info&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusSuccess"&gt;&lt;/auro-icon&gt; Status success&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusWarning"&gt;&lt;/auro-icon&gt; Status warning&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusError"&gt;&lt;/auro-icon&gt; Status error&lt;br /&gt;
-&#10;&lt;auro-icon category="interface" name="pin-trip" variant="statusInfoSubtle"&gt;&lt;/auro-icon&gt; Status info subtle&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusSuccessSubtle"&gt;&lt;/auro-icon&gt; Status success subtle&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusWarningSubtle"&gt;&lt;/auro-icon&gt; Status warning subtle&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="statusErrorSubtle"&gt;&lt;/auro-icon&gt; Status error subtle&lt;br /&gt;
-&#10;&lt;auro-icon category="interface" name="pin-trip" variant="fareBasicEconomy"&gt;&lt;/auro-icon&gt; Fare basic economy&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="fareBusiness"&gt;&lt;/auro-icon&gt; Fare business&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="fareEconomy"&gt;&lt;/auro-icon&gt; Fare economy&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="fareFirst"&gt;&lt;/auro-icon&gt; Fare first&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="farePremiumEconomy"&gt;&lt;/auro-icon&gt; Fare premium economy&lt;br /&gt;
-&#10;&lt;auro-icon category="interface" name="pin-trip" variant="tierOneWorldEmerald"&gt;&lt;/auro-icon&gt; oneworld Emerald tier&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="tierOneWorldSapphire"&gt;&lt;/auro-icon&gt; oneworld Sapphire tier&lt;br /&gt;
-&lt;auro-icon category="interface" name="pin-trip" variant="tierOneWorldRuby"&gt;&lt;/auro-icon&gt; oneworld Ruby tier&lt;br /&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;&lt;/auro-icon&gt; Default&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="disabled"&gt;&lt;/auro-icon&gt; Disabled&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="muted"&gt;&lt;/auro-icon&gt; Muted&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="accent1"&gt;&lt;/auro-icon&gt; Accent1&lt;br /&gt;
+&#10;&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusDefault"&gt;&lt;/auro-icon&gt; Status default&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusInfo"&gt;&lt;/auro-icon&gt; Status info&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusSuccess"&gt;&lt;/auro-icon&gt; Status success&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusWarning"&gt;&lt;/auro-icon&gt; Status warning&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusError"&gt;&lt;/auro-icon&gt; Status error&lt;br /&gt;
+&#10;&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusInfoSubtle"&gt;&lt;/auro-icon&gt; Status info subtle&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusSuccessSubtle"&gt;&lt;/auro-icon&gt; Status success subtle&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusWarningSubtle"&gt;&lt;/auro-icon&gt; Status warning subtle&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="statusErrorSubtle"&gt;&lt;/auro-icon&gt; Status error subtle&lt;br /&gt;
+&#10;&lt;auro-icon category="interface" name="pin-trip-filled" variant="fareBasicEconomy"&gt;&lt;/auro-icon&gt; Fare basic economy&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="fareBusiness"&gt;&lt;/auro-icon&gt; Fare business&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="fareEconomy"&gt;&lt;/auro-icon&gt; Fare economy&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="fareFirst"&gt;&lt;/auro-icon&gt; Fare first&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="farePremiumEconomy"&gt;&lt;/auro-icon&gt; Fare premium economy&lt;br /&gt;
+&#10;&lt;auro-icon category="interface" name="pin-trip-filled" variant="tierOneWorldEmerald"&gt;&lt;/auro-icon&gt; oneworld Emerald tier&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="tierOneWorldSapphire"&gt;&lt;/auro-icon&gt; oneworld Sapphire tier&lt;br /&gt;
+&lt;auro-icon category="interface" name="pin-trip-filled" variant="tierOneWorldRuby"&gt;&lt;/auro-icon&gt; oneworld Ruby tier&lt;br /&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
@@ -385,10 +385,10 @@ On dark backgrounds, add `appearance="inverse"`. Only the `disabled`, `muted`, a
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/appearance-inverse.html) -->
 <!-- The below content is automatically added from ../apiExamples/appearance-inverse.html -->
 <span style="color: var(--ds-basic-color-texticon-inverse)">
-<auro-icon category="interface" name="pin-trip" appearance="inverse"></auro-icon> Default<br />
-<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"></auro-icon> Disabled<br />
-<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"></auro-icon> Muted<br />
-<auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"></auro-icon> Status error<br />
+<auro-icon category="interface" name="pin-trip-filled" appearance="inverse"></auro-icon> Default<br />
+<auro-icon category="interface" name="pin-trip-filled" appearance="inverse" variant="disabled"></auro-icon> Disabled<br />
+<auro-icon category="interface" name="pin-trip-filled" appearance="inverse" variant="muted"></auro-icon> Muted<br />
+<auro-icon category="interface" name="pin-trip-filled" appearance="inverse" variant="statusError"></auro-icon> Status error<br />
 </span>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -398,10 +398,10 @@ On dark backgrounds, add `appearance="inverse"`. Only the `disabled`, `muted`, a
 <!-- The below code snippet is automatically added from ../apiExamples/appearance-inverse.html -->
 
 <pre class="language-html"><code class="language-html">&lt;span style="color: var(--ds-basic-color-texticon-inverse)"&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse"&gt;&lt;/auro-icon&gt; Default&lt;br /&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="disabled"&gt;&lt;/auro-icon&gt; Disabled&lt;br /&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="muted"&gt;&lt;/auro-icon&gt; Muted&lt;br /&gt;
-  &lt;auro-icon category="interface" name="pin-trip" appearance="inverse" variant="statusError"&gt;&lt;/auro-icon&gt; Status error&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip-filled" appearance="inverse"&gt;&lt;/auro-icon&gt; Default&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip-filled" appearance="inverse" variant="disabled"&gt;&lt;/auro-icon&gt; Disabled&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip-filled" appearance="inverse" variant="muted"&gt;&lt;/auro-icon&gt; Muted&lt;br /&gt;
+  &lt;auro-icon category="interface" name="pin-trip-filled" appearance="inverse" variant="statusError"&gt;&lt;/auro-icon&gt; Status error&lt;br /&gt;
 &lt;/span&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

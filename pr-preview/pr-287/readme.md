@@ -79,7 +79,7 @@ If your project can't process JS assets, use the pre-processed assets. Legacy br
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
 
-<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip"&gt;&lt;/auro-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Custom component registration for version management
@@ -101,12 +101,12 @@ import { AuroIcon } from '@aurodesignsystem/auro-icon/class';
 &#10;// Register with a custom name if desired
 AuroIcon.register('custom-icon');</code></pre>
 
-This creates a `<custom-icon>` element that works the same as `<auro-icon>`, so both can be used on the same page without conflicting.
+This creates a `<custom-icon>` element that works the same as `<auro-icon>` and doesn't conflict with it on the same page.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
 <!-- The below content is automatically added from ./apiExamples/custom.html -->
-<custom-icon category="interface" name="pin-trip"></custom-icon>
+<custom-icon category="interface" name="pin-trip-filled">Your trip starts here</custom-icon>
 <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -114,6 +114,6 @@ This creates a `<custom-icon>` element that works the same as `<auro-icon>`, so 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
 
-<pre class="language-html"><code class="language-html">&lt;custom-icon category="interface" name="pin-trip"&gt;&lt;/custom-icon&gt;</code></pre>
+<pre class="language-html"><code class="language-html">&lt;custom-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/custom-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
