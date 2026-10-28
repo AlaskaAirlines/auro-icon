@@ -7,7 +7,7 @@
 /* eslint-disable one-var */
 /* eslint-disable no-undef */
 
-import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import errorStroke from "@alaskaairux/icons/dist/icons/alert/error-stroke.mjs";
 import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import { expect, fixture, html, waitUntil } from "@open-wc/testing";
 import sinon from "sinon";
@@ -329,7 +329,10 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
 
-    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const penDOM = new DOMParser().parseFromString(
+      errorStroke.svg,
+      "text/html",
+    );
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
@@ -362,7 +365,10 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
 
-    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const penDOM = new DOMParser().parseFromString(
+      errorStroke.svg,
+      "text/html",
+    );
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
@@ -377,7 +383,10 @@ describe("auro-icon", () => {
 
     await waitUntil(() => el.svg, "Element did not set fallback svg");
 
-    const penDOM = new DOMParser().parseFromString(error.svg, "text/html");
+    const penDOM = new DOMParser().parseFromString(
+      errorStroke.svg,
+      "text/html",
+    );
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;

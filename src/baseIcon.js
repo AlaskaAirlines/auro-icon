@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 
-import error from "@alaskaairux/icons/dist/icons/alert/error.mjs";
+import errorStroke from "@alaskaairux/icons/dist/icons/alert/error-stroke.mjs";
 import tailDefault from "@alaskaairux/icons/dist/logos/tail-DEFAULT_es6.js";
 import AuroElement from "@aurodesignsystem/webcorestylesheets/dist/auroElement/auroElement.mjs";
 import cacheFetch from "./cacheFetch.js";
@@ -103,7 +103,7 @@ export default class BaseIcon extends AuroElement {
         } else if (!svg) {
           const fallbackSvg = this.name?.startsWith("tail-")
             ? tailDefault.svg
-            : error.svg;
+            : errorStroke.svg;
 
           this.svg = new DOMParser()
             .parseFromString(fallbackSvg, "text/html")
