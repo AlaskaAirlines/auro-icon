@@ -15,7 +15,7 @@ Shows the Alaska Airlines logo, with or without the official tagline.
 **Example**
 <pre class="language-html"><code class="language-html">&lt;auro-alaska&gt;&lt;/auro-alaska&gt;</code></pre>
 
-### Properties & Attributes
+### Properties and attributes
 
 | Properties | Attributes | Modifiers | Type                   | Default   | Description                                                                                                                              |
 | ---------- | ---------- | --------- | ---------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +35,7 @@ Shows the Alaska Airlines logo, with or without the official tagline.
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | (default) | Extra text read by screen readers along with the logo's built-in name, which already reads "Alaska Airlines Logo image for Alaska Airlines". Leave it empty unless the logo needs more context. It stays off screen. |
 
-### CSS Custom Properties
+### CSS custom properties
 
 | Name                   | Description        |
 | ---------------------- | ------------------ |
@@ -60,7 +60,7 @@ Auro interfaces.
 **Example**
 <pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 
-### Properties & Attributes
+### Properties and attributes
 
 | Properties  | Attributes  | Modifiers | Type                                                                                                                                                                                                                                                                                                                                                                                                 | Default   | Description                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | ----------- | ----------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -87,14 +87,14 @@ Auro interfaces.
 | (default) | Text that describes the icon to screen readers, such as "Your trip starts here". Leave it empty for decorative icons, which screen readers skip. Setting `label` also shows it on screen. |
 | svg       | The custom `<svg>` to show in place of a library icon. Give it a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon.                             |
 
-### CSS Shadow Parts
+### CSS shadow parts
 
 | Name  | Description                                                                                                                                                           |
 | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | label | The `<div>` wrapping the default slot's text, visually hidden unless `label` is set.                                                                                  |
 | svg   | The `<span>` wrapping the icon's SVG. Library icons also set this part on their `<svg>`, so `::part(svg)` styles both; a custom SVG in the `svg` slot doesn't get it. |
 
-### CSS Custom Properties
+### CSS custom properties
 
 | Name                 | Description                                           |
 | -------------------- | ----------------------------------------------------- |
