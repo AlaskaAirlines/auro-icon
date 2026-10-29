@@ -28,8 +28,8 @@ import tokensCss from "./styles/tokens.scss";
  * Shows the Alaska Airlines logo, with or without the official tagline.
  *
  * **Key capabilities**
- * - **Fills its container**: the logo stretches to the width of its container, and the
- *   element picks the artwork that best suits that width when it first renders.
+ * - **Fills its container**: The logo always stretches to the width of its container, and
+ *   the element picks the artwork that best suits that width when it first renders.
  * - **Official tagline**: `official` switches to the logo with the tagline.
  * - **Light and dark backgrounds**: `appearance="inverse"` shows the logo in white for dark
  *   backgrounds.

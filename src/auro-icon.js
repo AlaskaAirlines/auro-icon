@@ -17,14 +17,14 @@ import tokensCss from "./styles/tokens.scss";
  * Auro interfaces.
  *
  * **Key capabilities**
- * - **Library icons**: set `category` and `name` to load any icon from the Auro icon
+ * - **Library icons**: Set `category` and `name` to load any icon from the Auro icon
  *   library.
- * - **Custom SVGs**: set `customSvg` and put your own `<svg>` in the `svg` slot.
+ * - **Custom SVGs**: Set `customSvg` and put your own `<svg>` in the `svg` slot.
  * - **Color**: `variant` colors the icon by meaning, such as `statusError` or `fareFirst`,
  *   and `customColor` makes it inherit the surrounding text color.
  * - **Light and dark backgrounds**: `appearance="inverse"` switches the default, `disabled`,
  *   `muted`, and `statusError` colors to versions designed for dark backgrounds.
- * - **Labels**: text in the default slot describes the icon to screen readers, and `label`
+ * - **Labels**: Text in the default slot describes the icon to screen readers, and `label`
  *   also shows it next to the icon.
  *
  * **Example**
@@ -39,7 +39,7 @@ import tokensCss from "./styles/tokens.scss";
  * @slot svg - The custom `<svg>` to show in place of a library icon. Give it a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon. {@requiredWhen customSvg} {@category ui}
  * @csspart label - The `<div>` wrapping the default slot's text, visually hidden unless `label` is set.
  * @csspart svg - The `<span>` wrapping the icon's SVG. Library icons also set this part on their `<svg>`, so `::part(svg)` styles both; a custom SVG in the `svg` slot doesn't get it.
- * @cssprop {Color} --ds-auro-icon-color - Color of the icon. Ignored when `customColor` is set.
+ * @cssprop {Color} --ds-auro-icon-color - Color of the icon. Ignored when `customColor` is set. {@relevantWhen !customColor}
  * @cssprop {Length} --ds-auro-icon-size - Width and height of the icon.
  */
 export class AuroIcon extends BaseIcon {
@@ -78,7 +78,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`; see https://auro.alaskaair.com/icons/ways-to-use.
+       * Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Applies only when `customSvg` isn't set, and needs `name` too; see https://auro.alaskaair.com/icons/ways-to-use.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -116,7 +116,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip-filled`. Use it with `category`, and find available names in the icon list at https://auro.alaskaair.com/icons. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`.
+       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip-filled`. Applies only when `customSvg` isn't set, and needs `category` too; find available names in the icon list at https://auro.alaskaair.com/icons. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -126,7 +126,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.
+       * Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). Applies only when `customColor` isn't set. With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.
        * @type {"accent1" | "disabled" | "muted" | "statusDefault" | "statusInfo" | "statusSuccess" | "statusWarning" | "statusError" | "statusInfoSubtle" | "statusSuccessSubtle" | "statusWarningSubtle" | "statusErrorSubtle" | "fareBasicEconomy" | "fareBusiness" | "fareEconomy" | "fareFirst" | "farePremiumEconomy" | "tierOneWorldEmerald" | "tierOneWorldSapphire" | "tierOneWorldRuby"}
        * @relevantWhen !customColor
        * @category ui

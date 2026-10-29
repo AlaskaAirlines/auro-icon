@@ -1,6 +1,6 @@
 # Alaska
 
-The `auro-alaska` element shows the official Alaska Airlines logo. It fills the width of its container and picks the version of the logo that suits that width.
+The `auro-alaska` element shows the Alaska Airlines logo. It fills the width of its container and picks the version of the logo that suits that width.
 
 ## Install
 
