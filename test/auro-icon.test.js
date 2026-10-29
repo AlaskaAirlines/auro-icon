@@ -150,6 +150,30 @@ describe("auro-icon", () => {
       expect(svg.querySelector("desc")).to.not.exist;
       expect(svg).to.not.have.attr("aria-labelledby");
     });
+
+    it('comes back when ariaHidden changes from "true" to "false" after render, and goes again when it changes back', async () => {
+      const el = await fixture(html`
+        <auro-icon category="described" name="toggled" ariaHidden="true"></auro-icon>
+      `);
+      const shown = () => el.shadowRoot.querySelector("span svg");
+
+      await waitUntil(() => shown(), "Element did not become ready");
+      expect(shown().querySelector("desc")).to.not.exist;
+
+      el.ariaHidden = "false";
+      await waitUntil(
+        () => shown().querySelector("desc"),
+        "Description did not come back",
+      );
+      expect(shown()).to.have.attr("aria-labelledby", "described__desc");
+
+      el.ariaHidden = "true";
+      await waitUntil(
+        () => !shown().querySelector("desc"),
+        "Description was not removed again",
+      );
+      expect(shown()).to.not.have.attr("aria-labelledby");
+    });
   });
 
   it("applies the documented appearance and onDark defaults to both elements", async () => {
@@ -390,5 +414,130 @@ describe("auro-icon", () => {
     const expectedSvg = penDOM.body.querySelector("svg");
 
     expect(el.svg.isEqualNode(expectedSvg)).to.be.true;
+  });
+
+  describe("updates after the first render", () => {
+    // Each response is an SVG tagged with the category and name it was requested for.
+    function iconFor(url) {
+      const [category, file] = url.split("/").slice(-2);
+
+      return `<svg data-icon=${category}/${file.replace(".svg", "")}></svg>`;
+    }
+
+    const shownIcon = (el) => el.svg?.getAttribute("data-icon");
+
+    beforeEach(() => {
+      fetchStub.callsFake(async (url) => new window.Response(iconFor(url)));
+    });
+
+    it("loads the new icon when name changes", async () => {
+      const el = await fixture(html`
+        <auro-icon category="live" name="name-before"></auro-icon>
+      `);
+
+      await waitUntil(() => shownIcon(el) === "live/name-before");
+
+      el.name = "name-after";
+      await waitUntil(
+        () => shownIcon(el) === "live/name-after",
+        "Icon did not change",
+      );
+      expect(fetch).to.have.been.calledWith(
+        sinon.match("icons/live/name-after.svg"),
+      );
+    });
+
+    it("loads the new icon when category changes", async () => {
+      const el = await fixture(html`
+        <auro-icon category="live-before" name="same-name"></auro-icon>
+      `);
+
+      await waitUntil(() => shownIcon(el) === "live-before/same-name");
+
+      el.category = "live-after";
+      await waitUntil(
+        () => shownIcon(el) === "live-after/same-name",
+        "Icon did not change",
+      );
+    });
+
+    it("shows the requested icon when attributes are set after the element is created", async () => {
+      const el = await fixture(html`<auro-icon></auro-icon>`);
+
+      el.setAttribute("category", "live");
+      el.setAttribute("name", "set-late");
+
+      await waitUntil(
+        () => shownIcon(el) === "live/set-late",
+        "Icon did not load after its attributes were set",
+      );
+      expect(fetch).to.not.have.been.calledWith(sinon.match("undefined"));
+    });
+
+    it("keeps the newest icon when an earlier request finishes last", async () => {
+      let releaseSlow;
+
+      fetchStub.callsFake(async (url) => {
+        if (url.includes("slow-first")) {
+          await new Promise((resolve) => {
+            releaseSlow = resolve;
+          });
+        }
+
+        return new window.Response(iconFor(url));
+      });
+
+      const el = await fixture(html`
+        <auro-icon category="live" name="race-start"></auro-icon>
+      `);
+
+      await waitUntil(() => shownIcon(el) === "live/race-start");
+
+      el.name = "slow-first";
+      await el.updateComplete;
+      el.name = "fast-second";
+      await waitUntil(() => shownIcon(el) === "live/fast-second");
+
+      releaseSlow();
+      await new Promise((resolve) => setTimeout(resolve, 50));
+
+      expect(shownIcon(el)).to.equal("live/fast-second");
+    });
+
+    it("loads the library icon when customSvg is turned off", async () => {
+      const el = await fixture(html`
+        <auro-icon category="live" name="after-custom" customsvg></auro-icon>
+      `);
+
+      expect(el.svg).to.be.undefined;
+
+      el.customSvg = false;
+      await waitUntil(
+        () => shownIcon(el) === "live/after-custom",
+        "Library icon did not load",
+      );
+    });
+
+    it("auro-alaska switches artwork when official changes", async () => {
+      const el = await fixture(html`
+        <auro-alaska style="width: 72px"></auro-alaska>
+      `);
+      const viewBox = () =>
+        el.shadowRoot.querySelector("svg")?.getAttribute("viewBox");
+
+      await waitUntil(() => viewBox() === "0 0 57 17");
+
+      el.official = true;
+      await waitUntil(
+        () => viewBox() === "0 0 57 24",
+        "Tagline artwork did not show",
+      );
+
+      el.official = false;
+      await waitUntil(
+        () => viewBox() === "0 0 57 17",
+        "Plain artwork did not come back",
+      );
+    });
   });
 });

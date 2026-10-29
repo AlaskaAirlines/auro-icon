@@ -41,7 +41,7 @@ Screen readers skip the icon's graphic and read the label, so you don't need to 
 
 #### ARIA hidden
 
-By default, screen readers skip the icon's graphic. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Some library icons, such as `wifi`, don't have one and stay hidden. If the icon first renders with `ariaHidden="true"`, changing it to `false` later doesn't currently restore the description.
+By default, screen readers skip the icon's graphic. To expose it, set `ariaHidden="false"` (not the native `aria-hidden`); screen readers then announce the icon's built-in description. Some library icons, such as `wifi`, don't have one and stay hidden.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/aria-hidden.html) -->

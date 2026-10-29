@@ -94,25 +94,59 @@ export default class BaseIcon extends AuroElement {
 
   // lifecycle function
   async firstUpdated() {
+    await this.loadIcon();
+  }
+
+  /**
+   * Loads the icon set by `category` and `name`, or a fallback icon if it isn't found. It keeps only the latest call's result, so a slow earlier request can't replace a newer icon.
+   * @private
+   * @returns {Promise<void>}
+   */
+  async loadIcon() {
+    this._loadId = (this._loadId || 0) + 1;
+    const loadId = this._loadId;
+
+    if (this.customSvg) {
+      return;
+    }
+
+    let svg;
+
     try {
-      if (!this.customSvg) {
-        const svg = await this.fetchIcon(this.category, this.name);
+      // Without both a category and a name there's nothing to request, so go straight to the fallback.
+      if (this.category && this.name) {
+        svg = await this.fetchIcon(this.category, this.name);
+      }
 
-        if (svg) {
-          this.svg = svg;
-        } else if (!svg) {
-          const fallbackSvg = this.name?.startsWith("tail-")
-            ? tailDefault.svg
-            : errorStroke.svg;
+      if (!svg) {
+        const fallbackSvg = this.name?.startsWith("tail-")
+          ? tailDefault.svg
+          : errorStroke.svg;
 
-          this.svg = new DOMParser()
-            .parseFromString(fallbackSvg, "text/html")
-            .body.querySelector("svg");
-        }
+        svg = new DOMParser()
+          .parseFromString(fallbackSvg, "text/html")
+          .body.querySelector("svg");
       }
       // eslint-disable-next-line no-unused-vars
     } catch (_err) {
-      this.svg = undefined;
+      svg = undefined;
     }
+
+    if (loadId !== this._loadId) {
+      return;
+    }
+
+    this._sourceSvg = svg;
+    this.svg = svg ? this.prepareSvg(svg) : undefined;
+  }
+
+  /**
+   * Returns the SVG to show for a loaded icon. Subclasses override it to adjust the icon's accessibility markup.
+   * @private
+   * @param {SVGElement} svg - The icon's `<svg>` element, as loaded.
+   * @returns {SVGElement} The `<svg>` element to show.
+   */
+  prepareSvg(svg) {
+    return svg;
   }
 }

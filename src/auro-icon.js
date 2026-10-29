@@ -67,7 +67,7 @@ export class AuroIcon extends BaseIcon {
       ...BaseIcon.properties,
 
       /**
-       * Sets whether screen readers skip the icon's graphic. When unset or `true`, they skip it, so describe meaningful icons in the default slot; use `false` to have them announce the icon's built-in description, if it has one. This is the `ariahidden` attribute, not the native `aria-hidden`. Changing it after the icon first renders doesn't currently restore a removed description.
+       * Sets whether screen readers skip the icon's graphic. When unset or `true`, they skip it, so describe meaningful icons in the default slot; use `false` to have them announce the icon's built-in description, if it has one. This is the `ariahidden` attribute, not the native `aria-hidden`.
        * @type {"true" | "false"}
        * @category a11y
        */
@@ -78,7 +78,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`; see https://auro.alaskaair.com/icons/ways-to-use. Changing it after the icon first renders doesn't currently load the new icon.
+       * Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Use it with `name`; see https://auro.alaskaair.com/icons/ways-to-use.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -98,7 +98,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. The icon then ignores `category` and `name`. Turning it off after the icon first renders doesn't currently load a library icon.
+       * Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. The icon then ignores `category` and `name`.
        * @category behavior
        */
       customSvg: {
@@ -116,7 +116,7 @@ export class AuroIcon extends BaseIcon {
       },
 
       /**
-       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip-filled`. Use it with `category`, and find available names in the icon list at https://auro.alaskaair.com/icons. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`. Changing it after the icon first renders doesn't currently load the new icon.
+       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip-filled`. Use it with `category`, and find available names in the icon list at https://auro.alaskaair.com/icons. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`.
        * @relevantWhen !customSvg
        * @category ui
        */
@@ -171,26 +171,45 @@ export class AuroIcon extends BaseIcon {
     this.setAttribute("exportparts", "svg:iconSvg");
   }
 
-  async firstUpdated() {
-    await super.firstUpdated();
+  /**
+   * Returns the SVG to show, adjusted for `ariahidden`. Most library icons carry a built-in description that screen readers announce when `ariahidden` is "false". When `ariahidden` has any other value, screen readers skip the graphic, so the shown copy drops the description and its `aria-labelledby` reference. The loaded SVG keeps both, so they come back if `ariahidden` changes to "false".
+   * @private
+   * @param {SVGElement} svg - The icon's `<svg>` element, as loaded.
+   * @returns {SVGElement} The `<svg>` element to show.
+   */
+  prepareSvg(svg) {
+    if (!this.hasAttribute("ariaHidden") || this.ariaHidden === "false") {
+      return svg;
+    }
 
-    /**
-     * Most library icons carry a built-in description that screen readers announce when
-     * `ariahidden` is "false". When `ariahidden` has any value other than "false",
-     * screen readers skip the graphic, so remove the description and its
-     * `aria-labelledby` reference. When `ariahidden` is unset or "false", keep both.
-     */
+    const shown = svg.cloneNode(true);
+    const svgDesc = shown.querySelector("desc");
+
+    if (svgDesc) {
+      svgDesc.remove();
+      shown.removeAttribute("aria-labelledby");
+    }
+
+    return shown;
+  }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    // The first update's icon is loaded by firstUpdated, so only react to later changes.
+    if (!this._hasRendered) {
+      this._hasRendered = true;
+      return;
+    }
+
     if (
-      this.hasAttribute("ariaHidden") &&
-      this.ariaHidden !== "false" &&
-      this.svg
+      changedProperties.has("category") ||
+      changedProperties.has("name") ||
+      changedProperties.has("customSvg")
     ) {
-      const svgDesc = this.svg.querySelector("desc");
-
-      if (svgDesc) {
-        svgDesc.remove();
-        this.svg.removeAttribute("aria-labelledby");
-      }
+      this.loadIcon();
+    } else if (changedProperties.has("ariaHidden") && this._sourceSvg) {
+      this.svg = this.prepareSvg(this._sourceSvg);
     }
   }
 

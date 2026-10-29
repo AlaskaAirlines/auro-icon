@@ -82,7 +82,7 @@ export class AuroAlaska extends BaseIcon {
       },
 
       /**
-       * Shows the Alaska Airlines logo with the official tagline. Changing it after the logo first renders doesn't currently switch the artwork.
+       * Shows the Alaska Airlines logo with the official tagline.
        * @category ui
        */
       official: {
@@ -179,12 +179,33 @@ export class AuroAlaska extends BaseIcon {
   // displaying the correct Alaska logo
   // with the correct Restricted icon
   firstUpdated() {
+    this.pickArtwork();
+  }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    // The first update's artwork is picked by firstUpdated, so only react to later changes.
+    if (!this._hasRendered) {
+      this._hasRendered = true;
+      return;
+    }
+
+    if (changedProperties.has("official")) {
+      this.pickArtwork();
+    }
+  }
+
+  /**
+   * Picks the logo or tagline artwork that best fits the logo's current width.
+   * @private
+   * @returns {void}
+   */
+  pickArtwork() {
     const iconContainer = this.shadowRoot.querySelector(".icon");
     const iconWidth = iconContainer.clientWidth;
 
-    if (this.official) {
-      this.alaska = false;
-    }
+    this.alaska = !this.official;
 
     try {
       if (this.alaska) {
