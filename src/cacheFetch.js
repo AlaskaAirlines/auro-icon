@@ -3,20 +3,20 @@
 const _fetchMap = new Map();
 
 /**
- * A callback to parse Response body.
+ * Called when the response arrives, to read its body.
  *
  * @callback ResponseParser
- * @param {Fetch.Response} response
- * @returns {Promise}
+ * @param {Response} response - The response to read.
+ * @returns {Promise<*>} The parsed body.
  */
 
 /**
- * A minimal in-memory map to de-duplicate Fetch API media requests.
+ * Fetches a URL and shares the result with every later call for the same URL, so it requests each URL only once.
+ * Results stay cached until the page reloads, including failed requests.
  *
- * @param {String} uri
- * @param {Object} [options={}]
- * @param {ResponseParser} [options.responseParser=(response) => response.text()]
- * @returns {Promise}
+ * @param {string} uri - The URL to fetch.
+ * @param {{ responseParser?: ResponseParser }} [options] - The options for reading the response. Set `responseParser` to read the body another way; by default, `cacheFetch` reads it as text. Only the first call for a URL uses its `responseParser`, because later calls share that call's result.
+ * @returns {Promise<*>} The parsed response body, shared by every call for the same URL.
  */
 const cacheFetch = (uri, options = {}) => {
   const responseParser =

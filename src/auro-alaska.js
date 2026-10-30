@@ -23,14 +23,28 @@ import styleCss from "./styles/alaskaStyle.scss";
 import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
+// build the component class
 /**
- * The `auro-alaska` element provides users a way to use the Alaska Airline logos.
+ * Shows the Alaska Airlines logo, with or without the official tagline.
+ *
+ * **Key capabilities**
+ * - **Fills its container**: The logo always stretches to the width of its container, and
+ *   the element picks the artwork that best suits that width when it first renders.
+ * - **Official tagline**: `official` switches to the logo with the tagline.
+ * - **Light and dark backgrounds**: `appearance="inverse"` shows the logo in white for dark
+ *   backgrounds.
+ *
+ * **Example**
+ * ```html
+ * <auro-alaska></auro-alaska>
+ * ```
+ *
+ * @summary Alaska Airlines logo that fills its container, with an optional official tagline.
  * @customElement auro-alaska
  *
- * @slot - Hidden from visibility, used for a11y if icon description is needed
+ * @slot - Extra text read by screen readers along with the logo's built-in name, which already reads "Alaska Airlines Logo image for Alaska Airlines". Leave it empty unless the logo needs more context. It stays off screen. {@category a11y}
+ * @cssprop {Color} --ds-auro-alaska-color - Color of the logo.
  */
-
-// build the component class
 export class AuroAlaska extends BaseIcon {
   constructor() {
     super();
@@ -39,11 +53,12 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * Internal defaults.
+   * Sets the element's default values.
    * @private
    * @returns {void}
    */
   _initializeDefaults() {
+    super._initializeDefaults();
     this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.sm = 107;
     this.md = 191;
@@ -67,7 +82,8 @@ export class AuroAlaska extends BaseIcon {
       },
 
       /**
-       * Set value for alaska airlines logo with official tagline.
+       * Shows the Alaska Airlines logo with the official tagline.
+       * @category ui
        */
       official: {
         type: Boolean,
@@ -77,11 +93,11 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-alaska"] - The name of element that you want to register to.
+   * Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-alaska` on the same page.
+   * @param {string} [name="auro-alaska"] - The tag name to register the element under.
    *
    * @example
-   * AuroAlaska.register("custom-alaska") // this will register this element to <custom-alaska/>
+   * AuroAlaska.register("custom-alaska") // makes the element available as <custom-alaska>
    *
    */
   static register(name = "auro-alaska") {
@@ -89,9 +105,9 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * Async function to decide which logo to use.
+   * Picks the logo artwork that best fits the given width.
    * @private
-   * @param {number} iconWidth - Size of parent icon is in.
+   * @param {number} iconWidth - The width of the logo's wrapper element, in pixels.
    * @returns {void}
    */
   alaskaLogoDef(iconWidth) {
@@ -121,9 +137,9 @@ export class AuroAlaska extends BaseIcon {
   }
 
   /**
-   * Async function to decide which logo to use.
+   * Picks the official tagline artwork that best fits the given width.
    * @private
-   * @param {number} iconWidth - Size of parent icon is in.
+   * @param {number} iconWidth - The width of the logo's wrapper element, in pixels.
    * @returns {void}
    */
   alaskaOfficialDef(iconWidth) {
@@ -163,12 +179,33 @@ export class AuroAlaska extends BaseIcon {
   // displaying the correct Alaska logo
   // with the correct Restricted icon
   firstUpdated() {
+    this.pickArtwork();
+  }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    // The first update's artwork is picked by firstUpdated, so only react to later changes.
+    if (!this._hasRendered) {
+      this._hasRendered = true;
+      return;
+    }
+
+    if (changedProperties.has("official")) {
+      this.pickArtwork();
+    }
+  }
+
+  /**
+   * Picks the logo or tagline artwork that best fits the logo's current width.
+   * @private
+   * @returns {void}
+   */
+  pickArtwork() {
     const iconContainer = this.shadowRoot.querySelector(".icon");
     const iconWidth = iconContainer.clientWidth;
 
-    if (this.official) {
-      this.alaska = false;
-    }
+    this.alaska = !this.official;
 
     try {
       if (this.alaska) {
