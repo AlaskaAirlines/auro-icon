@@ -1,6 +1,6 @@
 <!--
  THIS PAGE'S CONTENT SHOULD BE KEPT MINIMAL.
- ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE — THE BASIC EXAMPLE IS USUALLY ENOUGH.
+ ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE. THE BASIC EXAMPLE IS USUALLY ENOUGH.
  ALL OTHER EXAMPLES SHOULD GO IN THE API DOCUMENTATION.
 -->
 
@@ -8,39 +8,37 @@
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
-Icons can be used to represent concepts or provide context to options and/or actions within an experience.
+Icons represent concepts and add context to options and actions.
 
-The `<auro-icon>` element comes pre-configured with all the available [Auro Icons](https://auro.alaskaair.com/icons) . Simply add the `category` and `name` of the icon for quick and easy results.
+The `<auro-icon>` element can show any icon in the [Auro icon library](https://auro.alaskaair.com/icons). Set the icon's `category` and `name`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
-The `<auro-icon>` element should be used in situations where users may:
+Use `<auro-icon>` when people:
 
-* Benefit from additional context provided by an icon alongside text
-* Need to quickly identify actions or options represented by icons
-* Require visual indicators to enhance usability and navigation within an interface
+* Benefit from an icon that adds context to nearby text
+* Need to quickly recognize an action or option by its icon
+* Rely on visual cues to find their way around an interface
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Example(s)
+## Examples
 
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
-  <auro-icon category="interface" name="pin-trip"></auro-icon>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+<!-- The below content is automatically added from ./../apiExamples/basic.html -->
+<auro-icon category="interface" name="pin-trip-filled">Your trip starts here</auro-icon>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
-```html
-<auro-icon category="interface" name="pin-trip"></auro-icon>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-icon category="interface" name="pin-trip-filled"&gt;Your trip starts here&lt;/auro-icon&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
