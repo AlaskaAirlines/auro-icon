@@ -1,3 +1,3 @@
-Icons can be used to represent concepts or provide context to options and/or actions within an experience.
+Icons represent concepts and add context to options and actions.
 
-The `<auro-icon>` element comes pre-configured with all the available [Auro Icons](https://auro.alaskaair.com/icons) . Simply add the `category` and `name` of the icon for quick and easy results.
+The `<auro-icon>` element can show any icon in the [Auro icon library](https://auro.alaskaair.com/icons). Set the icon's `category` and `name`.

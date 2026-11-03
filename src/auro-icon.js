@@ -13,12 +13,34 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
- * The `auro-icon` element provides users a way to use the Alaska Airlines icon library.
+ * Shows an icon from the Auro icon library, or a custom SVG, sized and colored to match
+ * Auro interfaces.
+ *
+ * **Key capabilities**
+ * - **Library icons**: Set `category` and `name` to load any icon from the Auro icon
+ *   library.
+ * - **Custom SVGs**: Set `customSvg` and put your own `<svg>` in the `svg` slot.
+ * - **Color**: `variant` colors the icon by meaning, such as `statusError` or `fareFirst`,
+ *   and `customColor` makes it inherit the surrounding text color.
+ * - **Light and dark backgrounds**: `appearance="inverse"` switches the default, `disabled`,
+ *   `muted`, and `statusError` colors to versions designed for dark backgrounds.
+ * - **Labels**: Text in the default slot describes the icon to screen readers, and `label`
+ *   also shows it next to the icon.
+ *
+ * **Example**
+ * ```html
+ * <auro-icon category="interface" name="pin-trip-filled">Your trip starts here</auro-icon>
+ * ```
+ *
+ * @summary Icon from the Auro icon library or a custom SVG, with color variants and an optional label.
  * @customElement auro-icon
- * 
- * @slot - Hidden from visibility, used for a11y if icon description is needed.
- * @slot svg - Used for custom SVG content.
- * @csspart label - Used for customizing the style of the icon label.
+ *
+ * @slot - Text that describes the icon to screen readers, such as "Your trip starts here". Leave it empty for decorative icons, which screen readers skip. Setting `label` also shows it on screen. {@category a11y}
+ * @slot svg - The custom `<svg>` to show in place of a library icon. Give it a `viewBox` and no `width` or `height`, so `--ds-auro-icon-size` sizes it like a library icon. {@requiredWhen customSvg} {@category ui}
+ * @csspart label - The `<div>` wrapping the default slot's text, visually hidden unless `label` is set.
+ * @csspart svg - The `<span>` wrapping the icon's SVG. Library icons also set this part on their `<svg>`, so `::part(svg)` styles both; a custom SVG in the `svg` slot doesn't get it.
+ * @cssprop {Color} --ds-auro-icon-color - Color of the icon. Ignored when `customColor` is set. {@relevantWhen !customColor}
+ * @cssprop {Length} --ds-auro-icon-size - Width and height of the icon.
  */
 export class AuroIcon extends BaseIcon {
   constructor() {
@@ -28,11 +50,12 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
-   * Internal Defaults.
+   * Sets the element's default values.
    * @private
    * @returns {void}
    */
   _initializeDefaults() {
+    super._initializeDefaults();
     this.variant = undefined;
     this.uri = "https://cdn.jsdelivr.net/npm/@alaskaairux/icons@latest/dist";
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
@@ -44,61 +67,73 @@ export class AuroIcon extends BaseIcon {
       ...BaseIcon.properties,
 
       /**
-       * Set aria-hidden value. Default is `true`. Option is `false`.
-       * @type {'true' | 'false'}
-       * @default 'true'
+       * Sets whether screen readers skip the icon's graphic. When unset or `true`, they skip it, so describe meaningful icons in the default slot; use `false` to have them announce the icon's built-in description, if it has one. This is the `ariahidden` attribute, not the native `aria-hidden`.
+       * @type {"true" | "false"}
+       * @category a11y
        */
       ariaHidden: {
         type: String,
-        reflect: true
+        attribute: "ariahidden",
+        reflect: true,
       },
 
       /**
-       * The category of the icon you are looking for. See https://auro.alaskaair.com/icons/ways-to-use.
+       * Sets the icon's category in the Auro icon library, such as `interface` or `in-flight`. Applies only when `customSvg` isn't set, and needs `name` too; see https://auro.alaskaair.com/icons/ways-to-use.
+       * @relevantWhen !customSvg
+       * @category ui
        */
       category: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * Allows custom color to be set.
+       * Makes the icon inherit the color of the surrounding text, in place of the `variant` color or `--ds-auro-icon-color`.
+       * @category ui
        */
       customColor: {
         type: Boolean,
-        reflect: true
+        attribute: "customcolor",
+        reflect: true,
       },
 
       /**
-       * When true, auro-icon will render a custom SVG inside the default slot.
+       * Shows the `<svg>` in the `svg` slot instead of loading an icon from the library. The icon then ignores `category` and `name`.
+       * @category behavior
        */
       customSvg: {
-        type: Boolean
+        type: Boolean,
+        attribute: "customsvg",
       },
 
       /**
-       * Exposes content in slot as icon label.
+       * Shows the default slot's text next to the icon. Without it, the text stays off screen, and only screen readers read it.
+       * @category ui
        */
       label: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * The name of the icon you are looking for without the file extension. See https://auro.alaskaair.com/icons/ways-to-use.
+       * Sets which icon to show, by its file name in the Auro icon library without the extension, such as `pin-trip-filled`. Applies only when `customSvg` isn't set, and needs `category` too; find available names in the icon list at https://auro.alaskaair.com/icons. If the icon isn't found, `auro-icon` shows an error icon instead, or the default tail logo for names that start with `tail-`.
+       * @relevantWhen !customSvg
+       * @category ui
        */
       name: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * The style of the icon.
-       * @type {'accent1' | 'disabled' | 'muted' | 'statusDefault' | 'statusInfo' | 'statusSuccess' | 'statusWarning' | 'statusError' | 'statusInfoSubtle' | 'statusSuccessSubtle' | 'statusWarningSubtle' | 'statusErrorSubtle' | 'fareBasicEconomy' | 'fareBusiness' | 'fareEconomy' | 'fareFirst' | 'farePremiumEconomy' | 'tierOneWorldEmerald' | 'tierOneWorldSapphire' | 'tierOneWorldRuby'}
+       * Sets the icon's color to match its meaning: an emphasis or state (`accent1`, `disabled`, `muted`), a status (`status*`), a fare class (`fare*`), or a oneworld tier (`tierOneWorld*`). Applies only when `customColor` isn't set. With `appearance="inverse"`, only `disabled`, `muted`, and `statusError` switch to colors designed for dark backgrounds; the other variants keep their standard colors.
+       * @type {"accent1" | "disabled" | "muted" | "statusDefault" | "statusInfo" | "statusSuccess" | "statusWarning" | "statusError" | "statusInfoSubtle" | "statusSuccessSubtle" | "statusWarningSubtle" | "statusErrorSubtle" | "fareBasicEconomy" | "fareBusiness" | "fareEconomy" | "fareFirst" | "farePremiumEconomy" | "tierOneWorldEmerald" | "tierOneWorldSapphire" | "tierOneWorldRuby"}
+       * @relevantWhen !customColor
+       * @category ui
        */
       variant: {
         type: String,
-        reflect: true
+        reflect: true,
       },
     };
   }
@@ -108,11 +143,11 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-icon"] - The name of element that you want to register to.
+   * Registers the element with the browser under a tag name. Use a custom name to run this version alongside another version of `auro-icon` on the same page.
+   * @param {string} [name="auro-icon"] - The tag name to register the element under.
    *
    * @example
-   * AuroIcon.register("custom-icon") // this will register this element to <custom-icon/>
+   * AuroIcon.register("custom-icon") // makes the element available as <custom-icon>
    *
    */
   static register(name = "auro-icon") {
@@ -127,28 +162,54 @@ export class AuroIcon extends BaseIcon {
   }
 
   /**
+   * Forwards the `svg` part as `iconSvg`, so when the icon sits inside another component's shadow DOM, that component's users can style it with `<component>::part(iconSvg)`.
+   * Nothing in this component calls it.
    * @private
-   * @returns {void} Exposes CSS parts for styling from parent components.
+   * @returns {void}
    */
   exposeCssParts() {
     this.setAttribute("exportparts", "svg:iconSvg");
   }
 
-  async firstUpdated() {
-    await super.firstUpdated();
+  /**
+   * Returns the SVG to show, adjusted for `ariahidden`. Most library icons carry a built-in description that screen readers announce when `ariahidden` is "false". When `ariahidden` has any other value, screen readers skip the graphic, so the shown copy drops the description and its `aria-labelledby` reference. The loaded SVG keeps both, so they come back if `ariahidden` changes to "false".
+   * @private
+   * @param {SVGElement} svg - The icon's `<svg>` element, as loaded.
+   * @returns {SVGElement} The `<svg>` element to show.
+   */
+  prepareSvg(svg) {
+    if (!this.hasAttribute("ariaHidden") || this.ariaHidden === "false") {
+      return svg;
+    }
 
-    /**
-     * icons provide a description for screen readers. Icon only instances Auro-button
-     * depend on this description to provide context for the user using a screen reader.
-     * Removes the SVG description for screen reader if ariaHidden is set to true.
-     */
-    if (this.hasAttribute("ariaHidden") && this.svg) {
-      const svgDesc = this.svg.querySelector("desc");
+    const shown = svg.cloneNode(true);
+    const svgDesc = shown.querySelector("desc");
 
-      if (svgDesc) {
-        svgDesc.remove();
-        this.svg.removeAttribute("aria-labelledby");
-      }
+    if (svgDesc) {
+      svgDesc.remove();
+      shown.removeAttribute("aria-labelledby");
+    }
+
+    return shown;
+  }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    // The first update's icon is loaded by firstUpdated, so only react to later changes.
+    if (!this._hasRendered) {
+      this._hasRendered = true;
+      return;
+    }
+
+    if (
+      changedProperties.has("category") ||
+      changedProperties.has("name") ||
+      changedProperties.has("customSvg")
+    ) {
+      this.loadIcon();
+    } else if (changedProperties.has("ariaHidden") && this._sourceSvg) {
+      this.svg = this.prepareSvg(this._sourceSvg);
     }
   }
 

@@ -1,11 +1,11 @@
 # Alaska
 
-The `auro-alaska` custom element is more than just an easy-to-use placement of the official logo, but it also comes with automation that will produce the proper version of the logo depending on the size of the parent container.
+The `auro-alaska` element shows the Alaska Airlines logo. It fills the width of its container and picks the version of the logo that suits that width.
 
 ## Install
 
-```bash
-import "@alaskaairux/auro-icon";
+```js
+import "@aurodesignsystem/auro-icon";
 ```
 
 ## Default component
@@ -13,6 +13,7 @@ import "@alaskaairux/auro-icon";
 <div class="exampleWrapper">
   <auro-alaska style="width: 192px"></auro-alaska>
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -21,9 +22,11 @@ import "@alaskaairux/auro-icon";
   ```
 
 </auro-accordion>
+
 <div class="exampleWrapper--ondark">
   <auro-alaska appearance="inverse" style="width: 192px"></auro-alaska>
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -35,11 +38,12 @@ import "@alaskaairux/auro-icon";
 
 ## Official logo with tagline
 
-Using the `official` property will display the Alaska Airlines logo with the official tagline.
+Add the `official` attribute to show the logo with the official tagline.
 
 <div class="exampleWrapper">
   <auro-alaska official style="width: 192px"></auro-alaska>
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -48,9 +52,11 @@ Using the `official` property will display the Alaska Airlines logo with the off
   ```
 
 </auro-accordion>
+
 <div class="exampleWrapper--ondark">
   <auro-alaska official appearance="inverse" style="width: 192px"></auro-alaska>
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -62,7 +68,7 @@ Using the `official` property will display the Alaska Airlines logo with the off
 
 ## Auto scale support
 
-The Alaska Airline logo has a preferred version of the logo depending in the size of the rendering. The auro-alaska custom element is auto-aware and will display the proper version of the logo depending on the size of the container automatically.
+The Alaska Airlines logo has a version designed for each size range. `auro-alaska` picks the version that suits its container's width when it first renders. It doesn't switch versions if the container is resized later.
 
 <div class="exampleWrapper">
   <auro-alaska style="width: 72px"></auro-alaska><br>
@@ -70,6 +76,7 @@ The Alaska Airline logo has a preferred version of the logo depending in the siz
   <auro-alaska style="width: 192px"></auro-alaska><br>
   <auro-alaska style="width: 528px"></auro-alaska>
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -81,12 +88,14 @@ The Alaska Airline logo has a preferred version of the logo depending in the siz
   ```
 
 </auro-accordion>
+
 <div class="exampleWrapper">
   <auro-alaska official style="width: 72px"></auro-alaska><br>
   <auro-alaska official style="width: 108px"></auro-alaska><br>
   <auro-alaska official style="width: 192px"></auro-alaska><br>
   <auro-alaska official style="width: 528px"></auro-alaska>
 </div>
+
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
